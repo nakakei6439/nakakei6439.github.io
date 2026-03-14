@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>献立カート — 衝動買いをなくす、週次献立アプリ</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+      color: #1C1C1E;
+      background: #F2F2F7;
+      line-height: 1.7;
+    }
+
+    /* ヘッダー */
+    header {
+      background: #FFFFFF;
+      text-align: center;
+      padding: 60px 20px 48px;
+    }
+
+    .app-icon {
+      width: 100px;
+      height: 100px;
+      background: #E8692A;
+      border-radius: 22px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 52px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 20px rgba(232,105,42,0.35);
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #1C1C1E;
+    }
+
+    .tagline {
+      font-size: 16px;
+      color: #8E8E93;
+      margin-top: 8px;
+    }
+
+    .badge-area {
+      margin-top: 28px;
+    }
+
+    .badge-soon {
+      display: inline-block;
+      background: #1C1C1E;
+      color: #FFFFFF;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 12px 28px;
+      border-radius: 12px;
+      letter-spacing: 0.3px;
+    }
+
+    /* セクション共通 */
+    section {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .section-card {
+      background: #FFFFFF;
+      border-radius: 16px;
+      padding: 28px 24px;
+      margin-bottom: 16px;
+    }
+
+    .section-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: #8E8E93;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 20px;
+    }
+
+    /* アプリ説明 */
+    .description {
+      font-size: 16px;
+      color: #3A3A3C;
+      line-height: 1.8;
+    }
+
+    /* 機能リスト */
+    .feature-list {
+      list-style: none;
+    }
+
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 14px 0;
+      border-bottom: 1px solid #F2F2F7;
+      font-size: 15px;
+      color: #1C1C1E;
+    }
+
+    .feature-list li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .feature-list li:first-child {
+      padding-top: 0;
+    }
+
+    .feature-icon {
+      font-size: 26px;
+      flex-shrink: 0;
+      width: 36px;
+      text-align: center;
+    }
+
+    .feature-text strong {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .feature-text span {
+      font-size: 13px;
+      color: #8E8E93;
+    }
+
+    /* プレミアム */
+    .premium-card {
+      background: linear-gradient(135deg, #E8692A 0%, #F0884A 100%);
+      border-radius: 16px;
+      padding: 28px 24px;
+      color: #FFFFFF;
+      margin-bottom: 16px;
+    }
+
+    .premium-card .section-label {
+      color: rgba(255,255,255,0.75);
+    }
+
+    .premium-title {
+      font-size: 20px;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    .premium-desc {
+      font-size: 14px;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.6;
+    }
+
+    .premium-price {
+      display: inline-block;
+      background: rgba(255,255,255,0.25);
+      border-radius: 10px;
+      padding: 6px 14px;
+      font-size: 18px;
+      font-weight: 800;
+      margin-top: 14px;
+    }
+
+    /* サポート */
+    .support-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-decoration: none;
+      color: #1C1C1E;
+      padding: 14px 0;
+      border-bottom: 1px solid #F2F2F7;
+      font-size: 15px;
+    }
+
+    .support-link:last-child {
+      border-bottom: none;
+    }
+
+    .support-link-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .support-link-icon {
+      font-size: 20px;
+      width: 32px;
+      text-align: center;
+    }
+
+    .chevron {
+      font-size: 18px;
+      color: #C7C7CC;
+    }
+
+    /* フッター */
+    footer {
+      text-align: center;
+      padding: 24px 20px 48px;
+      font-size: 13px;
+      color: #8E8E93;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="app-icon">🛒</div>
+    <h1>献立カート</h1>
+    <p class="tagline">週の献立を決めて、衝動買いをなくす</p>
+    <div class="badge-area">
+      <span class="badge-soon">App Store — 近日公開</span>
+    </div>
+  </header>
+
+  <section>
+
+    <!-- アプリ説明 -->
+    <div class="section-card">
+      <p class="section-label">このアプリについて</p>
+      <p class="description">
+        「献立カート」は、週の献立をあらかじめ決めておくことで、スーパーでの衝動買いをなくす献立管理アプリです。
+        献立を登録すると必要な食材だけが買い物リストに自動で追加されるので、余分な食材を買わず、食品ロスも減らせます。
+      </p>
+    </div>
+
+    <!-- 機能 -->
+    <div class="section-card">
+      <p class="section-label">主な機能</p>
+      <ul class="feature-list">
+        <li>
+          <div class="feature-icon">📅</div>
+          <div class="feature-text">
+            <strong>週次献立の登録</strong>
+            <span>1週間の夕食・昼食を曜日ごとに簡単登録</span>
+          </div>
+        </li>
+        <li>
+          <div class="feature-icon">🛒</div>
+          <div class="feature-text">
+            <strong>買い物リストの自動生成</strong>
+            <span>献立から必要な食材だけをリストアップ。お店でそのまま使える</span>
+          </div>
+        </li>
+        <li>
+          <div class="feature-icon">📖</div>
+          <div class="feature-text">
+            <strong>料理履歴</strong>
+            <span>過去に作った料理を振り返り、献立のマンネリを防止</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- プレミアム -->
+    <div class="premium-card">
+      <p class="section-label">プレミアム</p>
+      <p class="premium-title">広告なしで快適に</p>
+      <p class="premium-desc">一度の購入でアプリ内広告を永続的に非表示にします。サブスクリプションではありません。</p>
+      <span class="premium-price">¥300 買い切り</span>
+    </div>
+
+    <!-- サポート -->
+    <div class="section-card">
+      <p class="section-label">サポート</p>
+      <a class="support-link" href="mailto:nakakei6439@gmail.com">
+        <div class="support-link-left">
+          <span class="support-link-icon">✉️</span>
+          <span>お問い合わせ</span>
+        </div>
+        <span class="chevron">›</span>
+      </a>
+      <a class="support-link" href="./privacy-policy.html">
+        <div class="support-link-left">
+          <span class="support-link-icon">🔒</span>
+          <span>プライバシーポリシー</span>
+        </div>
+        <span class="chevron">›</span>
+      </a>
+    </div>
+
+  </section>
+
+  <footer>
+    <p>© 2026 Keita Nakagawa. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
