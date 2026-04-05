@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>使い方ガイド — 献立カート</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+      color: #1C1C1E;
+      background: #F2F2F7;
+      line-height: 1.7;
+    }
+
+    /* ヘッダー */
+    header {
+      background: #FFFFFF;
+      text-align: center;
+      padding: 48px 20px 36px;
+    }
+
+    .app-icon {
+      width: 72px;
+      height: 72px;
+      background: #E8692A;
+      border-radius: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 38px;
+      margin-bottom: 14px;
+      box-shadow: 0 4px 16px rgba(232,105,42,0.3);
+    }
+
+    h1 {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      color: #1C1C1E;
+    }
+
+    .tagline {
+      font-size: 14px;
+      color: #8E8E93;
+      margin-top: 6px;
+    }
+
+    /* 言語セレクター */
+    .lang-bar {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      padding: 12px 20px;
+      background: #FFFFFF;
+      border-top: 1px solid #F2F2F7;
+    }
+
+    .lang-btn {
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 8px;
+      border: none;
+      background: #F2F2F7;
+      color: #8E8E93;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .lang-btn.active {
+      background: #E8692A;
+      color: #FFFFFF;
+    }
+
+    /* セクション */
+    .content {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 24px 16px 48px;
+    }
+
+    .guide-card {
+      background: #FFFFFF;
+      border-radius: 16px;
+      padding: 24px 20px;
+      margin-bottom: 16px;
+    }
+
+    .section-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: #8E8E93;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #1C1C1E;
+      margin-bottom: 4px;
+    }
+
+    .section-desc {
+      font-size: 14px;
+      color: #8E8E93;
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+
+    /* ステップ */
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid #F2F2F7;
+    }
+
+    .step:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .step-num {
+      width: 28px;
+      height: 28px;
+      background: #E8692A;
+      color: #FFFFFF;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .step-text {
+      font-size: 15px;
+      color: #1C1C1E;
+      line-height: 1.6;
+    }
+
+    .step-text strong {
+      font-weight: 700;
+    }
+
+    .step-hint {
+      font-size: 13px;
+      color: #8E8E93;
+      margin-top: 2px;
+    }
+
+    /* ヒントボックス */
+    .tip-box {
+      background: #FFF8F0;
+      border-left: 3px solid #E8692A;
+      border-radius: 0 10px 10px 0;
+      padding: 12px 16px;
+      margin-top: 14px;
+      font-size: 14px;
+      color: #3A3A3C;
+      line-height: 1.6;
+    }
+
+    .tip-box strong {
+      color: #E8692A;
+    }
+
+    /* スワイプデモ */
+    .swipe-demo {
+      background: #F9F9F9;
+      border-radius: 12px;
+      padding: 16px;
+      margin-top: 14px;
+      overflow: hidden;
+    }
+
+    .swipe-demo-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: #8E8E93;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .swipe-row-container {
+      position: relative;
+      height: 52px;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 8px;
+    }
+
+    .swipe-row-container:last-child {
+      margin-bottom: 0;
+    }
+
+    .swipe-delete-bg {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 80px;
+      background: #FF3B30;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 0 10px 10px 0;
+    }
+
+    .swipe-row {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #FFFFFF;
+      border: 1px solid #E5E5EA;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+      font-size: 15px;
+      color: #1C1C1E;
+      animation: swipeLeft 3s ease-in-out infinite;
+    }
+
+    .swipe-row-static {
+      background: #FFFFFF;
+      border: 1px solid #E5E5EA;
+      border-radius: 10px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+      font-size: 15px;
+      color: #1C1C1E;
+      margin-bottom: 8px;
+    }
+
+    .swipe-row-static:last-child {
+      margin-bottom: 0;
+    }
+
+    .swipe-finger {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 22px;
+      animation: fingerSwipe 3s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    @keyframes swipeLeft {
+      0%, 20%  { transform: translateX(0); }
+      40%, 60% { transform: translateX(-80px); }
+      80%, 100% { transform: translateX(0); }
+    }
+
+    @keyframes fingerSwipe {
+      0%, 20%  { transform: translateY(-50%) translateX(0); opacity: 1; }
+      40%, 60% { transform: translateY(-50%) translateX(-80px); opacity: 1; }
+      65%      { opacity: 0; }
+      80%, 100% { transform: translateY(-50%) translateX(0); opacity: 0; }
+    }
+
+    /* 多言語切替 */
+    [data-lang] { display: none; }
+    [data-lang].visible { display: block; }
+
+    /* フッター */
+    footer {
+      text-align: center;
+      padding: 8px 20px 48px;
+      font-size: 13px;
+      color: #8E8E93;
+    }
+
+    footer a {
+      color: #E8692A;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="app-icon">🛒</div>
+    <h1 data-lang="ja" class="visible">使い方ガイド</h1>
+    <h1 data-lang="en">How to Use</h1>
+    <h1 data-lang="zh">使用指南</h1>
+    <h1 data-lang="ko">사용 가이드</h1>
+    <h1 data-lang="es">Guia de uso</h1>
+    <p class="tagline" data-lang="ja" class="visible">献立カート</p>
+    <p class="tagline" data-lang="en">KondateCart</p>
+    <p class="tagline" data-lang="zh">献立カート</p>
+    <p class="tagline" data-lang="ko">献立カート</p>
+    <p class="tagline" data-lang="es">献立カート</p>
+  </header>
+
+  <div class="lang-bar">
+    <button class="lang-btn active" data-select-lang="ja">日本語</button>
+    <button class="lang-btn" data-select-lang="en">EN</button>
+    <button class="lang-btn" data-select-lang="zh">中文</button>
+    <button class="lang-btn" data-select-lang="ko">한국어</button>
+    <button class="lang-btn" data-select-lang="es">ES</button>
+  </div>
+
+  <!-- ===== 日本語 ===== -->
+  <div class="content" data-lang="ja">
+
+    <!-- 1. 献立の登録 -->
+    <div class="guide-card">
+      <p class="section-label">STEP 1</p>
+      <p class="section-title">週の献立を登録する</p>
+      <p class="section-desc">画面下の「献立」タブで、1週間の料理を曜日ごとに入力します。</p>
+      <div class="step">
+        <span class="step-num">1</span>
+        <div>
+          <p class="step-text"><strong>曜日をタップ</strong>して入力画面を開く</p>
+          <p class="step-hint">「来週」「再来週」に切り替えも可能です</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">2</span>
+        <div>
+          <p class="step-text"><strong>料理名</strong>を入力する（例: 肉じゃが）</p>
+          <p class="step-hint">「履歴」ボタンで過去の料理を選べます</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">3</span>
+        <div>
+          <p class="step-text"><strong>材料</strong>を追加する（食材名と量）</p>
+          <p class="step-hint">「＋ 材料を追加」で複数の材料を登録できます</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">4</span>
+        <div>
+          <p class="step-text"><strong>「保存」</strong>をタップして完了</p>
+          <p class="step-hint">1日に複数の料理を登録することもできます</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. 買い物リスト -->
+    <div class="guide-card">
+      <p class="section-label">STEP 2</p>
+      <p class="section-title">買い物リストを使う</p>
+      <p class="section-desc">登録した献立の材料が自動で買い物リストにまとまります。</p>
+      <div class="step">
+        <span class="step-num">1</span>
+        <div>
+          <p class="step-text">画面下の<strong>「買い物」タブ</strong>を開く</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">2</span>
+        <div>
+          <p class="step-text"><strong>「来週」「再来週まで」</strong>で期間を切り替え</p>
+          <p class="step-hint">2週分まとめて買い物したいときに便利です</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">3</span>
+        <div>
+          <p class="step-text">買った食材を<strong>タップしてチェック</strong></p>
+          <p class="step-hint">チェックした品目は下部にまとまります</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">4</span>
+        <div>
+          <p class="step-text">献立を変更したら<strong>「再生成」</strong>でリストを更新</p>
+        </div>
+      </div>
+      <div class="tip-box">
+        <strong>Tip:</strong> リスト右上の「＋」ボタンで、献立にない品目（調味料など）も手動で追加できます。
+      </div>
+    </div>
+
+    <!-- 3. 料理履歴 -->
+    <div class="guide-card">
+      <p class="section-label">STEP 3</p>
+      <p class="section-title">料理履歴を活用する</p>
+      <p class="section-desc">過去に登録した料理が自動的に履歴に保存されます。</p>
+      <div class="step">
+        <span class="step-num">1</span>
+        <div>
+          <p class="step-text">画面下の<strong>「履歴」タブ</strong>を開く</p>
+          <p class="step-hint">今週・先週・今月・それ以前でグループ分けされています</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">2</span>
+        <div>
+          <p class="step-text">検索バーで<strong>料理名を検索</strong></p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">3</span>
+        <div>
+          <p class="step-text">料理をタップすると<strong>材料の確認・編集</strong>ができる</p>
+        </div>
+      </div>
+      <div class="tip-box">
+        <strong>Tip:</strong> 献立入力画面の「履歴」ボタンから、過去の料理を材料ごとそのまま再利用できます。
+      </div>
+    </div>
+
+    <!-- 4. スワイプ削除 -->
+    <div class="guide-card">
+      <p class="section-label">STEP 4</p>
+      <p class="section-title">スワイプで削除する</p>
+      <p class="section-desc">各項目を左にスワイプすると削除ボタンが現れます。</p>
+
+      <div class="swipe-demo">
+        <p class="swipe-demo-label">左にスワイプしてみよう</p>
+        <div class="swipe-row-static">📅 月曜 — カレーライス</div>
+        <div class="swipe-row-container">
+          <div class="swipe-delete-bg">削除</div>
+          <div class="swipe-row">
+            📅 火曜 — 肉じゃが
+            <span class="swipe-finger">👆</span>
+          </div>
+        </div>
+        <div class="swipe-row-static">📅 水曜 — パスタ</div>
+      </div>
+
+      <div class="tip-box">
+        <strong>Tip:</strong> スワイプ削除は献立・買い物リスト・料理履歴の全てで使えます。
+      </div>
+    </div>
+
+    <!-- 5. 設定 -->
+    <div class="guide-card">
+      <p class="section-label">STEP 5</p>
+      <p class="section-title">設定とデータ管理</p>
+      <p class="section-desc">画面右上の歯車アイコンから設定を開けます。</p>
+      <div class="step">
+        <span class="step-num">-</span>
+        <div>
+          <p class="step-text"><strong>プレミアム（¥300）:</strong> 広告を永久に非表示にします</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">-</span>
+        <div>
+          <p class="step-text"><strong>データエクスポート:</strong> 献立・履歴をJSONファイルで保存</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">-</span>
+        <div>
+          <p class="step-text"><strong>データインポート:</strong> バックアップからデータを復元</p>
+          <p class="step-hint">機種変更時にお使いください</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== English ===== -->
+  <div class="content" data-lang="en">
+
+    <div class="guide-card">
+      <p class="section-label">STEP 1</p>
+      <p class="section-title">Plan Your Weekly Meals</p>
+      <p class="section-desc">Use the "Menu" tab at the bottom to enter meals for each day of the week.</p>
+      <div class="step">
+        <span class="step-num">1</span>
+        <div>
+          <p class="step-text"><strong>Tap a day</strong> to open the entry screen</p>
+          <p class="step-hint">Switch between "Next week" and "Week after next"</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">2</span>
+        <div>
+          <p class="step-text">Enter a <strong>dish name</strong> (e.g., Curry Rice)</p>
+          <p class="step-hint">Tap "History" to pick from past dishes</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">3</span>
+        <div>
+          <p class="step-text">Add <strong>ingredients</strong> (name and amount)</p>
+          <p class="step-hint">Tap "+ Add ingredient" to add more</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">4</span>
+        <div>
+          <p class="step-text">Tap <strong>"Save"</strong> to finish</p>
+          <p class="step-hint">You can add multiple dishes per day</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="guide-card">
+      <p class="section-label">STEP 2</p>
+      <p class="section-title">Use the Shopping List</p>
+      <p class="section-desc">Ingredients from your meal plan are automatically compiled into a shopping list.</p>
+      <div class="step">
+        <span class="step-num">1</span>
+        <div><p class="step-text">Open the <strong>"Shopping" tab</strong> at the bottom</p></div>
+      </div>
+      <div class="step">
+        <span class="step-num">2</span>
+        <div>
+          <p class="step-text">Switch between <strong>"Next week" / "2 weeks"</strong></p>
+          <p class="step-hint">Handy for bulk shopping trips</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">3</span>
+        <div>
+          <p class="step-text"><strong>Tap items to check them off</strong> as you shop</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">4</span>
+        <div><p class="step-text">Changed your plan? Tap <strong>"Regenerate"</strong> to update the list</p></div>
+      </div>
+      <div class="tip-box">
+        <strong>Tip:</strong> Use the "+" button to manually add items not in your meal plan (e.g., seasonings).
+      </div>
+    </div>
+
+    <div class="guide-card">
+      <p class="section-label">STEP 3</p>
+      <p class="section-title">Browse Dish History</p>
+      <p class="section-desc">Every dish you register is automatically saved to your history.</p>
+      <div class="step">
+        <span class="step-num">1</span>
+        <div>
+          <p class="step-text">Open the <strong>"History" tab</strong></p>
+          <p class="step-hint">Grouped by this week, last week, this month, and earlier</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">2</span>
+        <div><p class="step-text"><strong>Search</strong> dishes by name</p></div>
+      </div>
+      <div class="step">
+        <span class="step-num">3</span>
+        <div><p class="step-text">Tap a dish to <strong>view or edit</strong> its ingredients</p></div>
+      </div>
+      <div class="tip-box">
+        <strong>Tip:</strong> When adding a meal, tap "History" to reuse a past dish with all its ingredients.
+      </div>
+    </div>
+
+    <div class="guide-card">
+      <p class="section-label">STEP 4</p>
+      <p class="section-title">Swipe to Delete</p>
+      <p class="section-desc">Swipe any row to the left to reveal a delete button.</p>
+
+      <div class="swipe-demo">
+        <p class="swipe-demo-label">Swipe left to delete</p>
+        <div class="swipe-row-static">📅 Mon — Curry Rice</div>
+        <div class="swipe-row-container">
+          <div class="swipe-delete-bg">Delete</div>
+          <div class="swipe-row">
+            📅 Tue — Nikujaga
+            <span class="swipe-finger">👆</span>
+          </div>
+        </div>
+        <div class="swipe-row-static">📅 Wed — Pasta</div>
+      </div>
+
+      <div class="tip-box">
+        <strong>Tip:</strong> Swipe-to-delete works on meal entries, shopping items, and dish history.
+      </div>
+    </div>
+
+    <div class="guide-card">
+      <p class="section-label">STEP 5</p>
+      <p class="section-title">Settings & Data</p>
+      <p class="section-desc">Tap the gear icon in the top-right corner to open settings.</p>
+      <div class="step">
+        <span class="step-num">-</span>
+        <div><p class="step-text"><strong>Premium (¥300):</strong> Permanently remove ads</p></div>
+      </div>
+      <div class="step">
+        <span class="step-num">-</span>
+        <div><p class="step-text"><strong>Export:</strong> Save your data as a JSON file</p></div>
+      </div>
+      <div class="step">
+        <span class="step-num">-</span>
+        <div>
+          <p class="step-text"><strong>Import:</strong> Restore from a backup file</p>
+          <p class="step-hint">Useful when switching devices</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 中文 ===== -->
+  <div class="content" data-lang="zh">
+
+    <div class="guide-card">
+      <p class="section-label">STEP 1</p>
+      <p class="section-title">规划每周菜单</p>
+      <p class="section-desc">在底部的"菜单"标签中，按天输入一周的菜品。</p>
+      <div class="step">
+        <span class="step-num">1</span>
+        <div>
+          <p class="step-text"><strong>点击某天</strong>打开输入界面</p>
+          <p class="step-hint">可切换"下周"和"下下周"</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">2</span>
+        <div>
+          <p class="step-text">输入<strong>菜品名称</strong>（如：咖喱饭）</p>
+          <p class="step-hint">点击"历史"可从过去的菜品中选择</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">3</span>
+        <div>
+          <p class="step-text">添加<strong>食材</strong>（名称和用量）</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">4</span>
+        <div>
+          <p class="step-text">点击<strong>"保存"</strong>完成</p>
+          <p class="step-hint">每天可以添加多道菜</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="guide-card">
+      <p class="section-label">STEP 2</p>
+      <p class="section-title">使用购物清单</p>
+      <p class="section-desc">菜单中的食材会自动汇总到购物清单中。</p>
+      <div class="step">
+        <span class="step-num">1</span>
+        <div><p class="step-text">打开底部的<strong>"购物"标签</strong></p></div>
+      </div>
+      <div class="step">
+        <span class="step-num">2</span>
+        <div>
+          <p class="step-text">切换<strong>"下周"/"两周"</strong>查看范围</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">3</span>
+        <div><p class="step-text"><strong>点击勾选</strong>已购买的食材</p></div>
+      </div>
+      <div class="step">
+        <span class="step-num">4</span>
+        <div><p class="step-text">菜单有变动时点击<strong>"重新生成"</strong>更新清单</p></div>
+      </div>
+      <div class="tip-box">
+        <strong>Tip:</strong> 点击右上角"+"按钮可手动添加菜单外的物品（如调味料）。
+      </div>
+    </div>
+
+    <div class="guide-card">
+      <p class="section-label">STEP 3</p>
+      <p class="section-title">查看烹饪历史</p>
+      <p class="section-desc">注册过的菜品会自动保存到历史记录中。</p>
+      <div class="step">
+        <span class="step-num">1</span>
+        <div>
+          <p class="step-text">打开<strong>"历史"标签</strong></p>
+          <p class="step-hint">按本周、上周、本月、更早分组</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">2</span>
+        <div><p class="step-text">使用搜索栏<strong>搜索菜名</strong></p></div>
+      </div>
+      <div class="step">
+        <span class="step-num">3</span>
+        <div><p class="step-text">点击菜品可<strong>查看或编辑</strong>食材</p></div>
+      </div>
+      <div class="tip-box">
+        <strong>Tip:</strong> 在添加菜品时，点击"历史"按钮可直接复用过去的菜品及其食材。
+      </div>
+    </div>
+
+    <div class="guide-card">
+      <p class="section-label">STEP 4</p>
+      <p class="section-title">滑动删除</p>
+      <p class="section-desc">向左滑动任意一行即可显示删除按钮。</p>
+
+      <div class="swipe-demo">
+        <p class="swipe-demo-label">向左滑动即可删除</p>
+        <div class="swipe-row-static">📅 周一 — 咖喱饭</div>
+        <div class="swipe-row-container">
+          <div class="swipe-delete-bg">删除</div>
+          <div class="swipe-row">
+            📅 周二 — 土豆炖肉
+            <span class="swipe-finger">👆</span>
+          </div>
+        </div>
+        <div class="swipe-row-static">📅 周三 — 意面</div>
+      </div>
+
+      <div class="tip-box">
+        <strong>Tip:</strong> 滑动删除适用于菜单、购物清单和烹饪历史。
+      </div>
+    </div>
+
+    <div class="guide-card">
+      <p class="section-label">STEP 5</p>
+      <p class="section-title">设置与数据管理</p>
+      <p class="section-desc">点击右上角齿轮图标打开设置。</p>
+      <div class="step">
+        <span class="step-num">-</span>
+        <div><p class="step-text"><strong>高级版（¥300）：</strong>永久去除广告</p></div>
+      </div>
+      <div class="step">
+        <span class="step-num">-</span>
+        <div><p class="step-text"><strong>导出：</strong>将数据保存为JSON文件</p></div>
+      </div>
+      <div class="step">
+        <span class="step-num">-</span>
+        <div>
+          <p class="step-text"><strong>导入：</strong>从备份文件恢复数据</p>
+          <p class="step-hint">更换设备时使用</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 한국어 ===== -->
+  <div class="content" data-lang="ko">
+
+    <div class="guide-card">
+      <p class="section-label">STEP 1</p>
+      <p class="section-title">주간 식단 등록하기</p>
+      <p class="section-desc">하단의 "식단" 탭에서 요일별로 일주일 요리를 입력합니다.</p>
+      <div class="step">
+        <span class="step-num">1</span>
+        <div>
+          <p class="step-text"><strong>요일을 탭</strong>하여 입력 화면 열기</p>
+          <p class="step-hint">"다음 주", "다다음 주"로 전환 가능</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">2</span>
+        <div>
+          <p class="step-text"><strong>요리 이름</strong> 입력 (예: 카레라이스)</p>
+          <p class="step-hint">"기록" 버튼으로 과거 요리 선택 가능</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">3</span>
+        <div><p class="step-text"><strong>재료</strong> 추가 (이름과 양)</p></div>
+      </div>
+      <div class="step">
+        <span class="step-num">4</span>
+        <div>
+          <p class="step-text"><strong>"저장"</strong>을 탭하여 완료</p>
+          <p class="step-hint">하루에 여러 요리를 등록할 수 있습니다</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="guide-card">
+      <p class="section-label">STEP 2</p>
+      <p class="section-title">장보기 목록 사용하기</p>
+      <p class="section-desc">등록한 식단의 재료가 자동으로 장보기 목록에 정리됩니다.</p>
+      <div class="step">
+        <span class="step-num">1</span>
+        <div><p class="step-text">하단의 <strong>"장보기" 탭</strong> 열기</p></div>
+      </div>
+      <div class="step">
+        <span class="step-num">2</span>
+        <div><p class="step-text"><strong>"다음 주" / "2주"</strong>로 기간 전환</p></div>
+      </div>
+      <div class="step">
+        <span class="step-num">3</span>
+        <div><p class="step-text">구매한 재료를 <strong>탭하여 체크</strong></p></div>
+      </div>
+      <div class="step">
+        <span class="step-num">4</span>
+        <div><p class="step-text">식단을 변경했다면 <strong>"재생성"</strong>으로 목록 업데이트</p></div>
+      </div>
+      <div class="tip-box">
+        <strong>Tip:</strong> 오른쪽 상단의 "+" 버튼으로 식단에 없는 품목(조미료 등)을 수동으로 추가할 수 있습니다.
+      </div>
+    </div>
+
+    <div class="guide-card">
+      <p class="section-label">STEP 3</p>
+      <p class="section-title">요리 기록 활용하기</p>
+      <p class="section-desc">등록한 요리가 자동으로 기록에 저장됩니다.</p>
+      <div class="step">
+        <span class="step-num">1</span>
+        <div>
+          <p class="step-text"><strong>"기록" 탭</strong> 열기</p>
+          <p class="step-hint">이번 주, 지난 주, 이번 달, 이전으로 그룹 분류</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">2</span>
+        <div><p class="step-text">검색창에서 <strong>요리 이름 검색</strong></p></div>
+      </div>
+      <div class="step">
+        <span class="step-num">3</span>
+        <div><p class="step-text">요리를 탭하여 <strong>재료 확인 및 편집</strong></p></div>
+      </div>
+      <div class="tip-box">
+        <strong>Tip:</strong> 식단 입력 화면의 "기록" 버튼에서 과거 요리를 재료와 함께 바로 재사용할 수 있습니다.
+      </div>
+    </div>
+
+    <div class="guide-card">
+      <p class="section-label">STEP 4</p>
+      <p class="section-title">스와이프로 삭제하기</p>
+      <p class="section-desc">항목을 왼쪽으로 스와이프하면 삭제 버튼이 나타납니다.</p>
+
+      <div class="swipe-demo">
+        <p class="swipe-demo-label">왼쪽으로 스와이프하세요</p>
+        <div class="swipe-row-static">📅 월 — 카레라이스</div>
+        <div class="swipe-row-container">
+          <div class="swipe-delete-bg">삭제</div>
+          <div class="swipe-row">
+            📅 화 — 고기감자조림
+            <span class="swipe-finger">👆</span>
+          </div>
+        </div>
+        <div class="swipe-row-static">📅 수 — 파스타</div>
+      </div>
+
+      <div class="tip-box">
+        <strong>Tip:</strong> 스와이프 삭제는 식단, 장보기 목록, 요리 기록 모두에서 사용할 수 있습니다.
+      </div>
+    </div>
+
+    <div class="guide-card">
+      <p class="section-label">STEP 5</p>
+      <p class="section-title">설정 및 데이터 관리</p>
+      <p class="section-desc">오른쪽 상단의 톱니바퀴 아이콘을 탭하여 설정을 엽니다.</p>
+      <div class="step">
+        <span class="step-num">-</span>
+        <div><p class="step-text"><strong>프리미엄 (¥300):</strong> 광고를 영구적으로 제거</p></div>
+      </div>
+      <div class="step">
+        <span class="step-num">-</span>
+        <div><p class="step-text"><strong>내보내기:</strong> 데이터를 JSON 파일로 저장</p></div>
+      </div>
+      <div class="step">
+        <span class="step-num">-</span>
+        <div>
+          <p class="step-text"><strong>가져오기:</strong> 백업 파일에서 데이터 복원</p>
+          <p class="step-hint">기기 변경 시 사용하세요</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Espanol ===== -->
+  <div class="content" data-lang="es">
+
+    <div class="guide-card">
+      <p class="section-label">PASO 1</p>
+      <p class="section-title">Planifica tus comidas semanales</p>
+      <p class="section-desc">Usa la pestana "Menu" para ingresar las comidas de cada dia.</p>
+      <div class="step">
+        <span class="step-num">1</span>
+        <div>
+          <p class="step-text"><strong>Toca un dia</strong> para abrir la pantalla de entrada</p>
+          <p class="step-hint">Cambia entre "Proxima semana" y "Siguiente semana"</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">2</span>
+        <div>
+          <p class="step-text">Ingresa el <strong>nombre del plato</strong> (ej: Arroz con curry)</p>
+          <p class="step-hint">Toca "Historial" para elegir platos anteriores</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">3</span>
+        <div><p class="step-text">Agrega <strong>ingredientes</strong> (nombre y cantidad)</p></div>
+      </div>
+      <div class="step">
+        <span class="step-num">4</span>
+        <div>
+          <p class="step-text">Toca <strong>"Guardar"</strong> para terminar</p>
+          <p class="step-hint">Puedes agregar varios platos por dia</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="guide-card">
+      <p class="section-label">PASO 2</p>
+      <p class="section-title">Usa la lista de compras</p>
+      <p class="section-desc">Los ingredientes del menu se compilan automaticamente en una lista de compras.</p>
+      <div class="step">
+        <span class="step-num">1</span>
+        <div><p class="step-text">Abre la pestana <strong>"Compras"</strong></p></div>
+      </div>
+      <div class="step">
+        <span class="step-num">2</span>
+        <div><p class="step-text">Cambia entre <strong>"Proxima semana" / "2 semanas"</strong></p></div>
+      </div>
+      <div class="step">
+        <span class="step-num">3</span>
+        <div><p class="step-text"><strong>Toca los items</strong> para marcarlos como comprados</p></div>
+      </div>
+      <div class="step">
+        <span class="step-num">4</span>
+        <div><p class="step-text">Si cambias el menu, toca <strong>"Regenerar"</strong> para actualizar</p></div>
+      </div>
+      <div class="tip-box">
+        <strong>Tip:</strong> Usa el boton "+" para agregar items manualmente (ej: condimentos).
+      </div>
+    </div>
+
+    <div class="guide-card">
+      <p class="section-label">PASO 3</p>
+      <p class="section-title">Consulta el historial</p>
+      <p class="section-desc">Cada plato registrado se guarda automaticamente en el historial.</p>
+      <div class="step">
+        <span class="step-num">1</span>
+        <div>
+          <p class="step-text">Abre la pestana <strong>"Historial"</strong></p>
+          <p class="step-hint">Agrupado por esta semana, semana pasada, este mes y anterior</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">2</span>
+        <div><p class="step-text"><strong>Busca</strong> platos por nombre</p></div>
+      </div>
+      <div class="step">
+        <span class="step-num">3</span>
+        <div><p class="step-text">Toca un plato para <strong>ver o editar</strong> sus ingredientes</p></div>
+      </div>
+      <div class="tip-box">
+        <strong>Tip:</strong> Al agregar una comida, toca "Historial" para reutilizar un plato con todos sus ingredientes.
+      </div>
+    </div>
+
+    <div class="guide-card">
+      <p class="section-label">PASO 4</p>
+      <p class="section-title">Desliza para eliminar</p>
+      <p class="section-desc">Desliza cualquier fila hacia la izquierda para ver el boton de eliminar.</p>
+
+      <div class="swipe-demo">
+        <p class="swipe-demo-label">Desliza a la izquierda</p>
+        <div class="swipe-row-static">📅 Lun — Arroz con curry</div>
+        <div class="swipe-row-container">
+          <div class="swipe-delete-bg">Eliminar</div>
+          <div class="swipe-row">
+            📅 Mar — Nikujaga
+            <span class="swipe-finger">👆</span>
+          </div>
+        </div>
+        <div class="swipe-row-static">📅 Mie — Pasta</div>
+      </div>
+
+      <div class="tip-box">
+        <strong>Tip:</strong> Deslizar para eliminar funciona en el menu, lista de compras e historial.
+      </div>
+    </div>
+
+    <div class="guide-card">
+      <p class="section-label">PASO 5</p>
+      <p class="section-title">Ajustes y datos</p>
+      <p class="section-desc">Toca el icono de engranaje en la esquina superior derecha.</p>
+      <div class="step">
+        <span class="step-num">-</span>
+        <div><p class="step-text"><strong>Premium (¥300):</strong> Elimina los anuncios permanentemente</p></div>
+      </div>
+      <div class="step">
+        <span class="step-num">-</span>
+        <div><p class="step-text"><strong>Exportar:</strong> Guarda tus datos como archivo JSON</p></div>
+      </div>
+      <div class="step">
+        <span class="step-num">-</span>
+        <div>
+          <p class="step-text"><strong>Importar:</strong> Restaura datos desde un archivo de respaldo</p>
+          <p class="step-hint">Util al cambiar de dispositivo</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <a href="./index.html">献立カート</a> &nbsp;|&nbsp; <a href="./privacy-policy.html" data-lang="ja" class="visible">プライバシーポリシー</a><a href="./privacy-policy.html" data-lang="en">Privacy Policy</a><a href="./privacy-policy.html" data-lang="zh">隐私政策</a><a href="./privacy-policy.html" data-lang="ko">개인정보 처리방침</a><a href="./privacy-policy.html" data-lang="es">Politica de privacidad</a>
+  </footer>
+
+  <script>
+    (function() {
+      var supported = ['ja','en','zh','ko','es'];
+      var params = new URLSearchParams(location.search);
+      var lang = params.get('lang');
+      if (!lang || supported.indexOf(lang) === -1) {
+        var nav = (navigator.language || '').slice(0,2);
+        lang = supported.indexOf(nav) !== -1 ? nav : 'ja';
+      }
+      switchLang(lang);
+
+      document.querySelectorAll('[data-select-lang]').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          switchLang(btn.getAttribute('data-select-lang'));
+        });
+      });
+
+      function switchLang(l) {
+        document.querySelectorAll('[data-lang]').forEach(function(el) {
+          el.classList.toggle('visible', el.getAttribute('data-lang') === l);
+        });
+        document.querySelectorAll('[data-select-lang]').forEach(function(btn) {
+          btn.classList.toggle('active', btn.getAttribute('data-select-lang') === l);
+        });
+        document.documentElement.lang = l;
+      }
+    })();
+  </script>
+
+</body>
+</html>

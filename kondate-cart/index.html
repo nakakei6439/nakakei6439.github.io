@@ -51,7 +51,7 @@
       margin-top: 28px;
     }
 
-    .badge-soon {
+    .badge-link {
       display: inline-block;
       background: #1C1C1E;
       color: #FFFFFF;
@@ -60,6 +60,12 @@
       padding: 12px 28px;
       border-radius: 12px;
       letter-spacing: 0.3px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .badge-link:hover {
+      background: #3A3A3C;
     }
 
     /* セクション共通 */
@@ -218,7 +224,7 @@
     <h1>献立カート</h1>
     <p class="tagline">週の献立を決めて、衝動買いをなくす</p>
     <div class="badge-area">
-      <span class="badge-soon">App Store — 近日公開</span>
+      <a class="badge-link" href="https://apps.apple.com/app/id6760213937">App Store でダウンロード</a>
     </div>
   </header>
 
@@ -240,22 +246,43 @@
         <li>
           <div class="feature-icon">📅</div>
           <div class="feature-text">
-            <strong>週次献立の登録</strong>
-            <span>1週間の夕食・昼食を曜日ごとに簡単登録</span>
+            <strong>週間献立カレンダー</strong>
+            <span>1週間の夕食を曜日ごとに登録。1日に複数の料理も可能</span>
           </div>
         </li>
         <li>
           <div class="feature-icon">🛒</div>
           <div class="feature-text">
             <strong>買い物リストの自動生成</strong>
-            <span>献立から必要な食材だけをリストアップ。お店でそのまま使える</span>
+            <span>献立から食材を自動集計。来週／再来週の切り替えにも対応</span>
           </div>
         </li>
         <li>
           <div class="feature-icon">📖</div>
           <div class="feature-text">
             <strong>料理履歴</strong>
-            <span>過去に作った料理を振り返り、献立のマンネリを防止</span>
+            <span>過去に作った料理をワンタップで再利用。献立のマンネリを防止</span>
+          </div>
+        </li>
+        <li>
+          <div class="feature-icon">📶</div>
+          <div class="feature-text">
+            <strong>完全オフライン対応</strong>
+            <span>通信不要。電波が混んだ店内でも問題なく動作</span>
+          </div>
+        </li>
+        <li>
+          <div class="feature-icon">🌐</div>
+          <div class="feature-text">
+            <strong>5言語対応</strong>
+            <span>日本語・英語・中国語・韓国語・スペイン語</span>
+          </div>
+        </li>
+        <li>
+          <div class="feature-icon">💾</div>
+          <div class="feature-text">
+            <strong>バックアップ＆復元</strong>
+            <span>データをJSONファイルで書き出し・復元。機種変更にも対応</span>
           </div>
         </li>
       </ul>
@@ -272,6 +299,13 @@
     <!-- サポート -->
     <div class="section-card">
       <p class="section-label">サポート</p>
+      <a class="support-link" href="./how-to-use.html">
+        <div class="support-link-left">
+          <span class="support-link-icon">📖</span>
+          <span>使い方ガイド</span>
+        </div>
+        <span class="chevron">›</span>
+      </a>
       <a class="support-link" href="mailto:nakakei6439@gmail.com">
         <div class="support-link-left">
           <span class="support-link-icon">✉️</span>
