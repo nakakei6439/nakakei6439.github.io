@@ -24,14 +24,17 @@
     .app-icon {
       width: 100px;
       height: 100px;
-      background: #E8692A;
       border-radius: 22px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 52px;
+      display: inline-block;
       margin-bottom: 20px;
-      box-shadow: 0 4px 20px rgba(232,105,42,0.35);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.18);
+      overflow: hidden;
+    }
+
+    .app-icon img {
+      width: 100%;
+      height: 100%;
+      display: block;
     }
 
     h1 {
@@ -220,7 +223,7 @@
 <body>
 
   <header>
-    <div class="app-icon">🛒</div>
+    <div class="app-icon"><img src="./icon.png" alt="献立カート アプリアイコン"></div>
     <h1>献立カート</h1>
     <p class="tagline">週の献立を決めて、衝動買いをなくす</p>
     <div class="badge-area">
@@ -283,6 +286,20 @@
           <div class="feature-text">
             <strong>バックアップ＆復元</strong>
             <span>データをJSONファイルで書き出し・復元。機種変更にも対応</span>
+          </div>
+        </li>
+        <li>
+          <div class="feature-icon">📱</div>
+          <div class="feature-text">
+            <strong>ホーム画面ウィジェット</strong>
+            <span>今日／明日の献立をホーム画面で確認。Small・Medium・Large の3サイズ対応</span>
+          </div>
+        </li>
+        <li>
+          <div class="feature-icon">🌓</div>
+          <div class="feature-text">
+            <strong>ダークモード対応</strong>
+            <span>iOS のシステム設定に追従。夜の買い物中でも見やすい配色</span>
           </div>
         </li>
       </ul>
