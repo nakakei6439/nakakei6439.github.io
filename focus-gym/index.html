@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FocusGym — 目のトレーニングアプリ</title>
+  <meta name="description" content="FocusGym は、毛様体筋の柔軟性をサポートする1日5分の目のトレーニングアプリです。科学的根拠に基づいた5種類のエクササイズを提供します。">
+  <link rel="icon" href="assets/icon.png">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', sans-serif;
+      background: #FAFAF5;
+      color: #333;
+      line-height: 1.8;
+    }
+    header {
+      background: linear-gradient(135deg, #5C9E7A 0%, #4A8568 100%);
+      color: white;
+      padding: 3rem 1.5rem 2.5rem;
+      text-align: center;
+    }
+    header .app-icon {
+      width: 96px;
+      height: 96px;
+      border-radius: 22px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+      margin-bottom: 1rem;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 0.3rem;
+      letter-spacing: 0.02em;
+    }
+    header .tagline {
+      font-size: 1rem;
+      opacity: 0.95;
+      margin-bottom: 1.5rem;
+    }
+    .app-store-button {
+      display: inline-block;
+      background: white;
+      color: #5C9E7A;
+      padding: 0.75rem 1.5rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.15s ease;
+    }
+    .app-store-button:hover { transform: translateY(-2px); }
+    .app-store-button::before { content: ""; margin-right: 0.4rem; }
+    main {
+      max-width: 760px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+    section { margin-bottom: 2.75rem; }
+    h2 {
+      font-size: 1.25rem;
+      color: #5C9E7A;
+      border-left: 4px solid #5C9E7A;
+      padding-left: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+    p, li { margin-bottom: 0.6rem; }
+    ul { padding-left: 1.5rem; }
+    a { color: #5C9E7A; }
+    .disclaimer {
+      background: #F0F4EE;
+      border: 1px solid #C8DDD0;
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+    .feature-card {
+      background: white;
+      border: 1px solid #E0E8E4;
+      border-radius: 12px;
+      padding: 1.25rem;
+      position: relative;
+    }
+    .feature-card .emoji {
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .feature-card h3 {
+      font-size: 1rem;
+      color: #333;
+      margin-bottom: 0.4rem;
+    }
+    .feature-card p {
+      font-size: 0.88rem;
+      color: #666;
+      line-height: 1.6;
+      margin: 0;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+    .badge.free { background: #E8F2EC; color: #5C9E7A; }
+    .badge.premium { background: #FFF4DA; color: #B07900; }
+    .screenshots {
+      display: flex;
+      gap: 1rem;
+      overflow-x: auto;
+      padding: 0.5rem 0 1rem;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+    .screenshots img {
+      width: 200px;
+      height: auto;
+      border-radius: 14px;
+      border: 1px solid #E0E8E4;
+      flex-shrink: 0;
+      scroll-snap-align: start;
+      background: white;
+    }
+    .pricing {
+      background: white;
+      border: 1px solid #E0E8E4;
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .pricing .price {
+      font-size: 1.8rem;
+      color: #5C9E7A;
+      font-weight: 700;
+      margin: 0.5rem 0;
+    }
+    .pricing .note {
+      font-size: 0.85rem;
+      color: #666;
+    }
+    .faq-item {
+      background: white;
+      border: 1px solid #E0E8E4;
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+    .faq-item .q {
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 0.4rem;
+    }
+    .faq-item .a {
+      font-size: 0.92rem;
+      color: #555;
+      margin: 0;
+    }
+    .contact-button {
+      display: inline-block;
+      background: #5C9E7A;
+      color: white;
+      padding: 0.75rem 1.75rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(92, 158, 122, 0.25);
+      transition: transform 0.15s ease;
+    }
+    .contact-button:hover { transform: translateY(-2px); }
+    .contact-block {
+      text-align: center;
+      padding: 1.5rem;
+      background: #F0F4EE;
+      border-radius: 12px;
+    }
+    .contact-block p { margin-bottom: 1rem; }
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .links a {
+      background: white;
+      border: 1px solid #E0E8E4;
+      padding: 0.6rem 1rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.92rem;
+    }
+    .links a:hover { background: #F0F4EE; }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.85rem;
+      color: #999;
+      border-top: 1px solid #E0E8E4;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="assets/icon.png" alt="FocusGym アイコン" class="app-icon">
+  <h1>FocusGym</h1>
+  <p class="tagline">毎日ちょっとずつ、目をケアする習慣を。</p>
+  <a href="https://apps.apple.com/jp/app/focus-gym/id6760606419" class="app-store-button">App Store でダウンロード</a>
+</header>
+
+<main>
+
+  <section>
+    <h2>アプリについて</h2>
+    <p>FocusGym は、毛様体筋の柔軟性サポートを目的とした目のエクササイズアプリです。科学的根拠に基づいた5種類のトレーニングを、1日5分まで無理なく続けられます。</p>
+    <div class="disclaimer">
+      <strong>重要な免責事項：</strong><br>
+      本アプリは医療行為ではありません。視力の改善・老眼の治癒を保証するものではありません。眼の異常や不調を感じた場合は、必ず医療機関を受診してください。
+    </div>
+  </section>
+
+  <section>
+    <h2>主な機能</h2>
+    <div class="features">
+      <div class="feature-card">
+        <span class="emoji">👁</span>
+        <span class="badge free">無料</span>
+        <h3>遠近ピント切替</h3>
+        <p>近くと遠くを交互に見ることで、毛様体筋の調節力をサポート。</p>
+      </div>
+      <div class="feature-card">
+        <span class="emoji">🎯</span>
+        <span class="badge premium">プレミアム</span>
+        <h3>追従運動</h3>
+        <p>動くボールを目でなめらかに追う、滑動性追従眼球運動の練習。</p>
+      </div>
+      <div class="feature-card">
+        <span class="emoji">👀</span>
+        <span class="badge premium">プレミアム</span>
+        <h3>寄り目トレーニング</h3>
+        <p>輻輳機能をサポートし、近くを見たときの疲れを和らげる。</p>
+      </div>
+      <div class="feature-card">
+        <span class="emoji">🌀</span>
+        <span class="badge premium">プレミアム</span>
+        <h3>ガルボーパッチ</h3>
+        <p>視覚情報処理の脳神経回路を活性化。最もエビデンスが強い種目。</p>
+      </div>
+      <div class="feature-card">
+        <span class="emoji">✨</span>
+        <span class="badge premium">プレミアム</span>
+        <h3>ぼかしくっきり訓練</h3>
+        <p>ピント合わせの応答スピードをサポートする調節練習。</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>スクリーンショット</h2>
+    <div class="screenshots">
+      <img src="assets/screenshots/01.png" alt="ホーム画面">
+      <img src="assets/screenshots/02.png" alt="トレーニング選択画面">
+      <img src="assets/screenshots/03.png" alt="トレーニング詳細画面">
+      <img src="assets/screenshots/04.png" alt="履歴・カレンダー画面">
+    </div>
+  </section>
+
+  <section>
+    <h2>価格</h2>
+    <div class="pricing">
+      <p>遠近ピント切替は<strong>無料</strong>。インストール後14日間は<strong>全機能を無料</strong>でお試しいただけます。</p>
+      <p class="price">¥300（買い切り）</p>
+      <p class="note">プレミアムは一度購入すれば永続的に全機能をご利用いただけます。サブスクリプションではありません。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>よくある質問</h2>
+
+    <div class="faq-item">
+      <p class="q">Q. 1日どのくらいトレーニングすればよいですか？</p>
+      <p class="a">1回1分・1日合計5分を上限としています。視覚トレーニングは過度に行うと眼精疲労を招く可能性があるため、適切な上限を設けています。</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="q">Q. 無料トライアルとはなんですか？</p>
+      <p class="a">インストール後14日間は全トレーニングを無料でお使いいただけます。トライアル期間終了後は¥300（買い切り）でご購入いただくと、全機能を永続的にご利用いただけます。</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="q">Q. 購入の復元はどうすればよいですか？</p>
+      <p class="a">設定画面の「購入を復元」ボタンをタップしてください。同じ Apple ID でサインインしていれば購入状態が復元されます。</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="q">Q. 端末を変更した場合はどうなりますか？</p>
+      <p class="a">同じ Apple ID でサインインした状態で、設定画面の「購入を復元」ボタンをタップすれば復元できます。</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="q">Q. 返金はできますか？</p>
+      <p class="a">返金は各アプリストアのポリシーに従います。App Store の場合は <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a> からお申し込みください。</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="q">Q. トレーニングにどんな効果がありますか？</p>
+      <p class="a">各トレーニングのエビデンスについては <a href="evidence.html">エビデンスページ</a> をご覧ください。</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="q">Q. 目に痛みや違和感がある場合は？</p>
+      <p class="a">直ちにトレーニングを中止し、医療機関を受診してください。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>お問い合わせ</h2>
+    <div class="contact-block">
+      <p>アプリに関するご質問・不具合報告・ご要望などは、下記までお気軽にご連絡ください。</p>
+      <a href="mailto:nakakei6439@gmail.com" class="contact-button">✉ メールで問い合わせる</a>
+    </div>
+  </section>
+
+  <section>
+    <h2>関連リンク</h2>
+    <div class="links">
+      <a href="privacy.html">プライバシーポリシー</a>
+      <a href="terms.html">利用規約</a>
+      <a href="evidence.html">トレーニングのエビデンス</a>
+      <a href="https://apps.apple.com/jp/app/focus-gym/id6760606419">App Store</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  &copy; 2026 FocusGym. All rights reserved.
+</footer>
+
+</body>
+</html>
