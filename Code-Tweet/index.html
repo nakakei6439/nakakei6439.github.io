@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Tweet — GitHub README から1週間分のXポストを5本自動生成</title>
+  <meta name="description" content="GitHubリポジトリURLを貼るだけで、READMEからX向けの投稿文を5本まとめて作成。個人開発者のための継続発信ツール。">
+  <meta property="og:title" content="Code Tweet — GitHub README から1週間分のXポストを5本自動生成">
+  <meta property="og:description" content="GitHubリポジトリURLを貼るだけで、READMEからX向けの投稿文を5本まとめて作成。個人開発者のための継続発信ツール。">
+  <meta property="og:url" content="https://nakakei6439.github.io/Code-Tweet/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Sans', sans-serif; }
+    .brand-gradient {
+      background-image: linear-gradient(to right, #67e8f9, #f0abfc, #fef08a);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+  </style>
+</head>
+<body class="bg-gray-950 text-white antialiased">
+
+  <!-- Hero -->
+  <section class="px-6 pt-20 pb-24 max-w-5xl mx-auto text-center">
+    <p class="text-sm uppercase tracking-widest text-fuchsia-300 mb-4">For Indie Developers</p>
+    <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight leading-tight">
+      <span class="brand-gradient">Code Tweet</span>
+    </h1>
+    <p class="mt-6 text-lg md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+      GitHub リポジトリ URL を貼るだけで、<br class="hidden md:block">
+      README から 1 週間分の X 向けポストを <span class="text-white font-bold">5 本まとめて</span>作成します。
+    </p>
+    <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="https://code-tweet.vercel.app/" target="_blank" rel="noopener"
+         class="inline-block bg-white text-gray-950 font-bold px-8 py-4 rounded-full hover:bg-gray-200 transition">
+        アプリを使う →
+      </a>
+      <a href="#features"
+         class="inline-block border border-gray-700 text-gray-300 font-medium px-8 py-4 rounded-full hover:border-gray-400 hover:text-white transition">
+        できることを見る
+      </a>
+    </div>
+    <p class="mt-6 text-sm text-gray-500">無料で 3 回まで試せます（登録不要）</p>
+  </section>
+
+  <!-- Pain -->
+  <section class="px-6 py-20 bg-gray-900/40">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl md:text-3xl font-bold text-center mb-12">
+        個人開発の<span class="brand-gradient">継続発信</span>、こんなことありませんか？
+      </h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-gray-900 rounded-2xl p-6 border border-gray-800">
+          <div class="text-3xl mb-3">😩</div>
+          <h3 class="font-bold mb-2">毎日ネタを考えるのが大変</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">「同じ告知ばかり」「もう何を書けばいいか…」となって発信が止まる。</p>
+        </div>
+        <div class="bg-gray-900 rounded-2xl p-6 border border-gray-800">
+          <div class="text-3xl mb-3">📝</div>
+          <h3 class="font-bold mb-2">文章を考える時間がない</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">開発に集中したい。でも宣伝もしないと使ってもらえない。</p>
+        </div>
+        <div class="bg-gray-900 rounded-2xl p-6 border border-gray-800">
+          <div class="text-3xl mb-3">📉</div>
+          <h3 class="font-bold mb-2">毎回トーンがバラバラ</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">真面目だったりカジュアルだったり、ブランドが定まらない。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="px-6 py-20 max-w-5xl mx-auto">
+    <h2 class="text-2xl md:text-3xl font-bold text-center mb-4">
+      使い方は<span class="brand-gradient">たった 3 ステップ</span>
+    </h2>
+    <p class="text-center text-gray-400 mb-14">面倒な設定は一切なし。リポジトリ URL を貼るだけ。</p>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="text-center">
+        <div class="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-cyan-300 to-fuchsia-300 text-gray-950 text-2xl font-extrabold flex items-center justify-center mb-5">1</div>
+        <h3 class="font-bold text-lg mb-2">URL を貼る</h3>
+        <p class="text-sm text-gray-400 leading-relaxed">紹介したい GitHub リポジトリの URL を入力欄に貼り付けます。</p>
+      </div>
+      <div class="text-center">
+        <div class="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-fuchsia-300 to-yellow-200 text-gray-950 text-2xl font-extrabold flex items-center justify-center mb-5">2</div>
+        <h3 class="font-bold text-lg mb-2">条件を選ぶ</h3>
+        <p class="text-sm text-gray-400 leading-relaxed">トーン（真面目／カジュアル）やターゲット読者を指定。空欄でも OK。</p>
+      </div>
+      <div class="text-center">
+        <div class="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-yellow-200 to-cyan-300 text-gray-950 text-2xl font-extrabold flex items-center justify-center mb-5">3</div>
+        <h3 class="font-bold text-lg mb-2">5 本まとめて生成</h3>
+        <p class="text-sm text-gray-400 leading-relaxed">紹介・使い方・ユースケース・共感・CTA の 5 本が一度に出来上がり。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="px-6 py-20 bg-gray-900/40">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-2xl md:text-3xl font-bold text-center mb-14">
+        <span class="brand-gradient">継続発信</span>に効くこだわり
+      </h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-gray-900 rounded-2xl p-6 border border-gray-800">
+          <h3 class="font-bold mb-2 text-cyan-300">📖 README を自動取得</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">URL を貼るだけでリポジトリの README を自動で読み込み、AI が要点を抽出します。</p>
+        </div>
+        <div class="bg-gray-900 rounded-2xl p-6 border border-gray-800">
+          <h3 class="font-bold mb-2 text-fuchsia-300">🎯 5 段ストーリーアーク</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">紹介 → 使い方 → ユースケース → 共感 → CTA の流れで 5 本生成。1 週間分の投稿計画がそのまま完成。</p>
+        </div>
+        <div class="bg-gray-900 rounded-2xl p-6 border border-gray-800">
+          <h3 class="font-bold mb-2 text-yellow-200">🕒 推奨投稿日時つき</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">各ポストに「いつ投稿すると良いか」の目安が付くので、投稿予約にそのまま使えます。</p>
+        </div>
+        <div class="bg-gray-900 rounded-2xl p-6 border border-gray-800">
+          <h3 class="font-bold mb-2 text-cyan-300">✂️ 280 字自動チェック</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">X の文字数制限に収まるかリアルタイムで確認。コピペしてすぐ投稿できます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="px-6 py-20 max-w-5xl mx-auto">
+    <h2 class="text-2xl md:text-3xl font-bold text-center mb-4">
+      <span class="brand-gradient">料金プラン</span>
+    </h2>
+    <p class="text-center text-gray-400 mb-14">まずは無料で試して、必要になったら Pro へ。</p>
+
+    <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+      <div class="bg-gray-900 rounded-2xl p-8 border border-gray-800">
+        <h3 class="text-xl font-bold mb-2">無料プラン</h3>
+        <p class="text-3xl font-extrabold mb-1">¥0<span class="text-base font-normal text-gray-400"> / 月</span></p>
+        <p class="text-sm text-gray-400 mb-6">まず試してみたい人向け</p>
+        <ul class="space-y-2 text-sm text-gray-300">
+          <li>✓ 月 3 回まで生成</li>
+          <li>✓ README 1,000 文字まで</li>
+          <li>✓ 5 段ストーリーアーク</li>
+          <li class="text-gray-600">— プライベートリポジトリ非対応</li>
+        </ul>
+      </div>
+      <div class="bg-gradient-to-br from-cyan-950 via-fuchsia-950 to-yellow-950 rounded-2xl p-8 border border-fuchsia-700 relative">
+        <span class="absolute -top-3 right-6 bg-fuchsia-400 text-gray-950 text-xs font-bold px-3 py-1 rounded-full">おすすめ</span>
+        <h3 class="text-xl font-bold mb-2">Pro プラン</h3>
+        <p class="text-3xl font-extrabold mb-1">¥980<span class="text-base font-normal text-gray-400"> / 月</span></p>
+        <p class="text-sm text-gray-300 mb-6">本格的に発信していきたい人へ</p>
+        <ul class="space-y-2 text-sm text-gray-100">
+          <li>✓ <span class="font-bold">月 30 回</span>まで生成</li>
+          <li>✓ README <span class="font-bold">10,000 文字</span>まで</li>
+          <li>✓ プライベートリポジトリ対応</li>
+          <li>✓ Stripe で安全に決済・いつでも解約</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="px-6 py-24 text-center">
+    <h2 class="text-3xl md:text-4xl font-extrabold mb-6">
+      まずは<span class="brand-gradient">無料</span>で試してみる
+    </h2>
+    <p class="text-gray-400 mb-10 max-w-xl mx-auto">登録不要・3 回までゲスト利用 OK。最初の 1 本を 1 分で。</p>
+    <a href="https://code-tweet.vercel.app/" target="_blank" rel="noopener"
+       class="inline-block bg-white text-gray-950 font-bold text-lg px-10 py-5 rounded-full hover:bg-gray-200 transition">
+      Code Tweet を開く →
+    </a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-900 px-6 py-10 text-center text-sm text-gray-500">
+    <a href="../" class="hover:text-white transition">← nakakei6439 のアプリ一覧へ</a>
+    <p class="mt-6">© 2026 Keita Nakagawa. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
