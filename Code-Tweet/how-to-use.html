@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>使い方ガイド — Code Tweet</title>
+  <meta name="description" content="Code Tweet の使い方を 5 ステップで解説。GitHub ログインから X 投稿までの流れと、よくある質問。">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+      color: #1C1C1E;
+      background: #F2F2F7;
+      line-height: 1.7;
+    }
+
+    a { color: inherit; }
+
+    .top-bar {
+      background: #FFFFFF;
+      padding: 16px 20px;
+      border-bottom: 1px solid #E5E5EA;
+    }
+
+    .top-bar a {
+      font-size: 14px;
+      color: #007AFF;
+      text-decoration: none;
+    }
+
+    header {
+      background: #FFFFFF;
+      text-align: center;
+      padding: 40px 20px 36px;
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #1C1C1E;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: #8E8E93;
+      margin-top: 6px;
+    }
+
+    section {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 32px 20px;
+    }
+
+    .section-card {
+      background: #FFFFFF;
+      border-radius: 16px;
+      padding: 28px 24px;
+      margin-bottom: 16px;
+    }
+
+    .section-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: #8E8E93;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 20px;
+    }
+
+    .step {
+      display: flex;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid #F2F2F7;
+    }
+
+    .step:first-child { padding-top: 0; }
+    .step:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .step-num {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      background: #000000;
+      color: #FFFFFF;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .step-body strong {
+      display: block;
+      font-size: 15px;
+      font-weight: 700;
+      color: #1C1C1E;
+      margin-bottom: 4px;
+    }
+
+    .step-body p {
+      font-size: 14px;
+      color: #3A3A3C;
+      line-height: 1.7;
+    }
+
+    .step-body .note {
+      font-size: 12px;
+      color: #8E8E93;
+      margin-top: 6px;
+    }
+
+    .step-body a {
+      color: #007AFF;
+      text-decoration: none;
+    }
+
+    .faq-item {
+      padding: 16px 0;
+      border-bottom: 1px solid #F2F2F7;
+    }
+
+    .faq-item:first-child { padding-top: 0; }
+    .faq-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .faq-q {
+      font-size: 15px;
+      font-weight: 700;
+      color: #1C1C1E;
+      margin-bottom: 6px;
+    }
+
+    .faq-q::before {
+      content: "Q. ";
+      color: #8E8E93;
+    }
+
+    .faq-a {
+      font-size: 14px;
+      color: #3A3A3C;
+      line-height: 1.7;
+    }
+
+    .faq-a::before {
+      content: "A. ";
+      color: #8E8E93;
+      font-weight: 700;
+    }
+
+    .faq-a a {
+      color: #007AFF;
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px 20px 48px;
+      font-size: 13px;
+      color: #8E8E93;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    <a href="./index.html">← Code Tweet トップに戻る</a>
+  </div>
+
+  <header>
+    <h1>使い方ガイド</h1>
+    <p class="subtitle">5 ステップで投稿が完成します</p>
+  </header>
+
+  <section>
+
+    <div class="section-card">
+      <p class="section-label">ステップ</p>
+
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <strong>GitHub でログイン</strong>
+          <p><a href="https://code-tweet.vercel.app/">code-tweet.vercel.app</a> を開き、「GitHub でログイン」を押します。</p>
+          <p class="note">ログインなしでも 3 回までは試せます（README 上限 1,000 文字）。</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <strong>リポジトリを選ぶ</strong>
+          <p>連携した GitHub アカウントから、宣伝したいリポジトリを選択します。</p>
+          <p class="note">プライベートリポジトリを対象にする場合は Pro プランの契約と Personal Access Token の登録が必要です。</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <strong>投稿を生成</strong>
+          <p>必要に応じてプロジェクト説明・トーン・ハッシュタグを補足し、「投稿を生成」ボタンを押します。AI が 5 件の投稿案を返します。</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <strong>気に入った案を選ぶ</strong>
+          <p>5 件から好みの 1 つを選んでコピー。各案には推奨投稿時刻と「なぜその時刻か」の理由も添えられます。</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-body">
+          <strong>X に投稿</strong>
+          <p>「X で投稿」ボタンから X の投稿画面に遷移し、内容を確認して投稿します。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <p class="section-label">よくある質問</p>
+
+      <div class="faq-item">
+        <p class="faq-q">無料と Pro の違いは？</p>
+        <p class="faq-a">無料は月 3 回・README 1,000 文字まで・公開リポジトリのみ。Pro は月 30 回・README 10,000 文字まで・プライベートリポジトリも対象です。価格は ¥980 / 月です。</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">プライベートリポジトリを読ませるには？</p>
+        <p class="faq-a">Pro プランに加入のうえ、設定ページから GitHub の Fine-grained Personal Access Token（Contents: Read-only 権限）を登録してください。詳しい手順は <a href="https://github.com/nakakei6439/Code-Tweet#readme">GitHub の README</a> に記載しています。</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">生成回数のリセットはいつ？</p>
+        <p class="faq-a">無料・Pro どちらも月単位でリセットされます。詳細はアプリ内の利用状況表示で確認できます。</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">生成された投稿は誰かに見られますか？</p>
+        <p class="faq-a">生成内容はあなたのアカウントに紐づいて保存され、他のユーザーには公開されません。詳しくは<a href="./privacy-policy.html">プライバシーポリシー</a>をご覧ください。</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">エラーが出て修正できません</p>
+        <p class="faq-a">入力中の内容を保持したまま画面下部にエラーが表示されます。文字数オーバーなど条件を満たしていない場合は、メッセージに従って修正してください。それでも解決しない場合は<a href="mailto:nakakei6439@gmail.com">お問い合わせ</a>または<a href="https://github.com/nakakei6439/Code-Tweet/issues">GitHub Issues</a>からご連絡ください。</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <footer>
+    <p>© 2026 Keita Nakagawa. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

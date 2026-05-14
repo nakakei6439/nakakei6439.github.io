@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>プライバシーポリシー — Code Tweet</title>
+  <meta name="description" content="Code Tweet が扱う情報、利用目的、外部サービスへの送信、削除方法について説明します。">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+      color: #1C1C1E;
+      background: #F2F2F7;
+      line-height: 1.7;
+    }
+
+    a { color: inherit; }
+
+    .top-bar {
+      background: #FFFFFF;
+      padding: 16px 20px;
+      border-bottom: 1px solid #E5E5EA;
+    }
+
+    .top-bar a {
+      font-size: 14px;
+      color: #007AFF;
+      text-decoration: none;
+    }
+
+    header {
+      background: #FFFFFF;
+      text-align: center;
+      padding: 40px 20px 36px;
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #1C1C1E;
+    }
+
+    .updated {
+      font-size: 13px;
+      color: #8E8E93;
+      margin-top: 8px;
+    }
+
+    section {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 32px 20px;
+    }
+
+    .section-card {
+      background: #FFFFFF;
+      border-radius: 16px;
+      padding: 28px 24px;
+      margin-bottom: 16px;
+    }
+
+    .intro {
+      font-size: 14px;
+      color: #3A3A3C;
+      line-height: 1.8;
+    }
+
+    .policy-item {
+      padding: 18px 0;
+      border-bottom: 1px solid #F2F2F7;
+    }
+
+    .policy-item:first-child { padding-top: 0; }
+    .policy-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .policy-q {
+      font-size: 16px;
+      font-weight: 700;
+      color: #1C1C1E;
+      margin-bottom: 8px;
+    }
+
+    .policy-a {
+      font-size: 14px;
+      color: #3A3A3C;
+      line-height: 1.8;
+    }
+
+    .contact-link {
+      display: inline-block;
+      margin-top: 8px;
+      background: #000000;
+      color: #FFFFFF;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 10px 22px;
+      border-radius: 10px;
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px 20px 48px;
+      font-size: 13px;
+      color: #8E8E93;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    <a href="./index.html">← Code Tweet トップに戻る</a>
+  </div>
+
+  <header>
+    <h1>プライバシーポリシー</h1>
+    <p class="updated">最終更新日: 2026 年 5 月 12 日</p>
+  </header>
+
+  <section>
+
+    <div class="section-card">
+      <p class="intro">
+        Code Tweet（以下「本サービス」）が扱う情報、その利用目的、外部サービスへの送信、削除方法について説明します。
+      </p>
+    </div>
+
+    <div class="section-card">
+
+      <div class="policy-item">
+        <p class="policy-q">1. 取得する情報</p>
+        <p class="policy-a">本サービスは、GitHub ログイン時のメールアドレス、GitHub アカウント識別情報、GitHub README やリポジトリ一覧の取得に必要な連携情報、生成回数、プラン判定、利用ログ、ゲスト利用時の IP アドレスをハッシュ化した情報を扱います。また、投稿生成時に入力されたプロジェクト説明、README、追加プロンプト、URL、ハッシュタグなどを扱います。</p>
+      </div>
+
+      <div class="policy-item">
+        <p class="policy-q">2. 利用目的</p>
+        <p class="policy-a">取得した情報は、ログイン状態の確認、利用回数制限、プラン判定、GitHub README やリポジトリ一覧の取得、AI による投稿生成、不正利用防止、問い合わせ対応、サービス改善のために利用します。</p>
+      </div>
+
+      <div class="policy-item">
+        <p class="policy-q">3. GitHub トークンの扱い</p>
+        <p class="policy-a">GitHub の Personal Access Token など、保存が必要なアクセストークン類はサーバー側でのみ扱い、データベースへ保存する場合は AES-256-GCM で暗号化します。保存済みトークンを画面に平文表示することはありません。必要がなくなった場合は、設定ページからトークン削除またはアカウント削除を行うことで関連情報を削除できます。</p>
+      </div>
+
+      <div class="policy-item">
+        <p class="policy-q">4. AI 生成に送信される情報</p>
+        <p class="policy-a">投稿生成時には、ユーザーが入力したプロジェクト説明、README、追加プロンプト、URL、ハッシュタグなどが Google Gemini API に送信されます。README やプロンプトには、秘密鍵、アクセストークン、パスワード、第三者の個人情報、未公開の機密情報を含めないでください。</p>
+      </div>
+
+      <div class="policy-item">
+        <p class="policy-q">5. 外部サービス</p>
+        <p class="policy-a">本サービスは、認証とデータベースに Supabase、ログインやリポジトリ情報取得に GitHub、投稿生成に Google Gemini API、ホスティングと実行基盤に Vercel を利用します。各外部サービスでの情報の扱いは、それぞれのプライバシーポリシーや利用規約に従います。</p>
+      </div>
+
+      <div class="policy-item">
+        <p class="policy-q">6. 情報の削除</p>
+        <p class="policy-a">ログイン済みユーザーは設定ページからアカウント削除を実行できます。削除により、アカウント、GitHub 連携情報、利用履歴、プラン情報など、ユーザーに紐づく情報の削除を行います。ただし、法令対応、不正利用防止、障害調査、外部サービス側の保持仕様により、一部のログや情報が一定期間残る場合があります。</p>
+      </div>
+
+      <div class="policy-item">
+        <p class="policy-q">7. 安全管理</p>
+        <p class="policy-a">API キーや Service Role Key などの秘密情報はサーバー側の環境変数として管理し、クライアントに公開しません。ゲスト利用時の IP アドレスはハッシュ化して保存し、GitHub トークンは暗号化して保存します。アクセス権限は、認証状態やユーザー ID に基づいて制御します。</p>
+      </div>
+
+      <div class="policy-item">
+        <p class="policy-q">8. 問い合わせ</p>
+        <p class="policy-a">個人情報の取り扱い、削除、訂正、利用停止などに関する問い合わせは、下記のメールアドレスからご連絡ください。本人確認が必要な場合は、ログイン状態や登録情報を確認したうえで対応します。</p>
+        <a class="contact-link" href="mailto:nakakei6439@gmail.com">✉️ お問い合わせ</a>
+      </div>
+
+      <div class="policy-item">
+        <p class="policy-q">9. ポリシーの変更</p>
+        <p class="policy-a">本ポリシーは、サービス内容や利用する外部サービスの変更に応じて更新する場合があります。重要な変更がある場合は、サービス上で告知します。</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <footer>
+    <p>© 2026 Keita Nakagawa. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
