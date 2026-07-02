@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>プライバシーポリシー｜たべメモ</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif; max-width: 720px; margin: 40px auto; padding: 0 20px; color: #1C1C1E; line-height: 1.85; }
+    h1 { font-size: 26px; border-bottom: 3px solid #219959; padding-bottom: 10px; }
+    h2 { font-size: 18px; margin-top: 36px; color: #219959; }
+    p, li { font-size: 15px; }
+    ul { padding-left: 1.3em; }
+    a { color: #219959; }
+    footer { margin-top: 56px; font-size: 13px; color: #888; border-top: 1px solid #eee; padding-top: 16px; }
+    .lead { color: #555; }
+  </style>
+</head>
+<body>
+  <h1>プライバシーポリシー</h1>
+  <p class="lead">本プライバシーポリシーは、アプリ「たべメモ」（以下「本アプリ」）における個人情報・データの取り扱いについて説明します。本アプリはアカウント登録を必要とせず、匿名で利用できます。</p>
+
+  <h2>1. カロリー推定のためにサーバへ送信する情報</h2>
+  <p>本アプリは、あなたが入力した食事の内容（テキスト。音声入力の場合はテキストに変換した文字列）を、カロリーを推定するために、開発者が管理するサーバー（tabememo-api / Vercel 上で稼働）を経由して <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">Anthropic の Claude API</a> に送信します。</p>
+  <ul>
+    <li>送信する内容は<strong>食事に関する入力テキストのみ</strong>で、氏名・連絡先・アカウント等の個人情報とは紐づきません（匿名）。</li>
+    <li>サーバーは推定結果を返すために処理するだけで、<strong>入力した本文をデータベース等に保存しません</strong>。</li>
+    <li>秘密鍵・パスワード・第三者の個人情報など、食事と関係のない機密情報は入力しないでください。</li>
+  </ul>
+
+  <h2>2. 端末内に保存する情報</h2>
+  <p>以下の情報は、原則としてあなたの端末内にのみ保存されます。開発者はアクセスできません。</p>
+  <ul>
+    <li>食事の記録（品目・カロリー・記録日時・食事種別）</li>
+    <li>1日の目標カロリー</li>
+    <li>からだの情報（身長・体重・年齢・性別）— 目標カロリーの自動計算に使用します</li>
+  </ul>
+  <p>iCloud 同期を有効にした場合、これらのデータは Apple の iCloud（CloudKit）にも保存されます。iCloud 上のデータは Apple の管理下にあり、開発者はアクセスできません。</p>
+
+  <h2>3. 不正利用の防止（App Attest）</h2>
+  <p>サーバーの不正利用を防ぐため、Apple の <strong>App Attest</strong>（アプリ／端末が正規のものであることを匿名で証明する仕組み）と、端末単位の利用回数制限を使用します。これらは個人を特定するものではなく、広告識別子（IDFA）でもありません。</p>
+
+  <h2>4. マイク・音声認識について</h2>
+  <p>音声で食事を入力する機能では、Apple の音声認識を使用して音声をテキストに変換します。この処理のために、音声が Apple に送信される場合があります。音声入力を使わない場合、マイクは使用されません。</p>
+
+  <h2>5. 広告・アクセス解析について</h2>
+  <p>本アプリは、広告の表示や、行動を追跡するアクセス解析を行いません。</p>
+
+  <h2>6. 利用する外部サービス</h2>
+  <ul>
+    <li><strong>Anthropic（Claude API）</strong> — カロリーの推定</li>
+    <li><strong>Apple</strong> — App Attest（不正防止）、音声認識、iCloud 同期</li>
+    <li><strong>Vercel</strong> — サーバーのホスティング・実行基盤</li>
+  </ul>
+  <p>各外部サービスでの情報の取り扱いは、それぞれのプライバシーポリシーに従います。</p>
+
+  <h2>7. データの削除</h2>
+  <p>本アプリをアンインストールすると、端末内に保存されたデータは削除されます。iCloud に保存されたデータは、iOS の設定（iCloud）から削除できます。サーバーは入力本文を保持しないため、サーバー側に削除すべき個人データは残りません。</p>
+
+  <h2>8. 第三者へのデータ提供</h2>
+  <p>開発者は、法令に基づく場合を除き、あなたの情報を第三者に販売・提供することはありません。</p>
+
+  <h2>9. 本ポリシーの変更</h2>
+  <p>本ポリシーは必要に応じて更新することがあります。変更後のポリシーはこのページに掲載します。</p>
+
+  <h2>10. お問い合わせ</h2>
+  <p>プライバシーに関するご質問は下記までご連絡ください。</p>
+  <p>メール：<a href="mailto:nakakei6439@gmail.com">nakakei6439@gmail.com</a></p>
+
+  <footer>
+    <p>アプリ名：たべメモ</p>
+    <p>最終更新日：2026年7月2日</p>
+  </footer>
+</body>
+</html>
