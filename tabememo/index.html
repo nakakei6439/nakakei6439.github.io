@@ -7,7 +7,8 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif; color: #1C1C1E; background: #F7F8FC; line-height: 1.8; }
-    header { background: #FFFFFF; text-align: center; padding: 64px 20px 48px; }
+    header { position: relative; background: #FFFFFF; text-align: center; padding: 64px 20px 48px; }
+    .lang-select { position: absolute; top: 16px; right: 16px; font-size: 13px; padding: 6px 10px; border-radius: 8px; border: 1px solid #E5E5EA; background: #FFFFFF; color: #1C1C1E; }
     .badge { width: 96px; height: 96px; border-radius: 22px; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 20px; background: linear-gradient(135deg, #33C77A, #219959); box-shadow: 0 6px 24px rgba(33,153,89,0.35); font-size: 48px; }
     h1 { font-size: 26px; }
     .tagline { color: #555; margin-top: 8px; font-size: 16px; }
@@ -23,35 +24,210 @@
 </head>
 <body>
   <header>
+    <select id="lang-select" class="lang-select" aria-label="Language">
+      <option value="ja">日本語</option>
+      <option value="en">English</option>
+      <option value="zh-Hans">简体中文</option>
+      <option value="zh-Hant">繁體中文</option>
+      <option value="fr">Français</option>
+      <option value="de">Deutsch</option>
+      <option value="es">Español</option>
+      <option value="ko">한국어</option>
+    </select>
     <div class="badge">🍃</div>
     <h1>たべメモ</h1>
-    <p class="tagline">雑に書くだけ。AIがカロリーを推定して、今日の残りが一目でわかる。</p>
+    <p class="tagline" data-i18n="tagline">雑に書くだけ。AIがカロリーを推定して、今日の残りが一目でわかる。</p>
   </header>
 
   <main>
     <section>
-      <h2>できること</h2>
+      <h2 data-i18n="h2Features">できること</h2>
       <ul>
-        <li>「アルフォート3枚」のような雑な入力（テキスト／音声）から、AIが品目とカロリーを推定</li>
-        <li>1日の目標から食べた分を引いた「残高（残りkcal）」をホーム画面ウィジェットに表示</li>
-        <li>Siri／アクションボタンから、アプリを開かずに記録</li>
-        <li>身長・体重などから目標カロリーを自動計算</li>
-        <li>摂取カロリーの推移グラフ、過去日の記録の追加・編集</li>
+        <li data-i18n="feat1">「アルフォート3枚」のような雑な入力（テキスト／音声）から、AIが品目とカロリーを推定</li>
+        <li data-i18n="feat2">1日の目標から食べた分を引いた「残高（残りkcal）」をホーム画面ウィジェットに表示</li>
+        <li data-i18n="feat3">Siri／アクションボタンから、アプリを開かずに記録</li>
+        <li data-i18n="feat4">身長・体重などから目標カロリーを自動計算</li>
+        <li data-i18n="feat5">摂取カロリーの推移グラフ、過去日の記録の追加・編集</li>
       </ul>
     </section>
 
     <section>
-      <h2>サポート・お問い合わせ</h2>
-      <p>ご質問・ご要望・不具合のご報告は、下記までお気軽にご連絡ください。</p>
-      <p>メール：<a href="mailto:nakakei6439@gmail.com">nakakei6439@gmail.com</a></p>
+      <h2 data-i18n="h2Support">サポート・お問い合わせ</h2>
+      <p data-i18n="supportText">ご質問・ご要望・不具合のご報告は、下記までお気軽にご連絡ください。</p>
+      <p><span data-i18n="emailLabel">メール：</span><a href="mailto:nakakei6439@gmail.com">nakakei6439@gmail.com</a></p>
       <p class="links" style="margin-top:12px;">
-        <a href="./privacy.html">プライバシーポリシー</a>
+        <a href="./privacy.html" data-i18n="privacyLink">プライバシーポリシー</a>
       </p>
     </section>
   </main>
 
   <footer>
-    <p>© 2026 Keita Nakagawa</p>
+    <p data-i18n="footer">© 2026 Keita Nakagawa</p>
   </footer>
+
+  <script>
+    var I18N = {
+      ja: {
+        title: "たべメモ — 雑に書くだけ、カロリーの残高がわかる",
+        tagline: "雑に書くだけ。AIがカロリーを推定して、今日の残りが一目でわかる。",
+        h2Features: "できること",
+        feat1: "「アルフォート3枚」のような雑な入力（テキスト／音声）から、AIが品目とカロリーを推定",
+        feat2: "1日の目標から食べた分を引いた「残高（残りkcal）」をホーム画面ウィジェットに表示",
+        feat3: "Siri／アクションボタンから、アプリを開かずに記録",
+        feat4: "身長・体重などから目標カロリーを自動計算",
+        feat5: "摂取カロリーの推移グラフ、過去日の記録の追加・編集",
+        h2Support: "サポート・お問い合わせ",
+        supportText: "ご質問・ご要望・不具合のご報告は、下記までお気軽にご連絡ください。",
+        emailLabel: "メール：",
+        privacyLink: "プライバシーポリシー",
+        footer: "© 2026 Keita Nakagawa"
+      },
+      en: {
+        title: "Tabememo — Just jot it down, see your calorie balance",
+        tagline: "Just jot it down. AI estimates the calories, so you can see today's balance at a glance.",
+        h2Features: "What it does",
+        feat1: "AI estimates items and calories from casual input like \"3 Alfort biscuits\" (text or voice)",
+        feat2: "See your remaining calorie balance for the day — today's goal minus what you've eaten — on a Home Screen widget",
+        feat3: "Log entries without opening the app, via Siri or the Action Button",
+        feat4: "Automatically calculates your calorie goal from height, weight, and more",
+        feat5: "View your calorie intake trend graph, and add or edit past days' entries",
+        h2Support: "Support & Contact",
+        supportText: "For questions, requests, or bug reports, feel free to reach out below.",
+        emailLabel: "Email: ",
+        privacyLink: "Privacy Policy",
+        footer: "© 2026 Keita Nakagawa"
+      },
+      "zh-Hans": {
+        title: "随手记 — 随手一写，卡路里余额一目了然",
+        tagline: "随手一写，AI自动估算卡路里，今天还能吃多少一目了然。",
+        h2Features: "功能介绍",
+        feat1: "输入「阿尔福特饼干3片」这样随意的文字或语音，AI即可自动识别品项并估算卡路里",
+        feat2: "在主屏幕小组件上显示「余额（剩余kcal）」＝每日目标减去已摄取的量",
+        feat3: "通过 Siri／操作按钮，无需打开App即可记录",
+        feat4: "根据身高、体重等自动计算目标卡路里",
+        feat5: "查看摄取卡路里趋势图，并可添加或编辑过去日期的记录",
+        h2Support: "支持与联系方式",
+        supportText: "如有问题、需求或故障报告，请随时通过以下方式联系我们。",
+        emailLabel: "邮箱：",
+        privacyLink: "隐私政策",
+        footer: "© 2026 Keita Nakagawa"
+      },
+      "zh-Hant": {
+        title: "隨手記 — 隨手一寫，卡路里餘額一目了然",
+        tagline: "隨手一寫，AI自動估算卡路里，今天還能吃多少一目了然。",
+        h2Features: "功能介紹",
+        feat1: "輸入「阿爾福特餅乾3片」這樣隨意的文字或語音，AI即可自動辨識品項並估算卡路里",
+        feat2: "在主畫面小工具上顯示「餘額（剩餘kcal）」＝每日目標減去已攝取的量",
+        feat3: "透過 Siri／操作按鈕，無需開啟App即可記錄",
+        feat4: "根據身高、體重等自動計算目標卡路里",
+        feat5: "查看攝取卡路里趨勢圖，並可新增或編輯過去日期的記錄",
+        h2Support: "支援與聯絡方式",
+        supportText: "如有問題、需求或故障回報，請隨時透過以下方式與我們聯絡。",
+        emailLabel: "電子郵件：",
+        privacyLink: "隱私權政策",
+        footer: "© 2026 Keita Nakagawa"
+      },
+      fr: {
+        title: "Tabememo — Notez sans réfléchir, votre solde calorique en un coup d'œil",
+        tagline: "Notez sans réfléchir. L'IA estime les calories, et vous voyez d'un coup d'œil ce qu'il vous reste pour aujourd'hui.",
+        h2Features: "Fonctionnalités",
+        feat1: "L'IA estime les aliments et les calories à partir d'une saisie rapide comme « 3 biscuits Alfort » (texte ou voix)",
+        feat2: "Affichez votre solde calorique du jour (objectif moins calories consommées) sur un widget d'écran d'accueil",
+        feat3: "Enregistrez sans ouvrir l'application, via Siri ou le bouton Action",
+        feat4: "Calcul automatique de votre objectif calorique à partir de votre taille, poids, etc.",
+        feat5: "Consultez le graphique d'évolution des calories consommées, et ajoutez ou modifiez les entrées des jours précédents",
+        h2Support: "Assistance et contact",
+        supportText: "Pour toute question, demande ou signalement de bug, n'hésitez pas à nous contacter ci-dessous.",
+        emailLabel: "E-mail : ",
+        privacyLink: "Politique de confidentialité",
+        footer: "© 2026 Keita Nakagawa"
+      },
+      de: {
+        title: "Tabememo — Einfach eintippen, Kalorienbilanz auf einen Blick",
+        tagline: "Einfach kurz eintippen. Die KI schätzt die Kalorien, sodass Sie Ihre heutige Bilanz auf einen Blick sehen.",
+        h2Features: "Funktionen",
+        feat1: "Die KI erkennt Lebensmittel und schätzt Kalorien aus beiläufigen Eingaben wie „3 Alfort-Kekse“ (Text oder Sprache)",
+        feat2: "Zeigen Sie Ihre Kalorienbilanz des Tages (Tagesziel minus Verzehr) auf einem Homescreen-Widget an",
+        feat3: "Erfassen Sie Einträge ohne die App zu öffnen, per Siri oder Aktionstaste",
+        feat4: "Automatische Berechnung Ihres Kalorienziels aus Größe, Gewicht und mehr",
+        feat5: "Sehen Sie den Verlauf Ihrer Kalorienaufnahme als Grafik und fügen Sie Einträge vergangener Tage hinzu oder bearbeiten Sie sie",
+        h2Support: "Support & Kontakt",
+        supportText: "Bei Fragen, Wünschen oder Fehlermeldungen kontaktieren Sie uns gerne über die folgenden Wege.",
+        emailLabel: "E-Mail: ",
+        privacyLink: "Datenschutzerklärung",
+        footer: "© 2026 Keita Nakagawa"
+      },
+      es: {
+        title: "Tabememo — Escríbelo sin más y descubre tu saldo de calorías",
+        tagline: "Escríbelo sin más. La IA estima las calorías para que veas de un vistazo lo que te queda hoy.",
+        h2Features: "Qué puedes hacer",
+        feat1: "La IA estima los alimentos y las calorías a partir de una entrada informal como «3 galletas Alfort» (texto o voz)",
+        feat2: "Consulta tu saldo de calorías del día (objetivo menos lo consumido) en un widget de pantalla de inicio",
+        feat3: "Registra sin abrir la app, mediante Siri o el botón de Acción",
+        feat4: "Calcula automáticamente tu objetivo calórico a partir de tu altura, peso y más",
+        feat5: "Consulta el gráfico de evolución de calorías consumidas, y añade o edita registros de días anteriores",
+        h2Support: "Soporte y contacto",
+        supportText: "Si tienes preguntas, sugerencias o quieres reportar un error, contáctanos a continuación.",
+        emailLabel: "Correo: ",
+        privacyLink: "Política de privacidad",
+        footer: "© 2026 Keita Nakagawa"
+      },
+      ko: {
+        title: "타베메모 — 대충 적기만 하면 칼로리 잔액을 알 수 있어요",
+        tagline: "대충 적기만 하면 AI가 칼로리를 추정해서, 오늘 남은 양을 한눈에 확인할 수 있어요.",
+        h2Features: "이런 걸 할 수 있어요",
+        feat1: "\"알포트 3개\"처럼 대충 입력(텍스트/음성)해도 AI가 품목과 칼로리를 추정",
+        feat2: "하루 목표에서 먹은 만큼을 뺀 '잔액(남은 kcal)'을 홈 화면 위젯에 표시",
+        feat3: "Siri／액션 버튼으로 앱을 열지 않고도 기록 가능",
+        feat4: "키・체중 등으로 목표 칼로리를 자동 계산",
+        feat5: "섭취 칼로리 추이 그래프 확인, 지난 날짜 기록 추가・수정 가능",
+        h2Support: "지원 및 문의",
+        supportText: "궁금한 점, 요청 사항, 오류 신고는 아래로 편하게 연락해 주세요.",
+        emailLabel: "이메일: ",
+        privacyLink: "개인정보 처리방침",
+        footer: "© 2026 Keita Nakagawa"
+      }
+    };
+
+    var SUPPORTED = Object.keys(I18N);
+
+    function detectLang() {
+      var saved = localStorage.getItem('site-lang');
+      if (saved && SUPPORTED.indexOf(saved) !== -1) return saved;
+      var langs = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || 'en'];
+      for (var i = 0; i < langs.length; i++) {
+        var lower = langs[i].toLowerCase();
+        if (lower.indexOf('zh') === 0) {
+          if (lower.indexOf('hant') !== -1 || lower.indexOf('-tw') !== -1 || lower.indexOf('-hk') !== -1 || lower.indexOf('-mo') !== -1) {
+            return 'zh-Hant';
+          }
+          return 'zh-Hans';
+        }
+        var base = lower.split('-')[0];
+        if (I18N.hasOwnProperty(base)) return base;
+      }
+      return 'en';
+    }
+
+    function applyLang(lang) {
+      var dict = I18N[lang] || I18N.en;
+      document.documentElement.lang = lang;
+      if (dict.title) document.title = dict.title;
+      var nodes = document.querySelectorAll('[data-i18n]');
+      for (var i = 0; i < nodes.length; i++) {
+        var key = nodes[i].getAttribute('data-i18n');
+        if (dict[key] != null) nodes[i].textContent = dict[key];
+      }
+      localStorage.setItem('site-lang', lang);
+      var select = document.getElementById('lang-select');
+      if (select) select.value = lang;
+    }
+
+    var currentLang = detectLang();
+    document.getElementById('lang-select').addEventListener('change', function (e) {
+      applyLang(e.target.value);
+    });
+    applyLang(currentLang);
+  </script>
 </body>
 </html>

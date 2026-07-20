@@ -15,6 +15,7 @@
     }
 
     header {
+      position: relative;
       background: #FFFFFF;
       text-align: center;
       padding: 60px 20px 40px;
@@ -30,6 +31,18 @@
       font-size: 15px;
       color: #8E8E93;
       margin-top: 8px;
+    }
+
+    .lang-select {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      font-size: 13px;
+      padding: 6px 10px;
+      border-radius: 8px;
+      border: 1px solid #E5E5EA;
+      background: #FFFFFF;
+      color: #1C1C1E;
     }
 
     section {
@@ -80,6 +93,10 @@
       background: linear-gradient(135deg, #67e8f9, #f0abfc, #fef08a);
     }
 
+    .app-icon.tabememo {
+      background: linear-gradient(135deg, #33C77A, #219959);
+    }
+
     .app-info {
       flex: 1;
     }
@@ -111,18 +128,37 @@
 <body>
 
   <header>
+    <select id="lang-select" class="lang-select" aria-label="Language">
+      <option value="ja">日本語</option>
+      <option value="en">English</option>
+      <option value="zh-Hans">简体中文</option>
+      <option value="zh-Hant">繁體中文</option>
+      <option value="fr">Français</option>
+      <option value="de">Deutsch</option>
+      <option value="es">Español</option>
+      <option value="ko">한국어</option>
+    </select>
     <h1>nakakei6439</h1>
-    <p>iOS アプリ開発</p>
+    <p data-i18n="subtitle">iOS アプリ開発</p>
   </header>
 
   <section>
-    <p class="section-label">アプリ</p>
+    <p class="section-label" data-i18n="appsLabel">アプリ</p>
+
+    <a class="app-card" href="./tabememo/">
+      <div class="app-icon tabememo">🍃</div>
+      <div class="app-info">
+        <div class="app-name">たべメモ</div>
+        <div class="app-desc" data-i18n="descTabememo">雑に書くだけ、AIがカロリーの残高を推定</div>
+      </div>
+      <span class="chevron">›</span>
+    </a>
 
     <a class="app-card" href="./kondate-cart/">
       <img class="app-icon" src="./kondate-cart/icon.png" alt="献立カート アイコン">
       <div class="app-info">
         <div class="app-name">献立カート</div>
-        <div class="app-desc">週の献立を決めて、衝動買いをなくす</div>
+        <div class="app-desc" data-i18n="descKondate">週の献立を決めて、衝動買いをなくす</div>
       </div>
       <span class="chevron">›</span>
     </a>
@@ -131,7 +167,7 @@
       <img class="app-icon" src="./focus-gym/assets/icon.png" alt="FocusGym アイコン">
       <div class="app-info">
         <div class="app-name">FocusGym</div>
-        <div class="app-desc">毎日ちょっとずつ、目をケアする習慣を。</div>
+        <div class="app-desc" data-i18n="descFocusGym">毎日ちょっとずつ、目をケアする習慣を。</div>
       </div>
       <span class="chevron">›</span>
     </a>
@@ -140,7 +176,7 @@
       <div class="app-icon code-tweet">💬</div>
       <div class="app-info">
         <div class="app-name">Code Tweet</div>
-        <div class="app-desc">GitHub README から1週間分のXポストを5本生成</div>
+        <div class="app-desc" data-i18n="descCodeTweet">GitHub README から1週間分のXポストを5本生成</div>
       </div>
       <span class="chevron">›</span>
     </a>
@@ -148,8 +184,133 @@
   </section>
 
   <footer>
-    <p>© 2026 Keita Nakagawa. All rights reserved.</p>
+    <p data-i18n="footer">© 2026 Keita Nakagawa. All rights reserved.</p>
   </footer>
+
+  <script>
+    var I18N = {
+      ja: {
+        title: "nakakei6439 — アプリ一覧",
+        subtitle: "iOS アプリ開発",
+        appsLabel: "アプリ",
+        descTabememo: "雑に書くだけ、AIがカロリーの残高を推定",
+        descKondate: "週の献立を決めて、衝動買いをなくす",
+        descFocusGym: "毎日ちょっとずつ、目をケアする習慣を。",
+        descCodeTweet: "GitHub README から1週間分のXポストを5本生成",
+        footer: "© 2026 Keita Nakagawa. All rights reserved."
+      },
+      en: {
+        title: "nakakei6439 — App List",
+        subtitle: "iOS App Development",
+        appsLabel: "Apps",
+        descTabememo: "Just jot it down — AI estimates your calorie balance",
+        descKondate: "Plan your week's meals and stop impulse buying",
+        descFocusGym: "Build a daily habit of eye care, little by little.",
+        descCodeTweet: "Generate 5 X posts for a week from a GitHub README",
+        footer: "© 2026 Keita Nakagawa. All rights reserved."
+      },
+      "zh-Hans": {
+        title: "nakakei6439 — 应用列表",
+        subtitle: "iOS 应用开发",
+        appsLabel: "应用",
+        descTabememo: "随手一记，AI自动估算卡路里余额",
+        descKondate: "提前规划本周菜单，告别冲动消费",
+        descFocusGym: "每天一点点，养成护眼好习惯。",
+        descCodeTweet: "根据GitHub README一周生成5条X帖子",
+        footer: "© 2026 Keita Nakagawa. 保留所有权利。"
+      },
+      "zh-Hant": {
+        title: "nakakei6439 — 應用程式列表",
+        subtitle: "iOS 應用程式開發",
+        appsLabel: "應用程式",
+        descTabememo: "隨手一記，AI自動估算卡路里餘額",
+        descKondate: "提前規劃本週菜單，告別衝動購物",
+        descFocusGym: "每天一點點，養成護眼好習慣。",
+        descCodeTweet: "根據GitHub README一週生成5則X貼文",
+        footer: "© 2026 Keita Nakagawa. 保留所有權利。"
+      },
+      fr: {
+        title: "nakakei6439 — Liste des applications",
+        subtitle: "Développement d'applications iOS",
+        appsLabel: "Applications",
+        descTabememo: "Notez sans réfléchir — l'IA estime votre solde calorique",
+        descKondate: "Planifiez vos repas de la semaine et évitez les achats impulsifs",
+        descFocusGym: "Adoptez petit à petit une habitude quotidienne de soin des yeux.",
+        descCodeTweet: "Générez 5 publications X pour une semaine à partir d'un README GitHub",
+        footer: "© 2026 Keita Nakagawa. Tous droits réservés."
+      },
+      de: {
+        title: "nakakei6439 — App-Übersicht",
+        subtitle: "iOS-App-Entwicklung",
+        appsLabel: "Apps",
+        descTabememo: "Einfach kurz eintippen – die KI schätzt Ihre Kalorienbilanz",
+        descKondate: "Planen Sie Ihre Wochenmahlzeiten und vermeiden Sie Spontankäufe",
+        descFocusGym: "Bauen Sie Schritt für Schritt eine tägliche Augenpflege-Gewohnheit auf.",
+        descCodeTweet: "Erstellen Sie aus einer GitHub-README 5 X-Beiträge für eine Woche",
+        footer: "© 2026 Keita Nakagawa. Alle Rechte vorbehalten."
+      },
+      es: {
+        title: "nakakei6439 — Lista de apps",
+        subtitle: "Desarrollo de apps iOS",
+        appsLabel: "Apps",
+        descTabememo: "Escribe sin pensarlo mucho: la IA estima tu saldo de calorías",
+        descKondate: "Planifica tus comidas semanales y evita las compras impulsivas",
+        descFocusGym: "Crea poco a poco un hábito diario de cuidado ocular.",
+        descCodeTweet: "Genera 5 publicaciones para X de una semana a partir de un README de GitHub",
+        footer: "© 2026 Keita Nakagawa. Todos los derechos reservados."
+      },
+      ko: {
+        title: "nakakei6439 — 앱 목록",
+        subtitle: "iOS 앱 개발",
+        appsLabel: "앱",
+        descTabememo: "대충 적기만 하면 AI가 칼로리 잔액을 추정",
+        descKondate: "일주일 식단을 미리 정하고, 충동구매를 없애세요",
+        descFocusGym: "매일 조금씩, 눈 건강 관리 습관을 만드세요.",
+        descCodeTweet: "GitHub README에서 일주일치 X 게시물 5개 생성",
+        footer: "© 2026 Keita Nakagawa. All rights reserved."
+      }
+    };
+
+    var SUPPORTED = Object.keys(I18N);
+
+    function detectLang() {
+      var saved = localStorage.getItem('site-lang');
+      if (saved && SUPPORTED.indexOf(saved) !== -1) return saved;
+      var langs = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || 'en'];
+      for (var i = 0; i < langs.length; i++) {
+        var lower = langs[i].toLowerCase();
+        if (lower.indexOf('zh') === 0) {
+          if (lower.indexOf('hant') !== -1 || lower.indexOf('-tw') !== -1 || lower.indexOf('-hk') !== -1 || lower.indexOf('-mo') !== -1) {
+            return 'zh-Hant';
+          }
+          return 'zh-Hans';
+        }
+        var base = lower.split('-')[0];
+        if (I18N.hasOwnProperty(base)) return base;
+      }
+      return 'en';
+    }
+
+    function applyLang(lang) {
+      var dict = I18N[lang] || I18N.en;
+      document.documentElement.lang = lang;
+      if (dict.title) document.title = dict.title;
+      var nodes = document.querySelectorAll('[data-i18n]');
+      for (var i = 0; i < nodes.length; i++) {
+        var key = nodes[i].getAttribute('data-i18n');
+        if (dict[key] != null) nodes[i].textContent = dict[key];
+      }
+      localStorage.setItem('site-lang', lang);
+      var select = document.getElementById('lang-select');
+      if (select) select.value = lang;
+    }
+
+    var currentLang = detectLang();
+    document.getElementById('lang-select').addEventListener('change', function (e) {
+      applyLang(e.target.value);
+    });
+    applyLang(currentLang);
+  </script>
 
 </body>
 </html>
