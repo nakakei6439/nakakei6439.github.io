@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FocusGym — 目のトレーニングアプリ</title>
+  <title data-i18n="pageTitle">FocusGym — 目のトレーニングアプリ</title>
   <meta name="description" content="FocusGym は、毛様体筋の柔軟性をサポートする1日5分の目のトレーニングアプリです。科学的根拠に基づいた5種類のエクササイズを提供します。">
   <link rel="icon" href="assets/icon.png">
   <style>
@@ -113,9 +113,9 @@
       border-radius: 999px;
       margin-bottom: 0.5rem;
       font-weight: 600;
+      background: #E8F2EC;
+      color: #5C9E7A;
     }
-    .badge.free { background: #E8F2EC; color: #5C9E7A; }
-    .badge.premium { background: #FFF4DA; color: #B07900; }
     .screenshots {
       display: flex;
       gap: 1rem;
@@ -213,131 +213,139 @@
 <body>
 
 <header>
-  <img src="assets/icon.png" alt="FocusGym アイコン" class="app-icon">
+  <img src="assets/icon.png" alt="FocusGym アイコン" class="app-icon" data-i18n-alt="appIconAlt">
   <h1>FocusGym</h1>
-  <p class="tagline">毎日ちょっとずつ、目をケアする習慣を。</p>
-  <a href="https://apps.apple.com/jp/app/focus-gym/id6760606419" class="app-store-button">App Store でダウンロード</a>
+  <p class="tagline" data-i18n="tagline">毎日ちょっとずつ、目をケアする習慣を。</p>
+  <a href="https://apps.apple.com/jp/app/focus-gym/id6760606419" class="app-store-button" data-i18n="downloadBtn">App Store でダウンロード</a>
 </header>
 
 <main>
 
   <section>
-    <h2>アプリについて</h2>
-    <p>FocusGym は、毛様体筋の柔軟性サポートを目的とした目のエクササイズアプリです。科学的根拠に基づいた5種類のトレーニングを、1日5分まで無理なく続けられます。</p>
+    <h2 data-i18n="aboutLabel">アプリについて</h2>
+    <p data-i18n="aboutDesc">FocusGym は、毛様体筋の柔軟性サポートを目的とした目のエクササイズアプリです。科学的根拠に基づいた5種類のトレーニングを、1日5分まで無理なく続けられます。</p>
     <div class="disclaimer">
-      <strong>重要な免責事項：</strong><br>
-      本アプリは医療行為ではありません。視力の改善・老眼の治癒を保証するものではありません。眼の異常や不調を感じた場合は、必ず医療機関を受診してください。
+      <strong data-i18n="disclaimerLabel">重要な免責事項：</strong><br>
+      <span data-i18n="disclaimerBody">本アプリは医療行為ではありません。視力の改善・老眼の治癒を保証するものではありません。眼の異常や不調を感じた場合は、必ず医療機関を受診してください。</span>
     </div>
   </section>
 
   <section>
-    <h2>主な機能</h2>
+    <h2 data-i18n="featuresLabel">主な機能</h2>
     <div class="features">
       <div class="feature-card">
-        <span class="emoji">👁</span>
-        <span class="badge free">無料</span>
-        <h3>遠近ピント切替</h3>
-        <p>近くと遠くを交互に見ることで、毛様体筋の調節力をサポート。</p>
+        <span class="emoji">🔭</span>
+        <span class="badge" data-i18n="freeBadge">無料</span>
+        <h3 data-i18n="f1t">遠近ピント切替</h3>
+        <p data-i18n="f1d">近くと遠くを交互に見ることで、毛様体筋の調節力をサポート。</p>
       </div>
       <div class="feature-card">
-        <span class="emoji">🎯</span>
-        <span class="badge premium">プレミアム</span>
-        <h3>追従運動</h3>
-        <p>動くボールを目でなめらかに追う、滑動性追従眼球運動の練習。</p>
+        <span class="emoji">👁️</span>
+        <span class="badge" data-i18n="freeBadge">無料</span>
+        <h3 data-i18n="f2t">追従運動</h3>
+        <p data-i18n="f2d">動くボールを目でなめらかに追う、滑動性追従眼球運動の練習。</p>
       </div>
       <div class="feature-card">
         <span class="emoji">👀</span>
-        <span class="badge premium">プレミアム</span>
-        <h3>寄り目トレーニング</h3>
-        <p>輻輳機能をサポートし、近くを見たときの疲れを和らげる。</p>
+        <span class="badge" data-i18n="freeBadge">無料</span>
+        <h3 data-i18n="f3t">寄り目トレーニング</h3>
+        <p data-i18n="f3d">輻輳機能をサポートし、近くを見たときの疲れを和らげる。</p>
       </div>
       <div class="feature-card">
-        <span class="emoji">🌀</span>
-        <span class="badge premium">プレミアム</span>
-        <h3>ガルボーパッチ</h3>
-        <p>視覚情報処理の脳神経回路を活性化。最もエビデンスが強い種目。</p>
+        <span class="emoji">〰️</span>
+        <span class="badge" data-i18n="freeBadge">無料</span>
+        <h3 data-i18n="f4t">ガボールパッチ</h3>
+        <p data-i18n="f4d">縞模様を識別するトレーニングで、視覚情報処理の脳神経回路を活性化。最もエビデンスが強い種目。</p>
       </div>
       <div class="feature-card">
-        <span class="emoji">✨</span>
-        <span class="badge premium">プレミアム</span>
-        <h3>ぼかしくっきり訓練</h3>
-        <p>ピント合わせの応答スピードをサポートする調節練習。</p>
+        <span class="emoji">🔍</span>
+        <span class="badge" data-i18n="freeBadge">無料</span>
+        <h3 data-i18n="f5t">ぼかしくっきり訓練</h3>
+        <p data-i18n="f5d">ぼやけ→くっきりを繰り返し、ピント合わせの応答スピードをサポート。</p>
       </div>
     </div>
   </section>
 
   <section>
-    <h2>スクリーンショット</h2>
+    <h2 data-i18n="screenshotsLabel">スクリーンショット</h2>
     <div class="screenshots">
-      <img src="assets/screenshots/01.png" alt="ホーム画面">
-      <img src="assets/screenshots/02.png" alt="トレーニング選択画面">
-      <img src="assets/screenshots/03.png" alt="トレーニング詳細画面">
-      <img src="assets/screenshots/04.png" alt="履歴・カレンダー画面">
+      <img src="assets/screenshots/01.png" alt="ホーム画面" data-i18n-alt="ss1Alt">
+      <img src="assets/screenshots/02.png" alt="トレーニング選択画面" data-i18n-alt="ss2Alt">
+      <img src="assets/screenshots/03.png" alt="トレーニング詳細画面" data-i18n-alt="ss3Alt">
+      <img src="assets/screenshots/04.png" alt="履歴・カレンダー画面" data-i18n-alt="ss4Alt">
     </div>
   </section>
 
   <section>
-    <h2>価格</h2>
+    <h2 data-i18n="pricingLabel">価格</h2>
     <div class="pricing">
-      <p>遠近ピント切替は<strong>無料</strong>。インストール後14日間は<strong>全機能を無料</strong>でお試しいただけます。</p>
-      <p class="price">¥300（買い切り）</p>
-      <p class="note">プレミアムは一度購入すれば永続的に全機能をご利用いただけます。サブスクリプションではありません。</p>
+      <p data-i18n="pricingFreeDesc">5種類のトレーニングすべてを<strong data-i18n="pricingFreeStrong">無料</strong>でご利用いただけます（アプリ内に広告が表示されます）。</p>
+      <p class="price" data-i18n="pricingRemoveAdsPrice">広告を消す：¥300（買い切り）</p>
+      <p class="note" data-i18n="pricingNote">一度購入すれば広告は永続的に非表示になります。サブスクリプションではありません。</p>
     </div>
   </section>
 
   <section>
-    <h2>よくある質問</h2>
+    <h2 data-i18n="faqLabel">よくある質問</h2>
 
     <div class="faq-item">
-      <p class="q">Q. 1日どのくらいトレーニングすればよいですか？</p>
-      <p class="a">1回1分・1日合計5分を上限としています。視覚トレーニングは過度に行うと眼精疲労を招く可能性があるため、適切な上限を設けています。</p>
+      <p class="q" data-i18n="q1">Q. 1日どのくらいトレーニングすればよいですか？</p>
+      <p class="a" data-i18n="a1">1回1分・1日合計5分を上限としています。視覚トレーニングは過度に行うと眼精疲労を招く可能性があるため、適切な上限を設けています。</p>
     </div>
 
     <div class="faq-item">
-      <p class="q">Q. 無料トライアルとはなんですか？</p>
-      <p class="a">インストール後14日間は全トレーニングを無料でお使いいただけます。トライアル期間終了後は¥300（買い切り）でご購入いただくと、全機能を永続的にご利用いただけます。</p>
+      <p class="q" data-i18n="q2">Q. 広告を消すことはできますか？</p>
+      <p class="a" data-i18n="a2">はい。設定画面から¥300（買い切り）で広告を非表示にできます。購入は一度きりで、サブスクリプションではありません。</p>
     </div>
 
     <div class="faq-item">
-      <p class="q">Q. 購入の復元はどうすればよいですか？</p>
-      <p class="a">設定画面の「購入を復元」ボタンをタップしてください。同じ Apple ID でサインインしていれば購入状態が復元されます。</p>
+      <p class="q" data-i18n="q3">Q. 購入の復元はどうすればよいですか？</p>
+      <p class="a" data-i18n="a3">設定画面の「購入を復元」ボタンをタップしてください。同じ Apple ID でサインインしていれば、広告非表示の購入状態が復元されます。</p>
     </div>
 
     <div class="faq-item">
-      <p class="q">Q. 端末を変更した場合はどうなりますか？</p>
-      <p class="a">同じ Apple ID でサインインした状態で、設定画面の「購入を復元」ボタンをタップすれば復元できます。</p>
+      <p class="q" data-i18n="q4">Q. 端末を変更した場合はどうなりますか？</p>
+      <p class="a" data-i18n="a4">同じ Apple ID でサインインした状態で、設定画面の「購入を復元」ボタンをタップすれば、広告非表示の購入状態を復元できます。</p>
     </div>
 
     <div class="faq-item">
-      <p class="q">Q. 返金はできますか？</p>
-      <p class="a">返金は各アプリストアのポリシーに従います。App Store の場合は <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a> からお申し込みください。</p>
+      <p class="q" data-i18n="q5">Q. 返金はできますか？</p>
+      <p class="a">
+        <span data-i18n="a5a">返金は各アプリストアのポリシーに従います。App Store の場合は</span>
+        <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>
+        <span data-i18n="a5b">からお申し込みください。</span>
+      </p>
     </div>
 
     <div class="faq-item">
-      <p class="q">Q. トレーニングにどんな効果がありますか？</p>
-      <p class="a">各トレーニングのエビデンスについては <a href="evidence.html">エビデンスページ</a> をご覧ください。</p>
+      <p class="q" data-i18n="q6">Q. トレーニングにどんな効果がありますか？</p>
+      <p class="a">
+        <span data-i18n="a6a">各トレーニングのエビデンスについては</span>
+        <a href="evidence.html" data-i18n="evidenceLinkText">エビデンスページ</a>
+        <span data-i18n="a6b">をご覧ください。</span>
+      </p>
     </div>
 
     <div class="faq-item">
-      <p class="q">Q. 目に痛みや違和感がある場合は？</p>
-      <p class="a">直ちにトレーニングを中止し、医療機関を受診してください。</p>
+      <p class="q" data-i18n="q7">Q. 目に痛みや違和感がある場合は？</p>
+      <p class="a" data-i18n="a7">直ちにトレーニングを中止し、医療機関を受診してください。</p>
     </div>
   </section>
 
   <section>
-    <h2>お問い合わせ</h2>
+    <h2 data-i18n="contactLabel">お問い合わせ</h2>
     <div class="contact-block">
-      <p>アプリに関するご質問・不具合報告・ご要望などは、下記までお気軽にご連絡ください。</p>
-      <a href="mailto:nakakei6439@gmail.com" class="contact-button">✉ メールで問い合わせる</a>
+      <p data-i18n="contactDesc">アプリに関するご質問・不具合報告・ご要望などは、下記までお気軽にご連絡ください。</p>
+      <a href="mailto:nakakei6439@gmail.com" class="contact-button" data-i18n="contactBtn">✉ メールで問い合わせる</a>
     </div>
   </section>
 
   <section>
-    <h2>関連リンク</h2>
+    <h2 data-i18n="linksLabel">関連リンク</h2>
     <div class="links">
-      <a href="privacy.html">プライバシーポリシー</a>
-      <a href="terms.html">利用規約</a>
-      <a href="evidence.html">トレーニングのエビデンス</a>
+      <a href="privacy.html" data-i18n="privacyLink">プライバシーポリシー</a>
+      <a href="terms.html" data-i18n="termsLink">利用規約</a>
+      <a href="evidence.html" data-i18n="evidenceLink">トレーニングのエビデンス</a>
       <a href="https://apps.apple.com/jp/app/focus-gym/id6760606419">App Store</a>
     </div>
   </section>
@@ -347,6 +355,437 @@
 <footer>
   &copy; 2026 FocusGym. All rights reserved.
 </footer>
+
+<script>
+  var I18N = {
+    ja: {
+      pageTitle: "FocusGym — 目のトレーニングアプリ",
+      appIconAlt: "FocusGym アイコン",
+      tagline: "毎日ちょっとずつ、目をケアする習慣を。",
+      downloadBtn: "App Store でダウンロード",
+      aboutLabel: "アプリについて",
+      aboutDesc: "FocusGym は、毛様体筋の柔軟性サポートを目的とした目のエクササイズアプリです。科学的根拠に基づいた5種類のトレーニングを、1日5分まで無理なく続けられます。",
+      disclaimerLabel: "重要な免責事項：",
+      disclaimerBody: "本アプリは医療行為ではありません。視力の改善・老眼の治癒を保証するものではありません。眼の異常や不調を感じた場合は、必ず医療機関を受診してください。",
+      featuresLabel: "主な機能",
+      freeBadge: "無料",
+      f1t: "遠近ピント切替", f1d: "近くと遠くを交互に見ることで、毛様体筋の調節力をサポート。",
+      f2t: "追従運動", f2d: "動くボールを目でなめらかに追う、滑動性追従眼球運動の練習。",
+      f3t: "寄り目トレーニング", f3d: "輻輳機能をサポートし、近くを見たときの疲れを和らげる。",
+      f4t: "ガボールパッチ", f4d: "縞模様を識別するトレーニングで、視覚情報処理の脳神経回路を活性化。最もエビデンスが強い種目。",
+      f5t: "ぼかしくっきり訓練", f5d: "ぼやけ→くっきりを繰り返し、ピント合わせの応答スピードをサポート。",
+      screenshotsLabel: "スクリーンショット",
+      ss1Alt: "ホーム画面", ss2Alt: "トレーニング選択画面", ss3Alt: "トレーニング詳細画面", ss4Alt: "履歴・カレンダー画面",
+      pricingLabel: "価格",
+      pricingFreeDesc: "5種類のトレーニングすべてを無料でご利用いただけます（アプリ内に広告が表示されます）。",
+      pricingFreeStrong: "無料",
+      pricingRemoveAdsPrice: "広告を消す：¥300（買い切り）",
+      pricingNote: "一度購入すれば広告は永続的に非表示になります。サブスクリプションではありません。",
+      faqLabel: "よくある質問",
+      q1: "Q. 1日どのくらいトレーニングすればよいですか？",
+      a1: "1回1分・1日合計5分を上限としています。視覚トレーニングは過度に行うと眼精疲労を招く可能性があるため、適切な上限を設けています。",
+      q2: "Q. 広告を消すことはできますか？",
+      a2: "はい。設定画面から¥300（買い切り）で広告を非表示にできます。購入は一度きりで、サブスクリプションではありません。",
+      q3: "Q. 購入の復元はどうすればよいですか？",
+      a3: "設定画面の「購入を復元」ボタンをタップしてください。同じ Apple ID でサインインしていれば、広告非表示の購入状態が復元されます。",
+      q4: "Q. 端末を変更した場合はどうなりますか？",
+      a4: "同じ Apple ID でサインインした状態で、設定画面の「購入を復元」ボタンをタップすれば、広告非表示の購入状態を復元できます。",
+      q5: "Q. 返金はできますか？",
+      a5a: "返金は各アプリストアのポリシーに従います。App Store の場合は",
+      a5b: "からお申し込みください。",
+      q6: "Q. トレーニングにどんな効果がありますか？",
+      a6a: "各トレーニングのエビデンスについては",
+      evidenceLinkText: "エビデンスページ",
+      a6b: "をご覧ください。",
+      q7: "Q. 目に痛みや違和感がある場合は？",
+      a7: "直ちにトレーニングを中止し、医療機関を受診してください。",
+      contactLabel: "お問い合わせ",
+      contactDesc: "アプリに関するご質問・不具合報告・ご要望などは、下記までお気軽にご連絡ください。",
+      contactBtn: "✉ メールで問い合わせる",
+      linksLabel: "関連リンク",
+      privacyLink: "プライバシーポリシー",
+      termsLink: "利用規約",
+      evidenceLink: "トレーニングのエビデンス"
+    },
+    en: {
+      pageTitle: "FocusGym — Eye Training App",
+      appIconAlt: "FocusGym icon",
+      tagline: "A little eye care, every day.",
+      downloadBtn: "Download on the App Store",
+      aboutLabel: "About This App",
+      aboutDesc: "FocusGym is an eye exercise app designed to support the flexibility of your ciliary muscle. It offers 5 evidence-based trainings you can keep up with in just 5 minutes a day.",
+      disclaimerLabel: "Important Disclaimer:",
+      disclaimerBody: "This app is not a medical treatment. It does not guarantee improved vision or a cure for presbyopia. If you notice any eye problems, please consult a doctor.",
+      featuresLabel: "Key Features",
+      freeBadge: "Free",
+      f1t: "Near-Far Focus", f1d: "Alternate between near and far focus to support your ciliary muscle's accommodation power.",
+      f2t: "Pursuit Tracking", f2d: "Smoothly follow a moving ball with your eyes — a smooth pursuit eye-movement exercise.",
+      f3t: "Convergence Training", f3d: "Supports convergence function and eases fatigue from close-up viewing.",
+      f4t: "Gabor Patch", f4d: "Identify striped patterns to activate the brain's visual processing circuits. The training with the strongest evidence.",
+      f5t: "Blur-to-Clear Training", f5d: "Repeated blur-to-clear cycles support faster focusing response.",
+      screenshotsLabel: "Screenshots",
+      ss1Alt: "Home screen", ss2Alt: "Training selection screen", ss3Alt: "Training detail screen", ss4Alt: "History & calendar screen",
+      pricingLabel: "Pricing",
+      pricingFreeDesc: "All 5 trainings are free to use (with in-app ads).",
+      pricingFreeStrong: "free",
+      pricingRemoveAdsPrice: "Remove ads: ¥300 (one-time)",
+      pricingNote: "Ads are removed permanently with a single purchase. Not a subscription.",
+      faqLabel: "FAQ",
+      q1: "Q. How much should I train each day?",
+      a1: "Each session is capped at 1 minute, for a daily total of 5 minutes. Excessive visual training can lead to eye strain, so we set a reasonable daily limit.",
+      q2: "Q. Can I remove the ads?",
+      a2: "Yes. From the Settings screen you can remove ads with a one-time purchase of ¥300. It's a single purchase, not a subscription.",
+      q3: "Q. How do I restore my purchase?",
+      a3: "Tap \"Restore Purchases\" in the Settings screen. If you're signed in with the same Apple ID, your ad-free status will be restored.",
+      q4: "Q. What happens if I change devices?",
+      a4: "Sign in with the same Apple ID and tap \"Restore Purchases\" in the Settings screen to restore your ad-free status.",
+      q5: "Q. Can I get a refund?",
+      a5a: "Refunds follow each app store's policy. For the App Store, please apply at",
+      a5b: ".",
+      q6: "Q. What effects can I expect from training?",
+      a6a: "See the",
+      evidenceLinkText: "evidence page",
+      a6b: "for the evidence behind each training.",
+      q7: "Q. What if I feel eye pain or discomfort?",
+      a7: "Stop training immediately and consult a doctor.",
+      contactLabel: "Contact",
+      contactDesc: "For questions, bug reports, or feature requests about the app, feel free to reach out below.",
+      contactBtn: "✉ Contact by Email",
+      linksLabel: "Related Links",
+      privacyLink: "Privacy Policy",
+      termsLink: "Terms of Service",
+      evidenceLink: "Training Evidence"
+    },
+    es: {
+      pageTitle: "FocusGym — App de entrenamiento visual",
+      appIconAlt: "Icono de FocusGym",
+      tagline: "Un poco de cuidado visual, cada día.",
+      downloadBtn: "Descargar en App Store",
+      aboutLabel: "Sobre esta app",
+      aboutDesc: "FocusGym es una app de ejercicios oculares diseñada para apoyar la flexibilidad del músculo ciliar. Ofrece 5 entrenamientos basados en evidencia que puedes mantener con solo 5 minutos al día.",
+      disclaimerLabel: "Aviso importante:",
+      disclaimerBody: "Esta aplicación no constituye un tratamiento médico. No garantiza la mejora de la visión ni la cura de la presbicia. Si nota alguna anomalía en sus ojos, consulte a un especialista.",
+      featuresLabel: "Funciones principales",
+      freeBadge: "Gratis",
+      f1t: "Cambio de enfoque cerca-lejos", f1d: "Alterna el enfoque entre cerca y lejos para apoyar la capacidad de acomodación del músculo ciliar.",
+      f2t: "Seguimiento ocular", f2d: "Sigue suavemente una pelota en movimiento con los ojos: un ejercicio de seguimiento ocular.",
+      f3t: "Entrenamiento de convergencia", f3d: "Apoya la función de convergencia y alivia la fatiga al mirar de cerca.",
+      f4t: "Parche de Gabor", f4d: "Identifica patrones de rayas para activar los circuitos cerebrales de procesamiento visual. El entrenamiento con la evidencia más sólida.",
+      f5t: "Entrenamiento de desenfoque a nitidez", f5d: "Los ciclos repetidos de desenfoque a nitidez apoyan una respuesta de enfoque más rápida.",
+      screenshotsLabel: "Capturas de pantalla",
+      ss1Alt: "Pantalla de inicio", ss2Alt: "Pantalla de selección de entrenamiento", ss3Alt: "Pantalla de detalle del entrenamiento", ss4Alt: "Pantalla de historial y calendario",
+      pricingLabel: "Precio",
+      pricingFreeDesc: "Los 5 entrenamientos son gratuitos (con anuncios dentro de la app).",
+      pricingFreeStrong: "gratuitos",
+      pricingRemoveAdsPrice: "Quitar anuncios: ¥300 (pago único)",
+      pricingNote: "Los anuncios se eliminan de forma permanente con una sola compra. No es una suscripción.",
+      faqLabel: "Preguntas frecuentes",
+      q1: "P. ¿Cuánto debo entrenar cada día?",
+      a1: "Cada sesión tiene un límite de 1 minuto, hasta un total diario de 5 minutos. El entrenamiento visual excesivo puede causar fatiga ocular, por lo que establecemos un límite diario razonable.",
+      q2: "P. ¿Puedo quitar los anuncios?",
+      a2: "Sí. Desde la pantalla de ajustes puedes quitar los anuncios con una compra única de ¥300. Es una compra única, no una suscripción.",
+      q3: "P. ¿Cómo restauro mi compra?",
+      a3: "Toca «Restaurar compras» en la pantalla de ajustes. Si has iniciado sesión con el mismo Apple ID, se restaurará tu estado sin anuncios.",
+      q4: "P. ¿Qué pasa si cambio de dispositivo?",
+      a4: "Inicia sesión con el mismo Apple ID y toca «Restaurar compras» en la pantalla de ajustes para restaurar tu estado sin anuncios.",
+      q5: "P. ¿Puedo obtener un reembolso?",
+      a5a: "Los reembolsos siguen la política de cada tienda de apps. Para App Store, solicítalo en",
+      a5b: ".",
+      q6: "P. ¿Qué efectos puedo esperar del entrenamiento?",
+      a6a: "Consulta la",
+      evidenceLinkText: "página de evidencia",
+      a6b: "para conocer la evidencia detrás de cada entrenamiento.",
+      q7: "P. ¿Y si siento dolor o molestia en los ojos?",
+      a7: "Detén el entrenamiento de inmediato y consulta a un especialista.",
+      contactLabel: "Contacto",
+      contactDesc: "Para preguntas, informes de errores o sugerencias sobre la app, no dudes en contactarnos.",
+      contactBtn: "✉ Contactar por correo",
+      linksLabel: "Enlaces relacionados",
+      privacyLink: "Política de privacidad",
+      termsLink: "Términos de servicio",
+      evidenceLink: "Evidencia del entrenamiento"
+    },
+    "zh-Hans": {
+      pageTitle: "FocusGym — 眼部训练App",
+      appIconAlt: "FocusGym 图标",
+      tagline: "每天一点点，养成呵护眼睛的习惯。",
+      downloadBtn: "在 App Store 下载",
+      aboutLabel: "关于此App",
+      aboutDesc: "FocusGym 是一款旨在支持睫状肌灵活性的眼部锻炼App。提供5种有科学依据的训练，每天只需5分钟即可轻松坚持。",
+      disclaimerLabel: "重要免责声明：",
+      disclaimerBody: "本应用并非医疗行为。不保证能改善视力或治愈老花眼。如感到眼部不适，请务必咨询医疗机构。",
+      featuresLabel: "主要功能",
+      freeBadge: "免费",
+      f1t: "远近对焦切换", f1d: "交替注视远近，支持睫状肌的调节能力。",
+      f2t: "追随运动", f2d: "用眼睛平滑追随移动的小球，锻炼平滑追随性眼球运动。",
+      f3t: "集合训练", f3d: "支持集合功能，缓解近距离用眼时的疲劳。",
+      f4t: "加博尔光栅", f4d: "通过识别条纹图案激活大脑的视觉处理神经回路，是证据最充分的训练项目。",
+      f5t: "模糊-清晰训练", f5d: "反复进行模糊→清晰的切换，支持更快的对焦响应速度。",
+      screenshotsLabel: "截图",
+      ss1Alt: "首页", ss2Alt: "训练选择页面", ss3Alt: "训练详情页面", ss4Alt: "记录与日历页面",
+      pricingLabel: "价格",
+      pricingFreeDesc: "5种训练全部免费使用（应用内含广告）。",
+      pricingFreeStrong: "免费",
+      pricingRemoveAdsPrice: "移除广告：¥300（一次性购买）",
+      pricingNote: "一次购买即可永久移除广告，非订阅制。",
+      faqLabel: "常见问题",
+      q1: "问：每天应该训练多长时间？",
+      a1: "每次训练上限为1分钟，每日合计上限为5分钟。过度进行视觉训练可能导致眼睛疲劳，因此设定了合理的每日上限。",
+      q2: "问：可以移除广告吗？",
+      a2: "可以。在设置页面中，只需一次性支付¥300即可移除广告。这是一次性购买，并非订阅。",
+      q3: "问：如何恢复购买？",
+      a3: "请在设置页面点击「恢复购买」按钮。如果使用相同的 Apple ID 登录，即可恢复无广告状态。",
+      q4: "问：更换设备后会怎样？",
+      a4: "使用相同的 Apple ID 登录后，在设置页面点击「恢复购买」按钮，即可恢复无广告状态。",
+      q5: "问：可以退款吗？",
+      a5a: "退款遵循各应用商店的政策。App Store 用户请前往",
+      a5b: "申请。",
+      q6: "问：训练能带来什么效果？",
+      a6a: "关于每种训练的依据，请查看",
+      evidenceLinkText: "依据页面",
+      a6b: "。",
+      q7: "问：如果眼睛感到疼痛或不适怎么办？",
+      a7: "请立即停止训练，并及时就医。",
+      contactLabel: "联系我们",
+      contactDesc: "如有关于应用的疑问、错误报告或功能建议，欢迎随时通过以下方式联系我们。",
+      contactBtn: "✉ 通过邮件联系",
+      linksLabel: "相关链接",
+      privacyLink: "隐私政策",
+      termsLink: "使用条款",
+      evidenceLink: "训练依据"
+    },
+    "zh-Hant": {
+      pageTitle: "FocusGym — 眼部訓練App",
+      appIconAlt: "FocusGym 圖示",
+      tagline: "每天一點點，養成呵護眼睛的習慣。",
+      downloadBtn: "在 App Store 下載",
+      aboutLabel: "關於此App",
+      aboutDesc: "FocusGym 是一款旨在支援睫狀肌靈活性的眼部鍛鍊App。提供5種有科學依據的訓練，每天只需5分鐘即可輕鬆堅持。",
+      disclaimerLabel: "重要免責聲明：",
+      disclaimerBody: "本應用程式並非醫療行為。不保證能改善視力或治癒老花眼。如感到眼部不適，請務必諮詢醫療機構。",
+      featuresLabel: "主要功能",
+      freeBadge: "免費",
+      f1t: "遠近對焦切換", f1d: "交替注視遠近，支援睫狀肌的調節能力。",
+      f2t: "追視運動", f2d: "用眼睛平順追隨移動的小球，鍛鍊平順追視性眼球運動。",
+      f3t: "集合訓練", f3d: "支援集合功能，緩解近距離用眼時的疲勞。",
+      f4t: "加博爾光柵", f4d: "透過辨識條紋圖案來活化大腦的視覺處理神經迴路，是證據最充分的訓練項目。",
+      f5t: "模糊到清晰訓練", f5d: "反覆進行模糊→清晰的切換，支援更快的對焦反應速度。",
+      screenshotsLabel: "截圖",
+      ss1Alt: "首頁", ss2Alt: "訓練選擇畫面", ss3Alt: "訓練詳情畫面", ss4Alt: "記錄與月曆畫面",
+      pricingLabel: "價格",
+      pricingFreeDesc: "5種訓練全部免費使用（應用程式內含廣告）。",
+      pricingFreeStrong: "免費",
+      pricingRemoveAdsPrice: "移除廣告：¥300（一次性購買）",
+      pricingNote: "只要購買一次即可永久移除廣告，並非訂閱制。",
+      faqLabel: "常見問題",
+      q1: "問：每天應該訓練多長時間？",
+      a1: "每次訓練上限為1分鐘，每日合計上限為5分鐘。過度進行視覺訓練可能導致眼睛疲勞，因此設定了合理的每日上限。",
+      q2: "問：可以移除廣告嗎？",
+      a2: "可以。在設定畫面中，只需一次性支付¥300即可移除廣告。這是一次性購買，並非訂閱。",
+      q3: "問：如何恢復購買？",
+      a3: "請在設定畫面點擊「恢復購買」按鈕。如果使用相同的 Apple ID 登入，即可恢復無廣告狀態。",
+      q4: "問：更換裝置後會怎樣？",
+      a4: "使用相同的 Apple ID 登入後，在設定畫面點擊「恢復購買」按鈕，即可恢復無廣告狀態。",
+      q5: "問：可以退款嗎？",
+      a5a: "退款遵循各應用程式商店的政策。App Store 使用者請前往",
+      a5b: "申請。",
+      q6: "問：訓練能帶來什麼效果？",
+      a6a: "關於每種訓練的依據，請查看",
+      evidenceLinkText: "依據頁面",
+      a6b: "。",
+      q7: "問：如果眼睛感到疼痛或不適怎麼辦？",
+      a7: "請立即停止訓練，並儘速就醫。",
+      contactLabel: "聯絡我們",
+      contactDesc: "如有關於應用程式的疑問、錯誤回報或功能建議，歡迎隨時透過以下方式聯絡我們。",
+      contactBtn: "✉ 透過電子郵件聯絡",
+      linksLabel: "相關連結",
+      privacyLink: "隱私權政策",
+      termsLink: "使用條款",
+      evidenceLink: "訓練依據"
+    },
+    ko: {
+      pageTitle: "FocusGym — 눈 트레이닝 앱",
+      appIconAlt: "FocusGym 아이콘",
+      tagline: "매일 조금씩, 눈을 돌보는 습관을.",
+      downloadBtn: "App Store에서 다운로드",
+      aboutLabel: "앱 소개",
+      aboutDesc: "FocusGym은 모양체근의 유연성을 지원하기 위한 눈 운동 앱입니다. 과학적 근거에 기반한 5가지 트레이닝을 하루 5분만으로 무리 없이 계속할 수 있습니다.",
+      disclaimerLabel: "중요한 면책 사항:",
+      disclaimerBody: "이 앱은 의료 행위가 아닙니다. 시력 개선이나 노안 치료를 보장하지 않습니다. 눈에 이상이나 불편함을 느끼시면 반드시 의료기관을 방문하세요.",
+      featuresLabel: "주요 기능",
+      freeBadge: "무료",
+      f1t: "원근 초점 전환", f1d: "가까운 곳과 먼 곳을 번갈아 보며 모양체근의 조절력을 지원합니다.",
+      f2t: "추적 운동", f2d: "움직이는 공을 눈으로 부드럽게 따라가는 추적 안구 운동 연습입니다.",
+      f3t: "모음 훈련", f3d: "모음 기능을 지원하고 근거리를 볼 때의 피로를 완화합니다.",
+      f4t: "가보 패치", f4d: "줄무늬 패턴을 식별하는 훈련으로 뇌의 시각 처리 신경 회로를 활성화합니다. 가장 근거가 강력한 종목입니다.",
+      f5t: "흐림-선명 훈련", f5d: "흐림→선명을 반복하여 초점 맞추기 반응 속도를 지원합니다.",
+      screenshotsLabel: "스크린샷",
+      ss1Alt: "홈 화면", ss2Alt: "트레이닝 선택 화면", ss3Alt: "트레이닝 상세 화면", ss4Alt: "기록・캘린더 화면",
+      pricingLabel: "가격",
+      pricingFreeDesc: "5가지 트레이닝 모두 무료로 이용할 수 있습니다（앱 내 광고가 표시됩니다）。",
+      pricingFreeStrong: "무료",
+      pricingRemoveAdsPrice: "광고 제거: ¥300（단품 구매）",
+      pricingNote: "한 번 구매하면 광고가 영구적으로 사라집니다. 구독이 아닙니다.",
+      faqLabel: "자주 묻는 질문",
+      q1: "Q. 하루에 얼마나 트레이닝하면 되나요?",
+      a1: "1회 1분・하루 합계 5분을 상한으로 하고 있습니다. 시각 트레이닝을 과도하게 하면 눈의 피로를 유발할 수 있어 적절한 상한을 두고 있습니다.",
+      q2: "Q. 광고를 제거할 수 있나요?",
+      a2: "네. 설정 화면에서 ¥300（단품 구매）로 광고를 제거할 수 있습니다. 한 번만 구매하면 되며, 구독이 아닙니다.",
+      q3: "Q. 구매 복원은 어떻게 하나요?",
+      a3: "설정 화면의 「구매 복원」 버튼을 탭해 주세요. 동일한 Apple ID로 로그인되어 있으면 광고 제거 구매 상태가 복원됩니다.",
+      q4: "Q. 기기를 변경하면 어떻게 되나요?",
+      a4: "동일한 Apple ID로 로그인한 상태에서 설정 화면의 「구매 복원」 버튼을 탭하면 광고 제거 구매 상태를 복원할 수 있습니다.",
+      q5: "Q. 환불이 가능한가요?",
+      a5a: "환불은 각 앱 스토어의 정책을 따릅니다. App Store의 경우",
+      a5b: "에서 신청해 주세요.",
+      q6: "Q. 트레이닝에는 어떤 효과가 있나요?",
+      a6a: "각 트레이닝의 근거는",
+      evidenceLinkText: "근거 페이지",
+      a6b: "를 확인해 주세요.",
+      q7: "Q. 눈에 통증이나 불편함이 있을 때는?",
+      a7: "즉시 트레이닝을 중단하고 의료기관을 방문하세요.",
+      contactLabel: "문의하기",
+      contactDesc: "앱에 관한 질문・오류 신고・요청 사항 등은 아래로 편하게 연락해 주세요.",
+      contactBtn: "✉ 이메일로 문의하기",
+      linksLabel: "관련 링크",
+      privacyLink: "개인정보 처리방침",
+      termsLink: "이용약관",
+      evidenceLink: "트레이닝 근거"
+    },
+    fr: {
+      pageTitle: "FocusGym — Application d'entraînement oculaire",
+      appIconAlt: "Icône FocusGym",
+      tagline: "Un peu de soin pour vos yeux, chaque jour.",
+      downloadBtn: "Télécharger sur l'App Store",
+      aboutLabel: "À propos de cette application",
+      aboutDesc: "FocusGym est une application d'exercices oculaires conçue pour soutenir la souplesse du muscle ciliaire. Elle propose 5 entraînements fondés sur des données scientifiques, réalisables sans effort en seulement 5 minutes par jour.",
+      disclaimerLabel: "Avertissement important :",
+      disclaimerBody: "Cette application ne constitue pas un traitement médical. Elle ne garantit pas l'amélioration de la vision ni la guérison de la presbytie. En cas d'anomalie oculaire, veuillez consulter un professionnel de santé.",
+      featuresLabel: "Fonctionnalités principales",
+      freeBadge: "Gratuit",
+      f1t: "Accommodation près-loin", f1d: "Alternez la mise au point entre le près et le loin pour soutenir la capacité d'accommodation du muscle ciliaire.",
+      f2t: "Poursuite oculaire", f2d: "Suivez doucement une balle en mouvement des yeux — un exercice de poursuite oculaire lisse.",
+      f3t: "Entraînement de convergence", f3d: "Soutient la fonction de convergence et atténue la fatigue lors de la vision de près.",
+      f4t: "Patch de Gabor", f4d: "Identifiez des motifs rayés pour activer les circuits cérébraux de traitement visuel. L'entraînement disposant des preuves scientifiques les plus solides.",
+      f5t: "Entraînement flou-net", f5d: "Des cycles répétés de flou à net favorisent une réponse de mise au point plus rapide.",
+      screenshotsLabel: "Captures d'écran",
+      ss1Alt: "Écran d'accueil", ss2Alt: "Écran de sélection d'entraînement", ss3Alt: "Écran de détail de l'entraînement", ss4Alt: "Écran d'historique et de calendrier",
+      pricingLabel: "Tarifs",
+      pricingFreeDesc: "Les 5 entraînements sont gratuits (avec publicités intégrées).",
+      pricingFreeStrong: "gratuits",
+      pricingRemoveAdsPrice: "Supprimer les publicités : 300 ¥ (achat unique)",
+      pricingNote: "Les publicités sont supprimées définitivement avec un seul achat. Ce n'est pas un abonnement.",
+      faqLabel: "Foire aux questions",
+      q1: "Q. Combien de temps dois-je m'entraîner par jour ?",
+      a1: "Chaque session est limitée à 1 minute, pour un total quotidien de 5 minutes. Un entraînement visuel excessif peut provoquer une fatigue oculaire, d'où cette limite quotidienne raisonnable.",
+      q2: "Q. Puis-je supprimer les publicités ?",
+      a2: "Oui. Depuis l'écran des réglages, vous pouvez supprimer les publicités avec un achat unique de 300 ¥. Il s'agit d'un achat unique, pas d'un abonnement.",
+      q3: "Q. Comment restaurer mon achat ?",
+      a3: "Appuyez sur « Restaurer les achats » dans l'écran des réglages. Si vous êtes connecté avec le même identifiant Apple, votre statut sans publicité sera restauré.",
+      q4: "Q. Que se passe-t-il si je change d'appareil ?",
+      a4: "Connectez-vous avec le même identifiant Apple et appuyez sur « Restaurer les achats » dans l'écran des réglages pour restaurer votre statut sans publicité.",
+      q5: "Q. Puis-je obtenir un remboursement ?",
+      a5a: "Les remboursements suivent la politique de chaque boutique d'applications. Pour l'App Store, veuillez faire votre demande sur",
+      a5b: ".",
+      q6: "Q. Quels effets puis-je attendre de l'entraînement ?",
+      a6a: "Consultez la",
+      evidenceLinkText: "page des données scientifiques",
+      a6b: "pour connaître les preuves derrière chaque entraînement.",
+      q7: "Q. Que faire en cas de douleur ou d'inconfort oculaire ?",
+      a7: "Arrêtez immédiatement l'entraînement et consultez un professionnel de santé.",
+      contactLabel: "Contact",
+      contactDesc: "Pour toute question, signalement de bug ou suggestion concernant l'application, n'hésitez pas à nous contacter ci-dessous.",
+      contactBtn: "✉ Nous contacter par e-mail",
+      linksLabel: "Liens utiles",
+      privacyLink: "Politique de confidentialité",
+      termsLink: "Conditions d'utilisation",
+      evidenceLink: "Données scientifiques"
+    },
+    de: {
+      pageTitle: "FocusGym — Augentraining-App",
+      appIconAlt: "FocusGym-Symbol",
+      tagline: "Jeden Tag ein bisschen Augenpflege.",
+      downloadBtn: "Im App Store laden",
+      aboutLabel: "Über diese App",
+      aboutDesc: "FocusGym ist eine Augenübungs-App, die die Flexibilität des Ziliarmuskels unterstützt. Sie bietet 5 wissenschaftlich fundierte Trainings, die sich mit nur 5 Minuten am Tag mühelos durchhalten lassen.",
+      disclaimerLabel: "Wichtiger Hinweis:",
+      disclaimerBody: "Diese App ist keine medizinische Behandlung. Sie garantiert keine Verbesserung der Sehkraft oder Heilung der Altersweitsichtigkeit. Wenden Sie sich bei Auffälligkeiten an den Augen bitte an eine Ärztin oder einen Arzt.",
+      featuresLabel: "Hauptfunktionen",
+      freeBadge: "Kostenlos",
+      f1t: "Nah-Fern-Fokuswechsel", f1d: "Wechseln Sie den Fokus zwischen nah und fern, um die Akkommodationsfähigkeit des Ziliarmuskels zu unterstützen.",
+      f2t: "Blickfolgetraining", f2d: "Verfolgen Sie einen bewegten Ball sanft mit den Augen — eine Übung für die glatte Augenfolgebewegung.",
+      f3t: "Konvergenztraining", f3d: "Unterstützt die Konvergenzfunktion und lindert die Ermüdung beim Sehen aus der Nähe.",
+      f4t: "Gabor-Patch", f4d: "Erkennen Sie Streifenmuster, um die visuellen Verarbeitungsschaltkreise des Gehirns zu aktivieren. Das Training mit der stärksten wissenschaftlichen Evidenz.",
+      f5t: "Unscharf-zu-Scharf-Training", f5d: "Wiederholte Unscharf-zu-Scharf-Zyklen unterstützen eine schnellere Fokussierreaktion.",
+      screenshotsLabel: "Screenshots",
+      ss1Alt: "Startbildschirm", ss2Alt: "Trainingsauswahl", ss3Alt: "Trainingsdetails", ss4Alt: "Verlauf und Kalender",
+      pricingLabel: "Preise",
+      pricingFreeDesc: "Alle 5 Trainings sind kostenlos nutzbar (mit In-App-Werbung).",
+      pricingFreeStrong: "kostenlos",
+      pricingRemoveAdsPrice: "Werbung entfernen: 300 ¥ (einmaliger Kauf)",
+      pricingNote: "Mit einem einmaligen Kauf wird die Werbung dauerhaft entfernt. Kein Abonnement.",
+      faqLabel: "Häufig gestellte Fragen",
+      q1: "F. Wie viel sollte ich täglich trainieren?",
+      a1: "Jede Sitzung ist auf 1 Minute begrenzt, insgesamt maximal 5 Minuten pro Tag. Übermäßiges visuelles Training kann zu Augenermüdung führen, daher setzen wir ein angemessenes Tageslimit.",
+      q2: "F. Kann ich die Werbung entfernen?",
+      a2: "Ja. Über den Einstellungsbildschirm können Sie die Werbung mit einem einmaligen Kauf für 300 ¥ entfernen. Es handelt sich um einen einmaligen Kauf, kein Abonnement.",
+      q3: "F. Wie stelle ich meinen Kauf wieder her?",
+      a3: "Tippen Sie im Einstellungsbildschirm auf „Käufe wiederherstellen“. Wenn Sie mit derselben Apple-ID angemeldet sind, wird Ihr werbefreier Status wiederhergestellt.",
+      q4: "F. Was passiert, wenn ich das Gerät wechsle?",
+      a4: "Melden Sie sich mit derselben Apple-ID an und tippen Sie im Einstellungsbildschirm auf „Käufe wiederherstellen“, um Ihren werbefreien Status wiederherzustellen.",
+      q5: "F. Kann ich eine Rückerstattung erhalten?",
+      a5a: "Rückerstattungen richten sich nach den Richtlinien des jeweiligen App-Stores. Für den App Store beantragen Sie dies bitte unter",
+      a5b: ".",
+      q6: "F. Welche Effekte kann ich vom Training erwarten?",
+      a6a: "Die wissenschaftliche Grundlage jedes Trainings finden Sie auf der",
+      evidenceLinkText: "Seite mit den wissenschaftlichen Nachweisen",
+      a6b: ".",
+      q7: "F. Was tun bei Augenschmerzen oder Unwohlsein?",
+      a7: "Brechen Sie das Training sofort ab und konsultieren Sie eine Ärztin oder einen Arzt.",
+      contactLabel: "Kontakt",
+      contactDesc: "Bei Fragen, Fehlerberichten oder Funktionswünschen zur App können Sie uns gerne unten kontaktieren.",
+      contactBtn: "✉ Per E-Mail kontaktieren",
+      linksLabel: "Weiterführende Links",
+      privacyLink: "Datenschutzerklärung",
+      termsLink: "Nutzungsbedingungen",
+      evidenceLink: "Wissenschaftliche Nachweise"
+    }
+  };
+
+  function detectLang() {
+    var langs = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || 'en'];
+    for (var i = 0; i < langs.length; i++) {
+      var lower = langs[i].toLowerCase();
+      if (lower.indexOf('zh') === 0) {
+        if (lower.indexOf('hant') !== -1 || lower.indexOf('-tw') !== -1 || lower.indexOf('-hk') !== -1 || lower.indexOf('-mo') !== -1) {
+          return 'zh-Hant';
+        }
+        return 'zh-Hans';
+      }
+      var base = lower.split('-')[0];
+      if (I18N.hasOwnProperty(base)) return base;
+    }
+    return 'en';
+  }
+
+  function applyI18n(lang) {
+    var dict = I18N[lang] || I18N.en;
+    document.documentElement.lang = lang;
+    if (dict.pageTitle) document.title = dict.pageTitle;
+    var textNodes = document.querySelectorAll('[data-i18n]');
+    for (var i = 0; i < textNodes.length; i++) {
+      var key = textNodes[i].getAttribute('data-i18n');
+      if (dict[key] != null) textNodes[i].textContent = dict[key];
+    }
+    var altNodes = document.querySelectorAll('[data-i18n-alt]');
+    for (var j = 0; j < altNodes.length; j++) {
+      var altKey = altNodes[j].getAttribute('data-i18n-alt');
+      if (dict[altKey] != null) altNodes[j].alt = dict[altKey];
+    }
+  }
+
+  applyI18n(detectLang());
+</script>
 
 </body>
 </html>
