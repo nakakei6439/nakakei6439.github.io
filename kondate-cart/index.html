@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>献立カート — 衝動買いをなくす、週次献立アプリ</title>
+  <title data-i18n="pageTitle">献立カート — 衝動買いをなくす、週次献立アプリ</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -223,11 +223,11 @@
 <body>
 
   <header>
-    <div class="app-icon"><img src="./icon.png" alt="献立カート アプリアイコン"></div>
-    <h1>献立カート</h1>
-    <p class="tagline">週の献立を決めて、衝動買いをなくす</p>
+    <div class="app-icon"><img src="./icon.png" data-i18n-alt="appIconAlt" alt="献立カート アプリアイコン"></div>
+    <h1 data-i18n="appName">献立カート</h1>
+    <p class="tagline" data-i18n="tagline">週の献立を決めて、衝動買いをなくす</p>
     <div class="badge-area">
-      <a class="badge-link" href="https://apps.apple.com/app/id6760213937">App Store でダウンロード</a>
+      <a class="badge-link" data-i18n="downloadBtn" href="https://apps.apple.com/app/id6760213937">App Store でダウンロード</a>
     </div>
   </header>
 
@@ -235,8 +235,8 @@
 
     <!-- アプリ説明 -->
     <div class="section-card">
-      <p class="section-label">このアプリについて</p>
-      <p class="description">
+      <p class="section-label" data-i18n="aboutLabel">このアプリについて</p>
+      <p class="description" data-i18n="aboutDesc">
         「献立カート」は、週の献立をあらかじめ決めておくことで、スーパーでの衝動買いをなくす献立管理アプリです。
         献立を登録すると必要な食材だけが買い物リストに自動で追加されるので、余分な食材を買わず、食品ロスも減らせます。
       </p>
@@ -244,62 +244,62 @@
 
     <!-- 機能 -->
     <div class="section-card">
-      <p class="section-label">主な機能</p>
+      <p class="section-label" data-i18n="featuresLabel">主な機能</p>
       <ul class="feature-list">
         <li>
           <div class="feature-icon">📅</div>
           <div class="feature-text">
-            <strong>週間献立カレンダー</strong>
-            <span>1週間の夕食を曜日ごとに登録。1日に複数の料理も可能</span>
+            <strong data-i18n="f1t">週間献立カレンダー</strong>
+            <span data-i18n="f1d">1週間の夕食を曜日ごとに登録。1日に複数の料理も可能</span>
           </div>
         </li>
         <li>
           <div class="feature-icon">🛒</div>
           <div class="feature-text">
-            <strong>買い物リストの自動生成</strong>
-            <span>献立から食材を自動集計。来週／再来週の切り替えにも対応</span>
+            <strong data-i18n="f2t">買い物リストの自動生成</strong>
+            <span data-i18n="f2d">献立から食材を自動集計。来週／再来週の切り替えにも対応</span>
           </div>
         </li>
         <li>
           <div class="feature-icon">📖</div>
           <div class="feature-text">
-            <strong>料理履歴</strong>
-            <span>過去に作った料理をワンタップで再利用。献立のマンネリを防止</span>
+            <strong data-i18n="f3t">料理履歴</strong>
+            <span data-i18n="f3d">過去に作った料理をワンタップで再利用。献立のマンネリを防止</span>
           </div>
         </li>
         <li>
           <div class="feature-icon">📶</div>
           <div class="feature-text">
-            <strong>完全オフライン対応</strong>
-            <span>通信不要。電波が混んだ店内でも問題なく動作</span>
+            <strong data-i18n="f4t">完全オフライン対応</strong>
+            <span data-i18n="f4d">通信不要。電波が混んだ店内でも問題なく動作</span>
           </div>
         </li>
         <li>
           <div class="feature-icon">🌐</div>
           <div class="feature-text">
-            <strong>5言語対応</strong>
-            <span>日本語・英語・中国語・韓国語・スペイン語</span>
+            <strong data-i18n="f5t">8言語対応</strong>
+            <span data-i18n="f5d">日本語・英語・スペイン語・中国語（簡体字・繁体字）・フランス語・ドイツ語・韓国語</span>
           </div>
         </li>
         <li>
           <div class="feature-icon">💾</div>
           <div class="feature-text">
-            <strong>バックアップ＆復元</strong>
-            <span>データをJSONファイルで書き出し・復元。機種変更にも対応</span>
+            <strong data-i18n="f6t">バックアップ＆復元</strong>
+            <span data-i18n="f6d">データをJSONファイルで書き出し・復元。機種変更にも対応</span>
           </div>
         </li>
         <li>
           <div class="feature-icon">📱</div>
           <div class="feature-text">
-            <strong>ホーム画面ウィジェット</strong>
-            <span>今日／明日の献立をホーム画面で確認。Small・Medium・Large の3サイズ対応</span>
+            <strong data-i18n="f7t">ホーム画面ウィジェット</strong>
+            <span data-i18n="f7d">今日／明日の献立をホーム画面で確認。Small・Medium・Large の3サイズ対応</span>
           </div>
         </li>
         <li>
           <div class="feature-icon">🌓</div>
           <div class="feature-text">
-            <strong>ダークモード対応</strong>
-            <span>iOS のシステム設定に追従。夜の買い物中でも見やすい配色</span>
+            <strong data-i18n="f8t">ダークモード対応</strong>
+            <span data-i18n="f8d">iOS のシステム設定に追従。夜の買い物中でも見やすい配色</span>
           </div>
         </li>
       </ul>
@@ -307,40 +307,40 @@
 
     <!-- プレミアム -->
     <div class="premium-card">
-      <p class="section-label">プレミアム</p>
-      <p class="premium-title">広告なしで快適に</p>
-      <p class="premium-desc">一度の購入でアプリ内広告を永続的に非表示にします。サブスクリプションではありません。</p>
-      <span class="premium-price">¥300 買い切り</span>
+      <p class="section-label" data-i18n="premiumLabel">プレミアム</p>
+      <p class="premium-title" data-i18n="premiumTitle">広告なしで快適に</p>
+      <p class="premium-desc" data-i18n="premiumDesc">一度の購入でアプリ内広告を永続的に非表示にします。サブスクリプションではありません。</p>
+      <span class="premium-price" data-i18n="premiumPrice">¥300 買い切り</span>
     </div>
 
     <!-- サポート -->
     <div class="section-card">
-      <p class="section-label">サポート</p>
+      <p class="section-label" data-i18n="supportLabel">サポート</p>
       <a class="support-link" href="https://apps.apple.com/app/id6760213937?action=write-review">
         <div class="support-link-left">
           <span class="support-link-icon">⭐️</span>
-          <span>レビューを書く</span>
+          <span data-i18n="reviewLink">レビューを書く</span>
         </div>
         <span class="chevron">›</span>
       </a>
       <a class="support-link" href="./how-to-use.html">
         <div class="support-link-left">
           <span class="support-link-icon">📖</span>
-          <span>使い方ガイド</span>
+          <span data-i18n="guideLink">使い方ガイド</span>
         </div>
         <span class="chevron">›</span>
       </a>
       <a class="support-link" href="mailto:nakakei6439@gmail.com">
         <div class="support-link-left">
           <span class="support-link-icon">✉️</span>
-          <span>お問い合わせ</span>
+          <span data-i18n="contactLink">お問い合わせ</span>
         </div>
         <span class="chevron">›</span>
       </a>
       <a class="support-link" href="./privacy-policy.html">
         <div class="support-link-left">
           <span class="support-link-icon">🔒</span>
-          <span>プライバシーポリシー</span>
+          <span data-i18n="privacyLink">プライバシーポリシー</span>
         </div>
         <span class="chevron">›</span>
       </a>
@@ -351,6 +351,261 @@
   <footer>
     <p>© 2026 Keita Nakagawa. All rights reserved.</p>
   </footer>
+
+  <script>
+    var I18N = {
+      ja: {
+        pageTitle: "献立カート — 衝動買いをなくす、週次献立アプリ",
+        appName: "献立カート",
+        appIconAlt: "献立カート アプリアイコン",
+        tagline: "週の献立を決めて、衝動買いをなくす",
+        downloadBtn: "App Store でダウンロード",
+        aboutLabel: "このアプリについて",
+        aboutDesc: "「献立カート」は、週の献立をあらかじめ決めておくことで、スーパーでの衝動買いをなくす献立管理アプリです。献立を登録すると必要な食材だけが買い物リストに自動で追加されるので、余分な食材を買わず、食品ロスも減らせます。",
+        featuresLabel: "主な機能",
+        f1t: "週間献立カレンダー", f1d: "1週間の夕食を曜日ごとに登録。1日に複数の料理も可能",
+        f2t: "買い物リストの自動生成", f2d: "献立から食材を自動集計。来週／再来週の切り替えにも対応",
+        f3t: "料理履歴", f3d: "過去に作った料理をワンタップで再利用。献立のマンネリを防止",
+        f4t: "完全オフライン対応", f4d: "通信不要。電波が混んだ店内でも問題なく動作",
+        f5t: "8言語対応", f5d: "日本語・英語・スペイン語・中国語（簡体字・繁体字）・フランス語・ドイツ語・韓国語",
+        f6t: "バックアップ＆復元", f6d: "データをJSONファイルで書き出し・復元。機種変更にも対応",
+        f7t: "ホーム画面ウィジェット", f7d: "今日／明日の献立をホーム画面で確認。Small・Medium・Large の3サイズ対応",
+        f8t: "ダークモード対応", f8d: "iOS のシステム設定に追従。夜の買い物中でも見やすい配色",
+        premiumLabel: "プレミアム",
+        premiumTitle: "広告なしで快適に",
+        premiumDesc: "一度の購入でアプリ内広告を永続的に非表示にします。サブスクリプションではありません。",
+        premiumPrice: "¥300 買い切り",
+        supportLabel: "サポート",
+        reviewLink: "レビューを書く",
+        guideLink: "使い方ガイド",
+        contactLink: "お問い合わせ",
+        privacyLink: "プライバシーポリシー"
+      },
+      en: {
+        pageTitle: "KondateCart — Weekly Meal Planning App That Stops Impulse Buys",
+        appName: "KondateCart",
+        appIconAlt: "KondateCart app icon",
+        tagline: "Plan your week's meals and stop impulse buying",
+        downloadBtn: "Download on the App Store",
+        aboutLabel: "About This App",
+        aboutDesc: "KondateCart is a meal planning app that stops impulse buys at the supermarket by having you plan your weekly meals ahead of time. Once you add your meals, only the ingredients you need are automatically added to your shopping list — so you never buy extra and waste less food.",
+        featuresLabel: "Key Features",
+        f1t: "Weekly Meal Calendar", f1d: "Plan dinner for each day of the week. Add multiple dishes per day",
+        f2t: "Automatic Shopping List", f2d: "Ingredients are tallied automatically from your meal plan, with next-week / week-after-next switching",
+        f3t: "Dish History", f3d: "Reuse dishes you've made before with one tap. Keep your meals from getting repetitive",
+        f4t: "Fully Offline", f4d: "No network needed — works reliably even in a crowded store with weak signal",
+        f5t: "8 Languages", f5d: "Japanese, English, Spanish, Chinese (Simplified & Traditional), French, German, Korean",
+        f6t: "Backup & Restore", f6d: "Export and restore your data as a JSON file. Works across device changes",
+        f7t: "Home Screen Widget", f7d: "See today's and tomorrow's meals on your Home Screen. Small, Medium, and Large sizes",
+        f8t: "Dark Mode", f8d: "Follows your iOS system setting for easy viewing during evening shopping",
+        premiumLabel: "Premium",
+        premiumTitle: "Go Ad-Free",
+        premiumDesc: "Remove in-app ads permanently with a single purchase. Not a subscription.",
+        premiumPrice: "One-time Purchase",
+        supportLabel: "Support",
+        reviewLink: "Write a Review",
+        guideLink: "How to Use",
+        contactLink: "Contact",
+        privacyLink: "Privacy Policy"
+      },
+      es: {
+        pageTitle: "MenúCarrito — App de menú semanal que evita las compras impulsivas",
+        appName: "MenúCarrito",
+        appIconAlt: "Icono de la app MenúCarrito",
+        tagline: "Planifica tus comidas semanales y evita las compras impulsivas",
+        downloadBtn: "Descargar en App Store",
+        aboutLabel: "Sobre esta app",
+        aboutDesc: "«MenúCarrito» es una app de planificación de comidas que evita las compras impulsivas en el supermercado al dejarte planificar tus comidas semanales con antelación. Al añadir tus comidas, solo los ingredientes que necesitas se agregan automáticamente a tu lista de compras, por lo que no compras de más ni desperdicias comida.",
+        featuresLabel: "Funciones principales",
+        f1t: "Calendario semanal de comidas", f1d: "Planifica la cena de cada día de la semana. Puedes añadir varios platos por día",
+        f2t: "Lista de compras automática", f2d: "Los ingredientes se calculan automáticamente desde tu menú, con cambio entre la próxima semana y la siguiente",
+        f3t: "Historial de platos", f3d: "Reutiliza platos que ya has preparado con un toque. Evita la monotonía en tus comidas",
+        f4t: "Totalmente sin conexión", f4d: "No requiere internet. Funciona sin problemas incluso con mala señal en la tienda",
+        f5t: "8 idiomas", f5d: "Japonés, inglés, español, chino (simplificado y tradicional), francés, alemán, coreano",
+        f6t: "Copia de seguridad y restauración", f6d: "Exporta y restaura tus datos como archivo JSON. Funciona al cambiar de dispositivo",
+        f7t: "Widget de pantalla de inicio", f7d: "Consulta las comidas de hoy y mañana desde la pantalla de inicio. Tamaños pequeño, mediano y grande",
+        f8t: "Modo oscuro", f8d: "Se adapta a la configuración del sistema iOS, ideal para comprar de noche",
+        premiumLabel: "Premium",
+        premiumTitle: "Disfruta sin anuncios",
+        premiumDesc: "Elimina los anuncios de la app de forma permanente con una sola compra. No es una suscripción.",
+        premiumPrice: "Compra única",
+        supportLabel: "Soporte",
+        reviewLink: "Escribir una reseña",
+        guideLink: "Guía de uso",
+        contactLink: "Contacto",
+        privacyLink: "Política de privacidad"
+      },
+      "zh-Hans": {
+        pageTitle: "菜单购物车 — 拒绝冲动消费的每周菜单规划App",
+        appName: "菜单购物车",
+        appIconAlt: "菜单购物车 App图标",
+        tagline: "提前规划本周菜单，告别冲动消费",
+        downloadBtn: "在 App Store 下载",
+        aboutLabel: "关于此App",
+        aboutDesc: "「菜单购物车」是一款通过提前规划本周菜单来避免超市冲动消费的菜单管理App。登记菜单后，所需食材会自动添加到购物清单中，不会多买，也能减少食物浪费。",
+        featuresLabel: "主要功能",
+        f1t: "每周菜单日历", f1d: "按星期登记每天的晚餐，一天也可以登记多道菜",
+        f2t: "自动生成购物清单", f2d: "根据菜单自动汇总食材，支持在下周／下下周之间切换",
+        f3t: "菜肴历史", f3d: "一键复用做过的菜肴，避免菜单千篇一律",
+        f4t: "完全离线可用", f4d: "无需联网，即使在信号不好的店内也能正常使用",
+        f5t: "支持8种语言", f5d: "日语、英语、西班牙语、中文（简体和繁体）、法语、德语、韩语",
+        f6t: "备份与还原", f6d: "可将数据导出为 JSON 文件并还原，换机时也能使用",
+        f7t: "主屏幕小组件", f7d: "在主屏幕查看今天／明天的菜单，支持小、中、大三种尺寸",
+        f8t: "深色模式", f8d: "跟随 iOS 系统设置，夜间购物也清晰易读",
+        premiumLabel: "高级版",
+        premiumTitle: "无广告，体验更舒适",
+        premiumDesc: "一次购买即可永久隐藏App内广告，非订阅制。",
+        premiumPrice: "买断制",
+        supportLabel: "支持与帮助",
+        reviewLink: "撰写评价",
+        guideLink: "使用指南",
+        contactLink: "联系我们",
+        privacyLink: "隐私政策"
+      },
+      "zh-Hant": {
+        pageTitle: "菜單購物車 — 拒絕衝動購物的每週菜單規劃App",
+        appName: "菜單購物車",
+        appIconAlt: "菜單購物車 App圖示",
+        tagline: "提前規劃本週菜單，告別衝動購物",
+        downloadBtn: "在 App Store 下載",
+        aboutLabel: "關於此App",
+        aboutDesc: "「菜單購物車」是一款透過提前規劃本週菜單來避免在超市衝動購物的菜單管理App。登錄菜單後，所需食材會自動加入購物清單，不會多買，也能減少食物浪費。",
+        featuresLabel: "主要功能",
+        f1t: "每週菜單行事曆", f1d: "依星期登錄每天的晚餐，一天也可以登錄多道菜色",
+        f2t: "自動產生購物清單", f2d: "根據菜單自動彙總食材，支援在下週／下下週之間切換",
+        f3t: "菜色歷史", f3d: "一鍵重複使用做過的菜色，避免菜單一成不變",
+        f4t: "完全離線可用", f4d: "無需連網，即使在訊號不佳的店內也能正常運作",
+        f5t: "支援8種語言", f5d: "日語、英語、西班牙語、中文（簡體與繁體）、法語、德語、韓語",
+        f6t: "備份與還原", f6d: "可將資料匯出為 JSON 檔並還原，換機時也能使用",
+        f7t: "主畫面小工具", f7d: "在主畫面查看今天／明天的菜單，支援小、中、大三種尺寸",
+        f8t: "深色模式", f8d: "跟隨 iOS 系統設定，夜間購物也清晰好讀",
+        premiumLabel: "高級版",
+        premiumTitle: "無廣告，體驗更舒適",
+        premiumDesc: "一次購買即可永久隱藏App內廣告，非訂閱制。",
+        premiumPrice: "買斷制",
+        supportLabel: "支援與協助",
+        reviewLink: "撰寫評論",
+        guideLink: "使用指南",
+        contactLink: "聯絡我們",
+        privacyLink: "隱私權政策"
+      },
+      ko: {
+        pageTitle: "식단카트 — 충동구매를 없애는 주간 식단 관리 앱",
+        appName: "식단카트",
+        appIconAlt: "식단카트 앱 아이콘",
+        tagline: "일주일 식단을 미리 정하고, 충동구매를 없애세요",
+        downloadBtn: "App Store에서 다운로드",
+        aboutLabel: "앱 소개",
+        aboutDesc: "'식단카트'는 일주일치 식단을 미리 정해두어 마트에서의 충동구매를 없애주는 식단 관리 앱입니다. 식단을 등록하면 필요한 재료만 자동으로 장보기 목록에 추가되어, 불필요한 재료 구매와 음식물 낭비를 줄일 수 있습니다.",
+        featuresLabel: "주요 기능",
+        f1t: "주간 식단 캘린더", f1d: "요일별로 저녁 식단을 등록하세요. 하루에 여러 요리도 등록 가능",
+        f2t: "장보기 목록 자동 생성", f2d: "식단에서 재료를 자동으로 집계. 다음 주／다다음 주 전환도 지원",
+        f3t: "요리 히스토리", f3d: "예전에 만든 요리를 한 번의 탭으로 재사용. 식단이 단조로워지는 것을 방지",
+        f4t: "완전 오프라인 지원", f4d: "인터넷 연결 불필요. 신호가 약한 매장 안에서도 문제없이 작동",
+        f5t: "8개 언어 지원", f5d: "일본어, 영어, 스페인어, 중국어(간체자·번체자), 프랑스어, 독일어, 한국어",
+        f6t: "백업 및 복원", f6d: "데이터를 JSON 파일로 내보내기·복원. 기기 변경 시에도 사용 가능",
+        f7t: "홈 화면 위젯", f7d: "오늘／내일 식단을 홈 화면에서 확인. Small·Medium·Large 3가지 크기 지원",
+        f8t: "다크 모드 지원", f8d: "iOS 시스템 설정을 따릅니다. 저녁 장보기 중에도 보기 편한 배색",
+        premiumLabel: "프리미엄",
+        premiumTitle: "광고 없이 쾌적하게",
+        premiumDesc: "한 번의 구매로 앱 내 광고를 영구적으로 숨깁니다. 구독이 아닙니다.",
+        premiumPrice: "단품 구매",
+        supportLabel: "지원",
+        reviewLink: "리뷰 작성하기",
+        guideLink: "사용 가이드",
+        contactLink: "문의하기",
+        privacyLink: "개인정보 처리방침"
+      },
+      fr: {
+        pageTitle: "MenuPanier — L'appli de menu hebdomadaire qui évite les achats impulsifs",
+        appName: "MenuPanier",
+        appIconAlt: "Icône de l'application MenuPanier",
+        tagline: "Planifiez vos repas de la semaine et évitez les achats impulsifs",
+        downloadBtn: "Télécharger sur l'App Store",
+        aboutLabel: "À propos de cette application",
+        aboutDesc: "« MenuPanier » est une application de planification de repas qui évite les achats impulsifs au supermarché en vous permettant de planifier vos repas de la semaine à l'avance. Une fois vos repas ajoutés, seuls les ingrédients nécessaires sont automatiquement ajoutés à votre liste de courses : vous n'achetez plus en trop et gaspillez moins de nourriture.",
+        featuresLabel: "Fonctionnalités principales",
+        f1t: "Calendrier de repas hebdomadaire", f1d: "Planifiez le dîner pour chaque jour de la semaine. Plusieurs plats possibles par jour",
+        f2t: "Liste de courses automatique", f2d: "Les ingrédients sont calculés automatiquement à partir de votre menu, avec bascule entre la semaine prochaine et celle d'après",
+        f3t: "Historique des plats", f3d: "Réutilisez en un geste les plats déjà préparés. Évitez la monotonie de vos menus",
+        f4t: "Fonctionne entièrement hors ligne", f4d: "Aucune connexion nécessaire — fonctionne sans problème même avec un mauvais signal en magasin",
+        f5t: "8 langues", f5d: "japonais, anglais, espagnol, chinois (simplifié et traditionnel), français, allemand, coréen",
+        f6t: "Sauvegarde et restauration", f6d: "Exportez et restaurez vos données en fichier JSON. Fonctionne lors d'un changement d'appareil",
+        f7t: "Widget d'écran d'accueil", f7d: "Consultez les repas d'aujourd'hui et de demain depuis l'écran d'accueil. Tailles Small, Medium et Large",
+        f8t: "Mode sombre", f8d: "Suit les réglages système d'iOS, pratique pour faire les courses le soir",
+        premiumLabel: "Premium",
+        premiumTitle: "Profitez sans publicité",
+        premiumDesc: "Supprimez définitivement les publicités in-app avec un seul achat. Ce n'est pas un abonnement.",
+        premiumPrice: "Achat unique",
+        supportLabel: "Assistance",
+        reviewLink: "Laisser un avis",
+        guideLink: "Guide d'utilisation",
+        contactLink: "Nous contacter",
+        privacyLink: "Politique de confidentialité"
+      },
+      de: {
+        pageTitle: "MenüKorb — Die Wochenmenü-App gegen Spontankäufe",
+        appName: "MenüKorb",
+        appIconAlt: "MenüKorb App-Symbol",
+        tagline: "Planen Sie Ihre Wochenmahlzeiten und vermeiden Sie Spontankäufe",
+        downloadBtn: "Im App Store laden",
+        aboutLabel: "Über diese App",
+        aboutDesc: "„MenüKorb“ ist eine App zur Essensplanung, die Spontankäufe im Supermarkt verhindert, indem Sie Ihre wöchentlichen Mahlzeiten im Voraus planen. Sobald Sie Ihre Mahlzeiten hinzufügen, werden nur die benötigten Zutaten automatisch zu Ihrer Einkaufsliste hinzugefügt — so kaufen Sie nichts Überflüssiges und verschwenden weniger Lebensmittel.",
+        featuresLabel: "Hauptfunktionen",
+        f1t: "Wöchentlicher Menükalender", f1d: "Planen Sie das Abendessen für jeden Wochentag. Mehrere Gerichte pro Tag möglich",
+        f2t: "Automatische Einkaufsliste", f2d: "Zutaten werden automatisch aus Ihrem Menüplan zusammengestellt, mit Umschalten zwischen nächster und übernächster Woche",
+        f3t: "Gerichteverlauf", f3d: "Bereits zubereitete Gerichte mit einem Tipp wiederverwenden. Beugt Eintönigkeit im Speiseplan vor",
+        f4t: "Vollständig offline nutzbar", f4d: "Keine Internetverbindung nötig — funktioniert zuverlässig auch bei schlechtem Empfang im Laden",
+        f5t: "8 Sprachen", f5d: "Japanisch, Englisch, Spanisch, Chinesisch (vereinfacht und traditionell), Französisch, Deutsch, Koreanisch",
+        f6t: "Sicherung & Wiederherstellung", f6d: "Daten als JSON-Datei exportieren und wiederherstellen. Funktioniert auch bei Gerätewechsel",
+        f7t: "Homescreen-Widget", f7d: "Heutige und morgige Mahlzeiten direkt auf dem Homescreen sehen. In den Größen Small, Medium und Large",
+        f8t: "Dunkelmodus", f8d: "Folgt der iOS-Systemeinstellung — gut lesbar auch beim abendlichen Einkauf",
+        premiumLabel: "Premium",
+        premiumTitle: "Werbefrei genießen",
+        premiumDesc: "Entfernen Sie In-App-Werbung dauerhaft mit einem einmaligen Kauf. Kein Abonnement.",
+        premiumPrice: "Einmaliger Kauf",
+        supportLabel: "Support",
+        reviewLink: "Bewertung schreiben",
+        guideLink: "Anleitung",
+        contactLink: "Kontakt",
+        privacyLink: "Datenschutzerklärung"
+      }
+    };
+
+    function detectLang() {
+      var langs = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || 'en'];
+      for (var i = 0; i < langs.length; i++) {
+        var lower = langs[i].toLowerCase();
+        if (lower.indexOf('zh') === 0) {
+          if (lower.indexOf('hant') !== -1 || lower.indexOf('-tw') !== -1 || lower.indexOf('-hk') !== -1 || lower.indexOf('-mo') !== -1) {
+            return 'zh-Hant';
+          }
+          return 'zh-Hans';
+        }
+        var base = lower.split('-')[0];
+        if (I18N.hasOwnProperty(base)) return base;
+      }
+      return 'en';
+    }
+
+    function applyI18n(lang) {
+      var dict = I18N[lang] || I18N.en;
+      document.documentElement.lang = lang;
+      if (dict.pageTitle) document.title = dict.pageTitle;
+      var textNodes = document.querySelectorAll('[data-i18n]');
+      for (var i = 0; i < textNodes.length; i++) {
+        var key = textNodes[i].getAttribute('data-i18n');
+        if (dict[key] != null) textNodes[i].textContent = dict[key];
+      }
+      var altNodes = document.querySelectorAll('[data-i18n-alt]');
+      for (var j = 0; j < altNodes.length; j++) {
+        var altKey = altNodes[j].getAttribute('data-i18n-alt');
+        if (dict[altKey] != null) altNodes[j].alt = dict[altKey];
+      }
+    }
+
+    applyI18n(detectLang());
+  </script>
 
 </body>
 </html>
