@@ -19,54 +19,79 @@
       background-clip: text;
       color: transparent;
     }
+    html:not(.i18n-ready) body { opacity: 0; }
+    body { opacity: 1; transition: opacity .15s ease; }
+    #langSwitcher {
+      -webkit-appearance: none;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%239ca3af'%3E%3Cpath fill-rule='evenodd' d='M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z' clip-rule='evenodd'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0.75rem center;
+      background-size: 1em;
+      padding-right: 2.25rem;
+    }
   </style>
 </head>
 <body class="bg-gray-950 text-white antialiased">
 
+  <!-- Language switcher -->
+  <div class="fixed top-4 right-4 z-50">
+    <select id="langSwitcher" class="bg-gray-900/90 border border-gray-700 text-gray-200 text-sm rounded-full pl-4 py-2 backdrop-blur focus:outline-none focus:ring-2 focus:ring-fuchsia-400 cursor-pointer">
+      <option value="ja">日本語</option>
+      <option value="en">English</option>
+      <option value="de">Deutsch</option>
+      <option value="fr">Français</option>
+      <option value="es">Español</option>
+      <option value="zh-Hans">简体中文</option>
+      <option value="zh-Hant">繁體中文</option>
+      <option value="ko">한국어</option>
+    </select>
+  </div>
+
   <!-- Hero -->
   <section class="px-6 pt-20 pb-24 max-w-5xl mx-auto text-center">
-    <p class="text-sm uppercase tracking-widest text-fuchsia-300 mb-4">For Indie Developers</p>
+    <p class="text-sm uppercase tracking-widest text-fuchsia-300 mb-4" data-i18n="hero.eyebrow">For Indie Developers</p>
     <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight leading-tight">
       <span class="brand-gradient">Code Tweet</span>
     </h1>
-    <p class="mt-6 text-lg md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+    <p class="mt-6 text-lg md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed" data-i18n="hero.subtitle">
       GitHub リポジトリ URL を貼るだけで、<br class="hidden md:block">
       README から 1 週間分の X 向けポストを <span class="text-white font-bold">5 本まとめて</span>作成します。
     </p>
     <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
       <a href="https://code-tweet.vercel.app/" target="_blank" rel="noopener"
-         class="inline-block bg-white text-gray-950 font-bold px-8 py-4 rounded-full hover:bg-gray-200 transition">
+         class="inline-block bg-white text-gray-950 font-bold px-8 py-4 rounded-full hover:bg-gray-200 transition" data-i18n="hero.cta1">
         アプリを使う →
       </a>
       <a href="#features"
-         class="inline-block border border-gray-700 text-gray-300 font-medium px-8 py-4 rounded-full hover:border-gray-400 hover:text-white transition">
+         class="inline-block border border-gray-700 text-gray-300 font-medium px-8 py-4 rounded-full hover:border-gray-400 hover:text-white transition" data-i18n="hero.cta2">
         できることを見る
       </a>
     </div>
-    <p class="mt-6 text-sm text-gray-500">無料で 3 回まで試せます（登録不要）</p>
+    <p class="mt-6 text-sm text-gray-500" data-i18n="hero.note">無料で 3 回まで試せます（登録不要）</p>
   </section>
 
   <!-- Pain -->
   <section class="px-6 py-20 bg-gray-900/40">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-2xl md:text-3xl font-bold text-center mb-12">
+      <h2 class="text-2xl md:text-3xl font-bold text-center mb-12" data-i18n="pain.h2">
         個人開発の<span class="brand-gradient">継続発信</span>、こんなことありませんか？
       </h2>
       <div class="grid md:grid-cols-3 gap-6">
         <div class="bg-gray-900 rounded-2xl p-6 border border-gray-800">
           <div class="text-3xl mb-3">😩</div>
-          <h3 class="font-bold mb-2">毎日ネタを考えるのが大変</h3>
-          <p class="text-sm text-gray-400 leading-relaxed">「同じ告知ばかり」「もう何を書けばいいか…」となって発信が止まる。</p>
+          <h3 class="font-bold mb-2" data-i18n="pain.c1t">毎日ネタを考えるのが大変</h3>
+          <p class="text-sm text-gray-400 leading-relaxed" data-i18n="pain.c1b">「同じ告知ばかり」「もう何を書けばいいか…」となって発信が止まる。</p>
         </div>
         <div class="bg-gray-900 rounded-2xl p-6 border border-gray-800">
           <div class="text-3xl mb-3">📝</div>
-          <h3 class="font-bold mb-2">文章を考える時間がない</h3>
-          <p class="text-sm text-gray-400 leading-relaxed">開発に集中したい。でも宣伝もしないと使ってもらえない。</p>
+          <h3 class="font-bold mb-2" data-i18n="pain.c2t">文章を考える時間がない</h3>
+          <p class="text-sm text-gray-400 leading-relaxed" data-i18n="pain.c2b">開発に集中したい。でも宣伝もしないと使ってもらえない。</p>
         </div>
         <div class="bg-gray-900 rounded-2xl p-6 border border-gray-800">
           <div class="text-3xl mb-3">📉</div>
-          <h3 class="font-bold mb-2">毎回トーンがバラバラ</h3>
-          <p class="text-sm text-gray-400 leading-relaxed">真面目だったりカジュアルだったり、ブランドが定まらない。</p>
+          <h3 class="font-bold mb-2" data-i18n="pain.c3t">毎回トーンがバラバラ</h3>
+          <p class="text-sm text-gray-400 leading-relaxed" data-i18n="pain.c3b">真面目だったりカジュアルだったり、ブランドが定まらない。</p>
         </div>
       </div>
     </div>
@@ -74,26 +99,26 @@
 
   <!-- How it works -->
   <section class="px-6 py-20 max-w-5xl mx-auto">
-    <h2 class="text-2xl md:text-3xl font-bold text-center mb-4">
+    <h2 class="text-2xl md:text-3xl font-bold text-center mb-4" data-i18n="how.h2">
       使い方は<span class="brand-gradient">たった 3 ステップ</span>
     </h2>
-    <p class="text-center text-gray-400 mb-14">面倒な設定は一切なし。リポジトリ URL を貼るだけ。</p>
+    <p class="text-center text-gray-400 mb-14" data-i18n="how.sub">面倒な設定は一切なし。リポジトリ URL を貼るだけ。</p>
 
     <div class="grid md:grid-cols-3 gap-8">
       <div class="text-center">
         <div class="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-cyan-300 to-fuchsia-300 text-gray-950 text-2xl font-extrabold flex items-center justify-center mb-5">1</div>
-        <h3 class="font-bold text-lg mb-2">URL を貼る</h3>
-        <p class="text-sm text-gray-400 leading-relaxed">紹介したい GitHub リポジトリの URL を入力欄に貼り付けます。</p>
+        <h3 class="font-bold text-lg mb-2" data-i18n="how.s1t">URL を貼る</h3>
+        <p class="text-sm text-gray-400 leading-relaxed" data-i18n="how.s1b">紹介したい GitHub リポジトリの URL を入力欄に貼り付けます。</p>
       </div>
       <div class="text-center">
         <div class="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-fuchsia-300 to-yellow-200 text-gray-950 text-2xl font-extrabold flex items-center justify-center mb-5">2</div>
-        <h3 class="font-bold text-lg mb-2">条件を選ぶ</h3>
-        <p class="text-sm text-gray-400 leading-relaxed">トーン（真面目／カジュアル）やターゲット読者を指定。空欄でも OK。</p>
+        <h3 class="font-bold text-lg mb-2" data-i18n="how.s2t">条件を選ぶ</h3>
+        <p class="text-sm text-gray-400 leading-relaxed" data-i18n="how.s2b">トーン（真面目／カジュアル）やターゲット読者を指定。空欄でも OK。</p>
       </div>
       <div class="text-center">
         <div class="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-yellow-200 to-cyan-300 text-gray-950 text-2xl font-extrabold flex items-center justify-center mb-5">3</div>
-        <h3 class="font-bold text-lg mb-2">5 本まとめて生成</h3>
-        <p class="text-sm text-gray-400 leading-relaxed">紹介・使い方・ユースケース・共感・CTA の 5 本が一度に出来上がり。</p>
+        <h3 class="font-bold text-lg mb-2" data-i18n="how.s3t">5 本まとめて生成</h3>
+        <p class="text-sm text-gray-400 leading-relaxed" data-i18n="how.s3b">紹介・使い方・ユースケース・共感・CTA の 5 本が一度に出来上がり。</p>
       </div>
     </div>
   </section>
@@ -101,63 +126,104 @@
   <!-- Features -->
   <section id="features" class="px-6 py-20 bg-gray-900/40">
     <div class="max-w-5xl mx-auto">
-      <h2 class="text-2xl md:text-3xl font-bold text-center mb-14">
+      <h2 class="text-2xl md:text-3xl font-bold text-center mb-14" data-i18n="features.h2">
         <span class="brand-gradient">継続発信</span>に効くこだわり
       </h2>
       <div class="grid md:grid-cols-2 gap-6">
         <div class="bg-gray-900 rounded-2xl p-6 border border-gray-800">
-          <h3 class="font-bold mb-2 text-cyan-300">📖 README を自動取得</h3>
-          <p class="text-sm text-gray-400 leading-relaxed">URL を貼るだけでリポジトリの README を自動で読み込み、AI が要点を抽出します。</p>
+          <h3 class="font-bold mb-2 text-cyan-300" data-i18n="features.f1t">📖 README を自動取得</h3>
+          <p class="text-sm text-gray-400 leading-relaxed" data-i18n="features.f1b">URL を貼るだけでリポジトリの README を自動で読み込み、AI が要点を抽出します。</p>
         </div>
         <div class="bg-gray-900 rounded-2xl p-6 border border-gray-800">
-          <h3 class="font-bold mb-2 text-fuchsia-300">🎯 5 段ストーリーアーク</h3>
-          <p class="text-sm text-gray-400 leading-relaxed">紹介 → 使い方 → ユースケース → 共感 → CTA の流れで 5 本生成。1 週間分の投稿計画がそのまま完成。</p>
+          <h3 class="font-bold mb-2 text-fuchsia-300" data-i18n="features.f2t">🎯 5 段ストーリーアーク</h3>
+          <p class="text-sm text-gray-400 leading-relaxed" data-i18n="features.f2b">紹介 → 使い方 → ユースケース → 共感 → CTA の流れで 5 本生成。1 週間分の投稿計画がそのまま完成。</p>
         </div>
         <div class="bg-gray-900 rounded-2xl p-6 border border-gray-800">
-          <h3 class="font-bold mb-2 text-yellow-200">🕒 推奨投稿日時つき</h3>
-          <p class="text-sm text-gray-400 leading-relaxed">各ポストに「いつ投稿すると良いか」の目安が付くので、投稿予約にそのまま使えます。</p>
+          <h3 class="font-bold mb-2 text-yellow-200" data-i18n="features.f3t">🕒 推奨投稿日時つき</h3>
+          <p class="text-sm text-gray-400 leading-relaxed" data-i18n="features.f3b">各ポストに「いつ投稿すると良いか」の目安が付くので、投稿予約にそのまま使えます。</p>
         </div>
         <div class="bg-gray-900 rounded-2xl p-6 border border-gray-800">
-          <h3 class="font-bold mb-2 text-cyan-300">✂️ 280 字自動チェック</h3>
-          <p class="text-sm text-gray-400 leading-relaxed">X の文字数制限に収まるかリアルタイムで確認。コピペしてすぐ投稿できます。</p>
+          <h3 class="font-bold mb-2 text-cyan-300" data-i18n="features.f4t">✂️ 280 字自動チェック</h3>
+          <p class="text-sm text-gray-400 leading-relaxed" data-i18n="features.f4b">X の文字数制限に収まるかリアルタイムで確認。コピペしてすぐ投稿できます。</p>
         </div>
         <div class="bg-gray-900 rounded-2xl p-6 border border-gray-800">
-          <h3 class="font-bold mb-2 text-fuchsia-300">🚀 ワンクリックで X へ</h3>
-          <p class="text-sm text-gray-400 leading-relaxed">生成したポストは「X で投稿」ボタンから、本文入りの投稿画面をそのまま開けます。コピー&貼り付け不要。</p>
+          <h3 class="font-bold mb-2 text-fuchsia-300" data-i18n="features.f5t">🚀 ワンクリックで X へ</h3>
+          <p class="text-sm text-gray-400 leading-relaxed" data-i18n="features.f5b">生成したポストは「X で投稿」ボタンから、本文入りの投稿画面をそのまま開けます。コピー&貼り付け不要。</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- App SS -->
+  <section id="appss" class="px-6 py-20 bg-gray-900/40">
+    <div class="max-w-5xl mx-auto">
+      <p class="text-sm uppercase tracking-widest text-cyan-300 mb-4 text-center" data-i18n="appss.eyebrow">New</p>
+      <h2 class="text-2xl md:text-3xl font-bold text-center mb-4" data-i18n="appss.h2">
+        <span class="brand-gradient">App SS</span> — App Store のスクショも、同じ README から
+      </h2>
+      <p class="text-center text-gray-400 max-w-2xl mx-auto mb-14 leading-relaxed" data-i18n="appss.body">
+        Code Tweet と同じ README を使って、App Store 提出用のスクリーンショット（＝ダウンロードを左右する“広告”）をAIと一緒に作成できるツールです。README を貼るだけでアプリ名・説明・機能をAIが自動で読み取り、見出しコピー・このアプリ専用の配色パレット・レイアウトまで一気に生成。あとは自分のアプリ画面を入れて書き出すだけ、すべてブラウザだけで完結します。
+      </p>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-gray-900 rounded-2xl p-6 border border-gray-800">
+          <h3 class="font-bold mb-2 text-cyan-300" data-i18n="appss.f1t">📖 README からアプリ情報を自動入力</h3>
+          <p class="text-sm text-gray-400 leading-relaxed" data-i18n="appss.f1b">README を貼り付けるだけで、AIがアプリ名・説明・主な機能を読み取って入力欄に反映。仮入力として使い、そこから自由に編集できます。</p>
+        </div>
+        <div class="bg-gray-900 rounded-2xl p-6 border border-gray-800">
+          <h3 class="font-bold mb-2 text-fuchsia-300" data-i18n="appss.f2t">🎨 専用配色パレットをAIが都度生成</h3>
+          <p class="text-sm text-gray-400 leading-relaxed" data-i18n="appss.f2b">既製テーマから選ぶだけでなく、アプリの雰囲気に合わせた配色をAIがそのつど新しく生成。テーマ 11 種・日本語フォント 9 種から手動でも選べます。</p>
+        </div>
+        <div class="bg-gray-900 rounded-2xl p-6 border border-gray-800">
+          <h3 class="font-bold mb-2 text-yellow-200" data-i18n="appss.f3t">✂️ 強調ワードを自動ハイライト</h3>
+          <p class="text-sm text-gray-400 leading-relaxed" data-i18n="appss.f3b">各見出しで一番刺さる語をAIが選び、アクセント色で自動強調。プロのスクショ広告に欠かせない“一語の強調”をそのまま再現します。</p>
+        </div>
+        <div class="bg-gray-900 rounded-2xl p-6 border border-gray-800">
+          <h3 class="font-bold mb-2 text-cyan-300" data-i18n="appss.f4t">🔒 画像は端末内だけで処理</h3>
+          <p class="text-sm text-gray-400 leading-relaxed" data-i18n="appss.f4b">取り込んだスクリーンショットはブラウザ内にのみ保存され、サーバーには送信されません。未公開アプリのスクショも安心して扱えます。</p>
+        </div>
+        <div class="bg-gray-900 rounded-2xl p-6 border border-gray-800 md:col-span-2">
+          <h3 class="font-bold mb-2 text-fuchsia-300" data-i18n="appss.f5t">🚀 App Store 全サイズを一括書き出し</h3>
+          <p class="text-sm text-gray-400 leading-relaxed" data-i18n="appss.f5b">6.9 / 6.5 / 6.3 / 6.1 インチを一度に PNG で書き出し、そのまま App Store Connect にアップロードできます。</p>
+        </div>
+      </div>
+      <div class="mt-10 text-center">
+        <a href="https://code-tweet.vercel.app/appss" target="_blank" rel="noopener"
+           class="inline-block bg-white text-gray-950 font-bold px-8 py-4 rounded-full hover:bg-gray-200 transition" data-i18n="appss.cta">
+          App SS を使う →
+        </a>
       </div>
     </div>
   </section>
 
   <!-- Pricing -->
   <section class="px-6 py-20 max-w-5xl mx-auto">
-    <h2 class="text-2xl md:text-3xl font-bold text-center mb-4">
+    <h2 class="text-2xl md:text-3xl font-bold text-center mb-4" data-i18n="pricing.h2">
       <span class="brand-gradient">料金プラン</span>
     </h2>
-    <p class="text-center text-gray-400 mb-14">まずは無料で試して、必要になったら Pro へ。</p>
+    <p class="text-center text-gray-400 mb-14" data-i18n="pricing.sub">まずは無料で試して、足りない分だけクレジットを買い足す。サブスク不要です。</p>
 
     <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
       <div class="bg-gray-900 rounded-2xl p-8 border border-gray-800">
-        <h3 class="text-xl font-bold mb-2">無料プラン</h3>
-        <p class="text-3xl font-extrabold mb-1">¥0<span class="text-base font-normal text-gray-400"> / 月</span></p>
-        <p class="text-sm text-gray-400 mb-6">まず試してみたい人向け</p>
+        <h3 class="text-xl font-bold mb-2" data-i18n="pricing.freeTitle">無料プラン</h3>
+        <p class="text-3xl font-extrabold mb-1" data-i18n="pricing.freePrice">¥0<span class="text-base font-normal text-gray-400"> / 月</span></p>
+        <p class="text-sm text-gray-400 mb-6" data-i18n="pricing.freeDesc">まず試してみたい人向け</p>
         <ul class="space-y-2 text-sm text-gray-300">
-          <li>✓ 月 3 回まで生成</li>
-          <li>✓ README 1,000 文字まで</li>
-          <li>✓ 5 段ストーリーアーク</li>
-          <li class="text-gray-600">— プライベートリポジトリ非対応</li>
+          <li data-i18n="pricing.freeLi1">✓ 月 3 回まで生成</li>
+          <li data-i18n="pricing.freeLi2">✓ README 1,000 文字まで</li>
+          <li data-i18n="pricing.freeLi3">✓ 5 段ストーリーアーク（Code Tweet）/ App SS のコピー＆デザイン生成</li>
+          <li class="text-gray-600" data-i18n="pricing.freeLi4">— プライベートリポジトリ非対応</li>
         </ul>
       </div>
       <div class="bg-gradient-to-br from-cyan-950 via-fuchsia-950 to-yellow-950 rounded-2xl p-8 border border-fuchsia-700 relative">
-        <span class="absolute -top-3 right-6 bg-fuchsia-400 text-gray-950 text-xs font-bold px-3 py-1 rounded-full">おすすめ</span>
-        <h3 class="text-xl font-bold mb-2">Pro プラン</h3>
-        <p class="text-3xl font-extrabold mb-1">¥500<span class="text-base font-normal text-gray-400"> / 月</span></p>
-        <p class="text-sm text-gray-300 mb-6">本格的に発信していきたい人へ</p>
+        <span class="absolute -top-3 right-6 bg-fuchsia-400 text-gray-950 text-xs font-bold px-3 py-1 rounded-full" data-i18n="pricing.badge">おすすめ</span>
+        <h3 class="text-xl font-bold mb-2" data-i18n="pricing.packTitle">クレジットパック</h3>
+        <p class="text-3xl font-extrabold mb-1" data-i18n="pricing.packPrice">¥100<span class="text-base font-normal text-gray-400"> 〜</span></p>
+        <p class="text-sm text-gray-300 mb-6" data-i18n="pricing.packDesc">サブスク不要・使う分だけ買い足し</p>
         <ul class="space-y-2 text-sm text-gray-100">
-          <li>✓ <span class="font-bold">月 30 回</span>まで生成</li>
-          <li>✓ README <span class="font-bold">10,000 文字</span>まで</li>
-          <li>✓ プライベートリポジトリ対応</li>
-          <li>✓ Stripe で安全に決済・いつでも解約</li>
+          <li data-i18n="pricing.packLi1">✓ 10回 ¥100 / 30回 ¥300 / 50回 ¥500 / 100回 ¥700</li>
+          <li data-i18n="pricing.packLi2">✓ クレジットは<span class="font-bold">無期限</span>（月をまたいでも消えない）</li>
+          <li data-i18n="pricing.packLi3">✓ README <span class="font-bold">10,000 文字</span>まで／プライベートリポジトリ対応</li>
+          <li data-i18n="pricing.packLi4">✓ Code Tweet・App SS で共通して使える</li>
         </ul>
       </div>
     </div>
@@ -165,21 +231,777 @@
 
   <!-- Final CTA -->
   <section class="px-6 py-24 text-center">
-    <h2 class="text-3xl md:text-4xl font-extrabold mb-6">
+    <h2 class="text-3xl md:text-4xl font-extrabold mb-6" data-i18n="finalCta.h2">
       まずは<span class="brand-gradient">無料</span>で試してみる
     </h2>
-    <p class="text-gray-400 mb-10 max-w-xl mx-auto">登録不要・3 回までゲスト利用 OK。最初の 1 本を 1 分で。</p>
+    <p class="text-gray-400 mb-10 max-w-xl mx-auto" data-i18n="finalCta.body">登録不要・3 回までゲスト利用 OK。最初の 1 本を 1 分で。</p>
     <a href="https://code-tweet.vercel.app/" target="_blank" rel="noopener"
-       class="inline-block bg-white text-gray-950 font-bold text-lg px-10 py-5 rounded-full hover:bg-gray-200 transition">
+       class="inline-block bg-white text-gray-950 font-bold text-lg px-10 py-5 rounded-full hover:bg-gray-200 transition" data-i18n="finalCta.cta">
       Code Tweet を開く →
     </a>
   </section>
 
   <!-- Footer -->
   <footer class="border-t border-gray-900 px-6 py-10 text-center text-sm text-gray-500">
-    <a href="../" class="hover:text-white transition">← nakakei6439 のアプリ一覧へ</a>
+    <a href="../" class="hover:text-white transition" data-i18n="footer.back">← nakakei6439 のアプリ一覧へ</a>
     <p class="mt-6">© 2026 Keita Nakagawa. All rights reserved.</p>
   </footer>
+
+  <script>
+    var translations = {
+      ja: {
+        meta: {
+          title: "Code Tweet — GitHub README から1週間分のXポストを5本自動生成",
+          desc: "GitHubリポジトリURLを貼るだけで、READMEからX向けの投稿文を5本まとめて作成。個人開発者のための継続発信ツール。"
+        },
+        hero: {
+          eyebrow: "For Indie Developers",
+          subtitle: `GitHub リポジトリ URL を貼るだけで、<br class="hidden md:block">README から 1 週間分の X 向けポストを <span class="text-white font-bold">5 本まとめて</span>作成します。`,
+          cta1: "アプリを使う →",
+          cta2: "できることを見る",
+          note: "無料で 3 回まで試せます（登録不要）"
+        },
+        pain: {
+          h2: `個人開発の<span class="brand-gradient">継続発信</span>、こんなことありませんか？`,
+          c1t: "毎日ネタを考えるのが大変",
+          c1b: "「同じ告知ばかり」「もう何を書けばいいか…」となって発信が止まる。",
+          c2t: "文章を考える時間がない",
+          c2b: "開発に集中したい。でも宣伝もしないと使ってもらえない。",
+          c3t: "毎回トーンがバラバラ",
+          c3b: "真面目だったりカジュアルだったり、ブランドが定まらない。"
+        },
+        how: {
+          h2: `使い方は<span class="brand-gradient">たった 3 ステップ</span>`,
+          sub: "面倒な設定は一切なし。リポジトリ URL を貼るだけ。",
+          s1t: "URL を貼る",
+          s1b: "紹介したい GitHub リポジトリの URL を入力欄に貼り付けます。",
+          s2t: "条件を選ぶ",
+          s2b: "トーン（真面目／カジュアル）やターゲット読者を指定。空欄でも OK。",
+          s3t: "5 本まとめて生成",
+          s3b: "紹介・使い方・ユースケース・共感・CTA の 5 本が一度に出来上がり。"
+        },
+        features: {
+          h2: `<span class="brand-gradient">継続発信</span>に効くこだわり`,
+          f1t: "📖 README を自動取得",
+          f1b: "URL を貼るだけでリポジトリの README を自動で読み込み、AI が要点を抽出します。",
+          f2t: "🎯 5 段ストーリーアーク",
+          f2b: "紹介 → 使い方 → ユースケース → 共感 → CTA の流れで 5 本生成。1 週間分の投稿計画がそのまま完成。",
+          f3t: "🕒 推奨投稿日時つき",
+          f3b: "各ポストに「いつ投稿すると良いか」の目安が付くので、投稿予約にそのまま使えます。",
+          f4t: "✂️ 280 字自動チェック",
+          f4b: "X の文字数制限に収まるかリアルタイムで確認。コピペしてすぐ投稿できます。",
+          f5t: "🚀 ワンクリックで X へ",
+          f5b: "生成したポストは「X で投稿」ボタンから、本文入りの投稿画面をそのまま開けます。コピー&貼り付け不要。"
+        },
+        appss: {
+          eyebrow: "New",
+          h2: `<span class="brand-gradient">App SS</span> — App Store のスクショも、同じ README から`,
+          body: `Code Tweet と同じ README を使って、App Store 提出用のスクリーンショット（＝ダウンロードを左右する"広告"）をAIと一緒に作成できるツールです。README を貼るだけでアプリ名・説明・機能をAIが自動で読み取り、見出しコピー・このアプリ専用の配色パレット・レイアウトまで一気に生成。あとは自分のアプリ画面を入れて書き出すだけ、すべてブラウザだけで完結します。`,
+          f1t: "📖 README からアプリ情報を自動入力",
+          f1b: "README を貼り付けるだけで、AIがアプリ名・説明・主な機能を読み取って入力欄に反映。仮入力として使い、そこから自由に編集できます。",
+          f2t: "🎨 専用配色パレットをAIが都度生成",
+          f2b: "既製テーマから選ぶだけでなく、アプリの雰囲気に合わせた配色をAIがそのつど新しく生成。テーマ 11 種・日本語フォント 9 種から手動でも選べます。",
+          f3t: "✂️ 強調ワードを自動ハイライト",
+          f3b: `各見出しで一番刺さる語をAIが選び、アクセント色で自動強調。プロのスクショ広告に欠かせない"一語の強調"をそのまま再現します。`,
+          f4t: "🔒 画像は端末内だけで処理",
+          f4b: "取り込んだスクリーンショットはブラウザ内にのみ保存され、サーバーには送信されません。未公開アプリのスクショも安心して扱えます。",
+          f5t: "🚀 App Store 全サイズを一括書き出し",
+          f5b: "6.9 / 6.5 / 6.3 / 6.1 インチを一度に PNG で書き出し、そのまま App Store Connect にアップロードできます。",
+          cta: "App SS を使う →"
+        },
+        pricing: {
+          h2: "料金プラン",
+          sub: "まずは無料で試して、足りない分だけクレジットを買い足す。サブスク不要です。",
+          freeTitle: "無料プラン",
+          freePrice: `¥0<span class="text-base font-normal text-gray-400"> / 月</span>`,
+          freeDesc: "まず試してみたい人向け",
+          freeLi1: "✓ 月 3 回まで生成",
+          freeLi2: "✓ README 1,000 文字まで",
+          freeLi3: "✓ 5 段ストーリーアーク（Code Tweet）/ App SS のコピー＆デザイン生成",
+          freeLi4: "— プライベートリポジトリ非対応",
+          badge: "おすすめ",
+          packTitle: "クレジットパック",
+          packPrice: `¥100<span class="text-base font-normal text-gray-400"> 〜</span>`,
+          packDesc: "サブスク不要・使う分だけ買い足し",
+          packLi1: "✓ 10回 ¥100 / 30回 ¥300 / 50回 ¥500 / 100回 ¥700",
+          packLi2: `✓ クレジットは<span class="font-bold">無期限</span>（月をまたいでも消えない）`,
+          packLi3: `✓ README <span class="font-bold">10,000 文字</span>まで／プライベートリポジトリ対応`,
+          packLi4: "✓ Code Tweet・App SS で共通して使える"
+        },
+        finalCta: {
+          h2: `まずは<span class="brand-gradient">無料</span>で試してみる`,
+          body: "登録不要・3 回までゲスト利用 OK。最初の 1 本を 1 分で。",
+          cta: "Code Tweet を開く →"
+        },
+        footer: { back: "← nakakei6439 のアプリ一覧へ" }
+      },
+      en: {
+        meta: {
+          title: "Code Tweet — Auto-generate a week of X posts from your GitHub README",
+          desc: "Paste a GitHub repo URL and get 5 ready-to-post X posts generated from your README. A continuous-posting tool for indie developers."
+        },
+        hero: {
+          eyebrow: "For Indie Developers",
+          subtitle: `Just paste your GitHub repository URL,<br class="hidden md:block">and get <span class="text-white font-bold">5 ready-to-post</span> X posts generated from your README — a full week's worth in one go.`,
+          cta1: "Try the App →",
+          cta2: "See What It Does",
+          note: "Free for 3 generations — no sign-up required"
+        },
+        pain: {
+          h2: `Sound familiar? The <span class="brand-gradient">struggle to keep posting</span> as an indie dev`,
+          c1t: "Coming up with something new every day is exhausting",
+          c1b: `"Same announcement again", "What do I even write about now..." — and posting grinds to a halt.`,
+          c2t: "No time to write copy",
+          c2b: "You want to focus on building. But without promotion, nobody finds your app.",
+          c3t: "Tone keeps drifting",
+          c3b: "Sometimes formal, sometimes casual — your brand voice never settles."
+        },
+        how: {
+          h2: `Just <span class="brand-gradient">3 simple steps</span>`,
+          sub: "No tedious setup. Just paste your repository URL.",
+          s1t: "Paste the URL",
+          s1b: "Paste the URL of the GitHub repository you want to promote.",
+          s2t: "Set your preferences",
+          s2b: "Choose a tone (formal / casual) and target audience — or leave it blank.",
+          s3t: "Generate 5 posts at once",
+          s3b: "Intro, how-to, use case, empathy, and CTA — all 5 posts appear in one go."
+        },
+        features: {
+          h2: `Details that make <span class="brand-gradient">consistent posting</span> easy`,
+          f1t: "📖 Auto-fetches your README",
+          f1b: "Just paste the URL and the AI automatically reads your repository's README and pulls out the key points.",
+          f2t: "🎯 A 5-part story arc",
+          f2b: "Intro → how-to → use case → empathy → CTA. Generates 5 posts that form a complete week of content.",
+          f3t: "🕒 Suggested posting times included",
+          f3b: "Each post comes with a recommended time to post, ready to plug straight into your scheduler.",
+          f4t: "✂️ Automatic 280-character check",
+          f4b: "Checks in real time whether your post fits X's character limit. Copy, paste, and post.",
+          f5t: "🚀 One click to X",
+          f5b: "Open a pre-filled post composer on X straight from the generated post — no copy-paste needed."
+        },
+        appss: {
+          eyebrow: "New",
+          h2: `<span class="brand-gradient">App SS</span> — App Store screenshots, from the same README`,
+          body: `A tool that uses the same README as Code Tweet to help you create App Store submission screenshots — the "ads" that decide whether people download your app — together with AI. Just paste your README and AI automatically reads your app name, description, and features, then generates headline copy, an app-specific color palette, and layouts in one go. All you do is drop in your own app screens and export — entirely in your browser.`,
+          f1t: "📖 Auto-fills app info from your README",
+          f1b: "Paste your README and AI reads your app name, description, and key features into the input fields. Use it as a starting draft and edit freely from there.",
+          f2t: "🎨 AI generates a dedicated color palette every time",
+          f2b: "Beyond picking from preset themes, AI generates a fresh palette matched to your app's vibe each time. 11 themes and 9 fonts are also available for manual selection.",
+          f3t: "✂️ Auto-highlights the key word",
+          f3b: `AI picks the most impactful word in each headline and highlights it in an accent color — recreating the "single-word emphasis" every pro screenshot ad relies on.`,
+          f4t: "🔒 Images are processed on-device only",
+          f4b: "Imported screenshots are stored only in your browser and never sent to a server — safe to use even with unreleased apps.",
+          f5t: "🚀 Export every App Store size at once",
+          f5b: "Exports 6.9 / 6.5 / 6.3 / 6.1-inch sizes as PNGs in one go, ready to upload straight to App Store Connect.",
+          cta: "Try App SS →"
+        },
+        pricing: {
+          h2: "Pricing",
+          sub: "Start free, then top up credits only when you need more. No subscription required.",
+          freeTitle: "Free Plan",
+          freePrice: `¥0<span class="text-base font-normal text-gray-400"> / month</span>`,
+          freeDesc: "For anyone who wants to try it out first",
+          freeLi1: "✓ Up to 3 generations per month",
+          freeLi2: "✓ README up to 1,000 characters",
+          freeLi3: "✓ 5-part story arc (Code Tweet) / copy & design generation (App SS)",
+          freeLi4: "— Private repositories not supported",
+          badge: "Recommended",
+          packTitle: "Credit Pack",
+          packPrice: `¥100<span class="text-base font-normal text-gray-400"> and up</span>`,
+          packDesc: "No subscription — pay only for what you use",
+          packLi1: "✓ 10 for ¥100 / 30 for ¥300 / 50 for ¥500 / 100 for ¥700",
+          packLi2: `✓ Credits <span class="font-bold">never expire</span> (carry over month to month)`,
+          packLi3: `✓ README up to <span class="font-bold">10,000 characters</span> / private repositories supported`,
+          packLi4: "✓ Shared across Code Tweet and App SS"
+        },
+        finalCta: {
+          h2: `Try it <span class="brand-gradient">free</span> — no strings attached`,
+          body: "No sign-up needed — try it as a guest up to 3 times. Your first post in under a minute.",
+          cta: "Open Code Tweet →"
+        },
+        footer: { back: "← Back to nakakei6439's apps" }
+      },
+      de: {
+        meta: {
+          title: "Code Tweet — Aus dem GitHub-README automatisch eine Woche X-Posts generieren",
+          desc: "Einfach die GitHub-Repository-URL einfügen und automatisch 5 fertige X-Posts aus dem README erstellen. Das Tool für regelmäßiges Posten für Indie-Entwickler."
+        },
+        hero: {
+          eyebrow: "Für Indie-Entwickler",
+          subtitle: `Einfach die GitHub-Repository-URL einfügen<br class="hidden md:block">und aus dem README <span class="text-white font-bold">5 fertige</span> X-Posts erstellen – eine ganze Woche auf einmal.`,
+          cta1: "App öffnen →",
+          cta2: "Funktionen ansehen",
+          note: "Kostenlos für 3 Generierungen – keine Registrierung nötig"
+        },
+        pain: {
+          h2: `Kommt dir das bekannt vor? Der <span class="brand-gradient">Kampf ums regelmäßige Posten</span> als Indie-Dev`,
+          c1t: "Jeden Tag eine neue Idee zu finden ist anstrengend",
+          c1b: `„Schon wieder dieselbe Ankündigung", „Was soll ich jetzt überhaupt schreiben …" – und irgendwann bleibt es einfach liegen.`,
+          c2t: "Keine Zeit, Texte zu schreiben",
+          c2b: "Eigentlich willst du dich aufs Entwickeln konzentrieren. Aber ohne Werbung findet niemand deine App.",
+          c3t: "Der Ton schwankt jedes Mal",
+          c3b: "Mal seriös, mal locker – eine klare Markenstimme entsteht so nie."
+        },
+        how: {
+          h2: `Nur <span class="brand-gradient">3 einfache Schritte</span>`,
+          sub: "Keine lästige Einrichtung. Einfach die Repository-URL einfügen.",
+          s1t: "URL einfügen",
+          s1b: "Füge die URL des GitHub-Repositorys ein, das du vorstellen möchtest.",
+          s2t: "Vorgaben wählen",
+          s2b: "Ton (seriös / locker) und Zielgruppe festlegen – oder einfach leer lassen.",
+          s3t: "5 Posts auf einmal generieren",
+          s3b: "Vorstellung, Anleitung, Anwendungsfall, Empathie und CTA – alle 5 Posts entstehen in einem Durchgang."
+        },
+        features: {
+          h2: `Details, die <span class="brand-gradient">regelmäßiges Posten</span> leicht machen`,
+          f1t: "📖 Liest dein README automatisch",
+          f1b: "Einfach die URL einfügen – die KI liest automatisch das README deines Repositorys und extrahiert die wichtigsten Punkte.",
+          f2t: "🎯 Ein 5-teiliger Story-Arc",
+          f2b: "Vorstellung → Anleitung → Anwendungsfall → Empathie → CTA. Erzeugt 5 Posts, die einen ganzen Wochenplan ergeben.",
+          f3t: "🕒 Inklusive empfohlener Posting-Zeit",
+          f3b: "Jeder Post kommt mit einer Empfehlung, wann er am besten veröffentlicht wird – ideal für die Planung.",
+          f4t: "✂️ Automatische 280-Zeichen-Prüfung",
+          f4b: "Prüft in Echtzeit, ob dein Post ins Zeichenlimit von X passt. Kopieren, einfügen, posten.",
+          f5t: "🚀 Mit einem Klick zu X",
+          f5b: "Öffnet direkt aus dem generierten Post heraus das X-Composer-Fenster mit fertigem Text – kein Kopieren nötig."
+        },
+        appss: {
+          eyebrow: "Neu",
+          h2: `<span class="brand-gradient">App SS</span> – App-Store-Screenshots aus demselben README`,
+          body: `Ein Tool, das dasselbe README wie Code Tweet nutzt, um zusammen mit KI App-Store-Screenshots zu erstellen – die „Werbung", die über Downloads entscheidet. Einfach README einfügen: Die KI liest automatisch App-Namen, Beschreibung und Funktionen aus und generiert daraus Headline-Texte, eine passende Farbpalette und Layouts. Du musst nur noch deine eigenen App-Screens einsetzen und exportieren – alles direkt im Browser.`,
+          f1t: "📖 Füllt App-Infos automatisch aus dem README",
+          f1b: "README einfügen genügt – die KI liest App-Namen, Beschreibung und Kernfunktionen aus und trägt sie in die Felder ein. Als Entwurf nutzen und frei weiterbearbeiten.",
+          f2t: "🎨 KI generiert jedes Mal eine eigene Farbpalette",
+          f2b: "Nicht nur vorgefertigte Themes – die KI erstellt jedes Mal eine neue, zur Stimmung deiner App passende Farbpalette. 11 Themes und 9 Schriftarten stehen auch manuell zur Auswahl.",
+          f3t: "✂️ Hebt Schlüsselwörter automatisch hervor",
+          f3b: `Die KI wählt in jeder Headline das wirkungsvollste Wort aus und hebt es in einer Akzentfarbe hervor – die „Ein-Wort-Betonung", auf die professionelle Screenshot-Werbung setzt.`,
+          f4t: "🔒 Bilder werden nur lokal verarbeitet",
+          f4b: "Importierte Screenshots werden nur im Browser gespeichert und nie an einen Server gesendet – sicher auch für unveröffentlichte Apps.",
+          f5t: "🚀 Alle App-Store-Größen auf einmal exportieren",
+          f5b: "Exportiert 6,9 / 6,5 / 6,3 / 6,1 Zoll gleichzeitig als PNG – direkt bereit für den Upload zu App Store Connect.",
+          cta: "App SS öffnen →"
+        },
+        pricing: {
+          h2: "Preise",
+          sub: "Erst kostenlos testen, dann nur bei Bedarf Credits nachkaufen. Kein Abo nötig.",
+          freeTitle: "Kostenloser Plan",
+          freePrice: `¥0<span class="text-base font-normal text-gray-400"> / Monat</span>`,
+          freeDesc: "Für alle, die es erstmal ausprobieren wollen",
+          freeLi1: "✓ Bis zu 3 Generierungen pro Monat",
+          freeLi2: "✓ README bis 1.000 Zeichen",
+          freeLi3: "✓ 5-teiliger Story-Arc (Code Tweet) / Text- & Design-Generierung (App SS)",
+          freeLi4: "— Keine privaten Repositorys",
+          badge: "Empfohlen",
+          packTitle: "Credit-Paket",
+          packPrice: `¥100<span class="text-base font-normal text-gray-400"> ab</span>`,
+          packDesc: "Kein Abo – zahle nur, was du nutzt",
+          packLi1: "✓ 10 für ¥100 / 30 für ¥300 / 50 für ¥500 / 100 für ¥700",
+          packLi2: `✓ Credits <span class="font-bold">verfallen nie</span> (bleiben auch über den Monat hinaus erhalten)`,
+          packLi3: `✓ README bis <span class="font-bold">10.000 Zeichen</span> / private Repositorys unterstützt`,
+          packLi4: "✓ Gemeinsam nutzbar für Code Tweet und App SS"
+        },
+        finalCta: {
+          h2: `Jetzt <span class="brand-gradient">kostenlos</span> ausprobieren`,
+          body: "Keine Registrierung nötig – bis zu 3 Nutzungen als Gast. Dein erster Post in einer Minute.",
+          cta: "Code Tweet öffnen →"
+        },
+        footer: { back: "← Zurück zu nakakei6439s Apps" }
+      },
+      fr: {
+        meta: {
+          title: "Code Tweet — Générez automatiquement une semaine de posts X à partir de votre README GitHub",
+          desc: "Collez l'URL d'un dépôt GitHub et obtenez 5 posts X prêts à publier, générés à partir de votre README. L'outil de publication régulière pour développeurs indépendants."
+        },
+        hero: {
+          eyebrow: "Pour les développeurs indépendants",
+          subtitle: `Il suffit de coller l'URL de votre dépôt GitHub<br class="hidden md:block">pour générer <span class="text-white font-bold">5 posts prêts à publier</span> sur X à partir de votre README — une semaine entière en un instant.`,
+          cta1: "Essayer l'app →",
+          cta2: "Voir les fonctionnalités",
+          note: "Gratuit pour 3 générations — sans inscription"
+        },
+        pain: {
+          h2: `Ça vous parle ? La <span class="brand-gradient">difficulté à publier régulièrement</span> en solo`,
+          c1t: "Trouver une nouvelle idée chaque jour, c'est épuisant",
+          c1b: `« Encore la même annonce », « Je ne sais plus quoi écrire… » — et on finit par arrêter de publier.`,
+          c2t: "Pas le temps de rédiger",
+          c2b: "Vous voulez vous concentrer sur le développement. Mais sans communication, personne ne découvre votre app.",
+          c3t: "Le ton change à chaque fois",
+          c3b: "Tantôt sérieux, tantôt décontracté — impossible de fixer une voix de marque cohérente."
+        },
+        how: {
+          h2: `Seulement <span class="brand-gradient">3 étapes simples</span>`,
+          sub: "Aucune configuration fastidieuse. Collez simplement l'URL du dépôt.",
+          s1t: "Collez l'URL",
+          s1b: "Collez l'URL du dépôt GitHub que vous souhaitez présenter.",
+          s2t: "Choisissez vos préférences",
+          s2b: "Définissez le ton (sérieux / décontracté) et le public visé — ou laissez vide.",
+          s3t: "Générez 5 posts d'un coup",
+          s3b: "Présentation, mode d'emploi, cas d'usage, empathie et CTA — les 5 posts sont générés en une seule fois."
+        },
+        features: {
+          h2: `Des détails pensés pour <span class="brand-gradient">publier régulièrement</span>`,
+          f1t: "📖 Récupère automatiquement votre README",
+          f1b: "Collez simplement l'URL : l'IA lit automatiquement le README de votre dépôt et en extrait les points clés.",
+          f2t: "🎯 Une trame narrative en 5 temps",
+          f2b: "Présentation → mode d'emploi → cas d'usage → empathie → CTA. Génère 5 posts qui forment un plan de publication complet pour la semaine.",
+          f3t: "🕒 Horaires de publication suggérés",
+          f3b: "Chaque post est accompagné d'une recommandation sur le meilleur moment pour le publier, prête à intégrer à votre planning.",
+          f4t: "✂️ Vérification automatique des 280 caractères",
+          f4b: "Vérifie en temps réel si votre post respecte la limite de caractères de X. Copiez, collez, publiez.",
+          f5t: "🚀 Vers X en un clic",
+          f5b: "Ouvrez directement la fenêtre de publication X pré-remplie depuis le post généré — sans copier-coller."
+        },
+        appss: {
+          eyebrow: "Nouveau",
+          h2: `<span class="brand-gradient">App SS</span> — les captures App Store, à partir du même README`,
+          body: `Un outil qui utilise le même README que Code Tweet pour créer, avec l'IA, les captures d'écran de soumission App Store — la « publicité » qui détermine les téléchargements. Collez simplement votre README : l'IA lit automatiquement le nom, la description et les fonctionnalités de votre app, puis génère titres, palette de couleurs dédiée et mises en page en un seul geste. Il ne vous reste plus qu'à insérer vos propres écrans et exporter — le tout directement dans le navigateur.`,
+          f1t: "📖 Remplit automatiquement les infos de l'app depuis le README",
+          f1b: "Collez votre README : l'IA lit le nom, la description et les fonctionnalités clés de votre app et les insère dans les champs. Utilisez-les comme brouillon, puis modifiez librement.",
+          f2t: "🎨 L'IA génère une palette de couleurs dédiée à chaque fois",
+          f2b: "Au-delà des thèmes prédéfinis, l'IA crée à chaque fois une nouvelle palette adaptée à l'ambiance de votre app. 11 thèmes et 9 polices restent aussi sélectionnables manuellement.",
+          f3t: "✂️ Met en avant le mot clé automatiquement",
+          f3b: `L'IA choisit le mot le plus percutant de chaque titre et le met en couleur — reproduisant la « mise en valeur d'un seul mot » indispensable aux publicités de captures d'écran professionnelles.`,
+          f4t: "🔒 Images traitées uniquement sur l'appareil",
+          f4b: "Les captures importées ne sont stockées que dans le navigateur et ne sont jamais envoyées à un serveur — sûr même pour des apps non publiées.",
+          f5t: "🚀 Exportez toutes les tailles App Store en une fois",
+          f5b: "Exporte simultanément les tailles 6,9 / 6,5 / 6,3 / 6,1 pouces en PNG, prêtes à être envoyées sur App Store Connect.",
+          cta: "Essayer App SS →"
+        },
+        pricing: {
+          h2: "Tarifs",
+          sub: "Commencez gratuitement, puis rechargez des crédits seulement si besoin. Aucun abonnement requis.",
+          freeTitle: "Offre gratuite",
+          freePrice: `¥0<span class="text-base font-normal text-gray-400"> / mois</span>`,
+          freeDesc: "Pour ceux qui veulent d'abord essayer",
+          freeLi1: "✓ Jusqu'à 3 générations par mois",
+          freeLi2: "✓ README jusqu'à 1 000 caractères",
+          freeLi3: "✓ Trame en 5 temps (Code Tweet) / génération de textes et design (App SS)",
+          freeLi4: "— Dépôts privés non pris en charge",
+          badge: "Recommandé",
+          packTitle: "Pack de crédits",
+          packPrice: `¥100<span class="text-base font-normal text-gray-400"> et plus</span>`,
+          packDesc: "Sans abonnement — payez seulement ce que vous utilisez",
+          packLi1: "✓ 10 pour ¥100 / 30 pour ¥300 / 50 pour ¥500 / 100 pour ¥700",
+          packLi2: `✓ Les crédits <span class="font-bold">n'expirent jamais</span> (conservés d'un mois à l'autre)`,
+          packLi3: `✓ README jusqu'à <span class="font-bold">10 000 caractères</span> / dépôts privés pris en charge`,
+          packLi4: "✓ Utilisable indifféremment pour Code Tweet et App SS"
+        },
+        finalCta: {
+          h2: `Essayez <span class="brand-gradient">gratuitement</span> dès maintenant`,
+          body: "Sans inscription — jusqu'à 3 essais en tant qu'invité. Votre premier post en une minute.",
+          cta: "Ouvrir Code Tweet →"
+        },
+        footer: { back: "← Retour aux apps de nakakei6439" }
+      },
+      es: {
+        meta: {
+          title: "Code Tweet — Genera automáticamente una semana de posts para X desde tu README de GitHub",
+          desc: "Pega la URL de un repositorio de GitHub y obtén 5 posts listos para X generados desde tu README. La herramienta de publicación constante para desarrolladores independientes."
+        },
+        hero: {
+          eyebrow: "Para desarrolladores independientes",
+          subtitle: `Solo pega la URL de tu repositorio de GitHub<br class="hidden md:block">y obtén <span class="text-white font-bold">5 posts listos</span> para X a partir de tu README — una semana entera de una vez.`,
+          cta1: "Probar la app →",
+          cta2: "Ver qué hace",
+          note: "Gratis para 3 generaciones — sin registro"
+        },
+        pain: {
+          h2: `¿Te suena? La <span class="brand-gradient">lucha por publicar constantemente</span> como dev independiente`,
+          c1t: "Pensar algo nuevo cada día agota",
+          c1b: `«Otra vez el mismo anuncio», «Ya no sé qué escribir…» — y al final dejas de publicar.`,
+          c2t: "No hay tiempo para redactar",
+          c2b: "Quieres concentrarte en desarrollar. Pero sin promoción, nadie descubre tu app.",
+          c3t: "El tono cambia cada vez",
+          c3b: "A veces formal, a veces informal — la voz de marca nunca termina de definirse."
+        },
+        how: {
+          h2: `Solo <span class="brand-gradient">3 pasos sencillos</span>`,
+          sub: "Sin configuraciones tediosas. Solo pega la URL del repositorio.",
+          s1t: "Pega la URL",
+          s1b: "Pega la URL del repositorio de GitHub que quieres promocionar.",
+          s2t: "Elige tus preferencias",
+          s2b: "Indica el tono (formal / informal) y el público objetivo, o déjalo en blanco.",
+          s3t: "Genera 5 posts a la vez",
+          s3b: "Presentación, guía de uso, caso de uso, empatía y CTA — los 5 posts se crean de una sola vez."
+        },
+        features: {
+          h2: `Detalles pensados para <span class="brand-gradient">publicar de forma constante</span>`,
+          f1t: "📖 Obtiene tu README automáticamente",
+          f1b: "Solo pega la URL: la IA lee automáticamente el README de tu repositorio y extrae los puntos clave.",
+          f2t: "🎯 Un arco narrativo de 5 partes",
+          f2b: "Presentación → guía de uso → caso de uso → empatía → CTA. Genera 5 posts que forman un plan completo para la semana.",
+          f3t: "🕒 Incluye horario de publicación sugerido",
+          f3b: "Cada post incluye una recomendación de cuándo publicarlo, lista para usar en tu programación.",
+          f4t: "✂️ Verificación automática de 280 caracteres",
+          f4b: "Comprueba en tiempo real si tu post cabe en el límite de caracteres de X. Copia, pega y publica.",
+          f5t: "🚀 A X con un solo clic",
+          f5b: "Abre directamente el compositor de X con el texto ya listo desde el post generado — sin copiar y pegar."
+        },
+        appss: {
+          eyebrow: "Nuevo",
+          h2: `<span class="brand-gradient">App SS</span> — capturas para App Store, desde el mismo README`,
+          body: `Una herramienta que usa el mismo README que Code Tweet para crear, junto con la IA, las capturas de pantalla de envío a App Store — el "anuncio" que decide las descargas. Solo pega tu README: la IA lee automáticamente el nombre, la descripción y las funciones de tu app, y genera de una vez los textos de titulares, una paleta de colores propia y los diseños. Solo te queda insertar las capturas de tu app y exportar, todo directamente en el navegador.`,
+          f1t: "📖 Rellena automáticamente la info de la app desde el README",
+          f1b: "Pega tu README y la IA lee el nombre, la descripción y las funciones clave de tu app en los campos. Úsalo como borrador y edítalo libremente.",
+          f2t: "🎨 La IA genera una paleta de colores propia cada vez",
+          f2b: "Además de elegir entre temas predefinidos, la IA crea cada vez una paleta nueva acorde al estilo de tu app. También puedes elegir manualmente entre 11 temas y 9 fuentes.",
+          f3t: "✂️ Resalta automáticamente la palabra clave",
+          f3b: `La IA elige la palabra más impactante de cada titular y la resalta con un color de acento, recreando el "énfasis de una sola palabra" imprescindible en los anuncios de capturas profesionales.`,
+          f4t: "🔒 Las imágenes se procesan solo en tu dispositivo",
+          f4b: "Las capturas importadas se guardan únicamente en el navegador y nunca se envían a un servidor — seguro incluso para apps aún no publicadas.",
+          f5t: "🚀 Exporta todos los tamaños de App Store a la vez",
+          f5b: "Exporta a la vez los tamaños de 6.9 / 6.5 / 6.3 / 6.1 pulgadas en PNG, listos para subir a App Store Connect.",
+          cta: "Probar App SS →"
+        },
+        pricing: {
+          h2: "Precios",
+          sub: "Empieza gratis y recarga créditos solo cuando los necesites. Sin suscripción.",
+          freeTitle: "Plan gratuito",
+          freePrice: `¥0<span class="text-base font-normal text-gray-400"> / mes</span>`,
+          freeDesc: "Para quienes quieren probarlo primero",
+          freeLi1: "✓ Hasta 3 generaciones al mes",
+          freeLi2: "✓ README de hasta 1000 caracteres",
+          freeLi3: "✓ Arco narrativo de 5 partes (Code Tweet) / generación de textos y diseño (App SS)",
+          freeLi4: "— No admite repositorios privados",
+          badge: "Recomendado",
+          packTitle: "Paquete de créditos",
+          packPrice: `¥100<span class="text-base font-normal text-gray-400"> en adelante</span>`,
+          packDesc: "Sin suscripción — paga solo por lo que uses",
+          packLi1: "✓ 10 por ¥100 / 30 por ¥300 / 50 por ¥500 / 100 por ¥700",
+          packLi2: `✓ Los créditos <span class="font-bold">nunca caducan</span> (se conservan de un mes a otro)`,
+          packLi3: `✓ README de hasta <span class="font-bold">10 000 caracteres</span> / admite repositorios privados`,
+          packLi4: "✓ Compartido entre Code Tweet y App SS"
+        },
+        finalCta: {
+          h2: `Pruébalo <span class="brand-gradient">gratis</span> ahora mismo`,
+          body: "Sin registro — hasta 3 usos como invitado. Tu primer post en un minuto.",
+          cta: "Abrir Code Tweet →"
+        },
+        footer: { back: "← Volver a las apps de nakakei6439" }
+      },
+      "zh-Hans": {
+        meta: {
+          title: "Code Tweet — 从 GitHub README 自动生成一周的 X 帖子",
+          desc: "只需粘贴 GitHub 仓库 URL，即可从 README 自动生成 5 条可直接发布的 X 帖子。为独立开发者打造的持续发帖工具。"
+        },
+        hero: {
+          eyebrow: "为独立开发者打造",
+          subtitle: `只需粘贴 GitHub 仓库 URL，<br class="hidden md:block">即可从 README 一次性生成 <span class="text-white font-bold">5 条</span> 可直接发布的 X 帖子，一周的内容一次搞定。`,
+          cta1: "立即使用 →",
+          cta2: "查看功能",
+          note: "免费体验 3 次，无需注册"
+        },
+        pain: {
+          h2: `是不是很熟悉？独立开发者<span class="brand-gradient">持续发帖</span>的烦恼`,
+          c1t: "每天想新话题太累了",
+          c1b: "「又是同样的宣传」「不知道该写点什么了……」，发帖节奏就这样停了下来。",
+          c2t: "没时间写文案",
+          c2b: "明明想专心开发，但不做宣传就没人知道你的应用。",
+          c3t: "语气每次都不一样",
+          c3b: "一会儿正式一会儿随意，品牌调性始终定不下来。"
+        },
+        how: {
+          h2: `只需<span class="brand-gradient">简单 3 步</span>`,
+          sub: "无需繁琐设置，只要粘贴仓库 URL。",
+          s1t: "粘贴 URL",
+          s1b: "粘贴你想推广的 GitHub 仓库 URL。",
+          s2t: "设置条件",
+          s2b: "指定语气（正式／随意）和目标读者，留空也没关系。",
+          s3t: "一次生成 5 条",
+          s3b: "介绍、用法、使用场景、共鸣、行动号召，5 条帖子一次生成完成。"
+        },
+        features: {
+          h2: `助力<span class="brand-gradient">持续发帖</span>的细节`,
+          f1t: "📖 自动获取 README",
+          f1b: "只需粘贴 URL，AI 会自动读取仓库的 README 并提取要点。",
+          f2t: "🎯 5 段式故事线",
+          f2b: "介绍 → 用法 → 使用场景 → 共鸣 → 行动号召，一次生成 5 条帖子，一周的发帖计划立刻完成。",
+          f3t: "🕒 附带推荐发布时间",
+          f3b: "每条帖子都附有「什么时候发布比较好」的建议，可直接用于预约发布。",
+          f4t: "✂️ 自动检查 280 字限制",
+          f4b: "实时检查是否符合 X 的字数限制，复制粘贴即可直接发布。",
+          f5t: "🚀 一键跳转 X",
+          f5b: "点击「发布到 X」按钮，即可直接打开已填好文案的发帖窗口，无需复制粘贴。"
+        },
+        appss: {
+          eyebrow: "新功能",
+          h2: `<span class="brand-gradient">App SS</span> —— App Store 截图，同样来自 README`,
+          body: `使用与 Code Tweet 相同的 README，借助 AI 一起制作 App Store 提交用截图——这是决定下载量的「广告」。只需粘贴 README，AI 会自动读取应用名称、简介和功能，一次性生成标题文案、专属配色方案和版式布局。剩下的只需放入你自己的应用截图并导出，全部在浏览器内完成。`,
+          f1t: "📖 从 README 自动填充应用信息",
+          f1b: "只需粘贴 README，AI 就会读取应用名称、简介和主要功能并填入输入框，可作为草稿使用并自由编辑。",
+          f2t: "🎨 AI 每次生成专属配色方案",
+          f2b: "除了从预设主题中选择外，AI 每次都会根据应用氛围生成全新配色。也可从 11 种主题、9 种字体中手动选择。",
+          f3t: "✂️ 自动高亮强调关键词",
+          f3b: "AI 会为每个标题选出最有冲击力的词，并用强调色自动高亮——还原专业截图广告不可或缺的「单词强调」效果。",
+          f4t: "🔒 图片仅在本地设备处理",
+          f4b: "导入的截图仅保存在浏览器中，绝不会上传到服务器，未发布的应用截图也可放心使用。",
+          f5t: "🚀 一键导出全部 App Store 尺寸",
+          f5b: "一次性导出 6.9 / 6.5 / 6.3 / 6.1 英寸的 PNG 图片，可直接上传至 App Store Connect。",
+          cta: "立即使用 App SS →"
+        },
+        pricing: {
+          h2: "价格方案",
+          sub: "先免费试用，不够再按需购买额度，无需订阅。",
+          freeTitle: "免费方案",
+          freePrice: `¥0<span class="text-base font-normal text-gray-400"> / 月</span>`,
+          freeDesc: "适合想先试用看看的用户",
+          freeLi1: "✓ 每月最多生成 3 次",
+          freeLi2: "✓ README 最多 1,000 字",
+          freeLi3: "✓ 5 段式故事线（Code Tweet）／文案与设计生成（App SS）",
+          freeLi4: "— 不支持私有仓库",
+          badge: "推荐",
+          packTitle: "额度包",
+          packPrice: `¥100<span class="text-base font-normal text-gray-400"> 起</span>`,
+          packDesc: "无需订阅，按需购买",
+          packLi1: "✓ 10 次 ¥100／30 次 ¥300／50 次 ¥500／100 次 ¥700",
+          packLi2: `✓ 额度<span class="font-bold">永不过期</span>（跨月也不会消失）`,
+          packLi3: `✓ README 最多支持 <span class="font-bold">10,000 字</span>／支持私有仓库`,
+          packLi4: "✓ Code Tweet 与 App SS 通用"
+        },
+        finalCta: {
+          h2: `现在就<span class="brand-gradient">免费</span>试试看`,
+          body: "无需注册，最多可免费体验 3 次。1 分钟生成你的第一条帖子。",
+          cta: "打开 Code Tweet →"
+        },
+        footer: { back: "← 返回 nakakei6439 的应用列表" }
+      },
+      "zh-Hant": {
+        meta: {
+          title: "Code Tweet — 從 GitHub README 自動生成一週份的 X 貼文",
+          desc: "只要貼上 GitHub 儲存庫 URL，就能從 README 自動生成 5 則可直接發布的 X 貼文。為獨立開發者打造的持續發文工具。"
+        },
+        hero: {
+          eyebrow: "為獨立開發者打造",
+          subtitle: `只要貼上 GitHub 儲存庫 URL，<br class="hidden md:block">就能從 README 一次生成 <span class="text-white font-bold">5 則</span> 可直接發布的 X 貼文，一週份的內容一次搞定。`,
+          cta1: "立即使用 →",
+          cta2: "查看功能",
+          note: "免費體驗 3 次，無需註冊"
+        },
+        pain: {
+          h2: `是不是很熟悉？獨立開發者<span class="brand-gradient">持續發文</span>的煩惱`,
+          c1t: "每天想新話題太累了",
+          c1b: "「又是同樣的宣傳」「不知道該寫什麼了……」，發文節奏就這樣停了下來。",
+          c2t: "沒時間寫文案",
+          c2b: "明明想專心開發，但不宣傳就沒人知道你的應用程式。",
+          c3t: "語氣每次都不一樣",
+          c3b: "有時正式、有時輕鬆，品牌調性始終定不下來。"
+        },
+        how: {
+          h2: `只需<span class="brand-gradient">簡單 3 步驟</span>`,
+          sub: "無需繁瑣設定，只要貼上儲存庫 URL。",
+          s1t: "貼上 URL",
+          s1b: "貼上你想推廣的 GitHub 儲存庫 URL。",
+          s2t: "設定條件",
+          s2b: "指定語氣（正式／輕鬆）與目標讀者，留空也沒關係。",
+          s3t: "一次生成 5 則",
+          s3b: "介紹、使用方法、應用情境、共鳴、行動呼籲，5 則貼文一次生成完成。"
+        },
+        features: {
+          h2: `助攻<span class="brand-gradient">持續發文</span>的細節`,
+          f1t: "📖 自動擷取 README",
+          f1b: "只要貼上 URL，AI 會自動讀取儲存庫的 README 並擷取重點。",
+          f2t: "🎯 5 段式故事架構",
+          f2b: "介紹 → 使用方法 → 應用情境 → 共鳴 → 行動呼籲，一次生成 5 則貼文，一週的發文計畫立刻完成。",
+          f3t: "🕒 附推薦發布時間",
+          f3b: "每則貼文都附有「何時發布較佳」的建議，可直接用於預約發布。",
+          f4t: "✂️ 自動檢查 280 字限制",
+          f4b: "即時檢查是否符合 X 的字數限制，複製貼上即可直接發布。",
+          f5t: "🚀 一鍵前往 X",
+          f5b: "點選「發布到 X」按鈕，即可直接開啟已填好文案的發文視窗，無需複製貼上。"
+        },
+        appss: {
+          eyebrow: "新功能",
+          h2: `<span class="brand-gradient">App SS</span> —— App Store 截圖，同樣來自 README`,
+          body: `使用與 Code Tweet 相同的 README，透過 AI 協助製作 App Store 提交用截圖——這是決定下載量的「廣告」。只要貼上 README，AI 便會自動讀取應用程式名稱、簡介與功能，一次生成標題文案、專屬配色方案與版面配置。剩下的只需放入你自己的應用程式畫面並匯出，全部在瀏覽器內完成。`,
+          f1t: "📖 從 README 自動帶入應用程式資訊",
+          f1b: "只要貼上 README，AI 就會讀取應用程式名稱、簡介與主要功能並填入欄位，可作為草稿並自由編輯。",
+          f2t: "🎨 AI 每次生成專屬配色方案",
+          f2b: "除了從既有主題中選擇，AI 每次都會依應用程式氛圍生成全新配色。也可從 11 種主題、9 種字型中手動選擇。",
+          f3t: "✂️ 自動強調關鍵字",
+          f3b: "AI 會為每個標題選出最有張力的字詞，並以強調色自動標示——重現專業截圖廣告不可或缺的「單字強調」效果。",
+          f4t: "🔒 圖片僅在裝置端處理",
+          f4b: "匯入的截圖只會儲存在瀏覽器中，絕不會上傳至伺服器，尚未公開的應用程式截圖也能安心使用。",
+          f5t: "🚀 一鍵匯出所有 App Store 尺寸",
+          f5b: "一次匯出 6.9 / 6.5 / 6.3 / 6.1 吋的 PNG 圖檔，可直接上傳至 App Store Connect。",
+          cta: "立即使用 App SS →"
+        },
+        pricing: {
+          h2: "方案價格",
+          sub: "先免費試用，不夠再依需求購買點數，無需訂閱。",
+          freeTitle: "免費方案",
+          freePrice: `¥0<span class="text-base font-normal text-gray-400"> / 月</span>`,
+          freeDesc: "適合想先試用看看的使用者",
+          freeLi1: "✓ 每月最多生成 3 次",
+          freeLi2: "✓ README 最多 1,000 字",
+          freeLi3: "✓ 5 段式故事架構（Code Tweet）／文案與設計生成（App SS）",
+          freeLi4: "— 不支援私有儲存庫",
+          badge: "推薦",
+          packTitle: "點數包",
+          packPrice: `¥100<span class="text-base font-normal text-gray-400"> 起</span>`,
+          packDesc: "無需訂閱，依使用量購買",
+          packLi1: "✓ 10 次 ¥100／30 次 ¥300／50 次 ¥500／100 次 ¥700",
+          packLi2: `✓ 點數<span class="font-bold">永不過期</span>（跨月也不會消失）`,
+          packLi3: `✓ README 最多支援 <span class="font-bold">10,000 字</span>／支援私有儲存庫`,
+          packLi4: "✓ Code Tweet 與 App SS 共用"
+        },
+        finalCta: {
+          h2: `現在就<span class="brand-gradient">免費</span>試試看`,
+          body: "無需註冊，最多可免費體驗 3 次。1 分鐘生成你的第一則貼文。",
+          cta: "開啟 Code Tweet →"
+        },
+        footer: { back: "← 返回 nakakei6439 的應用程式列表" }
+      },
+      ko: {
+        meta: {
+          title: "Code Tweet — GitHub README에서 일주일 치 X 게시물 5개를 자동 생성",
+          desc: "GitHub 저장소 URL만 붙여넣으면 README에서 X용 게시물 5개를 한 번에 생성합니다. 인디 개발자를 위한 꾸준한 홍보 도구."
+        },
+        hero: {
+          eyebrow: "인디 개발자를 위한",
+          subtitle: `GitHub 저장소 URL만 붙여넣으면<br class="hidden md:block">README에서 <span class="text-white font-bold">5개</span>의 X 게시물을 한 번에 생성합니다.`,
+          cta1: "앱 사용하기 →",
+          cta2: "기능 살펴보기",
+          note: "무료로 3회까지 체험 가능 (가입 불필요)"
+        },
+        pain: {
+          h2: `혹시 이런 고민 있으신가요? 인디 개발자의 <span class="brand-gradient">꾸준한 홍보</span> 고민`,
+          c1t: "매일 소재를 고민하는 게 너무 힘들다",
+          c1b: "「또 같은 공지」「이제 뭘 써야 하지…」 하다가 결국 게시가 멈춰버려요.",
+          c2t: "글을 쓸 시간이 없다",
+          c2b: "개발에만 집중하고 싶은데, 홍보하지 않으면 아무도 앱을 알아주지 않아요.",
+          c3t: "매번 톤이 제각각이다",
+          c3b: "어떤 날은 진지하게, 어떤 날은 캐주얼하게 — 브랜드 톤이 좀처럼 정해지지 않아요."
+        },
+        how: {
+          h2: `단 <span class="brand-gradient">3단계</span>면 끝`,
+          sub: "번거로운 설정은 필요 없어요. 저장소 URL만 붙여넣으세요.",
+          s1t: "URL 붙여넣기",
+          s1b: "소개하고 싶은 GitHub 저장소 URL을 입력란에 붙여넣습니다.",
+          s2t: "조건 선택하기",
+          s2b: "톤(진지함／캐주얼)과 타겟 독자를 지정합니다. 비워둬도 괜찮아요.",
+          s3t: "5개 한 번에 생성",
+          s3b: "소개・사용법・활용 사례・공감・CTA, 5개의 게시물이 한 번에 완성됩니다."
+        },
+        features: {
+          h2: `<span class="brand-gradient">꾸준한 홍보</span>에 도움이 되는 디테일`,
+          f1t: "📖 README 자동 불러오기",
+          f1b: "URL만 붙여넣으면 AI가 저장소의 README를 자동으로 읽고 핵심을 추출합니다.",
+          f2t: "🎯 5단계 스토리 아크",
+          f2b: "소개 → 사용법 → 활용 사례 → 공감 → CTA 흐름으로 5개를 생성. 일주일 치 게시 계획이 그대로 완성돼요.",
+          f3t: "🕒 추천 게시 시간 포함",
+          f3b: "각 게시물마다 「언제 올리면 좋을지」 가이드가 함께 제공되어 예약 게시에 바로 활용할 수 있어요.",
+          f4t: "✂️ 280자 자동 체크",
+          f4b: "X의 글자 수 제한을 지키는지 실시간으로 확인. 복사해서 바로 게시할 수 있어요.",
+          f5t: "🚀 원클릭으로 X에 게시",
+          f5b: "생성된 게시물에서 「X에 게시」 버튼을 누르면 본문이 채워진 게시 화면이 그대로 열려요. 복사·붙여넣기가 필요 없습니다."
+        },
+        appss: {
+          eyebrow: "신규",
+          h2: `<span class="brand-gradient">App SS</span> — App Store 스크린샷도 같은 README에서`,
+          body: `Code Tweet과 동일한 README를 활용해, 다운로드를 좌우하는 "광고"인 App Store 제출용 스크린샷을 AI와 함께 만들 수 있는 도구입니다. README를 붙여넣기만 하면 AI가 앱 이름・설명・기능을 자동으로 읽어 헤드라인 카피, 앱 전용 컬러 팔레트, 레이아웃까지 한 번에 생성합니다. 이후에는 자신의 앱 화면을 넣고 내보내기만 하면 되며, 모든 과정이 브라우저 안에서 완결됩니다.`,
+          f1t: "📖 README에서 앱 정보 자동 입력",
+          f1b: "README를 붙여넣기만 하면 AI가 앱 이름・설명・주요 기능을 읽어 입력란에 반영합니다. 초안으로 활용하고 자유롭게 수정할 수 있어요.",
+          f2t: "🎨 AI가 매번 전용 컬러 팔레트 생성",
+          f2b: "기성 테마에서 고르는 것뿐 아니라, 앱 분위기에 맞춰 AI가 매번 새로운 배색을 생성합니다. 테마 11종・글꼴 9종 중 수동 선택도 가능해요.",
+          f3t: "✂️ 강조 단어 자동 하이라이트",
+          f3b: "각 헤드라인에서 가장 임팩트 있는 단어를 AI가 골라 강조색으로 자동 표시. 프로 스크린샷 광고에 빠질 수 없는 '한 단어 강조'를 그대로 재현합니다.",
+          f4t: "🔒 이미지는 기기 내에서만 처리",
+          f4b: "가져온 스크린샷은 브라우저 내에만 저장되며 서버로 전송되지 않습니다. 미공개 앱의 스크린샷도 안심하고 사용할 수 있어요.",
+          f5t: "🚀 App Store 전 사이즈 일괄 내보내기",
+          f5b: "6.9 / 6.5 / 6.3 / 6.1인치를 한 번에 PNG로 내보내, 그대로 App Store Connect에 업로드할 수 있어요.",
+          cta: "App SS 사용하기 →"
+        },
+        pricing: {
+          h2: "요금제",
+          sub: "먼저 무료로 체험하고, 부족한 만큼만 크레딧을 추가 구매하세요. 구독은 필요 없습니다.",
+          freeTitle: "무료 플랜",
+          freePrice: `¥0<span class="text-base font-normal text-gray-400"> / 월</span>`,
+          freeDesc: "먼저 체험해보고 싶은 분께",
+          freeLi1: "✓ 월 3회까지 생성",
+          freeLi2: "✓ README 1,000자까지",
+          freeLi3: "✓ 5단계 스토리 아크(Code Tweet) / App SS 카피·디자인 생성",
+          freeLi4: "— 비공개 저장소 미지원",
+          badge: "추천",
+          packTitle: "크레딧 팩",
+          packPrice: `¥100<span class="text-base font-normal text-gray-400"> ~</span>`,
+          packDesc: "구독 불필요 · 사용한 만큼만 추가 구매",
+          packLi1: "✓ 10회 ¥100 / 30회 ¥300 / 50회 ¥500 / 100회 ¥700",
+          packLi2: `✓ 크레딧은 <span class="font-bold">무기한</span> (월이 바뀌어도 소멸되지 않음)`,
+          packLi3: `✓ README <span class="font-bold">10,000자</span>까지 / 비공개 저장소 지원`,
+          packLi4: "✓ Code Tweet・App SS에서 공통으로 사용 가능"
+        },
+        finalCta: {
+          h2: `지금 바로 <span class="brand-gradient">무료</span>로 체험해보세요`,
+          body: "가입 불필요・게스트로 3회까지 이용 가능. 첫 게시물을 1분 만에.",
+          cta: "Code Tweet 열기 →"
+        },
+        footer: { back: "← nakakei6439의 앱 목록으로" }
+      }
+    };
+
+    var SUPPORTED = ['ja', 'en', 'de', 'fr', 'es', 'zh-Hans', 'zh-Hant', 'ko'];
+
+    function detectLang() {
+      try {
+        var saved = localStorage.getItem('ct_lang');
+        if (saved && SUPPORTED.indexOf(saved) !== -1) return saved;
+      } catch (e) {}
+      var navLangs = navigator.languages || [navigator.language || 'en'];
+      for (var i = 0; i < navLangs.length; i++) {
+        var lc = navLangs[i].toLowerCase();
+        if (lc.indexOf('ja') === 0) return 'ja';
+        if (lc.indexOf('ko') === 0) return 'ko';
+        if (lc.indexOf('de') === 0) return 'de';
+        if (lc.indexOf('fr') === 0) return 'fr';
+        if (lc.indexOf('es') === 0) return 'es';
+        if (lc.indexOf('zh') === 0) {
+          if (lc.indexOf('tw') !== -1 || lc.indexOf('hk') !== -1 || lc.indexOf('mo') !== -1 || lc.indexOf('hant') !== -1) return 'zh-Hant';
+          return 'zh-Hans';
+        }
+        if (lc.indexOf('en') === 0) return 'en';
+      }
+      return 'en';
+    }
+
+    function getByPath(obj, path) {
+      return path.split('.').reduce(function (acc, key) {
+        return acc && acc[key] !== undefined ? acc[key] : undefined;
+      }, obj);
+    }
+
+    function applyLang(lang) {
+      var t = translations[lang] || translations.en;
+      document.documentElement.lang = lang;
+
+      document.title = t.meta.title;
+      var descTag = document.querySelector('meta[name="description"]');
+      if (descTag) descTag.setAttribute('content', t.meta.desc);
+      var ogTitle = document.querySelector('meta[property="og:title"]');
+      if (ogTitle) ogTitle.setAttribute('content', t.meta.title);
+      var ogDesc = document.querySelector('meta[property="og:description"]');
+      if (ogDesc) ogDesc.setAttribute('content', t.meta.desc);
+
+      var nodes = document.querySelectorAll('[data-i18n]');
+      for (var i = 0; i < nodes.length; i++) {
+        var key = nodes[i].getAttribute('data-i18n');
+        var value = getByPath(t, key);
+        if (value !== undefined) nodes[i].innerHTML = value;
+      }
+
+      var switcher = document.getElementById('langSwitcher');
+      if (switcher) switcher.value = lang;
+
+      try { localStorage.setItem('ct_lang', lang); } catch (e) {}
+    }
+
+    var initialLang = detectLang();
+    applyLang(initialLang);
+    document.documentElement.classList.add('i18n-ready');
+
+    document.getElementById('langSwitcher').addEventListener('change', function (e) {
+      applyLang(e.target.value);
+    });
+  </script>
 
 </body>
 </html>
