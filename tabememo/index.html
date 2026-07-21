@@ -12,6 +12,8 @@
     .badge { width: 96px; height: 96px; border-radius: 22px; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 20px; background: linear-gradient(135deg, #33C77A, #219959); box-shadow: 0 6px 24px rgba(33,153,89,0.35); font-size: 48px; }
     h1 { font-size: 26px; }
     .tagline { color: #555; margin-top: 8px; font-size: 16px; }
+    .appstore-badge { display: inline-block; margin-top: 20px; line-height: 0; }
+    .appstore-badge svg { display: block; }
     main { max-width: 680px; margin: 0 auto; padding: 32px 20px 64px; }
     section { background: #fff; border-radius: 16px; padding: 24px; margin-bottom: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
     h2 { font-size: 18px; color: #219959; margin-bottom: 12px; }
@@ -37,6 +39,16 @@
     <div class="badge">🍃</div>
     <h1 data-i18n="appName">たべメモ</h1>
     <p class="tagline" data-i18n="tagline">雑に書くだけ。AIがカロリーを推定して、今日の残りが一目でわかる。</p>
+    <a class="appstore-badge" href="https://apps.apple.com/app/id6787073935" target="_blank" rel="noopener" data-i18n-aria="downloadAria">
+      <svg width="135" height="40" viewBox="0 0 135 40" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+        <rect width="135" height="40" rx="8" fill="#000000"/>
+        <g fill="#FFFFFF">
+          <path d="M27.6 20.3c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.1 2.5-1.8 3.1-.5 7.6 1.2 10.1.9 1.2 1.9 2.6 3.2 2.5 1.3-.1 1.8-.8 3.4-.8 1.6 0 2 .8 3.4.8 1.4 0 2.3-1.2 3.1-2.5.6-.9 1-1.7 1.4-2.5-1.6-.6-2.9-2.2-2.9-4.2zM25.1 12.9c.7-.8 1.1-1.9 1-3-1 .1-2.1.7-2.8 1.4-.6.6-1.2 1.7-1 2.8 1.1.1 2.1-.5 2.8-1.2z"/>
+          <text x="38" y="17" font-family="-apple-system, BlinkMacSystemFont, Helvetica Neue, sans-serif" font-size="7.5" fill="#FFFFFF">Download on the</text>
+          <text x="38" y="30" font-family="-apple-system, BlinkMacSystemFont, Helvetica Neue, sans-serif" font-size="15" font-weight="600" fill="#FFFFFF">App Store</text>
+        </g>
+      </svg>
+    </a>
   </header>
 
   <main>
@@ -48,7 +60,13 @@
         <li data-i18n="feat3">Siri／アクションボタンから、アプリを開かずに記録</li>
         <li data-i18n="feat4">身長・体重などから目標カロリーを自動計算</li>
         <li data-i18n="feat5">摂取カロリーの推移グラフ、過去日の記録の追加・編集</li>
+        <li data-i18n="feat6">iCloudでiPhone・iPad間のデータを自動同期</li>
       </ul>
+    </section>
+
+    <section>
+      <h2 data-i18n="h2Pricing">料金について</h2>
+      <p data-i18n="pricingText">無料でご利用いただけます（非パーソナライズのバナー広告を表示）。¥300の買い切り購入で広告を非表示にできます。</p>
     </section>
 
     <section>
@@ -77,11 +95,15 @@
         feat3: "Siri／アクションボタンから、アプリを開かずに記録",
         feat4: "身長・体重などから目標カロリーを自動計算",
         feat5: "摂取カロリーの推移グラフ、過去日の記録の追加・編集",
+        feat6: "iCloudでiPhone・iPad間のデータを自動同期",
+        h2Pricing: "料金について",
+        pricingText: "無料でご利用いただけます（非パーソナライズのバナー広告を表示）。¥300の買い切り購入で広告を非表示にできます。",
         h2Support: "サポート・お問い合わせ",
         supportText: "ご質問・ご要望・不具合のご報告は、下記までお気軽にご連絡ください。",
         emailLabel: "メール：",
         privacyLink: "プライバシーポリシー",
-        footer: "© 2026 Keita Nakagawa"
+        footer: "© 2026 Keita Nakagawa",
+        downloadAria: "App Storeでダウンロード"
       },
       en: {
         title: "TabeMemo — Just jot it down, see your calorie balance",
@@ -93,11 +115,15 @@
         feat3: "Log entries without opening the app, via Siri or the Action Button",
         feat4: "Automatically calculates your calorie goal from height, weight, and more",
         feat5: "View your calorie intake trend graph, and add or edit past days' entries",
+        feat6: "Automatically sync your data between iPhone and iPad via iCloud",
+        h2Pricing: "Pricing",
+        pricingText: "Free to use (shows non-personalized banner ads). A one-time ¥300 purchase removes ads.",
         h2Support: "Support & Contact",
         supportText: "For questions, requests, or bug reports, feel free to reach out below.",
         emailLabel: "Email: ",
         privacyLink: "Privacy Policy",
-        footer: "© 2026 Keita Nakagawa"
+        footer: "© 2026 Keita Nakagawa",
+        downloadAria: "Download on the App Store"
       },
       "zh-Hans": {
         title: "食记 — 随手一写，卡路里余额一目了然",
@@ -109,11 +135,15 @@
         feat3: "通过 Siri／操作按钮，无需打开App即可记录",
         feat4: "根据身高、体重等自动计算目标卡路里",
         feat5: "查看摄取卡路里趋势图，并可添加或编辑过去日期的记录",
+        feat6: "通过iCloud在iPhone与iPad之间自动同步数据",
+        h2Pricing: "关于价格",
+        pricingText: "本应用可免费使用（展示非个性化横幅广告）。购买¥300的买断项目即可移除广告。",
         h2Support: "支持与联系方式",
         supportText: "如有问题、需求或故障报告，请随时通过以下方式联系我们。",
         emailLabel: "邮箱：",
         privacyLink: "隐私政策",
-        footer: "© 2026 Keita Nakagawa"
+        footer: "© 2026 Keita Nakagawa",
+        downloadAria: "前往App Store下载"
       },
       "zh-Hant": {
         title: "食記 — 隨手一寫，卡路里餘額一目了然",
@@ -125,11 +155,15 @@
         feat3: "透過 Siri／操作按鈕，無需開啟App即可記錄",
         feat4: "根據身高、體重等自動計算目標卡路里",
         feat5: "查看攝取卡路里趨勢圖，並可新增或編輯過去日期的記錄",
+        feat6: "透過iCloud在iPhone與iPad之間自動同步資料",
+        h2Pricing: "關於價格",
+        pricingText: "本App可免費使用（顯示非個人化橫幅廣告）。購買¥300的買斷項目即可移除廣告。",
         h2Support: "支援與聯絡方式",
         supportText: "如有問題、需求或故障回報，請隨時透過以下方式與我們聯絡。",
         emailLabel: "電子郵件：",
         privacyLink: "隱私權政策",
-        footer: "© 2026 Keita Nakagawa"
+        footer: "© 2026 Keita Nakagawa",
+        downloadAria: "前往App Store下載"
       },
       fr: {
         title: "MangeMémo — Notez sans réfléchir, votre solde calorique en un coup d'œil",
@@ -141,11 +175,15 @@
         feat3: "Enregistrez sans ouvrir l'application, via Siri ou le bouton Action",
         feat4: "Calcul automatique de votre objectif calorique à partir de votre taille, poids, etc.",
         feat5: "Consultez le graphique d'évolution des calories consommées, et ajoutez ou modifiez les entrées des jours précédents",
+        feat6: "Synchronisation automatique de vos données entre iPhone et iPad via iCloud",
+        h2Pricing: "Tarifs",
+        pricingText: "Gratuit à l'utilisation (affiche des bannières publicitaires non personnalisées). Un achat unique de ¥300 permet de supprimer les publicités.",
         h2Support: "Assistance et contact",
         supportText: "Pour toute question, demande ou signalement de bug, n'hésitez pas à nous contacter ci-dessous.",
         emailLabel: "E-mail : ",
         privacyLink: "Politique de confidentialité",
-        footer: "© 2026 Keita Nakagawa"
+        footer: "© 2026 Keita Nakagawa",
+        downloadAria: "Télécharger sur l'App Store"
       },
       de: {
         title: "EssMemo — Einfach eintippen, Kalorienbilanz auf einen Blick",
@@ -157,11 +195,15 @@
         feat3: "Erfassen Sie Einträge ohne die App zu öffnen, per Siri oder Aktionstaste",
         feat4: "Automatische Berechnung Ihres Kalorienziels aus Größe, Gewicht und mehr",
         feat5: "Sehen Sie den Verlauf Ihrer Kalorienaufnahme als Grafik und fügen Sie Einträge vergangener Tage hinzu oder bearbeiten Sie sie",
+        feat6: "Automatische Synchronisierung Ihrer Daten zwischen iPhone und iPad über iCloud",
+        h2Pricing: "Preise",
+        pricingText: "Kostenlos nutzbar (zeigt nicht personalisierte Banner-Werbung). Mit einem einmaligen Kauf für ¥300 entfernen Sie die Werbung.",
         h2Support: "Support & Kontakt",
         supportText: "Bei Fragen, Wünschen oder Fehlermeldungen kontaktieren Sie uns gerne über die folgenden Wege.",
         emailLabel: "E-Mail: ",
         privacyLink: "Datenschutzerklärung",
-        footer: "© 2026 Keita Nakagawa"
+        footer: "© 2026 Keita Nakagawa",
+        downloadAria: "Im App Store laden"
       },
       es: {
         title: "ComeMemo — Escríbelo sin más y descubre tu saldo de calorías",
@@ -173,11 +215,15 @@
         feat3: "Registra sin abrir la app, mediante Siri o el botón de Acción",
         feat4: "Calcula automáticamente tu objetivo calórico a partir de tu altura, peso y más",
         feat5: "Consulta el gráfico de evolución de calorías consumidas, y añade o edita registros de días anteriores",
+        feat6: "Sincroniza automáticamente tus datos entre iPhone y iPad mediante iCloud",
+        h2Pricing: "Precio",
+        pricingText: "Gratis para usar (muestra anuncios de banner no personalizados). Con una compra única de ¥300 puedes eliminar los anuncios.",
         h2Support: "Soporte y contacto",
         supportText: "Si tienes preguntas, sugerencias o quieres reportar un error, contáctanos a continuación.",
         emailLabel: "Correo: ",
         privacyLink: "Política de privacidad",
-        footer: "© 2026 Keita Nakagawa"
+        footer: "© 2026 Keita Nakagawa",
+        downloadAria: "Descargar en el App Store"
       },
       ko: {
         title: "먹메모 — 대충 적기만 하면 칼로리 잔액을 알 수 있어요",
@@ -189,11 +235,15 @@
         feat3: "Siri／액션 버튼으로 앱을 열지 않고도 기록 가능",
         feat4: "키・체중 등으로 목표 칼로리를 자동 계산",
         feat5: "섭취 칼로리 추이 그래프 확인, 지난 날짜 기록 추가・수정 가능",
+        feat6: "iCloud로 iPhone・iPad 간 데이터 자동 동기화",
+        h2Pricing: "요금 안내",
+        pricingText: "무료로 이용할 수 있습니다(비개인화 배너 광고가 표시됩니다). ¥300 일회성 구매로 광고를 제거할 수 있습니다.",
         h2Support: "지원 및 문의",
         supportText: "궁금한 점, 요청 사항, 오류 신고는 아래로 편하게 연락해 주세요.",
         emailLabel: "이메일: ",
         privacyLink: "개인정보 처리방침",
-        footer: "© 2026 Keita Nakagawa"
+        footer: "© 2026 Keita Nakagawa",
+        downloadAria: "App Store에서 다운로드"
       }
     };
 
@@ -225,6 +275,11 @@
       for (var i = 0; i < nodes.length; i++) {
         var key = nodes[i].getAttribute('data-i18n');
         if (dict[key] != null) nodes[i].textContent = dict[key];
+      }
+      var ariaNodes = document.querySelectorAll('[data-i18n-aria]');
+      for (var j = 0; j < ariaNodes.length; j++) {
+        var ariaKey = ariaNodes[j].getAttribute('data-i18n-aria');
+        if (dict[ariaKey] != null) ariaNodes[j].setAttribute('aria-label', dict[ariaKey]);
       }
       localStorage.setItem('site-lang', lang);
       var select = document.getElementById('lang-select');
