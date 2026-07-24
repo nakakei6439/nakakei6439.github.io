@@ -298,22 +298,31 @@
     <div class="app-icon">🛒</div>
     <h1 data-lang="ja" class="visible">使い方ガイド</h1>
     <h1 data-lang="en">How to Use</h1>
-    <h1 data-lang="zh">使用指南</h1>
+    <h1 data-lang="zh-Hans">使用指南</h1>
+    <h1 data-lang="zh-Hant">使用指南</h1>
     <h1 data-lang="ko">사용 가이드</h1>
     <h1 data-lang="es">Guia de uso</h1>
-    <p class="tagline" data-lang="ja" class="visible">献立カート</p>
+    <h1 data-lang="fr">Comment utiliser</h1>
+    <h1 data-lang="de">Anleitung</h1>
+    <p class="tagline visible" data-lang="ja">献立カート</p>
     <p class="tagline" data-lang="en">KondateCart</p>
-    <p class="tagline" data-lang="zh">献立カート</p>
-    <p class="tagline" data-lang="ko">献立カート</p>
-    <p class="tagline" data-lang="es">献立カート</p>
+    <p class="tagline" data-lang="zh-Hans">菜单购物车</p>
+    <p class="tagline" data-lang="zh-Hant">菜單購物車</p>
+    <p class="tagline" data-lang="ko">식단카트</p>
+    <p class="tagline" data-lang="es">KondateCart</p>
+    <p class="tagline" data-lang="fr">KondateCart</p>
+    <p class="tagline" data-lang="de">KondateCart</p>
   </header>
 
   <div class="lang-bar">
     <button class="lang-btn active" data-select-lang="ja">日本語</button>
     <button class="lang-btn" data-select-lang="en">EN</button>
-    <button class="lang-btn" data-select-lang="zh">中文</button>
+    <button class="lang-btn" data-select-lang="zh-Hans">简体</button>
+    <button class="lang-btn" data-select-lang="zh-Hant">繁體</button>
     <button class="lang-btn" data-select-lang="ko">한국어</button>
     <button class="lang-btn" data-select-lang="es">ES</button>
+    <button class="lang-btn" data-select-lang="fr">FR</button>
+    <button class="lang-btn" data-select-lang="de">DE</button>
   </div>
 
   <!-- ===== 日本語 ===== -->
@@ -606,8 +615,8 @@
     </div>
   </div>
 
-  <!-- ===== 中文 ===== -->
-  <div class="content" data-lang="zh">
+  <!-- ===== 简体中文 ===== -->
+  <div class="content" data-lang="zh-Hans">
 
     <div class="guide-card">
       <p class="section-label">STEP 1</p>
@@ -994,20 +1003,423 @@
     </div>
   </div>
 
+  <!-- ===== 繁體中文 ===== -->
+  <div class="content" data-lang="zh-Hant">
+
+    <div class="guide-card">
+      <p class="section-label">STEP 1</p>
+      <p class="section-title">規劃每週菜單</p>
+      <p class="section-desc">在底部的「菜單」標籤中，按天輸入一週的菜品。</p>
+      <div class="step">
+        <span class="step-num">1</span>
+        <div>
+          <p class="step-text"><strong>點擊某天</strong>開啟輸入介面</p>
+          <p class="step-hint">可切換「下週」和「下下週」</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">2</span>
+        <div>
+          <p class="step-text">輸入<strong>菜品名稱</strong>（如：咖哩飯）</p>
+          <p class="step-hint">點擊「歷史」可從過去的菜品中選擇</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">3</span>
+        <div>
+          <p class="step-text">新增<strong>食材</strong>（名稱和用量）</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">4</span>
+        <div>
+          <p class="step-text">點擊<strong>「儲存」</strong>完成</p>
+          <p class="step-hint">每天可以新增多道菜</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="guide-card">
+      <p class="section-label">STEP 2</p>
+      <p class="section-title">使用購物清單</p>
+      <p class="section-desc">菜單中的食材會自動彙整到購物清單中。</p>
+      <div class="step">
+        <span class="step-num">1</span>
+        <div><p class="step-text">開啟底部的<strong>「購物」標籤</strong></p></div>
+      </div>
+      <div class="step">
+        <span class="step-num">2</span>
+        <div>
+          <p class="step-text">切換<strong>「下週」/「兩週」</strong>查看範圍</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">3</span>
+        <div><p class="step-text"><strong>點擊勾選</strong>已購買的食材</p></div>
+      </div>
+      <div class="step">
+        <span class="step-num">4</span>
+        <div><p class="step-text">菜單有變動時點擊<strong>「重新生成」</strong>更新清單</p></div>
+      </div>
+      <div class="tip-box">
+        <strong>Tip:</strong> 點擊右上角「+」按鈕可手動新增菜單外的物品（如調味料）。
+      </div>
+    </div>
+
+    <div class="guide-card">
+      <p class="section-label">STEP 3</p>
+      <p class="section-title">查看烹飪紀錄</p>
+      <p class="section-desc">登錄過的菜品會自動儲存到紀錄中。</p>
+      <div class="step">
+        <span class="step-num">1</span>
+        <div>
+          <p class="step-text">開啟<strong>「歷史」標籤</strong></p>
+          <p class="step-hint">按本週、上週、本月、更早分組</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">2</span>
+        <div><p class="step-text">使用搜尋列<strong>搜尋菜名</strong></p></div>
+      </div>
+      <div class="step">
+        <span class="step-num">3</span>
+        <div><p class="step-text">點擊菜品可<strong>查看或編輯</strong>食材</p></div>
+      </div>
+      <div class="tip-box">
+        <strong>Tip:</strong> 新增菜品時，點擊「歷史」按鈕可直接重複使用過去的菜品及其食材。
+      </div>
+    </div>
+
+    <div class="guide-card">
+      <p class="section-label">STEP 4</p>
+      <p class="section-title">滑動刪除</p>
+      <p class="section-desc">向左滑動任一列即可顯示刪除按鈕。</p>
+
+      <div class="swipe-demo">
+        <p class="swipe-demo-label">向左滑動即可刪除</p>
+        <div class="swipe-row-static">📅 週一 — 咖哩飯</div>
+        <div class="swipe-row-container">
+          <div class="swipe-delete-bg">刪除</div>
+          <div class="swipe-row">
+            📅 週二 — 馬鈴薯燉肉
+            <span class="swipe-finger">👆</span>
+          </div>
+        </div>
+        <div class="swipe-row-static">📅 週三 — 義大利麵</div>
+      </div>
+
+      <div class="tip-box">
+        <strong>Tip:</strong> 滑動刪除適用於菜單、購物清單和烹飪紀錄。
+      </div>
+    </div>
+
+    <div class="guide-card">
+      <p class="section-label">STEP 5</p>
+      <p class="section-title">設定與資料管理</p>
+      <p class="section-desc">點擊右上角齒輪圖示開啟設定。</p>
+      <div class="step">
+        <span class="step-num">-</span>
+        <div><p class="step-text"><strong>進階版（¥300）：</strong>永久移除廣告</p></div>
+      </div>
+      <div class="step">
+        <span class="step-num">-</span>
+        <div><p class="step-text"><strong>匯出：</strong>將資料儲存為 JSON 檔案</p></div>
+      </div>
+      <div class="step">
+        <span class="step-num">-</span>
+        <div>
+          <p class="step-text"><strong>匯入：</strong>從備份檔案還原資料</p>
+          <p class="step-hint">更換裝置時使用</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Français ===== -->
+  <div class="content" data-lang="fr">
+
+    <div class="guide-card">
+      <p class="section-label">ÉTAPE 1</p>
+      <p class="section-title">Planifiez vos repas de la semaine</p>
+      <p class="section-desc">Utilisez l’onglet « Menu » en bas pour saisir les repas de chaque jour.</p>
+      <div class="step">
+        <span class="step-num">1</span>
+        <div>
+          <p class="step-text"><strong>Touchez un jour</strong> pour ouvrir l’écran de saisie</p>
+          <p class="step-hint">Basculez entre « Semaine prochaine » et « Dans deux semaines »</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">2</span>
+        <div>
+          <p class="step-text">Saisissez le <strong>nom du plat</strong> (ex. : bœuf bourguignon)</p>
+          <p class="step-hint">Touchez « Historique » pour choisir un plat déjà créé</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">3</span>
+        <div><p class="step-text">Ajoutez les <strong>ingrédients</strong> (nom et quantité)</p></div>
+      </div>
+      <div class="step">
+        <span class="step-num">4</span>
+        <div>
+          <p class="step-text">Touchez <strong>« Enregistrer »</strong> pour terminer</p>
+          <p class="step-hint">Vous pouvez ajouter plusieurs plats par jour</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="guide-card">
+      <p class="section-label">ÉTAPE 2</p>
+      <p class="section-title">Utilisez la liste de courses</p>
+      <p class="section-desc">Les ingrédients de vos menus sont automatiquement regroupés dans une liste de courses.</p>
+      <div class="step">
+        <span class="step-num">1</span>
+        <div><p class="step-text">Ouvrez l’onglet <strong>« Courses »</strong> en bas</p></div>
+      </div>
+      <div class="step">
+        <span class="step-num">2</span>
+        <div><p class="step-text">Basculez entre <strong>« Semaine prochaine » / « 2 semaines »</strong></p></div>
+      </div>
+      <div class="step">
+        <span class="step-num">3</span>
+        <div><p class="step-text"><strong>Touchez les articles pour les cocher</strong> pendant vos courses</p></div>
+      </div>
+      <div class="step">
+        <span class="step-num">4</span>
+        <div><p class="step-text">Menu modifié ? Touchez <strong>« Régénérer »</strong> pour mettre à jour la liste</p></div>
+      </div>
+      <div class="tip-box">
+        <strong>Astuce :</strong> Utilisez le bouton « + » pour ajouter manuellement des articles absents du menu (ex. : condiments).
+      </div>
+    </div>
+
+    <div class="guide-card">
+      <p class="section-label">ÉTAPE 3</p>
+      <p class="section-title">Consultez l’historique des plats</p>
+      <p class="section-desc">Chaque plat enregistré est automatiquement sauvegardé dans l’historique.</p>
+      <div class="step">
+        <span class="step-num">1</span>
+        <div>
+          <p class="step-text">Ouvrez l’onglet <strong>« Historique »</strong></p>
+          <p class="step-hint">Regroupé par cette semaine, semaine dernière, ce mois-ci et avant</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">2</span>
+        <div><p class="step-text"><strong>Recherchez</strong> un plat par son nom</p></div>
+      </div>
+      <div class="step">
+        <span class="step-num">3</span>
+        <div><p class="step-text">Touchez un plat pour <strong>voir ou modifier</strong> ses ingrédients</p></div>
+      </div>
+      <div class="tip-box">
+        <strong>Astuce :</strong> Lors de l’ajout d’un repas, touchez « Historique » pour réutiliser un plat avec tous ses ingrédients.
+      </div>
+    </div>
+
+    <div class="guide-card">
+      <p class="section-label">ÉTAPE 4</p>
+      <p class="section-title">Balayez pour supprimer</p>
+      <p class="section-desc">Balayez une ligne vers la gauche pour faire apparaître le bouton de suppression.</p>
+
+      <div class="swipe-demo">
+        <p class="swipe-demo-label">Balayez vers la gauche</p>
+        <div class="swipe-row-static">📅 Lun — Riz au curry</div>
+        <div class="swipe-row-container">
+          <div class="swipe-delete-bg">Supprimer</div>
+          <div class="swipe-row">
+            📅 Mar — Nikujaga
+            <span class="swipe-finger">👆</span>
+          </div>
+        </div>
+        <div class="swipe-row-static">📅 Mer — Pâtes</div>
+      </div>
+
+      <div class="tip-box">
+        <strong>Astuce :</strong> Le balayage pour supprimer fonctionne pour les menus, la liste de courses et l’historique.
+      </div>
+    </div>
+
+    <div class="guide-card">
+      <p class="section-label">ÉTAPE 5</p>
+      <p class="section-title">Réglages et données</p>
+      <p class="section-desc">Touchez l’icône d’engrenage en haut à droite pour ouvrir les réglages.</p>
+      <div class="step">
+        <span class="step-num">-</span>
+        <div><p class="step-text"><strong>Premium (¥300) :</strong> Supprime définitivement les publicités</p></div>
+      </div>
+      <div class="step">
+        <span class="step-num">-</span>
+        <div><p class="step-text"><strong>Exporter :</strong> Enregistrez vos données dans un fichier JSON</p></div>
+      </div>
+      <div class="step">
+        <span class="step-num">-</span>
+        <div>
+          <p class="step-text"><strong>Importer :</strong> Restaurez vos données depuis une sauvegarde</p>
+          <p class="step-hint">Utile lors d’un changement d’appareil</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Deutsch ===== -->
+  <div class="content" data-lang="de">
+
+    <div class="guide-card">
+      <p class="section-label">SCHRITT 1</p>
+      <p class="section-title">Planen Sie Ihre Wochenmahlzeiten</p>
+      <p class="section-desc">Geben Sie im Tab „Menü“ unten die Gerichte für jeden Wochentag ein.</p>
+      <div class="step">
+        <span class="step-num">1</span>
+        <div>
+          <p class="step-text"><strong>Tippen Sie auf einen Tag</strong>, um die Eingabe zu öffnen</p>
+          <p class="step-hint">Wechseln Sie zwischen „Nächste Woche“ und „Übernächste Woche“</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">2</span>
+        <div>
+          <p class="step-text">Geben Sie einen <strong>Gerichtnamen</strong> ein (z. B. Rindergulasch)</p>
+          <p class="step-hint">Tippen Sie auf „Verlauf“, um frühere Gerichte zu wählen</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">3</span>
+        <div><p class="step-text">Fügen Sie <strong>Zutaten</strong> hinzu (Name und Menge)</p></div>
+      </div>
+      <div class="step">
+        <span class="step-num">4</span>
+        <div>
+          <p class="step-text">Tippen Sie auf <strong>„Speichern“</strong>, um fertigzustellen</p>
+          <p class="step-hint">Sie können mehrere Gerichte pro Tag hinzufügen</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="guide-card">
+      <p class="section-label">SCHRITT 2</p>
+      <p class="section-title">Einkaufsliste verwenden</p>
+      <p class="section-desc">Die Zutaten aus Ihrem Menüplan werden automatisch in einer Einkaufsliste zusammengefasst.</p>
+      <div class="step">
+        <span class="step-num">1</span>
+        <div><p class="step-text">Öffnen Sie unten den Tab <strong>„Einkauf“</strong></p></div>
+      </div>
+      <div class="step">
+        <span class="step-num">2</span>
+        <div><p class="step-text">Wechseln Sie zwischen <strong>„Nächste Woche“ / „2 Wochen“</strong></p></div>
+      </div>
+      <div class="step">
+        <span class="step-num">3</span>
+        <div><p class="step-text"><strong>Tippen Sie Artikel an, um sie abzuhaken</strong></p></div>
+      </div>
+      <div class="step">
+        <span class="step-num">4</span>
+        <div><p class="step-text">Menü geändert? Tippen Sie auf <strong>„Neu erstellen“</strong>, um die Liste zu aktualisieren</p></div>
+      </div>
+      <div class="tip-box">
+        <strong>Tipp:</strong> Mit „+“ können Sie Artikel hinzufügen, die nicht im Menü stehen (z. B. Gewürze).
+      </div>
+    </div>
+
+    <div class="guide-card">
+      <p class="section-label">SCHRITT 3</p>
+      <p class="section-title">Gericht-Verlauf nutzen</p>
+      <p class="section-desc">Jedes erfasste Gericht wird automatisch im Verlauf gespeichert.</p>
+      <div class="step">
+        <span class="step-num">1</span>
+        <div>
+          <p class="step-text">Öffnen Sie den Tab <strong>„Verlauf“</strong></p>
+          <p class="step-hint">Gruppiert nach dieser Woche, letzter Woche, diesem Monat und früher</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">2</span>
+        <div><p class="step-text"><strong>Suchen</strong> Sie Gerichte nach Namen</p></div>
+      </div>
+      <div class="step">
+        <span class="step-num">3</span>
+        <div><p class="step-text">Tippen Sie ein Gericht an, um Zutaten <strong>anzusehen oder zu bearbeiten</strong></p></div>
+      </div>
+      <div class="tip-box">
+        <strong>Tipp:</strong> Tippen Sie beim Hinzufügen einer Mahlzeit auf „Verlauf“, um ein Gericht mit allen Zutaten wiederzuverwenden.
+      </div>
+    </div>
+
+    <div class="guide-card">
+      <p class="section-label">SCHRITT 4</p>
+      <p class="section-title">Zum Löschen wischen</p>
+      <p class="section-desc">Wischen Sie eine Zeile nach links, um die Schaltfläche zum Löschen anzuzeigen.</p>
+
+      <div class="swipe-demo">
+        <p class="swipe-demo-label">Nach links wischen</p>
+        <div class="swipe-row-static">📅 Mo — Curryreis</div>
+        <div class="swipe-row-container">
+          <div class="swipe-delete-bg">Löschen</div>
+          <div class="swipe-row">
+            📅 Di — Nikujaga
+            <span class="swipe-finger">👆</span>
+          </div>
+        </div>
+        <div class="swipe-row-static">📅 Mi — Pasta</div>
+      </div>
+
+      <div class="tip-box">
+        <strong>Tipp:</strong> Das Wischen zum Löschen funktioniert bei Menü, Einkaufsliste und Verlauf.
+      </div>
+    </div>
+
+    <div class="guide-card">
+      <p class="section-label">SCHRITT 5</p>
+      <p class="section-title">Einstellungen &amp; Daten</p>
+      <p class="section-desc">Tippen Sie oben rechts auf das Zahnradsymbol, um die Einstellungen zu öffnen.</p>
+      <div class="step">
+        <span class="step-num">-</span>
+        <div><p class="step-text"><strong>Premium (¥300):</strong> Entfernt Werbung dauerhaft</p></div>
+      </div>
+      <div class="step">
+        <span class="step-num">-</span>
+        <div><p class="step-text"><strong>Exportieren:</strong> Speichern Sie Ihre Daten als JSON-Datei</p></div>
+      </div>
+      <div class="step">
+        <span class="step-num">-</span>
+        <div>
+          <p class="step-text"><strong>Importieren:</strong> Daten aus einer Sicherung wiederherstellen</p>
+          <p class="step-hint">Nützlich beim Gerätewechsel</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <footer>
-    <a href="./index.html">献立カート</a> &nbsp;|&nbsp; <a href="./privacy-policy.html" data-lang="ja" class="visible">プライバシーポリシー</a><a href="./privacy-policy.html" data-lang="en">Privacy Policy</a><a href="./privacy-policy.html" data-lang="zh">隐私政策</a><a href="./privacy-policy.html" data-lang="ko">개인정보 처리방침</a><a href="./privacy-policy.html" data-lang="es">Politica de privacidad</a>
+    <a href="./index.html">献立カート</a> &nbsp;|&nbsp; <a href="./privacy-policy.html" data-lang="ja" class="visible">プライバシーポリシー</a><a href="./privacy-policy.html" data-lang="en">Privacy Policy</a><a href="./privacy-policy.html" data-lang="zh-Hans">隐私政策</a><a href="./privacy-policy.html" data-lang="zh-Hant">隱私政策</a><a href="./privacy-policy.html" data-lang="ko">개인정보 처리방침</a><a href="./privacy-policy.html" data-lang="es">Politica de privacidad</a><a href="./privacy-policy.html" data-lang="fr">Politique de confidentialité</a><a href="./privacy-policy.html" data-lang="de">Datenschutzerklärung</a>
   </footer>
 
   <script>
     (function() {
-      var supported = ['ja','en','zh','ko','es'];
+      var supported = ['ja','en','zh-Hans','zh-Hant','ko','es','fr','de'];
       var params = new URLSearchParams(location.search);
       var lang = params.get('lang');
       if (!lang || supported.indexOf(lang) === -1) {
-        var nav = (navigator.language || '').slice(0,2);
-        lang = supported.indexOf(nav) !== -1 ? nav : 'ja';
+        lang = detectLang();
       }
       switchLang(lang);
+
+      function detectLang() {
+        var langs = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || 'en'];
+        for (var i = 0; i < langs.length; i++) {
+          var lower = langs[i].toLowerCase();
+          if (lower.indexOf('zh') === 0) {
+            if (lower.indexOf('hant') !== -1 || lower.indexOf('-tw') !== -1 || lower.indexOf('-hk') !== -1 || lower.indexOf('-mo') !== -1) {
+              return 'zh-Hant';
+            }
+            return 'zh-Hans';
+          }
+          var base = lower.split('-')[0];
+          if (supported.indexOf(base) !== -1) return base;
+        }
+        return 'ja';
+      }
 
       document.querySelectorAll('[data-select-lang]').forEach(function(btn) {
         btn.addEventListener('click', function() {
