@@ -8,7 +8,7 @@
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Apple SD Gothic Neo', 'PingFang SC', 'PingFang TC', sans-serif;
       background: #FAFAF5;
       color: #333;
       line-height: 1.8;
@@ -37,6 +37,10 @@
     p, li { margin-bottom: 0.6rem; }
     ul, ol { padding-left: 1.5rem; }
     a { color: #5C9E7A; }
+    .note {
+      background: #F0F4EE; border: 1px solid #C8DDD0; border-radius: 8px;
+      padding: 0.8rem 1rem; font-size: 0.85rem; color: #555; margin-bottom: 2rem;
+    }
     footer {
       text-align: center;
       padding: 2rem;
@@ -49,97 +53,99 @@
 <body>
 
 <header>
-  <h1>利用規約</h1>
+  <h1 data-i18n="h1">利用規約</h1>
   <p>FocusGym</p>
 </header>
 
 <main>
+  <p class="note" data-i18n="xnote">本規約は日本語を正文とし、他言語は参考訳です。内容に相違がある場合は日本語版が優先されます。</p>
 
   <section>
-    <h2>第1条（適用）</h2>
-    <p>本利用規約（以下「本規約」）は、FocusGym（以下「本アプリ」）を提供する開発者（以下「当方」）と、本アプリを利用するすべての方（以下「利用者」）との間の本アプリの利用に関する条件を定めるものです。</p>
-    <p>利用者は、本アプリをダウンロード・インストール・利用することで本規約に同意したものとみなされます。</p>
+    <h2 data-i18n="s1">第1条（適用）</h2>
+    <p data-i18n="a1p1">本利用規約（以下「本規約」）は、FocusGym（以下「本アプリ」）を提供する開発者（以下「当方」）と、本アプリを利用するすべての方（以下「利用者」）との間の本アプリの利用に関する条件を定めるものです。</p>
+    <p data-i18n="a1p2">利用者は、本アプリをダウンロード・インストール・利用することで本規約に同意したものとみなされます。</p>
   </section>
 
   <section>
-    <h2>第2条（サービス内容）</h2>
-    <p>本アプリは、毛様体筋の柔軟性サポートを目的とした視覚トレーニングを提供します。提供する機能・内容・上限時間等は予告なく変更される場合があります。</p>
+    <h2 data-i18n="s2">第2条（サービス内容）</h2>
+    <p data-i18n="a2p1">本アプリは、毛様体筋の柔軟性サポートを目的とした視覚トレーニングを提供します。提供する機能・内容・上限時間等は予告なく変更される場合があります。</p>
   </section>
 
   <section>
-    <h2>第3条（免責事項）</h2>
+    <h2 data-i18n="s3">第3条（免責事項）</h2>
     <ul>
-      <li>本アプリは医療行為ではなく、視力の改善・老眼の治癒・特定疾患の予防または治療を保証するものではありません。</li>
-      <li>本アプリの利用により得られる結果について、当方は一切の保証を行いません。</li>
-      <li>眼の異常、痛み、違和感等を感じた場合は直ちに利用を中止し、医療機関を受診してください。</li>
-      <li>利用者が本アプリの利用により生じた損害について、当方は一切の責任を負いません。</li>
+      <li data-i18n="a3l1">本アプリは医療行為ではなく、視力の改善・老眼の治癒・特定疾患の予防または治療を保証するものではありません。</li>
+      <li data-i18n="a3l2">本アプリの利用により得られる結果について、当方は一切の保証を行いません。</li>
+      <li data-i18n="a3l3">眼の異常、痛み、違和感等を感じた場合は直ちに利用を中止し、医療機関を受診してください。</li>
+      <li data-i18n="a3l4">利用者が本アプリの利用により生じた損害について、当方は一切の責任を負いません。</li>
     </ul>
   </section>
 
   <section>
-    <h2>第4条（アプリ内課金）</h2>
-    <p>本アプリ内の有料機能は、Apple App Store を通じて課金されます。決済情報は Apple が管理し、当方が取得・保存することはありません。</p>
-    <p>返金については Apple のポリシーに従い、<a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a> よりお申し込みください。当方では返金処理を行うことはできません。</p>
+    <h2 data-i18n="s4">第4条（アプリ内課金）</h2>
+    <p data-i18n="a4p1">本アプリ内の有料機能は、Apple App Store を通じて課金されます。決済情報は Apple が管理し、当方が取得・保存することはありません。</p>
+    <p data-i18n-html="a4p2">返金については Apple のポリシーに従い、<a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a> よりお申し込みください。当方では返金処理を行うことはできません。</p>
   </section>
 
   <section>
-    <h2>第5条（禁止事項）</h2>
-    <p>利用者は、本アプリの利用にあたり以下の行為をしてはなりません。</p>
+    <h2 data-i18n="s5">第5条（禁止事項）</h2>
+    <p data-i18n="a5p1">利用者は、本アプリの利用にあたり以下の行為をしてはなりません。</p>
     <ol>
-      <li>法令または公序良俗に違反する行為</li>
-      <li>本アプリのリバースエンジニアリング・逆コンパイル・改変</li>
-      <li>本アプリのコピー・再配布・販売</li>
-      <li>本アプリのサーバーまたはネットワークの機能を妨害する行為</li>
-      <li>他の利用者または第三者の権利を侵害する行為</li>
-      <li>本アプリを医療行為または医療判断の代替として用いる行為</li>
-      <li>その他、当方が不適切と判断する行為</li>
+      <li data-i18n="a5l1">法令または公序良俗に違反する行為</li>
+      <li data-i18n="a5l2">本アプリのリバースエンジニアリング・逆コンパイル・改変</li>
+      <li data-i18n="a5l3">本アプリのコピー・再配布・販売</li>
+      <li data-i18n="a5l4">本アプリのサーバーまたはネットワークの機能を妨害する行為</li>
+      <li data-i18n="a5l5">他の利用者または第三者の権利を侵害する行為</li>
+      <li data-i18n="a5l6">本アプリを医療行為または医療判断の代替として用いる行為</li>
+      <li data-i18n="a5l7">その他、当方が不適切と判断する行為</li>
     </ol>
   </section>
 
   <section>
-    <h2>第6条（知的財産権）</h2>
-    <p>本アプリおよび本アプリに含まれるコンテンツ（プログラム、デザイン、画像、テキスト等）に関する著作権その他の知的財産権は、当方または正当な権利者に帰属します。</p>
+    <h2 data-i18n="s6">第6条（知的財産権）</h2>
+    <p data-i18n="a6p1">本アプリおよび本アプリに含まれるコンテンツ（プログラム、デザイン、画像、テキスト等）に関する著作権その他の知的財産権は、当方または正当な権利者に帰属します。</p>
   </section>
 
   <section>
-    <h2>第7条（責任の制限）</h2>
-    <p>本アプリは現状有姿で提供され、当方は本アプリの完全性・正確性・有用性・特定目的への適合性・第三者の権利を侵害しないこと等について、明示または黙示を問わず一切保証しません。</p>
-    <p>当方は、本アプリに関連して利用者または第三者に生じた一切の損害（直接損害、間接損害、付随的損害、特別損害、結果的損害、逸失利益を含む）について責任を負いません。</p>
+    <h2 data-i18n="s7">第7条（責任の制限）</h2>
+    <p data-i18n="a7p1">本アプリは現状有姿で提供され、当方は本アプリの完全性・正確性・有用性・特定目的への適合性・第三者の権利を侵害しないこと等について、明示または黙示を問わず一切保証しません。</p>
+    <p data-i18n="a7p2">当方は、本アプリに関連して利用者または第三者に生じた一切の損害（直接損害、間接損害、付随的損害、特別損害、結果的損害、逸失利益を含む）について責任を負いません。</p>
   </section>
 
   <section>
-    <h2>第8条（サービスの中断・終了）</h2>
-    <p>当方は、利用者への事前通知なく、本アプリの提供の全部または一部を中断・終了することがあります。これにより利用者または第三者に生じた損害について、当方は責任を負いません。</p>
+    <h2 data-i18n="s8">第8条（サービスの中断・終了）</h2>
+    <p data-i18n="a8p1">当方は、利用者への事前通知なく、本アプリの提供の全部または一部を中断・終了することがあります。これにより利用者または第三者に生じた損害について、当方は責任を負いません。</p>
   </section>
 
   <section>
-    <h2>第9条（規約の変更）</h2>
-    <p>当方は、必要と判断した場合には、利用者への事前通知なく本規約を変更することができます。変更後の本規約は、本ページに掲載した時点から効力を生じるものとします。</p>
+    <h2 data-i18n="s9">第9条（規約の変更）</h2>
+    <p data-i18n="a9p1">当方は、必要と判断した場合には、利用者への事前通知なく本規約を変更することができます。変更後の本規約は、本ページに掲載した時点から効力を生じるものとします。</p>
   </section>
 
   <section>
-    <h2>第10条（準拠法・管轄裁判所）</h2>
-    <p>本規約の解釈および適用は、日本法に準拠します。本アプリに関連して紛争が生じた場合は、東京地方裁判所を第一審の専属的合意管轄裁判所とします。</p>
+    <h2 data-i18n="s10">第10条（準拠法・管轄裁判所）</h2>
+    <p data-i18n="a10p1">本規約の解釈および適用は、日本法に準拠します。本アプリに関連して紛争が生じた場合は、東京地方裁判所を第一審の専属的合意管轄裁判所とします。</p>
   </section>
 
   <section>
-    <h2>お問い合わせ</h2>
-    <p>本規約に関するご質問は下記までお問い合わせください。</p>
+    <h2 data-i18n="s_contact">お問い合わせ</h2>
+    <p data-i18n="contact_p">本規約に関するご質問は下記までお問い合わせください。</p>
     <p><a href="mailto:nakakei6439@gmail.com">nakakei6439@gmail.com</a></p>
   </section>
 
   <section>
-    <h2>制定日</h2>
-    <p>2026年5月12日</p>
+    <h2 data-i18n="s_date">制定日</h2>
+    <p data-i18n="date_p">2026年5月12日</p>
   </section>
 
 </main>
 
-<footer>
+<footer data-i18n-html="footer">
   &copy; 2026 FocusGym. All rights reserved. |
   <a href="index.html">サポートページ</a> |
   <a href="privacy.html">プライバシーポリシー</a>
 </footer>
-
+<script src="assets/i18n.js"></script>
+<script>FGI18N.init({"ja": {"__title__": "利用規約 — FocusGym", "h1": "利用規約", "xnote": "本規約は日本語を正文とし、他言語は参考訳です。内容に相違がある場合は日本語版が優先されます。", "s1": "第1条（適用）", "a1p1": "本利用規約（以下「本規約」）は、FocusGym（以下「本アプリ」）を提供する開発者（以下「当方」）と、本アプリを利用するすべての方（以下「利用者」）との間の本アプリの利用に関する条件を定めるものです。", "a1p2": "利用者は、本アプリをダウンロード・インストール・利用することで本規約に同意したものとみなされます。", "s2": "第2条（サービス内容）", "a2p1": "本アプリは、毛様体筋の柔軟性サポートを目的とした視覚トレーニングを提供します。提供する機能・内容・上限時間等は予告なく変更される場合があります。", "s3": "第3条（免責事項）", "a3l1": "本アプリは医療行為ではなく、視力の改善・老眼の治癒・特定疾患の予防または治療を保証するものではありません。", "a3l2": "本アプリの利用により得られる結果について、当方は一切の保証を行いません。", "a3l3": "眼の異常、痛み、違和感等を感じた場合は直ちに利用を中止し、医療機関を受診してください。", "a3l4": "利用者が本アプリの利用により生じた損害について、当方は一切の責任を負いません。", "s4": "第4条（アプリ内課金）", "a4p1": "本アプリ内の有料機能は、Apple App Store を通じて課金されます。決済情報は Apple が管理し、当方が取得・保存することはありません。", "a4p2": "返金については Apple のポリシーに従い、<a href=\"https://reportaproblem.apple.com\">reportaproblem.apple.com</a> よりお申し込みください。当方では返金処理を行うことはできません。", "s5": "第5条（禁止事項）", "a5p1": "利用者は、本アプリの利用にあたり以下の行為をしてはなりません。", "a5l1": "法令または公序良俗に違反する行為", "a5l2": "本アプリのリバースエンジニアリング・逆コンパイル・改変", "a5l3": "本アプリのコピー・再配布・販売", "a5l4": "本アプリのサーバーまたはネットワークの機能を妨害する行為", "a5l5": "他の利用者または第三者の権利を侵害する行為", "a5l6": "本アプリを医療行為または医療判断の代替として用いる行為", "a5l7": "その他、当方が不適切と判断する行為", "s6": "第6条（知的財産権）", "a6p1": "本アプリおよび本アプリに含まれるコンテンツ（プログラム、デザイン、画像、テキスト等）に関する著作権その他の知的財産権は、当方または正当な権利者に帰属します。", "s7": "第7条（責任の制限）", "a7p1": "本アプリは現状有姿で提供され、当方は本アプリの完全性・正確性・有用性・特定目的への適合性・第三者の権利を侵害しないこと等について、明示または黙示を問わず一切保証しません。", "a7p2": "当方は、本アプリに関連して利用者または第三者に生じた一切の損害（直接損害、間接損害、付随的損害、特別損害、結果的損害、逸失利益を含む）について責任を負いません。", "s8": "第8条（サービスの中断・終了）", "a8p1": "当方は、利用者への事前通知なく、本アプリの提供の全部または一部を中断・終了することがあります。これにより利用者または第三者に生じた損害について、当方は責任を負いません。", "s9": "第9条（規約の変更）", "a9p1": "当方は、必要と判断した場合には、利用者への事前通知なく本規約を変更することができます。変更後の本規約は、本ページに掲載した時点から効力を生じるものとします。", "s10": "第10条（準拠法・管轄裁判所）", "a10p1": "本規約の解釈および適用は、日本法に準拠します。本アプリに関連して紛争が生じた場合は、東京地方裁判所を第一審の専属的合意管轄裁判所とします。", "s_contact": "お問い合わせ", "contact_p": "本規約に関するご質問は下記までお問い合わせください。", "s_date": "制定日", "date_p": "2026年5月12日", "footer": "&copy; 2026 FocusGym. All rights reserved. |\n  <a href=\"index.html\">サポートページ</a> |\n  <a href=\"privacy.html\">プライバシーポリシー</a>"}, "en": {"__title__": "Terms of Use — FocusGym", "h1": "Terms of Use", "xnote": "The Japanese version of these terms is authoritative. Translations are provided for convenience; in case of any discrepancy, the Japanese version prevails.", "s1": "Article 1 (Application)", "a1p1": "These Terms of Use (\"Terms\") set out the conditions governing use of FocusGym (the \"App\") between the developer providing the App (\"we\") and everyone who uses the App (the \"User\").", "a1p2": "By downloading, installing, or using the App, the User is deemed to have agreed to these Terms.", "s2": "Article 2 (Service)", "a2p1": "The App provides visual training intended to support the flexibility of the ciliary muscle. The features, content, time limits, and other aspects may change without notice.", "s3": "Article 3 (Disclaimer)", "a3l1": "The App is not a medical treatment and does not guarantee improved eyesight, a cure for presbyopia, or the prevention or treatment of any specific disease.", "a3l2": "We make no warranty whatsoever regarding the results obtained from using the App.", "a3l3": "If you experience any eye abnormality, pain, or discomfort, stop using the App immediately and consult a medical professional.", "a3l4": "We accept no liability for any damage incurred by the User as a result of using the App.", "s4": "Article 4 (In-App Purchases)", "a4p1": "Paid features within the App are billed through the Apple App Store. Payment information is managed by Apple and is never obtained or stored by us.", "a4p2": "Refunds are subject to Apple's policy; please request them at <a href=\"https://reportaproblem.apple.com\">reportaproblem.apple.com</a>. We are unable to process refunds ourselves.", "s5": "Article 5 (Prohibited Conduct)", "a5p1": "When using the App, the User must not engage in any of the following:", "a5l1": "Acts that violate laws or public order and morals", "a5l2": "Reverse engineering, decompiling, or modifying the App", "a5l3": "Copying, redistributing, or selling the App", "a5l4": "Interfering with the functioning of the App's servers or network", "a5l5": "Infringing the rights of other users or third parties", "a5l6": "Using the App as a substitute for medical treatment or medical judgment", "a5l7": "Any other conduct we deem inappropriate", "s6": "Article 6 (Intellectual Property)", "a6p1": "Copyright and other intellectual property rights in the App and its content (programs, designs, images, text, etc.) belong to us or to the rightful owners.", "s7": "Article 7 (Limitation of Liability)", "a7p1": "The App is provided \"as is,\" and we make no warranties, express or implied, as to its completeness, accuracy, usefulness, fitness for a particular purpose, or non-infringement of third-party rights.", "a7p2": "We accept no liability for any damages (including direct, indirect, incidental, special, consequential damages, or lost profits) incurred by the User or any third party in connection with the App.", "s8": "Article 8 (Suspension and Termination)", "a8p1": "We may suspend or terminate all or part of the App without prior notice to the User. We accept no liability for any damage to the User or any third party arising therefrom.", "s9": "Article 9 (Changes to the Terms)", "a9p1": "We may change these Terms without prior notice to the User when we deem it necessary. The revised Terms take effect when posted on this page.", "s10": "Article 10 (Governing Law and Jurisdiction)", "a10p1": "These Terms are governed by and construed in accordance with the laws of Japan. Any dispute relating to the App shall be subject to the exclusive jurisdiction of the Tokyo District Court as the court of first instance.", "s_contact": "Contact", "contact_p": "For questions about these Terms, please contact us at:", "s_date": "Effective Date", "date_p": "May 12, 2026", "footer": "&copy; 2026 FocusGym. All rights reserved. |\n  <a href=\"index.html\">Support</a> |\n  <a href=\"privacy.html\">Privacy Policy</a>"}, "de": {"__title__": "Nutzungsbedingungen — FocusGym", "h1": "Nutzungsbedingungen", "xnote": "Maßgeblich ist die japanische Fassung dieser Bedingungen. Übersetzungen dienen nur der Verständlichkeit; bei Abweichungen gilt die japanische Fassung.", "s1": "Artikel 1 (Geltungsbereich)", "a1p1": "Diese Nutzungsbedingungen („Bedingungen\") regeln die Bedingungen für die Nutzung von FocusGym (die „App\") zwischen dem Entwickler, der die App bereitstellt („wir\"), und allen Personen, die die App nutzen (dem „Nutzer\").", "a1p2": "Durch das Herunterladen, Installieren oder Nutzen der App gilt der Nutzer als mit diesen Bedingungen einverstanden.", "s2": "Artikel 2 (Leistung)", "a2p1": "Die App bietet Sehtraining, das die Flexibilität des Ziliarmuskels unterstützen soll. Funktionen, Inhalte, Zeitlimits und andere Aspekte können ohne Vorankündigung geändert werden.", "s3": "Artikel 3 (Haftungsausschluss)", "a3l1": "Die App ist keine medizinische Behandlung und garantiert weder eine Verbesserung der Sehkraft noch eine Heilung der Alterssichtigkeit oder die Vorbeugung bzw. Behandlung einer bestimmten Krankheit.", "a3l2": "Wir übernehmen keinerlei Gewähr für die durch die Nutzung der App erzielten Ergebnisse.", "a3l3": "Wenn Sie Auffälligkeiten, Schmerzen oder Beschwerden an den Augen bemerken, beenden Sie die Nutzung sofort und suchen Sie eine Ärztin oder einen Arzt auf.", "a3l4": "Wir haften nicht für Schäden, die dem Nutzer durch die Nutzung der App entstehen.", "s4": "Artikel 4 (In-App-Käufe)", "a4p1": "Kostenpflichtige Funktionen in der App werden über den Apple App Store abgerechnet. Zahlungsinformationen werden von Apple verwaltet und niemals von uns erfasst oder gespeichert.", "a4p2": "Rückerstattungen richten sich nach der Richtlinie von Apple; bitte beantragen Sie diese unter <a href=\"https://reportaproblem.apple.com\">reportaproblem.apple.com</a>. Wir selbst können keine Rückerstattungen vornehmen.", "s5": "Artikel 5 (Verbotene Handlungen)", "a5p1": "Bei der Nutzung der App darf der Nutzer keine der folgenden Handlungen vornehmen:", "a5l1": "Handlungen, die gegen Gesetze oder die guten Sitten verstoßen", "a5l2": "Reverse Engineering, Dekompilierung oder Veränderung der App", "a5l3": "Kopieren, Weiterverbreiten oder Verkaufen der App", "a5l4": "Beeinträchtigung der Funktion der Server oder des Netzwerks der App", "a5l5": "Verletzung der Rechte anderer Nutzer oder Dritter", "a5l6": "Nutzung der App als Ersatz für medizinische Behandlung oder ärztliche Beurteilung", "a5l7": "Sonstige Handlungen, die wir für unangemessen halten", "s6": "Artikel 6 (Geistiges Eigentum)", "a6p1": "Das Urheberrecht und sonstige Rechte am geistigen Eigentum an der App und ihren Inhalten (Programme, Designs, Bilder, Texte usw.) liegen bei uns oder den jeweils Berechtigten.", "s7": "Artikel 7 (Haftungsbeschränkung)", "a7p1": "Die App wird „wie besehen\" bereitgestellt; wir übernehmen weder ausdrücklich noch stillschweigend eine Gewähr für Vollständigkeit, Richtigkeit, Nützlichkeit, Eignung für einen bestimmten Zweck oder Nichtverletzung von Rechten Dritter.", "a7p2": "Wir haften nicht für Schäden gleich welcher Art (einschließlich direkter, indirekter, beiläufiger, besonderer oder Folgeschäden sowie entgangenen Gewinns), die dem Nutzer oder Dritten im Zusammenhang mit der App entstehen.", "s8": "Artikel 8 (Aussetzung und Beendigung)", "a8p1": "Wir können die Bereitstellung der App ganz oder teilweise ohne vorherige Ankündigung gegenüber dem Nutzer aussetzen oder beenden. Für dadurch entstehende Schäden beim Nutzer oder Dritten haften wir nicht.", "s9": "Artikel 9 (Änderungen der Bedingungen)", "a9p1": "Wir können diese Bedingungen bei Bedarf ohne vorherige Ankündigung gegenüber dem Nutzer ändern. Die geänderten Bedingungen treten mit ihrer Veröffentlichung auf dieser Seite in Kraft.", "s10": "Artikel 10 (Anwendbares Recht und Gerichtsstand)", "a10p1": "Diese Bedingungen unterliegen dem Recht Japans und werden nach diesem ausgelegt. Für Streitigkeiten im Zusammenhang mit der App ist das Bezirksgericht Tokio als erstinstanzliches Gericht ausschließlich zuständig.", "s_contact": "Kontakt", "contact_p": "Bei Fragen zu diesen Bedingungen kontaktieren Sie uns bitte unter:", "s_date": "In-Kraft-Treten", "date_p": "12. Mai 2026", "footer": "&copy; 2026 FocusGym. Alle Rechte vorbehalten. |\n  <a href=\"index.html\">Support</a> |\n  <a href=\"privacy.html\">Datenschutz</a>"}, "es": {"__title__": "Términos de Uso — FocusGym", "h1": "Términos de Uso", "xnote": "La versión japonesa de estos términos es la auténtica. Las traducciones se ofrecen por comodidad; en caso de discrepancia, prevalece la versión japonesa.", "s1": "Artículo 1 (Aplicación)", "a1p1": "Estos Términos de Uso (\"Términos\") establecen las condiciones que rigen el uso de FocusGym (la \"App\") entre el desarrollador que ofrece la App (\"nosotros\") y toda persona que use la App (el \"Usuario\").", "a1p2": "Al descargar, instalar o usar la App, se considera que el Usuario ha aceptado estos Términos.", "s2": "Artículo 2 (Servicio)", "a2p1": "La App ofrece entrenamiento visual destinado a favorecer la flexibilidad del músculo ciliar. Las funciones, el contenido, los límites de tiempo y otros aspectos pueden cambiar sin previo aviso.", "s3": "Artículo 3 (Exención de Responsabilidad)", "a3l1": "La App no es un tratamiento médico y no garantiza la mejora de la vista, la cura de la presbicia ni la prevención o el tratamiento de ninguna enfermedad concreta.", "a3l2": "No ofrecemos ninguna garantía sobre los resultados obtenidos del uso de la App.", "a3l3": "Si notas cualquier anomalía, dolor o molestia ocular, deja de usar la App de inmediato y consulta a un profesional médico.", "a3l4": "No asumimos ninguna responsabilidad por los daños que el Usuario sufra como consecuencia del uso de la App.", "s4": "Artículo 4 (Compras dentro de la App)", "a4p1": "Las funciones de pago de la App se cobran a través de la App Store de Apple. La información de pago la gestiona Apple y nosotros nunca la obtenemos ni la almacenamos.", "a4p2": "Los reembolsos están sujetos a la política de Apple; solicítalos en <a href=\"https://reportaproblem.apple.com\">reportaproblem.apple.com</a>. Nosotros no podemos tramitar reembolsos.", "s5": "Artículo 5 (Conductas Prohibidas)", "a5p1": "Al usar la App, el Usuario no debe realizar ninguna de las siguientes acciones:", "a5l1": "Actos que infrinjan la ley o el orden público y las buenas costumbres", "a5l2": "Realizar ingeniería inversa, descompilar o modificar la App", "a5l3": "Copiar, redistribuir o vender la App", "a5l4": "Interferir en el funcionamiento de los servidores o la red de la App", "a5l5": "Vulnerar los derechos de otros usuarios o de terceros", "a5l6": "Usar la App como sustituto de un tratamiento médico o de un criterio médico", "a5l7": "Cualquier otra conducta que consideremos inapropiada", "s6": "Artículo 6 (Propiedad Intelectual)", "a6p1": "Los derechos de autor y demás derechos de propiedad intelectual de la App y de su contenido (programas, diseños, imágenes, textos, etc.) pertenecen a nosotros o a sus legítimos titulares.", "s7": "Artículo 7 (Limitación de Responsabilidad)", "a7p1": "La App se ofrece \"tal cual\" y no ofrecemos ninguna garantía, expresa o implícita, sobre su integridad, exactitud, utilidad, idoneidad para un fin concreto o no vulneración de derechos de terceros.", "a7p2": "No asumimos ninguna responsabilidad por los daños (incluidos daños directos, indirectos, incidentales, especiales, consecuentes o lucro cesante) que el Usuario o cualquier tercero sufra en relación con la App.", "s8": "Artículo 8 (Suspensión y Terminación)", "a8p1": "Podemos suspender o cancelar la totalidad o parte de la App sin previo aviso al Usuario. No asumimos responsabilidad por los daños que ello cause al Usuario o a terceros.", "s9": "Artículo 9 (Modificación de los Términos)", "a9p1": "Podemos modificar estos Términos sin previo aviso al Usuario cuando lo consideremos necesario. Los Términos modificados entran en vigor cuando se publican en esta página.", "s10": "Artículo 10 (Ley Aplicable y Jurisdicción)", "a10p1": "Estos Términos se rigen e interpretan de acuerdo con las leyes de Japón. Cualquier disputa relacionada con la App se someterá a la jurisdicción exclusiva del Tribunal de Distrito de Tokio como tribunal de primera instancia.", "s_contact": "Contacto", "contact_p": "Para consultas sobre estos Términos, contáctanos en:", "s_date": "Fecha de Vigencia", "date_p": "12 de mayo de 2026", "footer": "&copy; 2026 FocusGym. Todos los derechos reservados. |\n  <a href=\"index.html\">Soporte</a> |\n  <a href=\"privacy.html\">Privacidad</a>"}, "fr": {"__title__": "Conditions d'Utilisation — FocusGym", "h1": "Conditions d'Utilisation", "xnote": "La version japonaise de ces conditions fait foi. Les traductions sont fournies à titre indicatif ; en cas de divergence, la version japonaise prévaut.", "s1": "Article 1 (Application)", "a1p1": "Les présentes Conditions d'Utilisation (« Conditions ») définissent les conditions régissant l'utilisation de FocusGym (l'« Application ») entre le développeur fournissant l'Application (« nous ») et toute personne utilisant l'Application (l'« Utilisateur »).", "a1p2": "En téléchargeant, installant ou utilisant l'Application, l'Utilisateur est réputé avoir accepté les présentes Conditions.", "s2": "Article 2 (Service)", "a2p1": "L'Application propose un entraînement visuel destiné à soutenir la souplesse du muscle ciliaire. Les fonctionnalités, le contenu, les limites de temps et d'autres aspects peuvent changer sans préavis.", "s3": "Article 3 (Avertissement)", "a3l1": "L'Application n'est pas un traitement médical et ne garantit ni l'amélioration de la vue, ni la guérison de la presbytie, ni la prévention ou le traitement d'une maladie particulière.", "a3l2": "Nous n'offrons aucune garantie quant aux résultats obtenus grâce à l'utilisation de l'Application.", "a3l3": "Si vous ressentez une anomalie, une douleur ou une gêne oculaire, cessez immédiatement d'utiliser l'Application et consultez un professionnel de santé.", "a3l4": "Nous déclinons toute responsabilité pour tout dommage subi par l'Utilisateur du fait de l'utilisation de l'Application.", "s4": "Article 4 (Achats Intégrés)", "a4p1": "Les fonctionnalités payantes de l'Application sont facturées via l'App Store d'Apple. Les informations de paiement sont gérées par Apple et ne sont jamais obtenues ni stockées par nous.", "a4p2": "Les remboursements sont soumis à la politique d'Apple ; veuillez en faire la demande sur <a href=\"https://reportaproblem.apple.com\">reportaproblem.apple.com</a>. Nous ne pouvons pas traiter les remboursements nous-mêmes.", "s5": "Article 5 (Comportements Interdits)", "a5p1": "Lors de l'utilisation de l'Application, l'Utilisateur ne doit se livrer à aucun des actes suivants :", "a5l1": "Les actes contraires à la loi ou à l'ordre public et aux bonnes mœurs", "a5l2": "La rétro-ingénierie, la décompilation ou la modification de l'Application", "a5l3": "La copie, la redistribution ou la vente de l'Application", "a5l4": "Perturber le fonctionnement des serveurs ou du réseau de l'Application", "a5l5": "Porter atteinte aux droits d'autres utilisateurs ou de tiers", "a5l6": "Utiliser l'Application comme substitut à un traitement ou à un avis médical", "a5l7": "Tout autre comportement que nous jugeons inapproprié", "s6": "Article 6 (Propriété Intellectuelle)", "a6p1": "Les droits d'auteur et autres droits de propriété intellectuelle sur l'Application et son contenu (programmes, designs, images, textes, etc.) nous appartiennent ou appartiennent à leurs titulaires légitimes.", "s7": "Article 7 (Limitation de Responsabilité)", "a7p1": "L'Application est fournie « en l'état » et nous n'offrons aucune garantie, expresse ou implicite, quant à son exhaustivité, son exactitude, son utilité, son adéquation à un usage particulier ou l'absence d'atteinte aux droits de tiers.", "a7p2": "Nous déclinons toute responsabilité pour tout dommage (y compris les dommages directs, indirects, accessoires, spéciaux, consécutifs ou la perte de bénéfices) subi par l'Utilisateur ou un tiers en lien avec l'Application.", "s8": "Article 8 (Suspension et Résiliation)", "a8p1": "Nous pouvons suspendre ou cesser tout ou partie de l'Application sans préavis à l'Utilisateur. Nous déclinons toute responsabilité pour les dommages en résultant pour l'Utilisateur ou des tiers.", "s9": "Article 9 (Modification des Conditions)", "a9p1": "Nous pouvons modifier les présentes Conditions sans préavis à l'Utilisateur lorsque nous le jugeons nécessaire. Les Conditions modifiées prennent effet dès leur publication sur cette page.", "s10": "Article 10 (Droit Applicable et Juridiction)", "a10p1": "Les présentes Conditions sont régies et interprétées conformément au droit japonais. Tout litige relatif à l'Application relève de la compétence exclusive du tribunal de district de Tokyo en première instance.", "s_contact": "Contact", "contact_p": "Pour toute question relative aux présentes Conditions, contactez-nous à :", "s_date": "Date d'Entrée en Vigueur", "date_p": "12 mai 2026", "footer": "&copy; 2026 FocusGym. Tous droits réservés. |\n  <a href=\"index.html\">Assistance</a> |\n  <a href=\"privacy.html\">Confidentialité</a>"}, "ko": {"__title__": "이용약관 — FocusGym", "h1": "이용약관", "xnote": "본 약관은 일본어판을 정본으로 하며, 다른 언어는 참고 번역입니다. 내용이 다를 경우 일본어판이 우선합니다.", "s1": "제1조 (적용)", "a1p1": "본 이용약관(이하 '본 약관')은 FocusGym(이하 '본 앱')을 제공하는 개발자(이하 '당사')와 본 앱을 이용하는 모든 분(이하 '이용자') 사이의 본 앱 이용에 관한 조건을 정하는 것입니다.", "a1p2": "이용자는 본 앱을 다운로드·설치·이용함으로써 본 약관에 동의한 것으로 간주됩니다.", "s2": "제2조 (서비스 내용)", "a2p1": "본 앱은 모양체근의 유연성 지원을 목적으로 하는 시각 트레이닝을 제공합니다. 제공하는 기능·내용·상한 시간 등은 예고 없이 변경될 수 있습니다.", "s3": "제3조 (면책사항)", "a3l1": "본 앱은 의료행위가 아니며, 시력 개선·노안 치료·특정 질환의 예방 또는 치료를 보장하지 않습니다.", "a3l2": "본 앱 이용으로 얻어지는 결과에 대해 당사는 일체의 보증을 하지 않습니다.", "a3l3": "눈의 이상, 통증, 위화감 등을 느낀 경우 즉시 이용을 중단하고 의료기관의 진료를 받으십시오.", "a3l4": "이용자가 본 앱 이용으로 발생한 손해에 대해 당사는 일체의 책임을 지지 않습니다.", "s4": "제4조 (인앱 구매)", "a4p1": "본 앱 내 유료 기능은 Apple App Store를 통해 결제됩니다. 결제 정보는 Apple이 관리하며 당사가 취득·저장하지 않습니다.", "a4p2": "환불은 Apple의 정책에 따르며, <a href=\"https://reportaproblem.apple.com\">reportaproblem.apple.com</a>에서 신청해 주십시오. 당사에서는 환불 처리를 할 수 없습니다.", "s5": "제5조 (금지사항)", "a5p1": "이용자는 본 앱 이용 시 다음 행위를 해서는 안 됩니다.", "a5l1": "법령 또는 공서양속에 위반하는 행위", "a5l2": "본 앱의 리버스 엔지니어링·역컴파일·개변", "a5l3": "본 앱의 복제·재배포·판매", "a5l4": "본 앱의 서버 또는 네트워크 기능을 방해하는 행위", "a5l5": "다른 이용자 또는 제3자의 권리를 침해하는 행위", "a5l6": "본 앱을 의료행위 또는 의료 판단의 대체로 사용하는 행위", "a5l7": "기타 당사가 부적절하다고 판단하는 행위", "s6": "제6조 (지식재산권)", "a6p1": "본 앱 및 본 앱에 포함된 콘텐츠(프로그램, 디자인, 이미지, 텍스트 등)에 관한 저작권 및 기타 지식재산권은 당사 또는 정당한 권리자에게 귀속됩니다.", "s7": "제7조 (책임의 제한)", "a7p1": "본 앱은 있는 그대로 제공되며, 당사는 본 앱의 완전성·정확성·유용성·특정 목적에의 적합성·제3자 권리 비침해 등에 대해 명시적이든 묵시적이든 일체 보증하지 않습니다.", "a7p2": "당사는 본 앱과 관련하여 이용자 또는 제3자에게 발생한 일체의 손해(직접손해, 간접손해, 부수적 손해, 특별손해, 결과적 손해, 일실이익 포함)에 대해 책임을 지지 않습니다.", "s8": "제8조 (서비스의 중단·종료)", "a8p1": "당사는 이용자에 대한 사전 통지 없이 본 앱 제공의 전부 또는 일부를 중단·종료할 수 있습니다. 이로 인해 이용자 또는 제3자에게 발생한 손해에 대해 당사는 책임을 지지 않습니다.", "s9": "제9조 (약관의 변경)", "a9p1": "당사는 필요하다고 판단한 경우 이용자에 대한 사전 통지 없이 본 약관을 변경할 수 있습니다. 변경 후의 본 약관은 본 페이지에 게시한 시점부터 효력을 발생합니다.", "s10": "제10조 (준거법·관할법원)", "a10p1": "본 약관의 해석 및 적용은 일본법에 준거합니다. 본 앱과 관련하여 분쟁이 발생한 경우 도쿄지방재판소를 제1심의 전속적 합의 관할 법원으로 합니다.", "s_contact": "문의", "contact_p": "본 약관에 관한 문의는 아래로 연락해 주세요.", "s_date": "제정일", "date_p": "2026년 5월 12일", "footer": "&copy; 2026 FocusGym. All rights reserved. |\n  <a href=\"index.html\">지원 페이지</a> |\n  <a href=\"privacy.html\">개인정보 처리방침</a>"}, "zh-Hans": {"__title__": "使用条款 — FocusGym", "h1": "使用条款", "xnote": "本条款以日文版为准，其他语言为参考译文。如有出入，以日文版为准。", "s1": "第1条（适用）", "a1p1": "本使用条款（以下称“本条款”）规定了提供 FocusGym（以下称“本应用”）的开发者（以下称“我方”）与使用本应用的所有人（以下称“用户”）之间关于本应用使用的条件。", "a1p2": "用户下载、安装或使用本应用，即视为同意本条款。", "s2": "第2条（服务内容）", "a2p1": "本应用提供旨在支持睫状肌柔韧性的视觉训练。所提供的功能、内容、上限时间等可能不经预告而变更。", "s3": "第3条（免责声明）", "a3l1": "本应用并非医疗行为，不保证改善视力、治愈老花或预防、治疗特定疾病。", "a3l2": "对于使用本应用所获得的结果，我方不作任何保证。", "a3l3": "若感到眼部异常、疼痛或不适，请立即停止使用并就医。", "a3l4": "对于用户因使用本应用而产生的损害，我方概不负责。", "s4": "第4条（应用内购买）", "a4p1": "本应用内的付费功能通过 Apple App Store 计费。支付信息由 Apple 管理，我方不会获取或保存。", "a4p2": "退款依据 Apple 的政策，请通过 <a href=\"https://reportaproblem.apple.com\">reportaproblem.apple.com</a> 申请。我方无法办理退款。", "s5": "第5条（禁止事项）", "a5p1": "用户在使用本应用时不得进行以下行为：", "a5l1": "违反法律法规或公序良俗的行为", "a5l2": "对本应用进行逆向工程、反编译或篡改", "a5l3": "复制、再分发或销售本应用", "a5l4": "妨碍本应用服务器或网络功能的行为", "a5l5": "侵害其他用户或第三方权利的行为", "a5l6": "将本应用用作医疗行为或医疗判断替代品的行为", "a5l7": "其他我方认为不当的行为", "s6": "第6条（知识产权）", "a6p1": "本应用及其所含内容（程序、设计、图像、文本等）的著作权及其他知识产权归我方或正当权利人所有。", "s7": "第7条（责任限制）", "a7p1": "本应用按“现状”提供，我方对其完整性、准确性、有用性、对特定目的的适用性、不侵害第三方权利等不作任何明示或默示的保证。", "a7p2": "对于因本应用而对用户或第三方造成的一切损害（包括直接、间接、附带、特别、后果性损害及利润损失），我方概不负责。", "s8": "第8条（服务的中断与终止）", "a8p1": "我方可不经事先通知用户，中断或终止本应用的全部或部分提供。对由此给用户或第三方造成的损害，我方概不负责。", "s9": "第9条（条款的变更）", "a9p1": "我方在认为必要时，可不经事先通知用户变更本条款。变更后的本条款自公布于本页面之时起生效。", "s10": "第10条（准据法与管辖法院）", "a10p1": "本条款的解释与适用以日本法为准据法。因本应用发生纠纷时，以东京地方法院为第一审专属合意管辖法院。", "s_contact": "联系我们", "contact_p": "如有关于本条款的问题，请通过以下方式联系我们：", "s_date": "制定日期", "date_p": "2026年5月12日", "footer": "&copy; 2026 FocusGym. 保留所有权利。 |\n  <a href=\"index.html\">支持页面</a> |\n  <a href=\"privacy.html\">隐私政策</a>"}, "zh-Hant": {"__title__": "使用條款 — FocusGym", "h1": "使用條款", "xnote": "本條款以日文版為準，其他語言為參考譯文。如有出入，以日文版為準。", "s1": "第1條（適用）", "a1p1": "本使用條款（以下稱「本條款」）規定了提供 FocusGym（以下稱「本應用程式」）的開發者（以下稱「我方」）與使用本應用程式的所有人（以下稱「使用者」）之間關於本應用程式使用的條件。", "a1p2": "使用者下載、安裝或使用本應用程式，即視為同意本條款。", "s2": "第2條（服務內容）", "a2p1": "本應用程式提供旨在支持睫狀肌柔軟度的視覺訓練。所提供的功能、內容、上限時間等可能未經預告而變更。", "s3": "第3條（免責聲明）", "a3l1": "本應用程式並非醫療行為，不保證改善視力、治癒老花或預防、治療特定疾病。", "a3l2": "對於使用本應用程式所獲得的結果，我方不作任何保證。", "a3l3": "若感到眼部異常、疼痛或不適，請立即停止使用並就醫。", "a3l4": "對於使用者因使用本應用程式而產生的損害，我方概不負責。", "s4": "第4條（應用程式內購買）", "a4p1": "本應用程式內的付費功能透過 Apple App Store 計費。付款資訊由 Apple 管理，我方不會取得或儲存。", "a4p2": "退款依據 Apple 的政策，請透過 <a href=\"https://reportaproblem.apple.com\">reportaproblem.apple.com</a> 申請。我方無法辦理退款。", "s5": "第5條（禁止事項）", "a5p1": "使用者在使用本應用程式時不得進行以下行為：", "a5l1": "違反法律法規或公序良俗的行為", "a5l2": "對本應用程式進行逆向工程、反編譯或竄改", "a5l3": "複製、再散布或銷售本應用程式", "a5l4": "妨礙本應用程式伺服器或網路功能的行為", "a5l5": "侵害其他使用者或第三方權利的行為", "a5l6": "將本應用程式用作醫療行為或醫療判斷替代品的行為", "a5l7": "其他我方認為不當的行為", "s6": "第6條（智慧財產權）", "a6p1": "本應用程式及其所含內容（程式、設計、圖像、文字等）的著作權及其他智慧財產權歸我方或正當權利人所有。", "s7": "第7條（責任限制）", "a7p1": "本應用程式按「現狀」提供，我方對其完整性、準確性、有用性、對特定目的的適用性、不侵害第三方權利等不作任何明示或默示的保證。", "a7p2": "對於因本應用程式而對使用者或第三方造成的一切損害（包括直接、間接、附帶、特別、後果性損害及利潤損失），我方概不負責。", "s8": "第8條（服務的中斷與終止）", "a8p1": "我方可不經事先通知使用者，中斷或終止本應用程式的全部或部分提供。對由此給使用者或第三方造成的損害，我方概不負責。", "s9": "第9條（條款的變更）", "a9p1": "我方在認為必要時，可不經事先通知使用者變更本條款。變更後的本條款自公布於本頁面之時起生效。", "s10": "第10條（準據法與管轄法院）", "a10p1": "本條款的解釋與適用以日本法為準據法。因本應用程式發生糾紛時，以東京地方法院為第一審專屬合意管轄法院。", "s_contact": "聯絡我們", "contact_p": "如有關於本條款的問題，請透過以下方式聯絡我們：", "s_date": "制定日期", "date_p": "2026年5月12日", "footer": "&copy; 2026 FocusGym. 保留所有權利。 |\n  <a href=\"index.html\">支援頁面</a> |\n  <a href=\"privacy.html\">隱私權政策</a>"}});</script>
 </body>
 </html>

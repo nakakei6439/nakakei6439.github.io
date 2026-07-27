@@ -4,10 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>プライバシーポリシー — FocusGym</title>
+  <link rel="icon" href="assets/icon.png">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: -apple-system, 'Hiragino Sans', sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Apple SD Gothic Neo', 'PingFang SC', 'PingFang TC', sans-serif;
       background: #FAFAF5;
       color: #333;
       line-height: 1.8;
@@ -34,8 +35,12 @@
       margin-bottom: 1rem;
     }
     p, li { margin-bottom: 0.6rem; }
-    ul { padding-left: 1.5rem; }
+    ul, ol { padding-left: 1.5rem; }
     a { color: #5C9E7A; }
+    .note {
+      background: #F0F4EE; border: 1px solid #C8DDD0; border-radius: 8px;
+      padding: 0.8rem 1rem; font-size: 0.85rem; color: #555; margin-bottom: 2rem;
+    }
     footer {
       text-align: center;
       padding: 2rem;
@@ -48,73 +53,98 @@
 <body>
 
 <header>
-  <h1>プライバシーポリシー</h1>
+  <h1 data-i18n="h1">プライバシーポリシー</h1>
   <p>FocusGym</p>
 </header>
 
 <main>
+  <p class="note" data-i18n="xnote">本ポリシーは日本語を正文とし、他言語は参考訳です。内容に相違がある場合は日本語版が優先されます。</p>
 
   <section>
-    <h2>制定日</h2>
-    <p>2026年3月8日</p>
+    <h2 data-i18n="s_dates">制定日・改定日</h2>
+    <p data-i18n="dates1">制定日: 2026年3月8日</p>
+    <p data-i18n="dates2">改定日: 2026年7月11日（利用状況の匿名計測について追記）</p>
   </section>
 
   <section>
-    <h2>収集する情報</h2>
-    <p>FocusGym は、ユーザーの個人情報を収集しません。</p>
-    <p>アプリが保存するデータはすべてお使いの端末内にローカル保存され、外部サーバーへ送信されることはありません。</p>
+    <h2 data-i18n="s_collect">収集する情報</h2>
+    <p data-i18n="collect1">FocusGym は、氏名・メールアドレスなどの個人を特定する情報を収集しません。</p>
+    <p data-i18n="collect2">トレーニング履歴や設定などのデータは、すべてお使いの端末内にローカル保存されます。</p>
+    <p data-i18n="collect3">アプリ改善のため、後述のとおり匿名の利用状況のみを Google のアナリティクスサービスへ送信します（個人を特定しません）。</p>
   </section>
 
   <section>
-    <h2>端末内に保存するデータ</h2>
+    <h2 data-i18n="s_local">端末内に保存するデータ</h2>
     <ul>
-      <li>トレーニング実施日・種類・実施時間</li>
-      <li>連続達成日数（ストリーク）</li>
-      <li>1日のトレーニング累計時間</li>
-      <li>通知時刻の設定</li>
-      <li>トレーニングアンロックの購入状態</li>
+      <li data-i18n="local1">トレーニング実施日・種類・実施時間</li>
+      <li data-i18n="local2">連続達成日数（ストリーク）</li>
+      <li data-i18n="local3">1日のトレーニング累計時間</li>
+      <li data-i18n="local4">通知時刻の設定</li>
+      <li data-i18n="local5">広告を非表示にする買い切り購入の状態</li>
     </ul>
-    <p>これらのデータは端末の Hive データベースに保存され、アプリ外からアクセスされることはありません。</p>
+    <p data-i18n="local_p">これらのデータは端末の Hive データベースに保存され、アプリ外からアクセスされることはありません。</p>
   </section>
 
   <section>
-    <h2>第三者への情報提供</h2>
-    <p>当アプリはユーザーデータを第三者に販売・提供・共有しません。</p>
+    <h2 data-i18n="s_analytics">利用状況の計測（アナリティクス）</h2>
+    <p data-i18n="analytics_p">アプリの改善のため、Google の Firebase Analytics（Google アナリティクス／GA4）を利用して、匿名の利用状況を計測します。</p>
+    <ul>
+      <li data-i18n="analytics1">収集する内容: 画面の表示、トレーニングの開始・完了、課金の完了、1日の利用上限への到達などの操作イベント、およびアプリのバージョンや大まかな端末種別といった技術情報。</li>
+      <li data-i18n="analytics2">広告識別子（IDFA）は使用せず、トラッキング許可（ATT）のダイアログも表示しません。個人を特定する情報とは結び付けません。</li>
+      <li data-i18n="analytics3">これらのデータは Google のプライバシーポリシーに従って処理されます。</li>
+      <li data-i18n="analytics4">アプリの「設定 > プライバシー > 利用状況の送信」からいつでも計測をオフにできます。</li>
+    </ul>
   </section>
 
   <section>
-    <h2>アプリ内課金</h2>
-    <p>アプリ内課金は Apple App Store を通じて処理されます。決済情報は Apple が管理し、当アプリが取得・保存することはありません。</p>
+    <h2 data-i18n="s_ads">広告について</h2>
+    <p data-i18n="ads_p">本アプリは無料でご利用いただけ、Google の AdMob（Google Mobile Ads）を通じてバナー広告およびインタースティシャル（全画面）広告を表示します。</p>
+    <ul>
+      <li data-i18n="ads1">広告の配信のため、AdMob がお使いの端末情報や広告関連の識別子を処理する場合があります。これらは Google のプライバシーポリシーに従って処理されます。</li>
+      <li data-i18n="ads2">お住まいの地域の法令（EU/英国など）で必要な場合は、同意管理（Google UMP）に基づく同意取得を行います。ご選択に応じて、パーソナライズ広告または非パーソナライズ広告が表示されます。</li>
+      <li data-i18n="ads3">¥300 の買い切り購入（広告を消す）により、すべての広告を非表示にできます。</li>
+    </ul>
   </section>
 
   <section>
-    <h2>プッシュ通知</h2>
-    <p>トレーニングのリマインダー通知を送信するためにローカル通知を使用します。通知の許可はいつでも端末の設定から変更できます。外部サーバーへの通信は行いません。</p>
+    <h2 data-i18n="s_third">第三者への情報提供</h2>
+    <p data-i18n="third_p">当アプリはユーザーデータを第三者に販売しません。上記のアナリティクスに関して、匿名の利用状況が計測サービスの提供者である Google によって処理されます。</p>
   </section>
 
   <section>
-    <h2>お子様のプライバシー</h2>
-    <p>当アプリは13歳未満のお子様を対象としておらず、意図的に個人情報を収集することはありません。</p>
+    <h2 data-i18n="s_iap">アプリ内課金</h2>
+    <p data-i18n="iap_p">アプリ内課金は Apple App Store を通じて処理されます。決済情報は Apple が管理し、当アプリが取得・保存することはありません。</p>
   </section>
 
   <section>
-    <h2>ポリシーの変更</h2>
-    <p>プライバシーポリシーを変更する場合は、このページに新しい内容を掲載します。</p>
+    <h2 data-i18n="s_push">プッシュ通知</h2>
+    <p data-i18n="push_p">トレーニングのリマインダー通知を送信するためにローカル通知を使用します。通知の許可はいつでも端末の設定から変更できます。外部サーバーへの通信は行いません。</p>
   </section>
 
   <section>
-    <h2>お問い合わせ</h2>
-    <p>プライバシーに関するご質問は下記までお問い合わせください。</p>
+    <h2 data-i18n="s_children">お子様のプライバシー</h2>
+    <p data-i18n="children_p">当アプリは13歳未満のお子様を対象としておらず、意図的に個人情報を収集することはありません。</p>
+  </section>
+
+  <section>
+    <h2 data-i18n="s_changes">ポリシーの変更</h2>
+    <p data-i18n="changes_p">プライバシーポリシーを変更する場合は、このページに新しい内容を掲載します。</p>
+  </section>
+
+  <section>
+    <h2 data-i18n="s_contact">お問い合わせ</h2>
+    <p data-i18n="contact_p">プライバシーに関するご質問は下記までお問い合わせください。</p>
     <p><a href="mailto:nakakei6439@gmail.com">nakakei6439@gmail.com</a></p>
   </section>
 
 </main>
 
-<footer>
+<footer data-i18n-html="footer">
   &copy; 2026 FocusGym. All rights reserved. |
   <a href="index.html">サポートページ</a> |
   <a href="terms.html">利用規約</a>
 </footer>
-
+<script src="assets/i18n.js"></script>
+<script>FGI18N.init({"ja": {"__title__": "プライバシーポリシー — FocusGym", "h1": "プライバシーポリシー", "xnote": "本ポリシーは日本語を正文とし、他言語は参考訳です。内容に相違がある場合は日本語版が優先されます。", "s_dates": "制定日・改定日", "dates1": "制定日: 2026年3月8日", "dates2": "改定日: 2026年7月11日（利用状況の匿名計測について追記）", "s_collect": "収集する情報", "collect1": "FocusGym は、氏名・メールアドレスなどの個人を特定する情報を収集しません。", "collect2": "トレーニング履歴や設定などのデータは、すべてお使いの端末内にローカル保存されます。", "collect3": "アプリ改善のため、後述のとおり匿名の利用状況のみを Google のアナリティクスサービスへ送信します（個人を特定しません）。", "s_local": "端末内に保存するデータ", "local1": "トレーニング実施日・種類・実施時間", "local2": "連続達成日数（ストリーク）", "local3": "1日のトレーニング累計時間", "local4": "通知時刻の設定", "local5": "広告を非表示にする買い切り購入の状態", "local_p": "これらのデータは端末の Hive データベースに保存され、アプリ外からアクセスされることはありません。", "s_analytics": "利用状況の計測（アナリティクス）", "analytics_p": "アプリの改善のため、Google の Firebase Analytics（Google アナリティクス／GA4）を利用して、匿名の利用状況を計測します。", "analytics1": "収集する内容: 画面の表示、トレーニングの開始・完了、課金の完了、1日の利用上限への到達などの操作イベント、およびアプリのバージョンや大まかな端末種別といった技術情報。", "analytics2": "広告識別子（IDFA）は使用せず、トラッキング許可（ATT）のダイアログも表示しません。個人を特定する情報とは結び付けません。", "analytics3": "これらのデータは Google のプライバシーポリシーに従って処理されます。", "analytics4": "アプリの「設定 > プライバシー > 利用状況の送信」からいつでも計測をオフにできます。", "s_ads": "広告について", "ads_p": "本アプリは無料でご利用いただけ、Google の AdMob（Google Mobile Ads）を通じてバナー広告およびインタースティシャル（全画面）広告を表示します。", "ads1": "広告の配信のため、AdMob がお使いの端末情報や広告関連の識別子を処理する場合があります。これらは Google のプライバシーポリシーに従って処理されます。", "ads2": "お住まいの地域の法令（EU/英国など）で必要な場合は、同意管理（Google UMP）に基づく同意取得を行います。ご選択に応じて、パーソナライズ広告または非パーソナライズ広告が表示されます。", "ads3": "¥300 の買い切り購入（広告を消す）により、すべての広告を非表示にできます。", "s_third": "第三者への情報提供", "third_p": "当アプリはユーザーデータを第三者に販売しません。上記のアナリティクスおよび広告に関して、データは提供者である Google によって Google のプライバシーポリシーに従い処理されます。", "s_iap": "アプリ内課金", "iap_p": "アプリ内課金は Apple App Store を通じて処理されます。決済情報は Apple が管理し、当アプリが取得・保存することはありません。", "s_push": "プッシュ通知", "push_p": "トレーニングのリマインダー通知を送信するためにローカル通知を使用します。通知の許可はいつでも端末の設定から変更できます。外部サーバーへの通信は行いません。", "s_children": "お子様のプライバシー", "children_p": "当アプリは13歳未満のお子様を対象としておらず、意図的に個人情報を収集することはありません。", "s_changes": "ポリシーの変更", "changes_p": "プライバシーポリシーを変更する場合は、このページに新しい内容を掲載します。", "s_contact": "お問い合わせ", "contact_p": "プライバシーに関するご質問は下記までお問い合わせください。", "footer": "&copy; 2026 FocusGym. All rights reserved. |\n  <a href=\"index.html\">サポートページ</a> |\n  <a href=\"terms.html\">利用規約</a>"}, "en": {"__title__": "Privacy Policy — FocusGym", "h1": "Privacy Policy", "xnote": "The Japanese version of this policy is authoritative. Translations are provided for convenience; in case of any discrepancy, the Japanese version prevails.", "s_dates": "Effective & Revised Dates", "dates1": "Effective date: March 8, 2026", "dates2": "Revised: July 11, 2026 (added anonymous usage analytics)", "s_collect": "Information We Collect", "collect1": "FocusGym does not collect personally identifiable information such as your name or email address.", "collect2": "Data such as your training history and settings is stored locally on your device.", "collect3": "To improve the app, only anonymous usage data is sent to Google's analytics service as described below (it does not identify you).", "s_local": "Data Stored on Your Device", "local1": "Training dates, types, and durations", "local2": "Consecutive-day streak", "local3": "Total training time per day", "local4": "Notification time setting", "local5": "Purchase status for removing ads", "local_p": "This data is stored in the device's Hive database and cannot be accessed from outside the app.", "s_analytics": "Usage Analytics", "analytics_p": "To improve the app, we use Google Firebase Analytics (Google Analytics / GA4) to measure anonymous usage.", "analytics1": "What we collect: interaction events such as screen views, training starts/completions, purchase completions, and reaching the daily limit, plus technical information such as the app version and general device type.", "analytics2": "We do not use the advertising identifier (IDFA) and do not show the App Tracking Transparency (ATT) dialog. This data is not linked to any personally identifiable information.", "analytics3": "This data is processed in accordance with Google's privacy policy.", "analytics4": "You can turn analytics off at any time from the app's Settings > Privacy > Send usage data.", "s_ads": "Advertising", "ads_p": "This app is free to use and displays banner and interstitial (full-screen) ads through Google AdMob (Google Mobile Ads).", "ads1": "To deliver ads, AdMob may process your device information and advertising-related identifiers. These are processed in accordance with Google's privacy policy.", "ads2": "Where required by the laws of your region (e.g., the EU/UK), we obtain consent via a consent-management platform (Google UMP). Depending on your choice, personalized or non-personalized ads are shown.", "ads3": "A one-time purchase of ¥300 (“Remove Ads”) hides all advertising.", "s_third": "Sharing with Third Parties", "third_p": "This app does not sell user data to third parties. Regarding the analytics and advertising above, data is processed by Google, the provider, in accordance with Google's privacy policy.", "s_iap": "In-App Purchases", "iap_p": "In-app purchases are processed through the Apple App Store. Payment information is managed by Apple and is never obtained or stored by this app.", "s_push": "Push Notifications", "push_p": "We use local notifications to send training reminders. You can change notification permission at any time in your device settings. No communication with external servers takes place.", "s_children": "Children's Privacy", "children_p": "This app is not intended for children under 13 and does not knowingly collect personal information from them.", "s_changes": "Changes to This Policy", "changes_p": "If we change this privacy policy, we will post the updated version on this page.", "s_contact": "Contact", "contact_p": "For questions about privacy, please contact us at:", "footer": "&copy; 2026 FocusGym. All rights reserved. |\n  <a href=\"index.html\">Support</a> |\n  <a href=\"terms.html\">Terms of Use</a>"}, "de": {"__title__": "Datenschutzerklärung — FocusGym", "h1": "Datenschutzerklärung", "xnote": "Maßgeblich ist die japanische Fassung dieser Richtlinie. Übersetzungen dienen nur der Verständlichkeit; bei Abweichungen gilt die japanische Fassung.", "s_dates": "In-Kraft-Treten & Änderung", "dates1": "In Kraft getreten: 8. März 2026", "dates2": "Geändert: 11. Juli 2026 (Ergänzung zur anonymen Nutzungsanalyse)", "s_collect": "Erhobene Informationen", "collect1": "FocusGym erhebt keine personenbezogenen Daten wie Name oder E-Mail-Adresse.", "collect2": "Daten wie Ihr Trainingsverlauf und Ihre Einstellungen werden lokal auf Ihrem Gerät gespeichert.", "collect3": "Zur Verbesserung der App werden wie unten beschrieben nur anonyme Nutzungsdaten an den Analysedienst von Google gesendet (ohne Sie zu identifizieren).", "s_local": "Auf Ihrem Gerät gespeicherte Daten", "local1": "Trainingsdaten, -arten und -dauer", "local2": "Serie aufeinanderfolgender Tage (Streak)", "local3": "Gesamte Trainingszeit pro Tag", "local4": "Einstellung der Benachrichtigungszeit", "local5": "Kaufstatus zum Entfernen der Werbung", "local_p": "Diese Daten werden in der Hive-Datenbank des Geräts gespeichert und sind von außerhalb der App nicht zugänglich.", "s_analytics": "Nutzungsanalyse", "analytics_p": "Zur Verbesserung der App verwenden wir Google Firebase Analytics (Google Analytics / GA4), um die Nutzung anonym zu messen.", "analytics1": "Was wir erfassen: Interaktionsereignisse wie Bildschirmaufrufe, Trainingsstarts/-abschlüsse, abgeschlossene Käufe und das Erreichen des Tageslimits sowie technische Angaben wie App-Version und grober Gerätetyp.", "analytics2": "Wir verwenden keinen Werbe-Identifier (IDFA) und zeigen keinen App-Tracking-Transparenz-Dialog (ATT). Diese Daten werden nicht mit personenbezogenen Daten verknüpft.", "analytics3": "Diese Daten werden gemäß der Datenschutzerklärung von Google verarbeitet.", "analytics4": "Sie können die Analyse jederzeit in der App unter Einstellungen > Datenschutz > Nutzungsdaten senden deaktivieren.", "s_ads": "Werbung", "ads_p": "Diese App ist kostenlos nutzbar und zeigt über Google AdMob (Google Mobile Ads) Banner- und Interstitial-Werbung (Vollbild) an.", "ads1": "Zur Auslieferung von Werbung kann AdMob Ihre Geräteinformationen und werbebezogene Kennungen verarbeiten. Diese werden gemäß der Datenschutzerklärung von Google verarbeitet.", "ads2": "Wo es die Gesetze Ihrer Region (z. B. EU/UK) verlangen, holen wir die Einwilligung über eine Consent-Management-Plattform (Google UMP) ein. Je nach Ihrer Wahl werden personalisierte oder nicht personalisierte Anzeigen ausgespielt.", "ads3": "Mit einem einmaligen Kauf von ¥300 („Werbung entfernen“) lässt sich sämtliche Werbung ausblenden.", "s_third": "Weitergabe an Dritte", "third_p": "Diese App verkauft keine Nutzerdaten an Dritte. Im Rahmen der oben genannten Analyse und Werbung werden Daten von Google als Anbieter gemäß der Datenschutzerklärung von Google verarbeitet.", "s_iap": "In-App-Käufe", "iap_p": "In-App-Käufe werden über den Apple App Store abgewickelt. Zahlungsinformationen werden von Apple verwaltet und niemals von dieser App erfasst oder gespeichert.", "s_push": "Push-Benachrichtigungen", "push_p": "Wir verwenden lokale Benachrichtigungen, um Trainingserinnerungen zu senden. Sie können die Benachrichtigungsberechtigung jederzeit in den Geräteeinstellungen ändern. Es findet keine Kommunikation mit externen Servern statt.", "s_children": "Privatsphäre von Kindern", "children_p": "Diese App richtet sich nicht an Kinder unter 13 Jahren und erhebt wissentlich keine personenbezogenen Daten von ihnen.", "s_changes": "Änderungen dieser Richtlinie", "changes_p": "Wenn wir diese Datenschutzerklärung ändern, veröffentlichen wir die aktualisierte Fassung auf dieser Seite.", "s_contact": "Kontakt", "contact_p": "Bei Fragen zum Datenschutz kontaktieren Sie uns bitte unter:", "footer": "&copy; 2026 FocusGym. Alle Rechte vorbehalten. |\n  <a href=\"index.html\">Support</a> |\n  <a href=\"terms.html\">Nutzungsbedingungen</a>"}, "es": {"__title__": "Política de Privacidad — FocusGym", "h1": "Política de Privacidad", "xnote": "La versión japonesa de esta política es la auténtica. Las traducciones se ofrecen por comodidad; en caso de discrepancia, prevalece la versión japonesa.", "s_dates": "Fechas de Vigencia y Revisión", "dates1": "Fecha de vigencia: 8 de marzo de 2026", "dates2": "Revisado: 11 de julio de 2026 (se añadió la analítica de uso anónima)", "s_collect": "Información que Recopilamos", "collect1": "FocusGym no recopila información de identificación personal como tu nombre o correo electrónico.", "collect2": "Los datos como tu historial de entrenamiento y ajustes se almacenan localmente en tu dispositivo.", "collect3": "Para mejorar la app, solo se envían datos de uso anónimos al servicio de analítica de Google, como se describe a continuación (no te identifican).", "s_local": "Datos Almacenados en tu Dispositivo", "local1": "Fechas, tipos y duración de los entrenamientos", "local2": "Racha de días consecutivos", "local3": "Tiempo total de entrenamiento por día", "local4": "Configuración de la hora de notificación", "local5": "Estado de compra para eliminar los anuncios", "local_p": "Estos datos se almacenan en la base de datos Hive del dispositivo y no se puede acceder a ellos desde fuera de la app.", "s_analytics": "Analítica de Uso", "analytics_p": "Para mejorar la app, usamos Google Firebase Analytics (Google Analytics / GA4) para medir el uso de forma anónima.", "analytics1": "Qué recopilamos: eventos de interacción como visualizaciones de pantalla, inicios/finalizaciones de entrenamiento, compras completadas y alcanzar el límite diario, además de información técnica como la versión de la app y el tipo general de dispositivo.", "analytics2": "No usamos el identificador de publicidad (IDFA) ni mostramos el diálogo de Transparencia de Seguimiento de Apps (ATT). Estos datos no se vinculan con información que te identifique.", "analytics3": "Estos datos se tratan de acuerdo con la política de privacidad de Google.", "analytics4": "Puedes desactivar la analítica en cualquier momento desde Ajustes > Privacidad > Enviar datos de uso de la app.", "s_ads": "Publicidad", "ads_p": "Esta app es de uso gratuito y muestra anuncios de banner e intersticiales (a pantalla completa) a través de Google AdMob (Google Mobile Ads).", "ads1": "Para mostrar anuncios, AdMob puede tratar la información de tu dispositivo e identificadores relacionados con la publicidad. Se tratan de acuerdo con la política de privacidad de Google.", "ads2": "Cuando lo exijan las leyes de tu región (p. ej., UE/Reino Unido), obtenemos el consentimiento mediante una plataforma de gestión del consentimiento (Google UMP). Según tu elección, se muestran anuncios personalizados o no personalizados.", "ads3": "Con una compra única de ¥300 («Eliminar anuncios») se ocultan todos los anuncios.", "s_third": "Divulgación a Terceros", "third_p": "Esta app no vende datos de los usuarios a terceros. En cuanto a la analítica y la publicidad anteriores, los datos son tratados por Google, el proveedor, de acuerdo con la política de privacidad de Google.", "s_iap": "Compras dentro de la App", "iap_p": "Las compras dentro de la app se procesan a través de la App Store de Apple. La información de pago la gestiona Apple y esta app nunca la obtiene ni la almacena.", "s_push": "Notificaciones Push", "push_p": "Usamos notificaciones locales para enviar recordatorios de entrenamiento. Puedes cambiar el permiso de notificaciones en cualquier momento en los ajustes de tu dispositivo. No se realiza ninguna comunicación con servidores externos.", "s_children": "Privacidad de los Menores", "children_p": "Esta app no está dirigida a menores de 13 años y no recopila deliberadamente su información personal.", "s_changes": "Cambios en esta Política", "changes_p": "Si cambiamos esta política de privacidad, publicaremos la versión actualizada en esta página.", "s_contact": "Contacto", "contact_p": "Para consultas sobre privacidad, contáctanos en:", "footer": "&copy; 2026 FocusGym. Todos los derechos reservados. |\n  <a href=\"index.html\">Soporte</a> |\n  <a href=\"terms.html\">Términos de Uso</a>"}, "fr": {"__title__": "Politique de Confidentialité — FocusGym", "h1": "Politique de Confidentialité", "xnote": "La version japonaise de cette politique fait foi. Les traductions sont fournies à titre indicatif ; en cas de divergence, la version japonaise prévaut.", "s_dates": "Dates d'Entrée en Vigueur et de Révision", "dates1": "Date d'entrée en vigueur : 8 mars 2026", "dates2": "Révisé : 11 juillet 2026 (ajout de la mesure d'audience anonyme)", "s_collect": "Informations Collectées", "collect1": "FocusGym ne collecte aucune information permettant de vous identifier, telle que votre nom ou votre adresse e-mail.", "collect2": "Les données telles que votre historique d'entraînement et vos réglages sont stockées localement sur votre appareil.", "collect3": "Pour améliorer l'application, seules des données d'utilisation anonymes sont envoyées au service d'analyse de Google, comme décrit ci-dessous (elles ne vous identifient pas).", "s_local": "Données Stockées sur votre Appareil", "local1": "Dates, types et durées des entraînements", "local2": "Série de jours consécutifs", "local3": "Temps d'entraînement total par jour", "local4": "Réglage de l'heure de notification", "local5": "Statut d'achat pour supprimer les publicités", "local_p": "Ces données sont stockées dans la base de données Hive de l'appareil et ne sont pas accessibles depuis l'extérieur de l'application.", "s_analytics": "Mesure d'Audience", "analytics_p": "Pour améliorer l'application, nous utilisons Google Firebase Analytics (Google Analytics / GA4) afin de mesurer l'utilisation de manière anonyme.", "analytics1": "Ce que nous collectons : des événements d'interaction tels que l'affichage d'écrans, le démarrage/l'achèvement d'entraînements, les achats effectués et l'atteinte de la limite quotidienne, ainsi que des informations techniques comme la version de l'application et le type général d'appareil.", "analytics2": "Nous n'utilisons pas l'identifiant publicitaire (IDFA) et n'affichons pas la fenêtre de transparence du suivi (ATT). Ces données ne sont liées à aucune information vous identifiant.", "analytics3": "Ces données sont traitées conformément à la politique de confidentialité de Google.", "analytics4": "Vous pouvez désactiver la mesure d'audience à tout moment dans Réglages > Confidentialité > Envoyer les données d'utilisation de l'application.", "s_ads": "Publicité", "ads_p": "Cette application est gratuite et affiche des bannières et des publicités interstitielles (plein écran) via Google AdMob (Google Mobile Ads).", "ads1": "Pour diffuser des publicités, AdMob peut traiter les informations de votre appareil et des identifiants liés à la publicité. Ils sont traités conformément à la politique de confidentialité de Google.", "ads2": "Lorsque la législation de votre région l'exige (p. ex. UE/Royaume-Uni), nous recueillons le consentement via une plateforme de gestion du consentement (Google UMP). Selon votre choix, des publicités personnalisées ou non personnalisées sont affichées.", "ads3": "Un achat unique de ¥300 (« Supprimer les publicités ») masque toute la publicité.", "s_third": "Partage avec des Tiers", "third_p": "Cette application ne vend pas les données des utilisateurs à des tiers. Concernant la mesure d'audience et la publicité ci-dessus, les données sont traitées par Google, le fournisseur, conformément à la politique de confidentialité de Google.", "s_iap": "Achats Intégrés", "iap_p": "Les achats intégrés sont traités via l'App Store d'Apple. Les informations de paiement sont gérées par Apple et ne sont jamais obtenues ni stockées par cette application.", "s_push": "Notifications Push", "push_p": "Nous utilisons des notifications locales pour envoyer des rappels d'entraînement. Vous pouvez modifier l'autorisation de notification à tout moment dans les réglages de votre appareil. Aucune communication avec des serveurs externes n'a lieu.", "s_children": "Confidentialité des Enfants", "children_p": "Cette application ne s'adresse pas aux enfants de moins de 13 ans et ne collecte pas sciemment leurs informations personnelles.", "s_changes": "Modifications de cette Politique", "changes_p": "Si nous modifions cette politique de confidentialité, nous publierons la version mise à jour sur cette page.", "s_contact": "Contact", "contact_p": "Pour toute question relative à la confidentialité, contactez-nous à :", "footer": "&copy; 2026 FocusGym. Tous droits réservés. |\n  <a href=\"index.html\">Assistance</a> |\n  <a href=\"terms.html\">Conditions d'Utilisation</a>"}, "ko": {"__title__": "개인정보 처리방침 — FocusGym", "h1": "개인정보 처리방침", "xnote": "본 방침은 일본어판을 정본으로 하며, 다른 언어는 참고 번역입니다. 내용이 다를 경우 일본어판이 우선합니다.", "s_dates": "제정일·개정일", "dates1": "제정일: 2026년 3월 8일", "dates2": "개정일: 2026년 7월 11일 (익명 이용 통계에 관한 내용 추가)", "s_collect": "수집하는 정보", "collect1": "FocusGym은 이름이나 이메일 주소 등 개인을 식별할 수 있는 정보를 수집하지 않습니다.", "collect2": "트레이닝 기록이나 설정 등의 데이터는 모두 사용 중인 기기 내에 로컬로 저장됩니다.", "collect3": "앱 개선을 위해 아래에 설명한 대로 익명의 이용 통계만 Google의 애널리틱스 서비스로 전송합니다(개인을 식별하지 않습니다).", "s_local": "기기 내에 저장되는 데이터", "local1": "트레이닝 실시일·종류·실시 시간", "local2": "연속 달성 일수(스트릭)", "local3": "하루 트레이닝 누적 시간", "local4": "알림 시각 설정", "local5": "광고 비표시 구매 상태", "local_p": "이 데이터는 기기의 Hive 데이터베이스에 저장되며 앱 외부에서 접근할 수 없습니다.", "s_analytics": "이용 통계(애널리틱스)", "analytics_p": "앱 개선을 위해 Google Firebase Analytics(Google 애널리틱스 / GA4)를 사용하여 익명의 이용 통계를 측정합니다.", "analytics1": "수집 내용: 화면 표시, 트레이닝 시작·완료, 결제 완료, 하루 이용 상한 도달 등의 조작 이벤트와 앱 버전·대략적인 기기 종류 등의 기술 정보.", "analytics2": "광고 식별자(IDFA)를 사용하지 않으며 추적 허용(ATT) 대화상자도 표시하지 않습니다. 개인을 식별하는 정보와 연결하지 않습니다.", "analytics3": "이 데이터는 Google의 개인정보 처리방침에 따라 처리됩니다.", "analytics4": "앱의 '설정 > 개인정보 > 이용 통계 전송'에서 언제든지 측정을 끌 수 있습니다.", "s_ads": "광고 안내", "ads_p": "본 앱은 무료로 이용할 수 있으며, Google AdMob(Google Mobile Ads)을 통해 배너 광고 및 전면(인터스티셜) 광고를 표시합니다.", "ads1": "광고 게재를 위해 AdMob이 기기 정보나 광고 관련 식별자를 처리할 수 있습니다. 이는 Google의 개인정보 처리방침에 따라 처리됩니다.", "ads2": "거주 지역의 법령(EU/영국 등)에서 필요한 경우 동의 관리 플랫폼(Google UMP)을 통해 동의를 받습니다. 선택에 따라 맞춤 광고 또는 비맞춤 광고가 표시됩니다.", "ads3": "¥300의 일회성 구매(‘광고 제거’)로 모든 광고를 숨길 수 있습니다.", "s_third": "제3자 제공", "third_p": "본 앱은 사용자 데이터를 제3자에게 판매하지 않습니다. 위 애널리틱스 및 광고와 관련하여 데이터는 제공자인 Google이 Google의 개인정보 처리방침에 따라 처리합니다.", "s_iap": "인앱 구매", "iap_p": "인앱 구매는 Apple App Store를 통해 처리됩니다. 결제 정보는 Apple이 관리하며 본 앱이 취득·저장하지 않습니다.", "s_push": "푸시 알림", "push_p": "트레이닝 리마인더 알림을 보내기 위해 로컬 알림을 사용합니다. 알림 권한은 언제든지 기기 설정에서 변경할 수 있습니다. 외부 서버와 통신하지 않습니다.", "s_children": "아동의 개인정보", "children_p": "본 앱은 만 13세 미만 아동을 대상으로 하지 않으며, 고의로 개인정보를 수집하지 않습니다.", "s_changes": "방침의 변경", "changes_p": "개인정보 처리방침을 변경할 경우 이 페이지에 새로운 내용을 게시합니다.", "s_contact": "문의", "contact_p": "개인정보에 관한 문의는 아래로 연락해 주세요.", "footer": "&copy; 2026 FocusGym. All rights reserved. |\n  <a href=\"index.html\">지원 페이지</a> |\n  <a href=\"terms.html\">이용약관</a>"}, "zh-Hans": {"__title__": "隐私政策 — FocusGym", "h1": "隐私政策", "xnote": "本政策以日文版为准，其他语言为参考译文。如有出入，以日文版为准。", "s_dates": "制定日期与修订日期", "dates1": "制定日期：2026年3月8日", "dates2": "修订日期：2026年7月11日（新增匿名使用统计说明）", "s_collect": "我们收集的信息", "collect1": "FocusGym 不会收集姓名、电子邮箱等可识别个人身份的信息。", "collect2": "训练记录、设置等数据均本地保存在您的设备中。", "collect3": "为改进应用，仅将匿名的使用情况发送至 Google 的分析服务（如下所述，不会识别个人身份）。", "s_local": "存储在设备内的数据", "local1": "训练日期、种类与时长", "local2": "连续达成天数（连胜）", "local3": "每日训练累计时长", "local4": "通知时间设置", "local5": "去除广告的购买状态", "local_p": "这些数据保存在设备的 Hive 数据库中，无法从应用外部访问。", "s_analytics": "使用情况统计（分析）", "analytics_p": "为改进应用，我们使用 Google Firebase Analytics（Google Analytics / GA4）以匿名方式衡量使用情况。", "analytics1": "收集内容：屏幕浏览、训练开始/完成、购买完成、达到每日上限等操作事件，以及应用版本、大致设备类型等技术信息。", "analytics2": "我们不使用广告标识符（IDFA），也不显示跟踪许可（ATT）对话框。这些数据不会与可识别个人身份的信息关联。", "analytics3": "这些数据依据 Google 的隐私政策进行处理。", "analytics4": "您可随时在应用的「设置 > 隐私 > 发送使用数据」中关闭统计。", "s_ads": "关于广告", "ads_p": "本应用可免费使用，并通过 Google AdMob（Google Mobile Ads）展示横幅广告和插页（全屏）广告。", "ads1": "为投放广告，AdMob 可能会处理您的设备信息和与广告相关的标识符。这些将依据 Google 的隐私政策进行处理。", "ads2": "在您所在地区法律要求时（如欧盟/英国），我们会通过同意管理平台（Google UMP）征得同意。根据您的选择，将展示个性化或非个性化广告。", "ads3": "一次性购买 ¥300（“去除广告”）即可隐藏所有广告。", "s_third": "向第三方提供信息", "third_p": "本应用不会向第三方出售用户数据。就上述分析和广告而言，数据由提供商 Google 依据 Google 的隐私政策进行处理。", "s_iap": "应用内购买", "iap_p": "应用内购买通过 Apple App Store 处理。支付信息由 Apple 管理，本应用不会获取或保存。", "s_push": "推送通知", "push_p": "我们使用本地通知发送训练提醒。您可随时在设备设置中更改通知权限。不会与外部服务器通信。", "s_children": "儿童隐私", "children_p": "本应用不面向 13 岁以下儿童，也不会有意收集其个人信息。", "s_changes": "政策的变更", "changes_p": "如变更本隐私政策，我们将在本页面公布更新后的内容。", "s_contact": "联系我们", "contact_p": "如有隐私相关问题，请通过以下方式联系我们：", "footer": "&copy; 2026 FocusGym. 保留所有权利。 |\n  <a href=\"index.html\">支持页面</a> |\n  <a href=\"terms.html\">使用条款</a>"}, "zh-Hant": {"__title__": "隱私權政策 — FocusGym", "h1": "隱私權政策", "xnote": "本政策以日文版為準，其他語言為參考譯文。如有出入，以日文版為準。", "s_dates": "制定日期與修訂日期", "dates1": "制定日期：2026年3月8日", "dates2": "修訂日期：2026年7月11日（新增匿名使用統計說明）", "s_collect": "我們收集的資訊", "collect1": "FocusGym 不會收集姓名、電子郵件等可識別個人身分的資訊。", "collect2": "訓練記錄、設定等資料皆本機儲存在您的裝置中。", "collect3": "為改善應用程式，僅將匿名的使用狀況傳送至 Google 的分析服務（如下所述，不會識別個人身分）。", "s_local": "儲存在裝置內的資料", "local1": "訓練日期、種類與時長", "local2": "連續達成天數（連勝）", "local3": "每日訓練累計時長", "local4": "通知時間設定", "local5": "移除廣告的購買狀態", "local_p": "這些資料儲存在裝置的 Hive 資料庫中，無法從應用程式外部存取。", "s_analytics": "使用狀況統計（分析）", "analytics_p": "為改善應用程式，我們使用 Google Firebase Analytics（Google Analytics / GA4）以匿名方式衡量使用狀況。", "analytics1": "收集內容：畫面瀏覽、訓練開始/完成、購買完成、達到每日上限等操作事件，以及應用程式版本、大致裝置類型等技術資訊。", "analytics2": "我們不使用廣告識別碼（IDFA），也不顯示追蹤許可（ATT）對話框。這些資料不會與可識別個人身分的資訊連結。", "analytics3": "這些資料依據 Google 的隱私權政策進行處理。", "analytics4": "您可隨時在應用程式的「設定 > 隱私 > 傳送使用資料」中關閉統計。", "s_ads": "關於廣告", "ads_p": "本應用程式可免費使用，並透過 Google AdMob（Google Mobile Ads）顯示橫幅廣告和插頁（全螢幕）廣告。", "ads1": "為投放廣告，AdMob 可能會處理您的裝置資訊和與廣告相關的識別碼。這些將依據 Google 的隱私權政策進行處理。", "ads2": "在您所在地區法律要求時（如歐盟/英國），我們會透過同意管理平台（Google UMP）徵得同意。根據您的選擇，將顯示個人化或非個人化廣告。", "ads3": "一次性購買 ¥300（「移除廣告」）即可隱藏所有廣告。", "s_third": "向第三方提供資訊", "third_p": "本應用程式不會向第三方出售使用者資料。就上述分析和廣告而言，資料由提供商 Google 依據 Google 的隱私權政策進行處理。", "s_iap": "應用程式內購買", "iap_p": "應用程式內購買透過 Apple App Store 處理。付款資訊由 Apple 管理，本應用程式不會取得或儲存。", "s_push": "推播通知", "push_p": "我們使用本機通知傳送訓練提醒。您可隨時在裝置設定中變更通知權限。不會與外部伺服器通訊。", "s_children": "兒童隱私", "children_p": "本應用程式不以未滿 13 歲兒童為對象，也不會有意收集其個人資訊。", "s_changes": "政策的變更", "changes_p": "如變更本隱私權政策，我們將在本頁面公布更新後的內容。", "s_contact": "聯絡我們", "contact_p": "如有隱私相關問題，請透過以下方式聯絡我們：", "footer": "&copy; 2026 FocusGym. 保留所有權利。 |\n  <a href=\"index.html\">支援頁面</a> |\n  <a href=\"terms.html\">使用條款</a>"}});</script>
 </body>
 </html>

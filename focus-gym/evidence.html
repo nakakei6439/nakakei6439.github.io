@@ -4,123 +4,71 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>トレーニングのエビデンス — FocusGym</title>
+  <link rel="icon" href="assets/icon.png">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: -apple-system, 'Hiragino Sans', sans-serif;
-      background: #FAFAF5;
-      color: #333;
-      line-height: 1.8;
-    }
-    header {
-      background: #5C9E7A;
-      color: white;
-      padding: 2rem 1.5rem;
-      text-align: center;
-    }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Apple SD Gothic Neo', 'PingFang SC', 'PingFang TC', sans-serif; background: #FAFAF5; color: #333; line-height: 1.8; }
+    header { background: #5C9E7A; color: white; padding: 2rem 1.5rem; text-align: center; }
     header h1 { font-size: 1.8rem; margin-bottom: 0.3rem; }
     header p { font-size: 1rem; opacity: 0.9; }
-    main {
-      max-width: 720px;
-      margin: 2rem auto;
-      padding: 0 1.5rem;
-    }
-    .disclaimer {
-      background: #F0F4EE;
-      border: 1px solid #C8DDD0;
-      border-radius: 8px;
-      padding: 1rem 1.25rem;
-      font-size: 0.9rem;
-      color: #555;
-      margin-bottom: 2rem;
-    }
-    .card {
-      background: white;
-      border-radius: 12px;
-      padding: 1.25rem 1.5rem;
-      margin-bottom: 1.25rem;
-      border: 1px solid #E0E8E4;
-    }
-    .card h2 {
-      font-size: 1.05rem;
-      color: #5C9E7A;
-      margin-bottom: 0.5rem;
-    }
-    .card .effect {
-      font-size: 0.95rem;
-      margin-bottom: 0.5rem;
-    }
-    .card .ref {
-      font-size: 0.8rem;
-      color: #888;
-    }
-    .badge {
-      display: inline-block;
-      background: #5C9E7A;
-      color: white;
-      font-size: 0.7rem;
-      padding: 0.15rem 0.5rem;
-      border-radius: 20px;
-      margin-left: 0.5rem;
-      vertical-align: middle;
-    }
+    main { max-width: 720px; margin: 2rem auto; padding: 0 1.5rem; }
+    .disclaimer { background: #F0F4EE; border: 1px solid #C8DDD0; border-radius: 8px; padding: 1rem 1.25rem; font-size: 0.9rem; color: #555; margin-bottom: 2rem; }
+    .card { background: white; border-radius: 12px; padding: 1.25rem 1.5rem; margin-bottom: 1.25rem; border: 1px solid #E0E8E4; }
+    .card h2 { font-size: 1.05rem; color: #5C9E7A; margin-bottom: 0.5rem; }
+    .card .effect { font-size: 0.95rem; margin-bottom: 0.5rem; }
+    .card .ref { font-size: 0.8rem; color: #888; }
+    .badge { display: inline-block; background: #5C9E7A; color: white; font-size: 0.7rem; padding: 0.15rem 0.5rem; border-radius: 20px; margin-left: 0.5rem; vertical-align: middle; }
     a { color: #5C9E7A; }
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.85rem;
-      color: #999;
-      border-top: 1px solid #E0E8E4;
-      margin-top: 3rem;
-    }
+    footer { text-align: center; padding: 2rem; font-size: 0.85rem; color: #999; border-top: 1px solid #E0E8E4; margin-top: 3rem; }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>トレーニングのエビデンス</h1>
-  <p>FocusGym の各トレーニングの科学的根拠</p>
+  <h1 data-i18n="h1">トレーニングのエビデンス</h1>
+  <p data-i18n="sub">FocusGym の各トレーニングの科学的根拠</p>
 </header>
 
 <main>
 
-  <div class="disclaimer">
+  <div class="disclaimer" data-i18n-html="disclaimer">
     <strong>重要な免責事項：</strong><br>
     以下のトレーニングはいずれも医療行為ではありません。視力の改善・老眼の治癒を保証するものではありません。眼の異常を感じた場合は医療機関を受診してください。また、1日の使用時間は合計15分を目安としてください。
   </div>
 
   <div class="card">
-    <h2>遠近ピント切替</h2>
-    <p class="effect">近くと遠くを交互に見ることで、毛様体筋の調節力（ピントを合わせる力）の柔軟性維持をサポートする練習です。</p>
-    <p class="ref">参考：Ciuffreda KJ et al. "Accommodative facility training in adult presbyopia." Optometry and Vision Science, 2011.</p>
+    <h2 data-i18n="c1h">遠近ピント切替</h2>
+    <p class="effect" data-i18n="c1e">近くと遠くを交互に見ることで、毛様体筋の調節力（ピントを合わせる力）の柔軟性維持をサポートする練習です。</p>
+    <p class="ref">Ciuffreda KJ et al. "Accommodative facility training in adult presbyopia." Optometry and Vision Science, 2011.</p>
   </div>
 
   <div class="card">
-    <h2>追従運動</h2>
-    <p class="effect">動く物体を目でなめらかに追う練習です。滑動性追従眼球運動を鍛えることで、眼球運動の滑らかさと目の疲れ軽減をサポートする可能性があります。</p>
-    <p class="ref">参考：Scheiman M et al. "A randomized clinical trial of vision therapy/orthoptics versus pencil pushups for the treatment of convergence insufficiency in young adults." Optometry and Vision Science, 2005.</p>
+    <h2 data-i18n="c2h">追従運動</h2>
+    <p class="effect" data-i18n="c2e">動く物体を目でなめらかに追う練習です。滑動性追従眼球運動を鍛えることで、眼球運動の滑らかさと目の疲れ軽減をサポートする可能性があります。</p>
+    <p class="ref">Scheiman M et al. "A randomized clinical trial of vision therapy/orthoptics versus pencil pushups..." Optometry and Vision Science, 2005.</p>
   </div>
 
   <div class="card">
-    <h2>寄り目トレーニング（輻輳運動）</h2>
-    <p class="effect">両目を内側に動かす練習です。輻輳機能をサポートし、近くを見たときの疲れを和らげる可能性があります。無作為化比較試験（RCT）でも効果が確認されています。</p>
-    <p class="ref">参考：CITT Study Group. "Randomized clinical trial of treatments for symptomatic convergence insufficiency." Archives of Ophthalmology, 2008.</p>
+    <h2 data-i18n="c3h">寄り目トレーニング（輻輳運動）</h2>
+    <p class="effect" data-i18n="c3e">両目を内側に動かす練習です。輻輳機能をサポートし、近くを見たときの疲れを和らげる可能性があります。無作為化比較試験（RCT）でも効果が確認されています。</p>
+    <p class="ref">CITT Study Group. "Randomized clinical trial of treatments for symptomatic convergence insufficiency." Archives of Ophthalmology, 2008.</p>
   </div>
 
   <div class="card">
-    <h2>ガルボーパッチ <span class="badge">最高エビデンス</span></h2>
-    <p class="effect">縞模様のパターン（ガルボーパッチ）を識別する練習です。視覚情報処理を行う脳の神経回路を活性化し、老眼に伴う読み取りづらさをサポートする可能性があります。無作為化比較試験により、老眼患者の読書能力改善が科学誌に報告されています。</p>
-    <p class="ref">参考：Polat U et al. "Training the brain to overcome the effect of aging on the human eye." Scientific Reports, 2012.</p>
+    <h2><span data-i18n="c4h">ガボールパッチ</span> <span class="badge" data-i18n="c4badge">最高エビデンス</span></h2>
+    <p class="effect" data-i18n="c4e">縞模様のパターン（ガボールパッチ）を識別する練習です。視覚情報処理を行う脳の神経回路を活性化し、老眼に伴う読み取りづらさをサポートする可能性があります。無作為化比較試験により、老眼患者の読書能力改善が科学誌に報告されています。</p>
+    <p class="ref">Polat U et al. "Training the brain to overcome the effect of aging on the human eye." Scientific Reports, 2012.</p>
   </div>
 
 </main>
 
-<footer>
+<footer data-i18n-html="footer">
   &copy; 2026 FocusGym. All rights reserved. |
   <a href="index.html">サポートページ</a> |
   <a href="privacy.html">プライバシーポリシー</a> |
   <a href="terms.html">利用規約</a>
 </footer>
-
+<script src="assets/i18n.js"></script>
+<script>FGI18N.init({"ja": {"__title__": "トレーニングのエビデンス — FocusGym", "h1": "トレーニングのエビデンス", "sub": "FocusGym の各トレーニングの科学的根拠", "disclaimer": "<strong>重要な免責事項：</strong><br>\n    以下のトレーニングはいずれも医療行為ではありません。視力の改善・老眼の治癒を保証するものではありません。眼の異常を感じた場合は医療機関を受診してください。また、1日の使用時間は合計15分を目安としてください。", "c1h": "遠近ピント切替", "c1e": "近くと遠くを交互に見ることで、毛様体筋の調節力（ピントを合わせる力）の柔軟性維持をサポートする練習です。", "c2h": "追従運動", "c2e": "動く物体を目でなめらかに追う練習です。滑動性追従眼球運動を鍛えることで、眼球運動の滑らかさと目の疲れ軽減をサポートする可能性があります。", "c3h": "寄り目トレーニング（輻輳運動）", "c3e": "両目を内側に動かす練習です。輻輳機能をサポートし、近くを見たときの疲れを和らげる可能性があります。無作為化比較試験（RCT）でも効果が確認されています。", "c4h": "ガボールパッチ", "c4badge": "最高エビデンス", "c4e": "縞模様のパターン（ガボールパッチ）を識別する練習です。視覚情報処理を行う脳の神経回路を活性化し、老眼に伴う読み取りづらさをサポートする可能性があります。無作為化比較試験により、老眼患者の読書能力改善が科学誌に報告されています。", "footer": "&copy; 2026 FocusGym. All rights reserved. |\n  <a href=\"index.html\">サポートページ</a> |\n  <a href=\"privacy.html\">プライバシーポリシー</a> |\n  <a href=\"terms.html\">利用規約</a>"}, "en": {"__title__": "Scientific Evidence — FocusGym", "h1": "Scientific Evidence", "sub": "The science behind each FocusGym training", "disclaimer": "<strong>Important disclaimer:</strong><br>\n    None of the following training is a medical treatment. It does not guarantee improved eyesight or a cure for presbyopia. If you notice any eye abnormality, consult a medical professional. Please keep total daily use to around 15 minutes.", "c1h": "Near-Far Focus", "c1e": "By alternating between near and far, this exercise helps support the flexibility of the ciliary muscle's accommodative (focusing) ability.", "c2h": "Pursuit Tracking", "c2e": "An exercise in smoothly following a moving object with your eyes. Training smooth-pursuit eye movements may help support smoother eye motion and reduced eye fatigue.", "c3h": "Convergence Training", "c3e": "An exercise in moving both eyes inward. It may support convergence function and ease fatigue when looking at nearby objects. Its effect has also been confirmed in a randomized controlled trial (RCT).", "c4h": "Gabor Patch", "c4badge": "Strongest evidence", "c4e": "An exercise in identifying striped patterns (Gabor patches). It may activate the brain's neural circuits for visual processing and help with reading difficulty associated with presbyopia. A randomized controlled trial reporting improved reading ability in presbyopic patients has been published in a scientific journal.", "footer": "&copy; 2026 FocusGym. All rights reserved. |\n  <a href=\"index.html\">Support</a> |\n  <a href=\"privacy.html\">Privacy Policy</a> |\n  <a href=\"terms.html\">Terms of Use</a>"}, "de": {"__title__": "Wissenschaftliche Grundlage — FocusGym", "h1": "Wissenschaftliche Grundlage", "sub": "Die Wissenschaft hinter jedem FocusGym-Training", "disclaimer": "<strong>Wichtiger Hinweis:</strong><br>\n    Keines der folgenden Trainings ist eine medizinische Behandlung. Eine Verbesserung der Sehkraft oder Heilung der Alterssichtigkeit wird nicht garantiert. Bei Auffälligkeiten an den Augen suchen Sie bitte ärztlichen Rat. Die tägliche Gesamtnutzung sollte etwa 15 Minuten betragen.", "c1h": "Nah-Fern-Fokuswechsel", "c1e": "Durch den Wechsel zwischen Nah und Fern unterstützt diese Übung die Flexibilität der Akkommodationsfähigkeit (Scharfstellung) des Ziliarmuskels.", "c2h": "Blickfolgetraining", "c2e": "Eine Übung, bei der Sie einem bewegten Objekt mit den Augen ruhig folgen. Das Training gleitender Augenfolgebewegungen kann eine flüssigere Augenbewegung und geringere Ermüdung unterstützen.", "c3h": "Konvergenztraining", "c3e": "Eine Übung, bei der beide Augen nach innen bewegt werden. Sie kann die Konvergenzfunktion unterstützen und Ermüdung beim Nahsehen lindern. Die Wirkung wurde auch in einer randomisierten kontrollierten Studie (RCT) bestätigt.", "c4h": "Gabor-Patch", "c4badge": "Stärkste Evidenz", "c4e": "Eine Übung zum Erkennen von Streifenmustern (Gabor-Patches). Sie kann die neuronalen Schaltkreise des Gehirns für die visuelle Verarbeitung aktivieren und bei alterssichtigkeitsbedingten Leseschwierigkeiten helfen. Eine randomisierte kontrollierte Studie, die eine verbesserte Lesefähigkeit bei Alterssichtigen zeigt, wurde in einer Fachzeitschrift veröffentlicht.", "footer": "&copy; 2026 FocusGym. Alle Rechte vorbehalten. |\n  <a href=\"index.html\">Support</a> |\n  <a href=\"privacy.html\">Datenschutz</a> |\n  <a href=\"terms.html\">Nutzungsbedingungen</a>"}, "es": {"__title__": "Evidencia Científica — FocusGym", "h1": "Evidencia Científica", "sub": "La ciencia detrás de cada entrenamiento de FocusGym", "disclaimer": "<strong>Aviso importante:</strong><br>\n    Ninguno de los siguientes entrenamientos es un tratamiento médico. No garantiza mejorar la vista ni curar la presbicia. Si notas alguna anomalía ocular, consulta a un profesional médico. Limita el uso total diario a unos 15 minutos.", "c1h": "Cambio de Enfoque Cerca-Lejos", "c1e": "Al alternar entre cerca y lejos, este ejercicio ayuda a mantener la flexibilidad de la capacidad de enfoque (acomodación) del músculo ciliar.", "c2h": "Seguimiento Ocular", "c2e": "Un ejercicio para seguir suavemente un objeto en movimiento con la vista. Entrenar los movimientos oculares de seguimiento suave puede ayudar a lograr un movimiento ocular más fluido y menos fatiga.", "c3h": "Entrenamiento de Convergencia", "c3e": "Un ejercicio para mover ambos ojos hacia dentro. Puede favorecer la función de convergencia y aliviar la fatiga al mirar de cerca. Su efecto también se ha confirmado en un ensayo controlado aleatorizado (ECA).", "c4h": "Parche de Gabor", "c4badge": "Máxima evidencia", "c4e": "Un ejercicio para identificar patrones de rayas (parches de Gabor). Puede activar los circuitos neuronales del cerebro para el procesamiento visual y ayudar con la dificultad de lectura asociada a la presbicia. Un ensayo controlado aleatorizado que muestra una mejora de la capacidad lectora en pacientes présbitas se ha publicado en una revista científica.", "footer": "&copy; 2026 FocusGym. Todos los derechos reservados. |\n  <a href=\"index.html\">Soporte</a> |\n  <a href=\"privacy.html\">Privacidad</a> |\n  <a href=\"terms.html\">Términos de Uso</a>"}, "fr": {"__title__": "Preuves Scientifiques — FocusGym", "h1": "Preuves Scientifiques", "sub": "La science derrière chaque entraînement FocusGym", "disclaimer": "<strong>Avertissement important :</strong><br>\n    Aucun des entraînements suivants n'est un traitement médical. Ils ne garantissent ni l'amélioration de la vue ni la guérison de la presbytie. En cas d'anomalie oculaire, consultez un professionnel de santé. Limitez l'utilisation quotidienne totale à environ 15 minutes.", "c1h": "Accommodation Près-Loin", "c1e": "En alternant entre le près et le loin, cet exercice aide à préserver la souplesse de la capacité d'accommodation (mise au point) du muscle ciliaire.", "c2h": "Poursuite Oculaire", "c2e": "Un exercice consistant à suivre du regard un objet en mouvement de façon fluide. Entraîner les mouvements de poursuite oculaire peut favoriser des mouvements plus fluides et réduire la fatigue.", "c3h": "Entraînement de Convergence", "c3e": "Un exercice consistant à converger les deux yeux vers l'intérieur. Il peut soutenir la fonction de convergence et réduire la fatigue en vision de près. Son efficacité a également été confirmée par un essai contrôlé randomisé (ECR).", "c4h": "Patch de Gabor", "c4badge": "Preuves les plus solides", "c4e": "Un exercice consistant à identifier des motifs rayés (patchs de Gabor). Il peut activer les circuits neuronaux du cerveau dédiés au traitement visuel et aider à la difficulté de lecture liée à la presbytie. Un essai contrôlé randomisé montrant une amélioration de la capacité de lecture chez des patients presbytes a été publié dans une revue scientifique.", "footer": "&copy; 2026 FocusGym. Tous droits réservés. |\n  <a href=\"index.html\">Assistance</a> |\n  <a href=\"privacy.html\">Confidentialité</a> |\n  <a href=\"terms.html\">Conditions d'Utilisation</a>"}, "ko": {"__title__": "트레이닝의 근거 — FocusGym", "h1": "트레이닝의 근거", "sub": "FocusGym 각 트레이닝의 과학적 근거", "disclaimer": "<strong>중요한 면책사항:</strong><br>\n    아래 트레이닝은 모두 의료행위가 아닙니다. 시력 개선이나 노안 치료를 보장하지 않습니다. 눈에 이상을 느끼면 의료기관의 진료를 받으십시오. 또한 하루 사용 시간은 총 15분을 기준으로 해 주세요.", "c1h": "원근 초점 전환", "c1e": "가까운 곳과 먼 곳을 번갈아 보며 모양체근의 조절력(초점을 맞추는 힘)의 유연성 유지를 돕는 연습입니다.", "c2h": "추적 운동", "c2e": "움직이는 물체를 눈으로 부드럽게 따라가는 연습입니다. 원활추종 안구운동을 단련하면 안구 운동의 부드러움과 눈의 피로 경감을 도울 수 있습니다.", "c3h": "모음 훈련(폭주 운동)", "c3e": "양쪽 눈을 안쪽으로 모으는 연습입니다. 폭주 기능을 돕고 가까운 곳을 볼 때의 피로를 완화할 수 있습니다. 무작위 대조 시험(RCT)에서도 효과가 확인되었습니다.", "c4h": "가보 패치", "c4badge": "최고 근거", "c4e": "줄무늬 패턴(가보 패치)을 식별하는 연습입니다. 시각 정보 처리를 담당하는 뇌의 신경 회로를 활성화하여 노안에 따른 읽기 어려움을 도울 수 있습니다. 무작위 대조 시험을 통해 노안 환자의 읽기 능력 개선이 과학지에 보고되었습니다.", "footer": "&copy; 2026 FocusGym. All rights reserved. |\n  <a href=\"index.html\">지원 페이지</a> |\n  <a href=\"privacy.html\">개인정보 처리방침</a> |\n  <a href=\"terms.html\">이용약관</a>"}, "zh-Hans": {"__title__": "训练的科学依据 — FocusGym", "h1": "训练的科学依据", "sub": "FocusGym 各项训练背后的科学依据", "disclaimer": "<strong>重要免责声明：</strong><br>\n    以下训练均非医疗行为，不保证改善视力或治愈老花。若感到眼部异常，请就医。此外，每日使用时间建议合计约 15 分钟。", "c1h": "远近对焦切换", "c1e": "通过交替看近处和远处，帮助维持睫状肌调节力（对焦能力）柔韧性的练习。", "c2h": "追随运动", "c2e": "用眼睛平滑追随移动物体的练习。锻炼平滑追随眼动，可能有助于让眼球运动更顺畅并减轻眼疲劳。", "c3h": "集合训练（辐辏运动）", "c3e": "将双眼向内侧移动的练习。可支持辐辏功能，缓解看近处时的疲劳。随机对照试验（RCT）也已确认其效果。", "c4h": "加博尔光栅", "c4badge": "最强证据", "c4e": "识别条纹图案（加博尔光栅）的练习。可激活大脑负责视觉信息处理的神经回路，可能有助于缓解老花带来的阅读困难。随机对照试验已在科学期刊上报告了老花患者阅读能力的改善。", "footer": "&copy; 2026 FocusGym. 保留所有权利。 |\n  <a href=\"index.html\">支持页面</a> |\n  <a href=\"privacy.html\">隐私政策</a> |\n  <a href=\"terms.html\">使用条款</a>"}, "zh-Hant": {"__title__": "訓練的科學依據 — FocusGym", "h1": "訓練的科學依據", "sub": "FocusGym 各項訓練背後的科學依據", "disclaimer": "<strong>重要免責聲明：</strong><br>\n    以下訓練均非醫療行為，不保證改善視力或治癒老花。若感到眼部異常，請就醫。此外，每日使用時間建議合計約 15 分鐘。", "c1h": "遠近對焦切換", "c1e": "透過交替看近處和遠處，幫助維持睫狀肌調節力（對焦能力）柔軟度的練習。", "c2h": "追視運動", "c2e": "用眼睛平滑追隨移動物體的練習。鍛鍊平滑追隨眼動，可能有助於讓眼球運動更順暢並減輕眼疲勞。", "c3h": "集合訓練（輻輳運動）", "c3e": "將雙眼向內側移動的練習。可支持輻輳功能，緩解看近處時的疲勞。隨機對照試驗（RCT）也已確認其效果。", "c4h": "加博爾光柵", "c4badge": "最強證據", "c4e": "辨識條紋圖案（加博爾光柵）的練習。可活化大腦負責視覺資訊處理的神經迴路，可能有助於緩解老花帶來的閱讀困難。隨機對照試驗已在科學期刊上報告了老花患者閱讀能力的改善。", "footer": "&copy; 2026 FocusGym. 保留所有權利。 |\n  <a href=\"index.html\">支援頁面</a> |\n  <a href=\"privacy.html\">隱私權政策</a> |\n  <a href=\"terms.html\">使用條款</a>"}});</script>
 </body>
 </html>
