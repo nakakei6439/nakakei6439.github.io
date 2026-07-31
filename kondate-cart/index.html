@@ -4,6 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title data-i18n="pageTitle">献立カート — 衝動買いをなくす、週次献立アプリ</title>
+
+  <!-- OGP / Twitter Card。クローラーは JS を実行しないため英語で直書きし、JS では書き換えない。 -->
+  <meta name="description" content="Plan your dinners once. KondateCart turns them into one shopping list, so you stop impulse-buying at the supermarket. Fully offline. iPhone.">
+  <link rel="canonical" href="https://nakakei6439.github.io/kondate-cart/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="KondateCart">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://nakakei6439.github.io/kondate-cart/">
+  <meta property="og:title" content="KondateCart — Plan the week's meals, the shopping list builds itself">
+  <meta property="og:description" content="Plan your dinners once. KondateCart turns them into one shopping list, so you stop impulse-buying at the supermarket. Fully offline. iPhone.">
+  <meta property="og:image" content="https://nakakei6439.github.io/kondate-cart/assets/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="KondateCart weekly meal planner showing seven dinners planned and one shopping list">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="KondateCart — Plan the week's meals, the shopping list builds itself">
+  <meta name="twitter:description" content="Plan your dinners once. KondateCart turns them into one shopping list, so you stop impulse-buying at the supermarket. Fully offline. iPhone.">
+  <meta name="twitter:image" content="https://nakakei6439.github.io/kondate-cart/assets/og.png">
+
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -141,6 +162,26 @@
     .feature-text span {
       font-size: 13px;
       color: #8E8E93;
+    }
+
+    /* スクリーンショット */
+    .screenshots {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      padding: 4px 0 8px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .screenshots img {
+      width: 200px;
+      height: auto;
+      border-radius: 14px;
+      border: 1px solid #E5E5EA;
+      flex-shrink: 0;
+      scroll-snap-align: start;
+      background: #FFFFFF;
     }
 
     /* プレミアム */
@@ -305,6 +346,25 @@
       </ul>
     </div>
 
+    <!-- スクリーンショット -->
+    <div class="section-card">
+      <p class="section-label" data-i18n="screenshotsLabel">スクリーンショット</p>
+      <div class="screenshots">
+        <img src="./assets/screenshots/ja/01.png" data-i18n-src="./assets/screenshots/{lang}/01.png"
+             data-i18n-alt="f1t" alt="週間献立カレンダー" width="600" height="1300" loading="lazy">
+        <img src="./assets/screenshots/ja/02.png" data-i18n-src="./assets/screenshots/{lang}/02.png"
+             data-i18n-alt="f2t" alt="買い物リストの自動生成" width="600" height="1300" loading="lazy">
+        <img src="./assets/screenshots/ja/03.png" data-i18n-src="./assets/screenshots/{lang}/03.png"
+             data-i18n-alt="f7t" alt="ホーム画面ウィジェット" width="600" height="1300" loading="lazy">
+        <img src="./assets/screenshots/ja/04.png" data-i18n-src="./assets/screenshots/{lang}/04.png"
+             data-i18n-alt="f2t" alt="買い物リストの自動生成" width="600" height="1300" loading="lazy">
+        <img src="./assets/screenshots/ja/05.png" data-i18n-src="./assets/screenshots/{lang}/05.png"
+             data-i18n-alt="f3t" alt="料理履歴" width="600" height="1300" loading="lazy">
+        <img src="./assets/screenshots/ja/06.png" data-i18n-src="./assets/screenshots/{lang}/06.png"
+             data-i18n-alt="featuresLabel" alt="主な機能" width="600" height="1300" loading="lazy">
+      </div>
+    </div>
+
     <!-- プレミアム -->
     <div class="premium-card">
       <p class="section-label" data-i18n="premiumLabel">プレミアム</p>
@@ -352,6 +412,7 @@
     <p>© 2026 Keita Nakagawa. All rights reserved.</p>
   </footer>
 
+  <script src="/assets/i18n.js"></script>
   <script>
     var I18N = {
       ja: {
@@ -363,6 +424,7 @@
         aboutLabel: "このアプリについて",
         aboutDesc: "「献立カート」は、週の献立をあらかじめ決めておくことで、スーパーでの衝動買いをなくす献立管理アプリです。献立を登録すると必要な食材だけが買い物リストに自動で追加されるので、余分な食材を買わず、食品ロスも減らせます。",
         featuresLabel: "主な機能",
+        screenshotsLabel: "スクリーンショット",
         f1t: "週間献立カレンダー", f1d: "1週間の夕食を曜日ごとに登録。1日に複数の料理も可能",
         f2t: "買い物リストの自動生成", f2d: "献立から食材を自動集計。来週／再来週の切り替えにも対応",
         f3t: "料理履歴", f3d: "過去に作った料理をワンタップで再利用。献立のマンネリを防止",
@@ -390,6 +452,7 @@
         aboutLabel: "About This App",
         aboutDesc: "KondateCart is a meal planning app that stops impulse buys at the supermarket by having you plan your weekly meals ahead of time. Once you add your meals, only the ingredients you need are automatically added to your shopping list — so you never buy extra and waste less food.",
         featuresLabel: "Key Features",
+        screenshotsLabel: "Screenshots",
         f1t: "Weekly Meal Calendar", f1d: "Plan dinner for each day of the week. Add multiple dishes per day",
         f2t: "Automatic Shopping List", f2d: "Ingredients are tallied automatically from your meal plan, with next-week / week-after-next switching",
         f3t: "Dish History", f3d: "Reuse dishes you've made before with one tap. Keep your meals from getting repetitive",
@@ -417,6 +480,7 @@
         aboutLabel: "Sobre esta app",
         aboutDesc: "«MenúCarrito» es una app de planificación de comidas que evita las compras impulsivas en el supermercado al dejarte planificar tus comidas semanales con antelación. Al añadir tus comidas, solo los ingredientes que necesitas se agregan automáticamente a tu lista de compras, por lo que no compras de más ni desperdicias comida.",
         featuresLabel: "Funciones principales",
+        screenshotsLabel: "Capturas de pantalla",
         f1t: "Calendario semanal de comidas", f1d: "Planifica la cena de cada día de la semana. Puedes añadir varios platos por día",
         f2t: "Lista de compras automática", f2d: "Los ingredientes se calculan automáticamente desde tu menú, con cambio entre la próxima semana y la siguiente",
         f3t: "Historial de platos", f3d: "Reutiliza platos que ya has preparado con un toque. Evita la monotonía en tus comidas",
@@ -444,6 +508,7 @@
         aboutLabel: "关于此App",
         aboutDesc: "「菜单购物车」是一款通过提前规划本周菜单来避免超市冲动消费的菜单管理App。登记菜单后，所需食材会自动添加到购物清单中，不会多买，也能减少食物浪费。",
         featuresLabel: "主要功能",
+        screenshotsLabel: "截图",
         f1t: "每周菜单日历", f1d: "按星期登记每天的晚餐，一天也可以登记多道菜",
         f2t: "自动生成购物清单", f2d: "根据菜单自动汇总食材，支持在下周／下下周之间切换",
         f3t: "菜肴历史", f3d: "一键复用做过的菜肴，避免菜单千篇一律",
@@ -471,6 +536,7 @@
         aboutLabel: "關於此App",
         aboutDesc: "「菜單購物車」是一款透過提前規劃本週菜單來避免在超市衝動購物的菜單管理App。登錄菜單後，所需食材會自動加入購物清單，不會多買，也能減少食物浪費。",
         featuresLabel: "主要功能",
+        screenshotsLabel: "截圖",
         f1t: "每週菜單行事曆", f1d: "依星期登錄每天的晚餐，一天也可以登錄多道菜色",
         f2t: "自動產生購物清單", f2d: "根據菜單自動彙總食材，支援在下週／下下週之間切換",
         f3t: "菜色歷史", f3d: "一鍵重複使用做過的菜色，避免菜單一成不變",
@@ -498,6 +564,7 @@
         aboutLabel: "앱 소개",
         aboutDesc: "'식단카트'는 일주일치 식단을 미리 정해두어 마트에서의 충동구매를 없애주는 식단 관리 앱입니다. 식단을 등록하면 필요한 재료만 자동으로 장보기 목록에 추가되어, 불필요한 재료 구매와 음식물 낭비를 줄일 수 있습니다.",
         featuresLabel: "주요 기능",
+        screenshotsLabel: "스크린샷",
         f1t: "주간 식단 캘린더", f1d: "요일별로 저녁 식단을 등록하세요. 하루에 여러 요리도 등록 가능",
         f2t: "장보기 목록 자동 생성", f2d: "식단에서 재료를 자동으로 집계. 다음 주／다다음 주 전환도 지원",
         f3t: "요리 히스토리", f3d: "예전에 만든 요리를 한 번의 탭으로 재사용. 식단이 단조로워지는 것을 방지",
@@ -525,6 +592,7 @@
         aboutLabel: "À propos de cette application",
         aboutDesc: "« MenuPanier » est une application de planification de repas qui évite les achats impulsifs au supermarché en vous permettant de planifier vos repas de la semaine à l'avance. Une fois vos repas ajoutés, seuls les ingrédients nécessaires sont automatiquement ajoutés à votre liste de courses : vous n'achetez plus en trop et gaspillez moins de nourriture.",
         featuresLabel: "Fonctionnalités principales",
+        screenshotsLabel: "Captures d'écran",
         f1t: "Calendrier de repas hebdomadaire", f1d: "Planifiez le dîner pour chaque jour de la semaine. Plusieurs plats possibles par jour",
         f2t: "Liste de courses automatique", f2d: "Les ingrédients sont calculés automatiquement à partir de votre menu, avec bascule entre la semaine prochaine et celle d'après",
         f3t: "Historique des plats", f3d: "Réutilisez en un geste les plats déjà préparés. Évitez la monotonie de vos menus",
@@ -552,6 +620,7 @@
         aboutLabel: "Über diese App",
         aboutDesc: "„MenüKorb“ ist eine App zur Essensplanung, die Spontankäufe im Supermarkt verhindert, indem Sie Ihre wöchentlichen Mahlzeiten im Voraus planen. Sobald Sie Ihre Mahlzeiten hinzufügen, werden nur die benötigten Zutaten automatisch zu Ihrer Einkaufsliste hinzugefügt — so kaufen Sie nichts Überflüssiges und verschwenden weniger Lebensmittel.",
         featuresLabel: "Hauptfunktionen",
+        screenshotsLabel: "Screenshots",
         f1t: "Wöchentlicher Menükalender", f1d: "Planen Sie das Abendessen für jeden Wochentag. Mehrere Gerichte pro Tag möglich",
         f2t: "Automatische Einkaufsliste", f2d: "Zutaten werden automatisch aus Ihrem Menüplan zusammengestellt, mit Umschalten zwischen nächster und übernächster Woche",
         f3t: "Gerichteverlauf", f3d: "Bereits zubereitete Gerichte mit einem Tipp wiederverwenden. Beugt Eintönigkeit im Speiseplan vor",
@@ -572,39 +641,7 @@
       }
     };
 
-    function detectLang() {
-      var langs = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || 'en'];
-      for (var i = 0; i < langs.length; i++) {
-        var lower = langs[i].toLowerCase();
-        if (lower.indexOf('zh') === 0) {
-          if (lower.indexOf('hant') !== -1 || lower.indexOf('-tw') !== -1 || lower.indexOf('-hk') !== -1 || lower.indexOf('-mo') !== -1) {
-            return 'zh-Hant';
-          }
-          return 'zh-Hans';
-        }
-        var base = lower.split('-')[0];
-        if (I18N.hasOwnProperty(base)) return base;
-      }
-      return 'en';
-    }
-
-    function applyI18n(lang) {
-      var dict = I18N[lang] || I18N.en;
-      document.documentElement.lang = lang;
-      if (dict.pageTitle) document.title = dict.pageTitle;
-      var textNodes = document.querySelectorAll('[data-i18n]');
-      for (var i = 0; i < textNodes.length; i++) {
-        var key = textNodes[i].getAttribute('data-i18n');
-        if (dict[key] != null) textNodes[i].textContent = dict[key];
-      }
-      var altNodes = document.querySelectorAll('[data-i18n-alt]');
-      for (var j = 0; j < altNodes.length; j++) {
-        var altKey = altNodes[j].getAttribute('data-i18n-alt');
-        if (dict[altKey] != null) altNodes[j].alt = dict[altKey];
-      }
-    }
-
-    applyI18n(detectLang());
+    FGI18N.init(I18N);
   </script>
 
 </body>
