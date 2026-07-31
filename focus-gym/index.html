@@ -4,8 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title data-i18n="pageTitle">FocusGym — 目のトレーニングアプリ</title>
-  <meta name="description" content="FocusGym は、毛様体筋の柔軟性をサポートする1日5分の目のトレーニングアプリです。科学的根拠に基づいた5種類のエクササイズを提供します。">
   <link rel="icon" href="assets/icon.png">
+
+  <!-- OGP / Twitter Card。クローラーは JS を実行しないため英語で直書きし、JS では書き換えない。 -->
+  <meta name="description" content="Tired eyes? FocusGym is a 5-minutes-a-day eye training app with five evidence-based exercises. Free with ads. iPhone.">
+  <link rel="canonical" href="https://nakakei6439.github.io/focus-gym/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="FocusGym">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://nakakei6439.github.io/focus-gym/">
+  <meta property="og:title" content="FocusGym — Five minutes a day for tired eyes">
+  <meta property="og:description" content="Tired eyes? FocusGym is a 5-minutes-a-day eye training app with five evidence-based exercises. Free with ads. iPhone.">
+  <meta property="og:image" content="https://nakakei6439.github.io/focus-gym/assets/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="FocusGym — a five-minute daily eye care routine on iPhone">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FocusGym — Five minutes a day for tired eyes">
+  <meta name="twitter:description" content="Tired eyes? FocusGym is a 5-minutes-a-day eye training app with five evidence-based exercises. Free with ads. iPhone.">
+  <meta name="twitter:image" content="https://nakakei6439.github.io/focus-gym/assets/og.png">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -269,10 +288,22 @@
   <section>
     <h2 data-i18n="screenshotsLabel">スクリーンショット</h2>
     <div class="screenshots">
-      <img src="assets/screenshots/01.png" alt="ホーム画面" data-i18n-alt="ss1Alt">
-      <img src="assets/screenshots/02.png" alt="トレーニング選択画面" data-i18n-alt="ss2Alt">
-      <img src="assets/screenshots/03.png" alt="トレーニング詳細画面" data-i18n-alt="ss3Alt">
-      <img src="assets/screenshots/04.png" alt="履歴・カレンダー画面" data-i18n-alt="ss4Alt">
+      <img src="assets/screenshots/ja/01.png" data-i18n-src="assets/screenshots/{lang}/01.png"
+           alt="ホーム画面" data-i18n-alt="ss1Alt" width="600" height="1300" loading="lazy">
+      <img src="assets/screenshots/ja/02.png" data-i18n-src="assets/screenshots/{lang}/02.png"
+           alt="トレーニング選択画面" data-i18n-alt="ss2Alt" width="600" height="1300" loading="lazy">
+      <img src="assets/screenshots/ja/03.png" data-i18n-src="assets/screenshots/{lang}/03.png"
+           alt="履歴・カレンダー画面" data-i18n-alt="ss4Alt" width="600" height="1300" loading="lazy">
+      <img src="assets/screenshots/ja/04.png" data-i18n-src="assets/screenshots/{lang}/04.png"
+           alt="遠近ピント切替" data-i18n-alt="f1t" width="600" height="1300" loading="lazy">
+      <img src="assets/screenshots/ja/05.png" data-i18n-src="assets/screenshots/{lang}/05.png"
+           alt="追従運動" data-i18n-alt="f2t" width="600" height="1300" loading="lazy">
+      <img src="assets/screenshots/ja/06.png" data-i18n-src="assets/screenshots/{lang}/06.png"
+           alt="ガボールパッチ" data-i18n-alt="f4t" width="600" height="1300" loading="lazy">
+      <img src="assets/screenshots/ja/07.png" data-i18n-src="assets/screenshots/{lang}/07.png"
+           alt="ぼかしくっきり訓練" data-i18n-alt="f5t" width="600" height="1300" loading="lazy">
+      <img src="assets/screenshots/ja/08.png" data-i18n-src="assets/screenshots/{lang}/08.png"
+           alt="トレーニングのエビデンス" data-i18n-alt="evidenceLink" width="600" height="1300" loading="lazy">
     </div>
   </section>
 
@@ -356,6 +387,7 @@
   &copy; 2026 FocusGym. All rights reserved.
 </footer>
 
+<script src="/assets/i18n.js"></script>
 <script>
   var I18N = {
     ja: {
@@ -752,39 +784,7 @@
     }
   };
 
-  function detectLang() {
-    var langs = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || 'en'];
-    for (var i = 0; i < langs.length; i++) {
-      var lower = langs[i].toLowerCase();
-      if (lower.indexOf('zh') === 0) {
-        if (lower.indexOf('hant') !== -1 || lower.indexOf('-tw') !== -1 || lower.indexOf('-hk') !== -1 || lower.indexOf('-mo') !== -1) {
-          return 'zh-Hant';
-        }
-        return 'zh-Hans';
-      }
-      var base = lower.split('-')[0];
-      if (I18N.hasOwnProperty(base)) return base;
-    }
-    return 'en';
-  }
-
-  function applyI18n(lang) {
-    var dict = I18N[lang] || I18N.en;
-    document.documentElement.lang = lang;
-    if (dict.pageTitle) document.title = dict.pageTitle;
-    var textNodes = document.querySelectorAll('[data-i18n]');
-    for (var i = 0; i < textNodes.length; i++) {
-      var key = textNodes[i].getAttribute('data-i18n');
-      if (dict[key] != null) textNodes[i].textContent = dict[key];
-    }
-    var altNodes = document.querySelectorAll('[data-i18n-alt]');
-    for (var j = 0; j < altNodes.length; j++) {
-      var altKey = altNodes[j].getAttribute('data-i18n-alt');
-      if (dict[altKey] != null) altNodes[j].alt = dict[altKey];
-    }
-  }
-
-  applyI18n(detectLang());
+  FGI18N.init(I18N);
 </script>
 
 </body>

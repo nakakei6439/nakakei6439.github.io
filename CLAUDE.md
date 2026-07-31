@@ -32,7 +32,7 @@ gh api repos/nakakei6439/nakakei6439.github.io/pages/builds --jq '.[0].status'
 ## i18n アーキテクチャ
 
 全ページ8言語対応（`ja` `en` `de` `es` `fr` `ko` `zh-Hans` `zh-Hant`）。
-**現在3つの方式が混在しており、共通部品への統一が進行中。** 触るページがどれかを最初に確認すること。
+**共通部品への統一が進行中で、まだ3つの方式が混在している。** 触るページがどれかを最初に確認すること。
 
 ### 1. 共通部品 `/assets/i18n.js`（移行先。新規はこれを使う）
 
@@ -55,13 +55,7 @@ gh api repos/nakakei6439/nakakei6439.github.io/pages/builds --jq '.[0].status'
 `site-lang` へ自動移行し、旧キーは削除される。右上の切替プルダウン（`#fg-lang-switch`）は
 部品側が自動で挿入するので、ページ側にUIを書かない。
 
-### 2. `focus-gym/assets/i18n.js`（旧・共通部品）
-
-`focus-gym/privacy.html` `terms.html` `evidence.html` が相対パス `assets/i18n.js` で読んでいる。
-保存キーが `fg_lang` のまま、`data-i18n-src` / `data-i18n-label` も持たない。
-**focus-gym を移行するまで削除しないこと。**
-
-### 3. `data-lang` 方式（`kondate-cart/how-to-use.html` のみ）
+### 2. `data-lang` 方式（`kondate-cart/how-to-use.html` のみ）
 
 8言語ぶんの本文HTMLを丸ごと重複させ、`[data-lang].visible` の CSS で出し分ける。
 1443行のうち大半がこの重複。集約は全アプリの移行が終わった最後にまとめて行う予定。
@@ -70,15 +64,18 @@ gh api repos/nakakei6439/nakakei6439.github.io/pages/builds --jq '.[0].status'
 
 | ページ | i18n方式 | OGP |
 |---|---|---|
-| `index.html`（トップ） | インライン実装 / `site-lang` | なし |
+| `index.html`（トップ） | **共通部品** | なし |
+| `focus-gym/index.html` | **共通部品** | **英語で直書き済み** |
+| `focus-gym/{privacy,terms,evidence}.html` | **共通部品** | なし |
 | `kondate-cart/index.html` | **共通部品** | **英語で直書き済み** |
 | `kondate-cart/privacy-policy.html` | **共通部品** | なし |
 | `kondate-cart/how-to-use.html` | `data-lang` 方式 | なし |
-| `focus-gym/index.html` | インライン実装 | なし |
-| `focus-gym/{privacy,terms,evidence}.html` | 旧共通部品 / `fg_lang` | なし |
 | `tabememo/{index,privacy}.html` | インライン実装 / `site-lang` | なし |
 | `Code-Tweet/index.html` | インライン実装 / `ct_lang` | **日本語。要英語化** |
 | `Code-Tweet/{how-to-use,privacy-policy}.html` | 多言語化なし | なし |
+
+スクショ欄の実装例は `focus-gym/index.html`（8枚）と `kondate-cart/index.html`（6枚）。
+どちらも `data-i18n-src` で言語連動し、`alt` は既存の機能名キーを流用している。
 
 ## OGP の方針
 
@@ -113,9 +110,15 @@ sips -z 630 1200 /tmp/og-crop.png --out <app>/assets/og.png
 sips -Z 1300 <元画像> --out <app>/assets/screenshots/<lang>/01.png
 
 # 圧縮。必須。これを飛ばすとリポジトリが数十MB増える（26MB -> 4MB の実績）
-find <app>/assets -name '*.png' -print0 \
+# 対象は screenshots 配下と og.png に限る。assets 全体にかけないこと。
+find <app>/assets/screenshots -name '*.png' -print0 \
   | xargs -0 -n1 pngquant --quality=60-88 --speed 1 --force --ext .png --skip-if-larger
+pngquant --quality=60-88 --speed 1 --force --ext .png --skip-if-larger <app>/assets/og.png
 ```
+
+`icon.png` にはかけないこと。パステル調のなめらかなグラデーションは256色に落とすと
+バンディングが出る（`focus-gym/assets/icon.png` で実際に発生させ、revert した）。
+写真やUIスクショは問題ないが、なめらかなグラデーションが主体の画像は目視で確認してから採用する。
 
 中国語のフォルダ名は素材側が `zh-Hans（简体）` のようになっているが、URL に非ASCIIが
 入らないよう `zh-Hans` / `zh-Hant` に正規化して配置する。
