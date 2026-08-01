@@ -4,12 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Code Tweet — GitHub README から1週間分のXポストを5本自動生成</title>
-  <meta name="description" content="GitHubリポジトリURLを貼るだけで、READMEからX向けの投稿文を5本まとめて作成。個人開発者のための継続発信ツール。">
-  <meta property="og:title" content="Code Tweet — GitHub README から1週間分のXポストを5本自動生成">
-  <meta property="og:description" content="GitHubリポジトリURLを貼るだけで、READMEからX向けの投稿文を5本まとめて作成。個人開発者のための継続発信ツール。">
-  <meta property="og:url" content="https://nakakei6439.github.io/Code-Tweet/">
+  <link rel="icon" href="./assets/icon.png">
+
+  <!-- OGP / Twitter Card。クローラーは JS を実行しないため英語で直書きし、JS では書き換えない。 -->
+  <meta name="description" content="Paste a GitHub repo URL and get five ready-to-post X drafts, each with a suggested time to post. Built for indie developers who keep forgetting to market.">
+  <link rel="canonical" href="https://nakakei6439.github.io/Code-Tweet/">
+
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Code Tweet">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://nakakei6439.github.io/Code-Tweet/">
+  <meta property="og:title" content="Code Tweet — Turn a GitHub README into a week of X posts">
+  <meta property="og:description" content="Paste a GitHub repo URL and get five ready-to-post X drafts, each with a suggested time to post. Built for indie developers who keep forgetting to market.">
+  <meta property="og:image" content="https://nakakei6439.github.io/Code-Tweet/assets/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Code Tweet — a README in, a week of X posts out">
+
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Code Tweet — Turn a GitHub README into a week of X posts">
+  <meta name="twitter:description" content="Paste a GitHub repo URL and get five ready-to-post X drafts, each with a suggested time to post. Built for indie developers who keep forgetting to market.">
+  <meta name="twitter:image" content="https://nakakei6439.github.io/Code-Tweet/assets/og.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body { font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Sans', sans-serif; }
@@ -36,7 +51,7 @@
 
   <!-- Language switcher -->
   <div class="fixed top-4 right-4 z-50">
-    <select id="langSwitcher" class="bg-gray-900/90 border border-gray-700 text-gray-200 text-sm rounded-full pl-4 py-2 backdrop-blur focus:outline-none focus:ring-2 focus:ring-fuchsia-400 cursor-pointer">
+    <select id="langSwitcher" data-i18n-switcher class="bg-gray-900/90 border border-gray-700 text-gray-200 text-sm rounded-full pl-4 py-2 backdrop-blur focus:outline-none focus:ring-2 focus:ring-fuchsia-400 cursor-pointer">
       <option value="ja">日本語</option>
       <option value="en">English</option>
       <option value="de">Deutsch</option>
@@ -50,48 +65,50 @@
 
   <!-- Hero -->
   <section class="px-6 pt-20 pb-24 max-w-5xl mx-auto text-center">
-    <p class="text-sm uppercase tracking-widest text-fuchsia-300 mb-4" data-i18n="hero.eyebrow">For Indie Developers</p>
+    <img src="./assets/icon.png" width="112" height="112" alt="Code Tweet"
+         class="w-28 h-28 rounded-3xl mx-auto mb-8 shadow-2xl shadow-cyan-500/10">
+    <p class="text-sm uppercase tracking-widest text-fuchsia-300 mb-4" data-i18n-html="hero.eyebrow">For Indie Developers</p>
     <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight leading-tight">
       <span class="brand-gradient">Code Tweet</span>
     </h1>
-    <p class="mt-6 text-lg md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed" data-i18n="hero.subtitle">
+    <p class="mt-6 text-lg md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed" data-i18n-html="hero.subtitle">
       GitHub リポジトリ URL を貼るだけで、<br class="hidden md:block">
       README から 1 週間分の X 向けポストを <span class="text-white font-bold">5 本まとめて</span>作成します。
     </p>
     <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
       <a href="https://code-tweet.vercel.app/" target="_blank" rel="noopener"
-         class="inline-block bg-white text-gray-950 font-bold px-8 py-4 rounded-full hover:bg-gray-200 transition" data-i18n="hero.cta1">
+         class="inline-block bg-white text-gray-950 font-bold px-8 py-4 rounded-full hover:bg-gray-200 transition" data-i18n-html="hero.cta1">
         アプリを使う →
       </a>
       <a href="#features"
-         class="inline-block border border-gray-700 text-gray-300 font-medium px-8 py-4 rounded-full hover:border-gray-400 hover:text-white transition" data-i18n="hero.cta2">
+         class="inline-block border border-gray-700 text-gray-300 font-medium px-8 py-4 rounded-full hover:border-gray-400 hover:text-white transition" data-i18n-html="hero.cta2">
         できることを見る
       </a>
     </div>
-    <p class="mt-6 text-sm text-gray-500" data-i18n="hero.note">無料で 3 回まで試せます（登録不要）</p>
+    <p class="mt-6 text-sm text-gray-500" data-i18n-html="hero.note">無料で 3 回まで試せます（登録不要）</p>
   </section>
 
   <!-- Pain -->
   <section class="px-6 py-20 bg-gray-900/40">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-2xl md:text-3xl font-bold text-center mb-12" data-i18n="pain.h2">
+      <h2 class="text-2xl md:text-3xl font-bold text-center mb-12" data-i18n-html="pain.h2">
         個人開発の<span class="brand-gradient">継続発信</span>、こんなことありませんか？
       </h2>
       <div class="grid md:grid-cols-3 gap-6">
         <div class="bg-gray-900 rounded-2xl p-6 border border-gray-800">
           <div class="text-3xl mb-3">😩</div>
-          <h3 class="font-bold mb-2" data-i18n="pain.c1t">毎日ネタを考えるのが大変</h3>
-          <p class="text-sm text-gray-400 leading-relaxed" data-i18n="pain.c1b">「同じ告知ばかり」「もう何を書けばいいか…」となって発信が止まる。</p>
+          <h3 class="font-bold mb-2" data-i18n-html="pain.c1t">毎日ネタを考えるのが大変</h3>
+          <p class="text-sm text-gray-400 leading-relaxed" data-i18n-html="pain.c1b">「同じ告知ばかり」「もう何を書けばいいか…」となって発信が止まる。</p>
         </div>
         <div class="bg-gray-900 rounded-2xl p-6 border border-gray-800">
           <div class="text-3xl mb-3">📝</div>
-          <h3 class="font-bold mb-2" data-i18n="pain.c2t">文章を考える時間がない</h3>
-          <p class="text-sm text-gray-400 leading-relaxed" data-i18n="pain.c2b">開発に集中したい。でも宣伝もしないと使ってもらえない。</p>
+          <h3 class="font-bold mb-2" data-i18n-html="pain.c2t">文章を考える時間がない</h3>
+          <p class="text-sm text-gray-400 leading-relaxed" data-i18n-html="pain.c2b">開発に集中したい。でも宣伝もしないと使ってもらえない。</p>
         </div>
         <div class="bg-gray-900 rounded-2xl p-6 border border-gray-800">
           <div class="text-3xl mb-3">📉</div>
-          <h3 class="font-bold mb-2" data-i18n="pain.c3t">毎回トーンがバラバラ</h3>
-          <p class="text-sm text-gray-400 leading-relaxed" data-i18n="pain.c3b">真面目だったりカジュアルだったり、ブランドが定まらない。</p>
+          <h3 class="font-bold mb-2" data-i18n-html="pain.c3t">毎回トーンがバラバラ</h3>
+          <p class="text-sm text-gray-400 leading-relaxed" data-i18n-html="pain.c3b">真面目だったりカジュアルだったり、ブランドが定まらない。</p>
         </div>
       </div>
     </div>
@@ -99,26 +116,26 @@
 
   <!-- How it works -->
   <section class="px-6 py-20 max-w-5xl mx-auto">
-    <h2 class="text-2xl md:text-3xl font-bold text-center mb-4" data-i18n="how.h2">
+    <h2 class="text-2xl md:text-3xl font-bold text-center mb-4" data-i18n-html="how.h2">
       使い方は<span class="brand-gradient">たった 3 ステップ</span>
     </h2>
-    <p class="text-center text-gray-400 mb-14" data-i18n="how.sub">面倒な設定は一切なし。リポジトリ URL を貼るだけ。</p>
+    <p class="text-center text-gray-400 mb-14" data-i18n-html="how.sub">面倒な設定は一切なし。リポジトリ URL を貼るだけ。</p>
 
     <div class="grid md:grid-cols-3 gap-8">
       <div class="text-center">
         <div class="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-cyan-300 to-fuchsia-300 text-gray-950 text-2xl font-extrabold flex items-center justify-center mb-5">1</div>
-        <h3 class="font-bold text-lg mb-2" data-i18n="how.s1t">URL を貼る</h3>
-        <p class="text-sm text-gray-400 leading-relaxed" data-i18n="how.s1b">紹介したい GitHub リポジトリの URL を入力欄に貼り付けます。</p>
+        <h3 class="font-bold text-lg mb-2" data-i18n-html="how.s1t">URL を貼る</h3>
+        <p class="text-sm text-gray-400 leading-relaxed" data-i18n-html="how.s1b">紹介したい GitHub リポジトリの URL を入力欄に貼り付けます。</p>
       </div>
       <div class="text-center">
         <div class="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-fuchsia-300 to-yellow-200 text-gray-950 text-2xl font-extrabold flex items-center justify-center mb-5">2</div>
-        <h3 class="font-bold text-lg mb-2" data-i18n="how.s2t">条件を選ぶ</h3>
-        <p class="text-sm text-gray-400 leading-relaxed" data-i18n="how.s2b">トーン（真面目／カジュアル）やターゲット読者を指定。空欄でも OK。</p>
+        <h3 class="font-bold text-lg mb-2" data-i18n-html="how.s2t">条件を選ぶ</h3>
+        <p class="text-sm text-gray-400 leading-relaxed" data-i18n-html="how.s2b">トーン（真面目／カジュアル）やターゲット読者を指定。空欄でも OK。</p>
       </div>
       <div class="text-center">
         <div class="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-yellow-200 to-cyan-300 text-gray-950 text-2xl font-extrabold flex items-center justify-center mb-5">3</div>
-        <h3 class="font-bold text-lg mb-2" data-i18n="how.s3t">5 本まとめて生成</h3>
-        <p class="text-sm text-gray-400 leading-relaxed" data-i18n="how.s3b">紹介・使い方・ユースケース・共感・CTA の 5 本が一度に出来上がり。</p>
+        <h3 class="font-bold text-lg mb-2" data-i18n-html="how.s3t">5 本まとめて生成</h3>
+        <p class="text-sm text-gray-400 leading-relaxed" data-i18n-html="how.s3b">紹介・使い方・ユースケース・共感・CTA の 5 本が一度に出来上がり。</p>
       </div>
     </div>
   </section>
@@ -126,29 +143,29 @@
   <!-- Features -->
   <section id="features" class="px-6 py-20 bg-gray-900/40">
     <div class="max-w-5xl mx-auto">
-      <h2 class="text-2xl md:text-3xl font-bold text-center mb-14" data-i18n="features.h2">
+      <h2 class="text-2xl md:text-3xl font-bold text-center mb-14" data-i18n-html="features.h2">
         <span class="brand-gradient">継続発信</span>に効くこだわり
       </h2>
       <div class="grid md:grid-cols-2 gap-6">
         <div class="bg-gray-900 rounded-2xl p-6 border border-gray-800">
-          <h3 class="font-bold mb-2 text-cyan-300" data-i18n="features.f1t">📖 README を自動取得</h3>
-          <p class="text-sm text-gray-400 leading-relaxed" data-i18n="features.f1b">URL を貼るだけでリポジトリの README を自動で読み込み、AI が要点を抽出します。</p>
+          <h3 class="font-bold mb-2 text-cyan-300" data-i18n-html="features.f1t">📖 README を自動取得</h3>
+          <p class="text-sm text-gray-400 leading-relaxed" data-i18n-html="features.f1b">URL を貼るだけでリポジトリの README を自動で読み込み、AI が要点を抽出します。</p>
         </div>
         <div class="bg-gray-900 rounded-2xl p-6 border border-gray-800">
-          <h3 class="font-bold mb-2 text-fuchsia-300" data-i18n="features.f2t">🎯 5 段ストーリーアーク</h3>
-          <p class="text-sm text-gray-400 leading-relaxed" data-i18n="features.f2b">紹介 → 使い方 → ユースケース → 共感 → CTA の流れで 5 本生成。1 週間分の投稿計画がそのまま完成。</p>
+          <h3 class="font-bold mb-2 text-fuchsia-300" data-i18n-html="features.f2t">🎯 5 段ストーリーアーク</h3>
+          <p class="text-sm text-gray-400 leading-relaxed" data-i18n-html="features.f2b">紹介 → 使い方 → ユースケース → 共感 → CTA の流れで 5 本生成。1 週間分の投稿計画がそのまま完成。</p>
         </div>
         <div class="bg-gray-900 rounded-2xl p-6 border border-gray-800">
-          <h3 class="font-bold mb-2 text-yellow-200" data-i18n="features.f3t">🕒 推奨投稿日時つき</h3>
-          <p class="text-sm text-gray-400 leading-relaxed" data-i18n="features.f3b">各ポストに「いつ投稿すると良いか」の目安が付くので、投稿予約にそのまま使えます。</p>
+          <h3 class="font-bold mb-2 text-yellow-200" data-i18n-html="features.f3t">🕒 推奨投稿日時つき</h3>
+          <p class="text-sm text-gray-400 leading-relaxed" data-i18n-html="features.f3b">各ポストに「いつ投稿すると良いか」の目安が付くので、投稿予約にそのまま使えます。</p>
         </div>
         <div class="bg-gray-900 rounded-2xl p-6 border border-gray-800">
-          <h3 class="font-bold mb-2 text-cyan-300" data-i18n="features.f4t">✂️ 280 字自動チェック</h3>
-          <p class="text-sm text-gray-400 leading-relaxed" data-i18n="features.f4b">X の文字数制限に収まるかリアルタイムで確認。コピペしてすぐ投稿できます。</p>
+          <h3 class="font-bold mb-2 text-cyan-300" data-i18n-html="features.f4t">✂️ 280 字自動チェック</h3>
+          <p class="text-sm text-gray-400 leading-relaxed" data-i18n-html="features.f4b">X の文字数制限に収まるかリアルタイムで確認。コピペしてすぐ投稿できます。</p>
         </div>
         <div class="bg-gray-900 rounded-2xl p-6 border border-gray-800">
-          <h3 class="font-bold mb-2 text-fuchsia-300" data-i18n="features.f5t">🚀 ワンクリックで X へ</h3>
-          <p class="text-sm text-gray-400 leading-relaxed" data-i18n="features.f5b">生成したポストは「X で投稿」ボタンから、本文入りの投稿画面をそのまま開けます。コピー&貼り付け不要。</p>
+          <h3 class="font-bold mb-2 text-fuchsia-300" data-i18n-html="features.f5t">🚀 ワンクリックで X へ</h3>
+          <p class="text-sm text-gray-400 leading-relaxed" data-i18n-html="features.f5b">生成したポストは「X で投稿」ボタンから、本文入りの投稿画面をそのまま開けます。コピー&貼り付け不要。</p>
         </div>
       </div>
     </div>
@@ -157,38 +174,38 @@
   <!-- App SS -->
   <section id="appss" class="px-6 py-20 bg-gray-900/40">
     <div class="max-w-5xl mx-auto">
-      <p class="text-sm uppercase tracking-widest text-cyan-300 mb-4 text-center" data-i18n="appss.eyebrow">New</p>
-      <h2 class="text-2xl md:text-3xl font-bold text-center mb-4" data-i18n="appss.h2">
+      <p class="text-sm uppercase tracking-widest text-cyan-300 mb-4 text-center" data-i18n-html="appss.eyebrow">New</p>
+      <h2 class="text-2xl md:text-3xl font-bold text-center mb-4" data-i18n-html="appss.h2">
         <span class="brand-gradient">App SS</span> — App Store のスクショも、同じ README から
       </h2>
-      <p class="text-center text-gray-400 max-w-2xl mx-auto mb-14 leading-relaxed" data-i18n="appss.body">
+      <p class="text-center text-gray-400 max-w-2xl mx-auto mb-14 leading-relaxed" data-i18n-html="appss.body">
         Code Tweet と同じ README を使って、App Store 提出用のスクリーンショット（＝ダウンロードを左右する“広告”）をAIと一緒に作成できるツールです。README を貼るだけでアプリ名・説明・機能をAIが自動で読み取り、見出しコピー・このアプリ専用の配色パレット・レイアウトまで一気に生成。あとは自分のアプリ画面を入れて書き出すだけ、すべてブラウザだけで完結します。
       </p>
       <div class="grid md:grid-cols-2 gap-6">
         <div class="bg-gray-900 rounded-2xl p-6 border border-gray-800">
-          <h3 class="font-bold mb-2 text-cyan-300" data-i18n="appss.f1t">📖 README からアプリ情報を自動入力</h3>
-          <p class="text-sm text-gray-400 leading-relaxed" data-i18n="appss.f1b">README を貼り付けるだけで、AIがアプリ名・説明・主な機能を読み取って入力欄に反映。仮入力として使い、そこから自由に編集できます。</p>
+          <h3 class="font-bold mb-2 text-cyan-300" data-i18n-html="appss.f1t">📖 README からアプリ情報を自動入力</h3>
+          <p class="text-sm text-gray-400 leading-relaxed" data-i18n-html="appss.f1b">README を貼り付けるだけで、AIがアプリ名・説明・主な機能を読み取って入力欄に反映。仮入力として使い、そこから自由に編集できます。</p>
         </div>
         <div class="bg-gray-900 rounded-2xl p-6 border border-gray-800">
-          <h3 class="font-bold mb-2 text-fuchsia-300" data-i18n="appss.f2t">🎨 専用配色パレットをAIが都度生成</h3>
-          <p class="text-sm text-gray-400 leading-relaxed" data-i18n="appss.f2b">既製テーマから選ぶだけでなく、アプリの雰囲気に合わせた配色をAIがそのつど新しく生成。テーマ 11 種・日本語フォント 9 種から手動でも選べます。</p>
+          <h3 class="font-bold mb-2 text-fuchsia-300" data-i18n-html="appss.f2t">🎨 専用配色パレットをAIが都度生成</h3>
+          <p class="text-sm text-gray-400 leading-relaxed" data-i18n-html="appss.f2b">既製テーマから選ぶだけでなく、アプリの雰囲気に合わせた配色をAIがそのつど新しく生成。テーマ 11 種・日本語フォント 9 種から手動でも選べます。</p>
         </div>
         <div class="bg-gray-900 rounded-2xl p-6 border border-gray-800">
-          <h3 class="font-bold mb-2 text-yellow-200" data-i18n="appss.f3t">✂️ 強調ワードを自動ハイライト</h3>
-          <p class="text-sm text-gray-400 leading-relaxed" data-i18n="appss.f3b">各見出しで一番刺さる語をAIが選び、アクセント色で自動強調。プロのスクショ広告に欠かせない“一語の強調”をそのまま再現します。</p>
+          <h3 class="font-bold mb-2 text-yellow-200" data-i18n-html="appss.f3t">✂️ 強調ワードを自動ハイライト</h3>
+          <p class="text-sm text-gray-400 leading-relaxed" data-i18n-html="appss.f3b">各見出しで一番刺さる語をAIが選び、アクセント色で自動強調。プロのスクショ広告に欠かせない“一語の強調”をそのまま再現します。</p>
         </div>
         <div class="bg-gray-900 rounded-2xl p-6 border border-gray-800">
-          <h3 class="font-bold mb-2 text-cyan-300" data-i18n="appss.f4t">🔒 画像は端末内だけで処理</h3>
-          <p class="text-sm text-gray-400 leading-relaxed" data-i18n="appss.f4b">取り込んだスクリーンショットはブラウザ内にのみ保存され、サーバーには送信されません。未公開アプリのスクショも安心して扱えます。</p>
+          <h3 class="font-bold mb-2 text-cyan-300" data-i18n-html="appss.f4t">🔒 画像は端末内だけで処理</h3>
+          <p class="text-sm text-gray-400 leading-relaxed" data-i18n-html="appss.f4b">取り込んだスクリーンショットはブラウザ内にのみ保存され、サーバーには送信されません。未公開アプリのスクショも安心して扱えます。</p>
         </div>
         <div class="bg-gray-900 rounded-2xl p-6 border border-gray-800 md:col-span-2">
-          <h3 class="font-bold mb-2 text-fuchsia-300" data-i18n="appss.f5t">🚀 App Store 全サイズを一括書き出し</h3>
-          <p class="text-sm text-gray-400 leading-relaxed" data-i18n="appss.f5b">6.9 / 6.5 / 6.3 / 6.1 インチを一度に PNG で書き出し、そのまま App Store Connect にアップロードできます。</p>
+          <h3 class="font-bold mb-2 text-fuchsia-300" data-i18n-html="appss.f5t">🚀 App Store 全サイズを一括書き出し</h3>
+          <p class="text-sm text-gray-400 leading-relaxed" data-i18n-html="appss.f5b">6.9 / 6.5 / 6.3 / 6.1 インチを一度に PNG で書き出し、そのまま App Store Connect にアップロードできます。</p>
         </div>
       </div>
       <div class="mt-10 text-center">
         <a href="https://code-tweet.vercel.app/appss" target="_blank" rel="noopener"
-           class="inline-block bg-white text-gray-950 font-bold px-8 py-4 rounded-full hover:bg-gray-200 transition" data-i18n="appss.cta">
+           class="inline-block bg-white text-gray-950 font-bold px-8 py-4 rounded-full hover:bg-gray-200 transition" data-i18n-html="appss.cta">
           App SS を使う →
         </a>
       </div>
@@ -197,33 +214,33 @@
 
   <!-- Pricing -->
   <section class="px-6 py-20 max-w-5xl mx-auto">
-    <h2 class="text-2xl md:text-3xl font-bold text-center mb-4" data-i18n="pricing.h2">
+    <h2 class="text-2xl md:text-3xl font-bold text-center mb-4" data-i18n-html="pricing.h2">
       <span class="brand-gradient">料金プラン</span>
     </h2>
-    <p class="text-center text-gray-400 mb-14" data-i18n="pricing.sub">まずは無料で試して、足りない分だけクレジットを買い足す。サブスク不要です。</p>
+    <p class="text-center text-gray-400 mb-14" data-i18n-html="pricing.sub">まずは無料で試して、足りない分だけクレジットを買い足す。サブスク不要です。</p>
 
     <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
       <div class="bg-gray-900 rounded-2xl p-8 border border-gray-800">
-        <h3 class="text-xl font-bold mb-2" data-i18n="pricing.freeTitle">無料プラン</h3>
-        <p class="text-3xl font-extrabold mb-1" data-i18n="pricing.freePrice">¥0<span class="text-base font-normal text-gray-400"> / 月</span></p>
-        <p class="text-sm text-gray-400 mb-6" data-i18n="pricing.freeDesc">まず試してみたい人向け</p>
+        <h3 class="text-xl font-bold mb-2" data-i18n-html="pricing.freeTitle">無料プラン</h3>
+        <p class="text-3xl font-extrabold mb-1" data-i18n-html="pricing.freePrice">¥0<span class="text-base font-normal text-gray-400"> / 月</span></p>
+        <p class="text-sm text-gray-400 mb-6" data-i18n-html="pricing.freeDesc">まず試してみたい人向け</p>
         <ul class="space-y-2 text-sm text-gray-300">
-          <li data-i18n="pricing.freeLi1">✓ 月 3 回まで生成</li>
-          <li data-i18n="pricing.freeLi2">✓ README 1,000 文字まで</li>
-          <li data-i18n="pricing.freeLi3">✓ 5 段ストーリーアーク（Code Tweet）/ App SS のコピー＆デザイン生成</li>
-          <li class="text-gray-600" data-i18n="pricing.freeLi4">— プライベートリポジトリ非対応</li>
+          <li data-i18n-html="pricing.freeLi1">✓ 月 3 回まで生成</li>
+          <li data-i18n-html="pricing.freeLi2">✓ README 1,000 文字まで</li>
+          <li data-i18n-html="pricing.freeLi3">✓ 5 段ストーリーアーク（Code Tweet）/ App SS のコピー＆デザイン生成</li>
+          <li class="text-gray-600" data-i18n-html="pricing.freeLi4">— プライベートリポジトリ非対応</li>
         </ul>
       </div>
       <div class="bg-gradient-to-br from-cyan-950 via-fuchsia-950 to-yellow-950 rounded-2xl p-8 border border-fuchsia-700 relative">
-        <span class="absolute -top-3 right-6 bg-fuchsia-400 text-gray-950 text-xs font-bold px-3 py-1 rounded-full" data-i18n="pricing.badge">おすすめ</span>
-        <h3 class="text-xl font-bold mb-2" data-i18n="pricing.packTitle">クレジットパック</h3>
-        <p class="text-3xl font-extrabold mb-1" data-i18n="pricing.packPrice">¥100<span class="text-base font-normal text-gray-400"> 〜</span></p>
-        <p class="text-sm text-gray-300 mb-6" data-i18n="pricing.packDesc">サブスク不要・使う分だけ買い足し</p>
+        <span class="absolute -top-3 right-6 bg-fuchsia-400 text-gray-950 text-xs font-bold px-3 py-1 rounded-full" data-i18n-html="pricing.badge">おすすめ</span>
+        <h3 class="text-xl font-bold mb-2" data-i18n-html="pricing.packTitle">クレジットパック</h3>
+        <p class="text-3xl font-extrabold mb-1" data-i18n-html="pricing.packPrice">¥100<span class="text-base font-normal text-gray-400"> 〜</span></p>
+        <p class="text-sm text-gray-300 mb-6" data-i18n-html="pricing.packDesc">サブスク不要・使う分だけ買い足し</p>
         <ul class="space-y-2 text-sm text-gray-100">
-          <li data-i18n="pricing.packLi1">✓ 10回 ¥100 / 30回 ¥300 / 50回 ¥500 / 100回 ¥700</li>
-          <li data-i18n="pricing.packLi2">✓ クレジットは<span class="font-bold">無期限</span>（月をまたいでも消えない）</li>
-          <li data-i18n="pricing.packLi3">✓ README <span class="font-bold">10,000 文字</span>まで／プライベートリポジトリ対応</li>
-          <li data-i18n="pricing.packLi4">✓ Code Tweet・App SS で共通して使える</li>
+          <li data-i18n-html="pricing.packLi1">✓ 10回 ¥100 / 30回 ¥300 / 50回 ¥500 / 100回 ¥700</li>
+          <li data-i18n-html="pricing.packLi2">✓ クレジットは<span class="font-bold">無期限</span>（月をまたいでも消えない）</li>
+          <li data-i18n-html="pricing.packLi3">✓ README <span class="font-bold">10,000 文字</span>まで／プライベートリポジトリ対応</li>
+          <li data-i18n-html="pricing.packLi4">✓ Code Tweet・App SS で共通して使える</li>
         </ul>
       </div>
     </div>
@@ -231,22 +248,23 @@
 
   <!-- Final CTA -->
   <section class="px-6 py-24 text-center">
-    <h2 class="text-3xl md:text-4xl font-extrabold mb-6" data-i18n="finalCta.h2">
+    <h2 class="text-3xl md:text-4xl font-extrabold mb-6" data-i18n-html="finalCta.h2">
       まずは<span class="brand-gradient">無料</span>で試してみる
     </h2>
-    <p class="text-gray-400 mb-10 max-w-xl mx-auto" data-i18n="finalCta.body">登録不要・3 回までゲスト利用 OK。最初の 1 本を 1 分で。</p>
+    <p class="text-gray-400 mb-10 max-w-xl mx-auto" data-i18n-html="finalCta.body">登録不要・3 回までゲスト利用 OK。最初の 1 本を 1 分で。</p>
     <a href="https://code-tweet.vercel.app/" target="_blank" rel="noopener"
-       class="inline-block bg-white text-gray-950 font-bold text-lg px-10 py-5 rounded-full hover:bg-gray-200 transition" data-i18n="finalCta.cta">
+       class="inline-block bg-white text-gray-950 font-bold text-lg px-10 py-5 rounded-full hover:bg-gray-200 transition" data-i18n-html="finalCta.cta">
       Code Tweet を開く →
     </a>
   </section>
 
   <!-- Footer -->
   <footer class="border-t border-gray-900 px-6 py-10 text-center text-sm text-gray-500">
-    <a href="../" class="hover:text-white transition" data-i18n="footer.back">← nakakei6439 のアプリ一覧へ</a>
+    <a href="../" class="hover:text-white transition" data-i18n-html="footer.back">← nakakei6439 のアプリ一覧へ</a>
     <p class="mt-6">© 2026 Keita Nakagawa. All rights reserved.</p>
   </footer>
 
+  <script src="/assets/i18n.js"></script>
   <script>
     var translations = {
       ja: {
@@ -939,68 +957,7 @@
       }
     };
 
-    var SUPPORTED = ['ja', 'en', 'de', 'fr', 'es', 'zh-Hans', 'zh-Hant', 'ko'];
-
-    function detectLang() {
-      try {
-        var saved = localStorage.getItem('ct_lang');
-        if (saved && SUPPORTED.indexOf(saved) !== -1) return saved;
-      } catch (e) {}
-      var navLangs = navigator.languages || [navigator.language || 'en'];
-      for (var i = 0; i < navLangs.length; i++) {
-        var lc = navLangs[i].toLowerCase();
-        if (lc.indexOf('ja') === 0) return 'ja';
-        if (lc.indexOf('ko') === 0) return 'ko';
-        if (lc.indexOf('de') === 0) return 'de';
-        if (lc.indexOf('fr') === 0) return 'fr';
-        if (lc.indexOf('es') === 0) return 'es';
-        if (lc.indexOf('zh') === 0) {
-          if (lc.indexOf('tw') !== -1 || lc.indexOf('hk') !== -1 || lc.indexOf('mo') !== -1 || lc.indexOf('hant') !== -1) return 'zh-Hant';
-          return 'zh-Hans';
-        }
-        if (lc.indexOf('en') === 0) return 'en';
-      }
-      return 'en';
-    }
-
-    function getByPath(obj, path) {
-      return path.split('.').reduce(function (acc, key) {
-        return acc && acc[key] !== undefined ? acc[key] : undefined;
-      }, obj);
-    }
-
-    function applyLang(lang) {
-      var t = translations[lang] || translations.en;
-      document.documentElement.lang = lang;
-
-      document.title = t.meta.title;
-      var descTag = document.querySelector('meta[name="description"]');
-      if (descTag) descTag.setAttribute('content', t.meta.desc);
-      var ogTitle = document.querySelector('meta[property="og:title"]');
-      if (ogTitle) ogTitle.setAttribute('content', t.meta.title);
-      var ogDesc = document.querySelector('meta[property="og:description"]');
-      if (ogDesc) ogDesc.setAttribute('content', t.meta.desc);
-
-      var nodes = document.querySelectorAll('[data-i18n]');
-      for (var i = 0; i < nodes.length; i++) {
-        var key = nodes[i].getAttribute('data-i18n');
-        var value = getByPath(t, key);
-        if (value !== undefined) nodes[i].innerHTML = value;
-      }
-
-      var switcher = document.getElementById('langSwitcher');
-      if (switcher) switcher.value = lang;
-
-      try { localStorage.setItem('ct_lang', lang); } catch (e) {}
-    }
-
-    var initialLang = detectLang();
-    applyLang(initialLang);
-    document.documentElement.classList.add('i18n-ready');
-
-    document.getElementById('langSwitcher').addEventListener('change', function (e) {
-      applyLang(e.target.value);
-    });
+    FGI18N.init(translations);
   </script>
 
 </body>

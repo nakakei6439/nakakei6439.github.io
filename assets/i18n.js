@@ -75,22 +75,37 @@
     for (var i = 0; i < nodes.length; i++) apply(nodes[i], nodes[i].getAttribute(attr));
   }
 
+  /* キーを引く。"a.b.c" のようにドットを含む場合は入れ子をたどる。
+   * 平坦なキーにドットは現れないので、既存ページの挙動は変わらない。 */
+  function lookup(dict, key) {
+    if (key == null) return undefined;
+    if (dict[key] !== undefined) return dict[key];
+    if (key.indexOf(".") === -1) return undefined;
+    return key.split(".").reduce(function (acc, k) {
+      return acc && acc[k] !== undefined ? acc[k] : undefined;
+    }, dict);
+  }
+
   function apply(dict, lang) {
     var d = dict[lang] || dict.en || dict.ja;
     if (!d) return;
     document.documentElement.lang = lang;
 
     fill(null, "data-i18n", function (el, k) {
-      if (d[k] != null) el.textContent = d[k];
+      var v = lookup(d, k);
+      if (v != null) el.textContent = v;
     });
     fill(null, "data-i18n-html", function (el, k) {
-      if (d[k] != null) el.innerHTML = d[k];
+      var v = lookup(d, k);
+      if (v != null) el.innerHTML = v;
     });
     fill(null, "data-i18n-alt", function (el, k) {
-      if (d[k] != null) el.setAttribute("alt", d[k]);
+      var v = lookup(d, k);
+      if (v != null) el.setAttribute("alt", v);
     });
     fill(null, "data-i18n-label", function (el, k) {
-      if (d[k] != null) el.setAttribute("aria-label", d[k]);
+      var v = lookup(d, k);
+      if (v != null) el.setAttribute("aria-label", v);
     });
     // src はテンプレート。辞書ではなくパス中の {lang} を置換する。
     fill(null, "data-i18n-src", function (el, tpl) {
@@ -99,10 +114,11 @@
       if (el.getAttribute("src") !== next) el.setAttribute("src", next);
     });
 
-    if (d.__title__) document.title = d.__title__;
-    else if (d.pageTitle) document.title = d.pageTitle;
+    var title = lookup(d, "__title__") || lookup(d, "pageTitle") || lookup(d, "meta.title");
+    if (title) document.title = title;
     var meta = document.querySelector('meta[name="description"]');
-    if (meta && d.__desc__) meta.setAttribute("content", d.__desc__);
+    var desc = lookup(d, "__desc__");
+    if (meta && desc) meta.setAttribute("content", desc);
   }
 
   function injectStyle() {
@@ -120,8 +136,20 @@
     document.head.appendChild(s);
   }
 
+  /* ページが自前の切替UIを持つ場合は data-i18n-switcher を付けておく。
+   * その <select> に接続し、部品側からは何も注入しない（配色が合わないUIが重なるのを避ける）。 */
+  function bindExisting(lang, onchange) {
+    var sel = document.querySelector("select[data-i18n-switcher]");
+    if (!sel) return false;
+    sel.value = lang;
+    sel.addEventListener("change", function () { onchange(sel.value); });
+    return true;
+  }
+
   function buildSwitch(dict, lang, onchange) {
+    if (bindExisting(lang, onchange)) return;
     if (document.getElementById("fg-lang-switch")) return;
+    injectStyle();
     var sel = document.createElement("select");
     sel.id = "fg-lang-switch";
     sel.setAttribute("aria-label", "Language / 言語");
@@ -141,13 +169,15 @@
     init: function (dict) {
       var lang = detect();
       function mount() {
-        injectStyle();
         apply(dict, lang);
         buildSwitch(dict, lang, function (next) {
           lang = next;
           save(next);
           apply(dict, next);
         });
+        // 切替前のチラつきを body の非表示で抑えているページ向けの合図。
+        // （html:not(.i18n-ready) body{opacity:0} を置いているページだけが影響を受ける）
+        document.documentElement.classList.add("i18n-ready");
       }
       if (document.readyState === "loading") {
         document.addEventListener("DOMContentLoaded", mount);

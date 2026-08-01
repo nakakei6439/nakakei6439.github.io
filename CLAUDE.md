@@ -50,6 +50,16 @@ gh api repos/nakakei6439/nakakei6439.github.io/pages/builds --jq '.[0].status'
 言語コードに置換される（`./assets/screenshots/{lang}/01.png`）。8言語ぶんのパスを辞書に
 並べずに済ませるための仕組み。
 
+キーは **ドット区切りで入れ子をたどれる**（`hero.eyebrow`）。平坦なキーにドットは
+現れないため、平坦な辞書と入れ子の辞書が混在していても壊れない。
+
+ページが**自前の切替UIを持つ場合**は、その `<select>` に `data-i18n-switcher` を付ける。
+部品はそれに接続し、`#fg-lang-switch` を注入しない。付け忘れると**切替UIが2つ出る**。
+暗色テーマの `Code-Tweet/index.html` がこれを使っている。
+
+`html:not(.i18n-ready) body { opacity: 0 }` を置いているページでは、適用完了後に部品が
+`<html>` へ `i18n-ready` を付ける。この CSS が無いページには何の影響もない。
+
 言語の判定順は `?lang=xx` → `localStorage("site-lang")` → `navigator.languages` → `en`。
 `?lang=xx` で来た場合はその言語を保存する。旧キー `fg_lang` / `ct_lang` は初回に
 `site-lang` へ自動移行し、旧キーは削除される。右上の切替プルダウン（`#fg-lang-switch`）は
@@ -72,8 +82,10 @@ gh api repos/nakakei6439/nakakei6439.github.io/pages/builds --jq '.[0].status'
 | `kondate-cart/how-to-use.html` | `data-lang` 方式 | なし |
 | `tabememo/index.html` | **共通部品** | **英語で直書き済み** |
 | `tabememo/privacy.html` | **共通部品**（全文 `data-i18n-html`） | なし |
-| `Code-Tweet/index.html` | インライン実装 / `ct_lang` | **日本語。要英語化** |
+| `Code-Tweet/index.html` | **共通部品**（入れ子キー・全文 `data-i18n-html`・自前の切替UI） | **英語で直書き済み** |
 | `Code-Tweet/{how-to-use,privacy-policy}.html` | 多言語化なし | なし |
+
+残るインライン実装は `kondate-cart/how-to-use.html` の `data-lang` 方式のみ。
 
 スクショ欄の実装例は `focus-gym/index.html`（8枚）と `kondate-cart/index.html`（6枚）。
 どちらも `data-i18n-src` で言語連動し、`alt` は既存の機能名キーを流用している。
