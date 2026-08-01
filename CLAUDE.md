@@ -70,12 +70,27 @@ gh api repos/nakakei6439/nakakei6439.github.io/pages/builds --jq '.[0].status'
 | `kondate-cart/index.html` | **共通部品** | **英語で直書き済み** |
 | `kondate-cart/privacy-policy.html` | **共通部品** | なし |
 | `kondate-cart/how-to-use.html` | `data-lang` 方式 | なし |
-| `tabememo/{index,privacy}.html` | インライン実装 / `site-lang` | なし |
+| `tabememo/index.html` | **共通部品** | **英語で直書き済み** |
+| `tabememo/privacy.html` | **共通部品**（全文 `data-i18n-html`） | なし |
 | `Code-Tweet/index.html` | インライン実装 / `ct_lang` | **日本語。要英語化** |
 | `Code-Tweet/{how-to-use,privacy-policy}.html` | 多言語化なし | なし |
 
 スクショ欄の実装例は `focus-gym/index.html`（8枚）と `kondate-cart/index.html`（6枚）。
 どちらも `data-i18n-src` で言語連動し、`alt` は既存の機能名キーを流用している。
+
+### 既存ページを共通部品へ移行するときの確認点
+
+インライン実装はページごとに微妙に違う。移行前に必ず旧コードを読み、次を揃えること。
+
+| 旧実装にありがちな差異 | 揃え方 |
+|---|---|
+| `document.title` を `dict.title` から取っている | 辞書のキー名を `pageTitle` に直す（訳文は不変） |
+| `aria-label` を `data-i18n-aria` で差している | 属性名を `data-i18n-label` に直す |
+| `data-i18n` に `innerHTML` を代入している | 訳文にリンクや `<strong>` が含まれる。属性名を `data-i18n-html` に直す。<br>`tabememo/privacy.html` は42箇所すべてがこれに該当した |
+| ページ自身が `<select id="lang-select">` を持っている | markup と `.lang-select` の CSS を削除する。共通部品が `#fg-lang-switch` を注入するため、残すと切替UIが2つ出る |
+
+`data-i18n` のまま移行すると、リンクが `&lt;a href=…&gt;` のように文字列として表示される。
+移行後は必ずブラウザで `document.querySelectorAll('[data-i18n-html] a').length` を確認すること。
 
 ## OGP の方針
 
