@@ -32,7 +32,7 @@ gh api repos/nakakei6439/nakakei6439.github.io/pages/builds --jq '.[0].status'
 ## i18n アーキテクチャ
 
 全ページ8言語対応（`ja` `en` `de` `es` `fr` `ko` `zh-Hans` `zh-Hant`）。
-**共通部品への統一が進行中で、まだ3つの方式が混在している。** 触るページがどれかを最初に確認すること。
+**全11ページが共通部品 `/assets/i18n.js` に統一済み。** 新しいページも同じ作法で書く。
 
 ### 1. 共通部品 `/assets/i18n.js`（移行先。新規はこれを使う）
 
@@ -65,10 +65,15 @@ gh api repos/nakakei6439/nakakei6439.github.io/pages/builds --jq '.[0].status'
 `site-lang` へ自動移行し、旧キーは削除される。右上の切替プルダウン（`#fg-lang-switch`）は
 部品側が自動で挿入するので、ページ側にUIを書かない。
 
-### 2. `data-lang` 方式（`kondate-cart/how-to-use.html` のみ）
+### 2. 訳が一部の言語にしか無いとき
 
-8言語ぶんの本文HTMLを丸ごと重複させ、`[data-lang].visible` の CSS で出し分ける。
-1443行のうち大半がこの重複。集約は全アプリの移行が終わった最後にまとめて行う予定。
+`kondate-cart/how-to-use.html` の `.step-hint` のように、日本語には補足があるが他言語には
+無い項目がある。**キーを省略してはいけない。** 部品はキーが無い要素に触れないため、
+直前に表示していた言語の文字がそのまま残る（日本語表示のあとフランス語に切り替えると、
+その要素だけ日本語のままになる）。
+
+訳が無い言語では **空文字 `""` を明示的に入れる**。空要素が余白だけ残る場合は
+`.step-hint:empty { display: none; }` のように CSS で畳む。
 
 ### 現状の対応表
 
@@ -79,13 +84,13 @@ gh api repos/nakakei6439/nakakei6439.github.io/pages/builds --jq '.[0].status'
 | `focus-gym/{privacy,terms,evidence}.html` | **共通部品** | なし |
 | `kondate-cart/index.html` | **共通部品** | **英語で直書き済み** |
 | `kondate-cart/privacy-policy.html` | **共通部品** | なし |
-| `kondate-cart/how-to-use.html` | `data-lang` 方式 | なし |
+| `kondate-cart/how-to-use.html` | **共通部品**（全文 `data-i18n-html`） | なし |
 | `tabememo/index.html` | **共通部品** | **英語で直書き済み** |
 | `tabememo/privacy.html` | **共通部品**（全文 `data-i18n-html`） | なし |
 | `Code-Tweet/index.html` | **共通部品**（入れ子キー・全文 `data-i18n-html`・自前の切替UI） | **英語で直書き済み** |
 | `Code-Tweet/{how-to-use,privacy-policy}.html` | 多言語化なし | なし |
 
-残るインライン実装は `kondate-cart/how-to-use.html` の `data-lang` 方式のみ。
+全11ページが共通部品に統一済み。インライン実装は残っていない。
 
 スクショ欄の実装例は `focus-gym/index.html`（8枚）と `kondate-cart/index.html`（6枚）。
 どちらも `data-i18n-src` で言語連動し、`alt` は既存の機能名キーを流用している。
@@ -100,6 +105,11 @@ gh api repos/nakakei6439/nakakei6439.github.io/pages/builds --jq '.[0].status'
 | `aria-label` を `data-i18n-aria` で差している | 属性名を `data-i18n-label` に直す |
 | `data-i18n` に `innerHTML` を代入している | 訳文にリンクや `<strong>` が含まれる。属性名を `data-i18n-html` に直す。<br>`tabememo/privacy.html` は42箇所すべてがこれに該当した |
 | ページ自身が `<select id="lang-select">` を持っている | markup と `.lang-select` の CSS を削除する。共通部品が `#fg-lang-switch` を注入するため、残すと切替UIが2つ出る |
+| 8言語ぶんのHTMLを重複させて出し分けている | 1つの骨組みに集約する。`kondate-cart/how-to-use.html` がこれだった（1443行 → 843行）。<br>言語ごとに要素数が違うことがあるので、集約前に構造の差を必ず洗い出す |
+
+大きな集約をしたときは、**旧版を残したまま新旧を並べて配信し、8言語ぶんの表示テキストを
+機械的に突き合わせる**こと。`how-to-use.html` では隠し iframe で旧版を読み込み、
+言語を切り替えながら `innerText` を比較して全8言語の一致を確認してから差し替えた。
 
 `data-i18n` のまま移行すると、リンクが `&lt;a href=…&gt;` のように文字列として表示される。
 移行後は必ずブラウザで `document.querySelectorAll('[data-i18n-html] a').length` を確認すること。
@@ -112,9 +122,9 @@ gh api repos/nakakei6439/nakakei6439.github.io/pages/builds --jq '.[0].status'
 閲覧者向けの表示（`<title>` や本文）は従来どおり言語で切り替わり、`og:` / `twitter:` だけが
 英語で固定される、という住み分けにする。実装例は `kondate-cart/index.html` の `<head>`。
 
-`Code-Tweet/index.html` は現在この方針に反しており、日本語の `og:` を持ち、979〜982行目付近の
-インラインJSが言語切替時に `og:title` / `og:description` を書き換えている。
-Code-Tweet の番になったら og: を英語化し、この書き換えJSを削除する。
+4アプリすべて対応済み。`Code-Tweet/index.html` は当初、日本語の `og:` を持ち、
+インラインJSが言語切替のたびに `og:title` / `og:description` を書き換えていたが、
+英語化のうえその書き換えを削除した。**同じ実装を復活させないこと。**
 
 ## 画像素材
 
