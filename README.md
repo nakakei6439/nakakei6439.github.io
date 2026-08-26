@@ -11,8 +11,12 @@
 | `focus-gym/` | フォーカスジム（FocusGym） | iOS | トップ / プライバシー / 利用規約 / エビデンス |
 | `tabememo/` | 食べメモ（TabeMemo） | [App Store](https://apps.apple.com/app/id6787073935) | トップ / プライバシー |
 | `Code-Tweet/` | Code Tweet | [Web](https://code-tweet.vercel.app/) | トップ / プライバシーポリシー / 使い方ガイド |
+| `sameq/` | SameQ | iOS（審査準備中） | トップ / プライバシーポリシー / 利用規約 |
 
 全ページ 8言語対応（日本語・英語・ドイツ語・スペイン語・フランス語・韓国語・簡体字・繁体字）。
+**例外: `sameq/` は現時点で日本語・英語の2言語のみ**（App Store審査提出を優先したため）。
+`/assets/i18n.js` の言語切替UIは他言語も選択できるが、日英以外は英語表示にフォールバックする。
+他アプリと同じ8言語に揃える場合は追って翻訳を追加する。
 
 ## 共通の言語切替部品 `/assets/i18n.js`
 
