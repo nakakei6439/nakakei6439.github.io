@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="pageTitle">SameQ — 世界の知らない誰かと、同じ問いに答えるだけのSNS</title>
+  <link rel="icon" href="./assets/icon.png">
+
+  <!-- OGP / Twitter Card。クローラーは JS を実行しないため英語で直書きし、JS では書き換えない。 -->
+  <meta name="description" content="Once a day, a shared question arrives at a random time. Answer it, and strangers' answers from around the world appear — in your own language. No follows, no comments, just today's honest word. iPhone.">
+  <link rel="canonical" href="https://nakakei6439.github.io/sameq/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="SameQ">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://nakakei6439.github.io/sameq/">
+  <meta property="og:title" content="SameQ — Answer one question a day with a stranger, somewhere in the world">
+  <meta property="og:description" content="Once a day, a shared question arrives at a random time. Answer it, and strangers' answers from around the world appear — in your own language. No follows, no comments, just today's honest word. iPhone.">
+  <meta property="og:image" content="https://nakakei6439.github.io/sameq/assets/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="SameQ — a daily shared question, answered anonymously by people around the world">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SameQ — Answer one question a day with a stranger, somewhere in the world">
+  <meta name="twitter:description" content="Once a day, a shared question arrives at a random time. Answer it, and strangers' answers from around the world appear — in your own language. No follows, no comments, just today's honest word. iPhone.">
+  <meta name="twitter:image" content="https://nakakei6439.github.io/sameq/assets/og.png">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', sans-serif;
+      color: #1C1C1E;
+      background: #F5F3FA;
+      line-height: 1.7;
+    }
+
+    header {
+      background: linear-gradient(180deg, #1C1B29 0%, #3A2F6E 100%);
+      color: white;
+      text-align: center;
+      padding: 60px 20px 48px;
+    }
+
+    .app-icon {
+      width: 100px;
+      height: 100px;
+      border-radius: 22px;
+      display: inline-block;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.35);
+      overflow: hidden;
+    }
+    .app-icon img { width: 100%; height: 100%; display: block; }
+
+    header h1 { font-size: 1.9rem; margin-bottom: 0.5rem; }
+    header p { font-size: 1.05rem; opacity: 0.85; max-width: 480px; margin: 0 auto; }
+
+    main {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 48px 20px;
+    }
+
+    section { margin-bottom: 3rem; }
+
+    h2 {
+      font-size: 1.1rem;
+      color: #4C3B8F;
+      margin-bottom: 1rem;
+    }
+
+    ul.features { list-style: none; padding: 0; }
+    ul.features li {
+      background: white;
+      border-radius: 12px;
+      padding: 1rem 1.2rem;
+      margin-bottom: 0.75rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    }
+
+    .support-links a {
+      display: block;
+      color: #4C3B8F;
+      text-decoration: none;
+      margin-bottom: 0.6rem;
+      font-weight: 600;
+    }
+    .support-links a:hover { text-decoration: underline; }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.85rem;
+      color: #999;
+      border-top: 1px solid #E5E0F2;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="app-icon"><img src="./assets/icon.png" alt="SameQ" data-i18n-alt="iconAlt"></div>
+  <h1 data-i18n="h1">SameQ</h1>
+  <p data-i18n="tagline">世界の知らない誰かと、同じ問いに答えるだけのSNS。1日1回、いつ来るか分からない通知が届く。答えて初めて、世界中の答えが自分の言葉で見えてくる。</p>
+</header>
+
+<main>
+  <section>
+    <h2 data-i18n="s_features">できること</h2>
+    <ul class="features">
+      <li data-i18n="f1">1日1回、世界共通のお題がランダムな時刻に届く</li>
+      <li data-i18n="f2">自分が答えて初めて、世界の誰かの答えが1件ずつ見られるようになる</li>
+      <li data-i18n="f3">相手の言葉は、何語で書かれていても最初から自分の言語で表示される（端末内翻訳）</li>
+      <li data-i18n="f4">フォローも検索もランキングも会話もない。できるのは「いいね」だけ</li>
+      <li data-i18n="f5">その日の言葉は消え、翌日また違う時刻に次のお題が届く</li>
+      <li data-i18n="f6">メール・電話番号は不要。匿名の絵文字とニックネームだけで参加できる</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 data-i18n="s_support">サポート</h2>
+    <div class="support-links">
+      <a href="privacy.html" data-i18n="l_privacy">プライバシーポリシー</a>
+      <a href="terms.html" data-i18n="l_terms">利用規約</a>
+      <a href="mailto:nakakei6439@gmail.com" data-i18n="l_contact">お問い合わせ: nakakei6439@gmail.com</a>
+    </div>
+  </section>
+</main>
+
+<footer data-i18n-html="footer">
+  &copy; 2026 Keita Nakagawa. All rights reserved.
+</footer>
+<script src="/assets/i18n.js"></script>
+<script>
+FGI18N.init({
+  ja: {
+    pageTitle: "SameQ — 世界の知らない誰かと、同じ問いに答えるだけのSNS",
+    iconAlt: "SameQ アプリアイコン",
+    h1: "SameQ",
+    tagline: "世界の知らない誰かと、同じ問いに答えるだけのSNS。1日1回、いつ来るか分からない通知が届く。答えて初めて、世界中の答えが自分の言葉で見えてくる。",
+    s_features: "できること",
+    f1: "1日1回、世界共通のお題がランダムな時刻に届く",
+    f2: "自分が答えて初めて、世界の誰かの答えが1件ずつ見られるようになる",
+    f3: "相手の言葉は、何語で書かれていても最初から自分の言語で表示される（端末内翻訳）",
+    f4: "フォローも検索もランキングも会話もない。できるのは「いいね」だけ",
+    f5: "その日の言葉は消え、翌日また違う時刻に次のお題が届く",
+    f6: "メール・電話番号は不要。匿名の絵文字とニックネームだけで参加できる",
+    s_support: "サポート",
+    l_privacy: "プライバシーポリシー",
+    l_terms: "利用規約",
+    l_contact: "お問い合わせ: nakakei6439@gmail.com",
+    footer: "&copy; 2026 Keita Nakagawa. All rights reserved."
+  },
+  en: {
+    pageTitle: "SameQ — Answer one question a day with a stranger, somewhere in the world",
+    iconAlt: "SameQ app icon",
+    h1: "SameQ",
+    tagline: "A social app for answering the same question as a stranger, somewhere in the world. Once a day, a notification arrives at a time you can't predict. Only after you answer do the world's answers appear, in your own language.",
+    s_features: "What you can do",
+    f1: "Once a day, a shared prompt arrives at a random time",
+    f2: "Answer it, and strangers' answers from around the world start appearing, one at a time",
+    f3: "Everyone's words show up in your own language from the start, translated on-device",
+    f4: "No follows, no search, no rankings, no comments — only a like",
+    f5: "Today's words disappear, and tomorrow a new prompt arrives at a different time",
+    f6: "No email or phone number required — join with just an emoji and an optional nickname",
+    s_support: "Support",
+    l_privacy: "Privacy Policy",
+    l_terms: "Terms of Use",
+    l_contact: "Contact: nakakei6439@gmail.com",
+    footer: "&copy; 2026 Keita Nakagawa. All rights reserved."
+  }
+});
+</script>
+</body>
+</html>
