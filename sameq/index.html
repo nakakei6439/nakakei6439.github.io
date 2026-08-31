@@ -119,6 +119,16 @@
     </ul>
   </section>
 
+  <!-- TODO(2026-08-31): ベータテスト用の告知セクション。App Store正式公開・ベータ終了後は
+       このsection丸ごと削除し、下のFGI18N.init内のs_beta/beta_desc/l_betaキーも合わせて消すこと。 -->
+  <section>
+    <h2 data-i18n="s_beta">ベータテスト</h2>
+    <p data-i18n="beta_desc">正式リリース前のTestFlightベータテストに参加できます。</p>
+    <div class="support-links">
+      <a href="https://testflight.apple.com/join/xv7kJFRm" data-i18n="l_beta">TestFlightで参加する</a>
+    </div>
+  </section>
+
   <section>
     <h2 data-i18n="s_support">サポート</h2>
     <div class="support-links">
@@ -147,6 +157,9 @@ FGI18N.init({
     f4: "フォローも検索もランキングも会話もない。できるのは「いいね」だけ",
     f5: "その日の言葉は消え、翌日また違う時刻に次のお題が届く",
     f6: "メール・電話番号は不要。匿名の絵文字とニックネームだけで参加できる",
+    s_beta: "ベータテスト",
+    beta_desc: "正式リリース前のTestFlightベータテストに参加できます。",
+    l_beta: "TestFlightで参加する",
     s_support: "サポート",
     l_privacy: "プライバシーポリシー",
     l_terms: "利用規約",
@@ -165,6 +178,9 @@ FGI18N.init({
     f4: "No follows, no search, no rankings, no comments — only a like",
     f5: "Today's words disappear, and tomorrow a new prompt arrives at a different time",
     f6: "No email or phone number required — join with just an emoji and an optional nickname",
+    s_beta: "Beta Testing",
+    beta_desc: "Join the TestFlight beta before the official release.",
+    l_beta: "Join on TestFlight",
     s_support: "Support",
     l_privacy: "Privacy Policy",
     l_terms: "Terms of Use",
