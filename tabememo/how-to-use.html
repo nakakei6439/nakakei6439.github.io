@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="pageTitle">使い方ガイド — たべメモ</title>
+  <link rel="icon" href="./assets/app-icon.png">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+      color: #1C1C1E;
+      background: #F7F8FC;
+      line-height: 1.7;
+    }
+
+    /* ヘッダー */
+    header {
+      background: #FFFFFF;
+      text-align: center;
+      padding: 56px 20px 40px;
+    }
+
+    .badge {
+      width: 80px;
+      height: 80px;
+      border-radius: 20px;
+      display: block;
+      margin: 0 auto 16px;
+      box-shadow: 0 4px 16px rgba(33,153,89,0.30);
+    }
+
+    h1 {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      color: #1C1C1E;
+    }
+
+    .tagline {
+      font-size: 14px;
+      color: #8E8E93;
+      margin-top: 6px;
+    }
+
+    /* 訳が無い言語では .step-hint を辞書側で空にしている。空の行が余白だけ残らないようにする */
+    .step-hint:empty { display: none; }
+
+    /* セクション */
+    .content {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 24px 16px 48px;
+    }
+
+    .guide-card {
+      background: #FFFFFF;
+      border-radius: 16px;
+      padding: 24px 20px;
+      margin-bottom: 16px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+
+    .section-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: #219959;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #1C1C1E;
+      margin-bottom: 4px;
+    }
+
+    .section-desc {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+
+    /* ステップ */
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid #F2F2F7;
+    }
+
+    .step:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .step-num {
+      width: 28px;
+      height: 28px;
+      background: #219959;
+      color: #FFFFFF;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .step-text {
+      font-size: 15px;
+      color: #1C1C1E;
+      line-height: 1.6;
+    }
+
+    .step-text strong {
+      font-weight: 700;
+    }
+
+    .step-hint {
+      font-size: 13px;
+      color: #8E8E93;
+      margin-top: 2px;
+    }
+
+    /* ヒントボックス */
+    .tip-box {
+      background: #F0FAF4;
+      border-left: 3px solid #219959;
+      border-radius: 0 10px 10px 0;
+      padding: 12px 16px;
+      margin-top: 14px;
+      font-size: 14px;
+      color: #3A3A3C;
+      line-height: 1.6;
+    }
+
+    .tip-box strong {
+      color: #219959;
+    }
+
+    /* フッター */
+    footer {
+      text-align: center;
+      padding: 8px 20px 48px;
+      font-size: 13px;
+      color: #8E8E93;
+    }
+
+    footer a {
+      color: #219959;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img class="badge" src="./assets/app-icon.png" alt="たべメモ" data-i18n-alt="pageH1">
+    <h1 data-i18n-html="pageH1"></h1>
+    <p class="tagline" data-i18n-html="tagline"></p>
+  </header>
+
+  <div class="content">
+
+    <!-- 1. 手入力 -->
+    <div class="guide-card">
+      <p class="section-label" data-i18n-html="card1.label"></p>
+      <p class="section-title" data-i18n-html="card1.title"></p>
+      <p class="section-desc" data-i18n-html="card1.desc"></p>
+      <div class="step">
+        <span class="step-num">1</span>
+        <div>
+          <p class="step-text" data-i18n-html="step1.text"></p>
+          <p class="step-hint" data-i18n-html="step1.hint"></p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">2</span>
+        <div>
+          <p class="step-text" data-i18n-html="step2.text"></p>
+          <p class="step-hint" data-i18n-html="step2.hint"></p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">3</span>
+        <div>
+          <p class="step-text" data-i18n-html="step3.text"></p>
+          <p class="step-hint" data-i18n-html="step3.hint"></p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">4</span>
+        <div>
+          <p class="step-text" data-i18n-html="step4.text"></p>
+          <p class="step-hint" data-i18n-html="step4.hint"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. 音声入力 -->
+    <div class="guide-card">
+      <p class="section-label" data-i18n-html="card2.label"></p>
+      <p class="section-title" data-i18n-html="card2.title"></p>
+      <p class="section-desc" data-i18n-html="card2.desc"></p>
+      <div class="step">
+        <span class="step-num">1</span>
+        <div>
+          <p class="step-text" data-i18n-html="step5.text"></p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">2</span>
+        <div>
+          <p class="step-text" data-i18n-html="step6.text"></p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">3</span>
+        <div>
+          <p class="step-text" data-i18n-html="step7.text"></p>
+        </div>
+      </div>
+      <div class="tip-box" data-i18n-html="tip1"></div>
+    </div>
+
+    <!-- 3. Siri -->
+    <div class="guide-card">
+      <p class="section-label" data-i18n-html="card3.label"></p>
+      <p class="section-title" data-i18n-html="card3.title"></p>
+      <p class="section-desc" data-i18n-html="card3.desc"></p>
+      <div class="step">
+        <span class="step-num">1</span>
+        <div>
+          <p class="step-text" data-i18n-html="step8.text"></p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">2</span>
+        <div>
+          <p class="step-text" data-i18n-html="step9.text"></p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">3</span>
+        <div>
+          <p class="step-text" data-i18n-html="step10.text"></p>
+        </div>
+      </div>
+      <div class="tip-box" data-i18n-html="tip2"></div>
+    </div>
+  </div>
+
+  <footer>
+    <a href="./index.html" data-i18n-html="topLink"></a> &nbsp;|&nbsp; <a href="./privacy.html" data-i18n-html="privacyLink"></a>
+  </footer>
+
+  <script src="/assets/i18n.js"></script>
+  <script>
+    var I18N = {
+      ja: {
+        "card1.label": "方法 1",
+        "card1.title": "手入力で記録する",
+        "card1.desc": "ホーム画面下部の入力欄に食べたものを雑に書くだけです。AIが品目とカロリーを推定します。",
+        "step1.text": "入力欄に<strong>「アルフォート3枚」</strong>のように雑に書く",
+        "step1.hint": "数字・量・メモはざっくりでOK。AIが判断します",
+        "step2.text": "送信ボタン（<strong>✨きらめきアイコン</strong>）をタップ",
+        "step2.hint": "推定が始まり、画面に「推定中…」と表示されます",
+        "step3.text": "<strong>AIの推定結果</strong>（品目・kcal）を確認する",
+        "step3.hint": "倍率メニュー（×0.3〜×3）で分量を調整したり、数値を直接修正することもできます",
+        "step4.text": "<strong>「確定する」</strong>をタップして保存",
+        "step4.hint": "食事種別（朝・昼・夜・間食）は時刻から自動判定されます",
+        "card2.label": "方法 2",
+        "card2.title": "音声入力で記録する",
+        "card2.desc": "マイクに向かって話すだけで、手入力と同じ流れで記録できます。",
+        "step5.text": "入力欄の横の<strong>マイクアイコン（🎙）</strong>をタップして話す",
+        "step6.text": "もう一度タップして<strong>認識を止める</strong>",
+        "step7.text": "手入力と同じ<strong>確認画面で内容を確認し、保存</strong>する",
+        "tip1": "<strong>Tip:</strong> 認識された内容はそのまま入力欄に連結されます。確定前に手で書き換えることもできます。",
+        "card3.label": "方法 3",
+        "card3.title": "Siriで記録する（アプリを開かずに）",
+        "card3.desc": "ロック画面やホーム画面から声だけで記録できます。",
+        "step8.text": "<strong>「Hey Siri、たべメモで記録」</strong>と話しかける",
+        "step9.text": "Siriが<strong>「何を食べましたか？」</strong>と聞き返すので答える",
+        "step10.text": "<strong>確認なしに自動で記録</strong>される",
+        "tip2": "<strong>Tip:</strong> Siri経由は確認を挟まずに自動確定されます。通信失敗時は未推定で保存されるので、後からアプリを開いて再推定・修正できます。",
+        "pageH1": "使い方ガイド",
+        "tagline": "たべメモ",
+        "topLink": "たべメモ",
+        "privacyLink": "プライバシーポリシー",
+        "pageTitle": "使い方ガイド — たべメモ"
+      },
+      en: {
+        "card1.label": "METHOD 1",
+        "card1.title": "Log by Typing",
+        "card1.desc": "Just type what you ate in the input field at the bottom of the Home screen. AI estimates the items and calories.",
+        "step1.text": "Type casually in the input field — e.g. <strong>“3 Alfort biscuits”</strong>",
+        "step1.hint": "Numbers, amounts and notes can be rough — AI figures it out",
+        "step2.text": "Tap the <strong>sparkles send button (✨)</strong>",
+        "step2.hint": "Estimation starts and “Estimating…” appears on the screen",
+        "step3.text": "Review the <strong>AI estimate</strong> (items and kcal)",
+        "step3.hint": "Adjust the portion with the multiplier menu (×0.3 to ×3) or edit the kcal directly",
+        "step4.text": "Tap <strong>“Save”</strong> to confirm",
+        "step4.hint": "Meal type (breakfast / lunch / dinner / snack) is auto-detected from the time",
+        "card2.label": "METHOD 2",
+        "card2.title": "Log by Voice",
+        "card2.desc": "Just speak into the microphone — same flow as typing.",
+        "step5.text": "Tap the <strong>microphone icon (🎙)</strong> next to the input field and speak",
+        "step6.text": "Tap it again to <strong>stop recognition</strong>",
+        "step7.text": "<strong>Review on the same confirmation screen</strong> and save",
+        "tip1": "<strong>Tip:</strong> Recognized text is appended to the input field. You can edit it by hand before saving.",
+        "card3.label": "METHOD 3",
+        "card3.title": "Log via Siri (Without Opening the App)",
+        "card3.desc": "Log entries with just your voice from the Lock screen or Home screen.",
+        "step8.text": "Say <strong>“Hey Siri, log with TabeMemo”</strong>",
+        "step9.text": "Siri asks <strong>“What did you eat?”</strong> — answer it",
+        "step10.text": "It's <strong>saved automatically without confirmation</strong>",
+        "tip2": "<strong>Tip:</strong> Siri skips the confirmation screen and saves directly. If the API call fails, the entry is saved unconfirmed so you can re-estimate it later in the app.",
+        "pageH1": "How to Use",
+        "tagline": "TabeMemo",
+        "topLink": "TabeMemo",
+        "privacyLink": "Privacy Policy",
+        "pageTitle": "How to Use — TabeMemo"
+      },
+      "zh-Hans": {
+        "card1.label": "方法 1",
+        "card1.title": "手动输入记录",
+        "card1.desc": "在主屏幕底部的输入栏随意写下吃过的东西即可，AI 会自动识别品项并估算卡路里。",
+        "step1.text": "在输入栏随意写下，例如 <strong>「阿尔福特饼干3片」</strong>",
+        "step1.hint": "数字、分量、备注都可以很随意，AI 会自行判断",
+        "step2.text": "点击 <strong>✨闪闪发送按钮</strong>",
+        "step2.hint": "开始估算，画面上会显示「正在估算…」",
+        "step3.text": "查看 <strong>AI 估算结果</strong>（品项与 kcal）",
+        "step3.hint": "可用倍率菜单（×0.3 到 ×3）调整分量，也可直接修改 kcal",
+        "step4.text": "点击 <strong>「保存」</strong> 完成记录",
+        "step4.hint": "餐点类型（早／午／晚／加餐）会依时间自动判定",
+        "card2.label": "方法 2",
+        "card2.title": "用语音记录",
+        "card2.desc": "对着麦克风说话即可，与手动输入相同的流程。",
+        "step5.text": "点击输入栏旁的 <strong>麦克风图标（🎙）</strong> 并说话",
+        "step6.text": "再次点击以 <strong>停止识别</strong>",
+        "step7.text": "在与手动输入相同的 <strong>确认画面查看内容并保存</strong>",
+        "tip1": "<strong>提示：</strong> 识别出的文字会追加到输入栏中，可在保存前手动修改。",
+        "card3.label": "方法 3",
+        "card3.title": "用 Siri 记录（无需打开 App）",
+        "card3.desc": "在锁屏或主屏幕只需动口即可记录。",
+        "step8.text": "说 <strong>「嘿 Siri，用食记记录」</strong>",
+        "step9.text": "Siri 会<strong>询问「您吃了什么？」</strong> — 回答即可",
+        "step10.text": "<strong>无需确认即自动保存</strong>",
+        "tip2": "<strong>提示：</strong> Siri 会跳过确认画面直接保存。若 API 调用失败，会以未估算状态保存，便于之后在 App 中重新估算。",
+        "pageH1": "使用指南",
+        "tagline": "食记",
+        "topLink": "食记",
+        "privacyLink": "隐私政策",
+        "pageTitle": "使用指南 — 食记"
+      },
+      "zh-Hant": {
+        "card1.label": "方法 1",
+        "card1.title": "手動輸入記錄",
+        "card1.desc": "在主畫面底部的輸入欄隨意寫下吃過的東西即可，AI 會自動辨識品項並估算卡路里。",
+        "step1.text": "在輸入欄隨意寫下，例如 <strong>「阿爾福特餅乾3片」</strong>",
+        "step1.hint": "數字、分量、備註都可以很隨意，AI 會自行判斷",
+        "step2.text": "點選 <strong>✨閃閃傳送按鈕</strong>",
+        "step2.hint": "開始估算，畫面上會顯示「正在估算…」",
+        "step3.text": "查看 <strong>AI 估算結果</strong>（品項與 kcal）",
+        "step3.hint": "可用倍率選單（×0.3 到 ×3）調整分量，也可直接修改 kcal",
+        "step4.text": "點選 <strong>「儲存」</strong> 完成記錄",
+        "step4.hint": "餐點類型（早／午／晚／點心）會依時間自動判定",
+        "card2.label": "方法 2",
+        "card2.title": "用語音記錄",
+        "card2.desc": "對著麥克風說話即可，與手動輸入相同的流程。",
+        "step5.text": "點選輸入欄旁的 <strong>麥克風圖示（🎙）</strong> 並說話",
+        "step6.text": "再次點選以 <strong>停止辨識</strong>",
+        "step7.text": "在與手動輸入相同的 <strong>確認畫面查看內容並儲存</strong>",
+        "tip1": "<strong>提示：</strong> 辨識出的文字會附加到輸入欄中，可在儲存前手動修改。",
+        "card3.label": "方法 3",
+        "card3.title": "用 Siri 記錄（無需開啟 App）",
+        "card3.desc": "在鎖定畫面或主畫面只需動口即可記錄。",
+        "step8.text": "說 <strong>「嘿 Siri，用食記記錄」</strong>",
+        "step9.text": "Siri 會<strong>詢問「您吃了什麼？」</strong> — 回答即可",
+        "step10.text": "<strong>無需確認即自動儲存</strong>",
+        "tip2": "<strong>提示：</strong> Siri 會跳過確認畫面直接儲存。若 API 呼叫失敗，會以未估算狀態儲存，便於之後在 App 中重新估算。",
+        "pageH1": "使用指南",
+        "tagline": "食記",
+        "topLink": "食記",
+        "privacyLink": "隱私權政策",
+        "pageTitle": "使用指南 — 食記"
+      },
+      ko: {
+        "card1.label": "방법 1",
+        "card1.title": "텍스트로 기록하기",
+        "card1.desc": "홈 화면 하단의 입력란에 먹은 것을 대충 적기만 하면 됩니다. AI가 품목과 칼로리를 추정합니다.",
+        "step1.text": "입력란에 <strong>「알포트 3개」</strong>처럼 대충 적습니다",
+        "step1.hint": "숫자・분량・메모는 대충 적어도 OK. AI가 판단합니다",
+        "step2.text": "<strong>반짝이 전송 버튼(✨)</strong>을 탭합니다",
+        "step2.hint": "추정이 시작되고 화면에 「추정 중…」이 표시됩니다",
+        "step3.text": "<strong>AI 추정 결과</strong>(품목·kcal)를 확인합니다",
+        "step3.hint": "배율 메뉴(×0.3 ~ ×3)로 분량을 조정하거나 kcal을 직접 수정할 수 있습니다",
+        "step4.text": "<strong>「저장」</strong>을 탭하여 저장합니다",
+        "step4.hint": "식사 종류(아침・점심・저녁・간식)는 시각으로부터 자동 판정됩니다",
+        "card2.label": "방법 2",
+        "card2.title": "음성으로 기록하기",
+        "card2.desc": "마이크에 대고 말하기만 하면 텍스트 입력과 동일한 흐름으로 기록됩니다.",
+        "step5.text": "입력란 옆의 <strong>마이크 아이콘(🎙)</strong>을 탭하고 말합니다",
+        "step6.text": "다시 한 번 탭하여 <strong>인식을 멈춥니다</strong>",
+        "step7.text": "텍스트와 동일한 <strong>확인 화면에서 내용을 확인하고 저장</strong>합니다",
+        "tip1": "<strong>Tip:</strong> 인식된 텍스트는 입력란에 이어붙여집니다. 저장 전에 손으로 수정할 수도 있습니다.",
+        "card3.label": "방법 3",
+        "card3.title": "Siri로 기록하기(앱을 열지 않고)",
+        "card3.desc": "잠금 화면이나 홈 화면에서 음성만으로 기록할 수 있습니다.",
+        "step8.text": "<strong>「Hey Siri, 먹메모로 기록」</strong>이라고 말합니다",
+        "step9.text": "Siri가 <strong>「뭘 드셨어요?」</strong>라고 되묻습니다 — 대답합니다",
+        "step10.text": "<strong>확인 없이 자동으로 기록</strong>됩니다",
+        "tip2": "<strong>Tip:</strong> Siri는 확인 화면을 건너뛰고 바로 저장합니다. API 호출이 실패하면 추정이 안 된 상태로 저장되어 나중에 앱에서 다시 추정할 수 있습니다.",
+        "pageH1": "사용 가이드",
+        "tagline": "먹메모",
+        "topLink": "먹메모",
+        "privacyLink": "개인정보 처리방침",
+        "pageTitle": "사용 가이드 — 먹메모"
+      },
+      es: {
+        "card1.label": "MÉTODO 1",
+        "card1.title": "Registrar escribiendo",
+        "card1.desc": "Solo escribe lo que comiste en el campo de entrada en la parte inferior de la pantalla de inicio. La IA estima los alimentos y las calorías.",
+        "step1.text": "Escríbelo sin más, por ejemplo <strong>«3 galletas Alfort»</strong>",
+        "step1.hint": "Los números, cantidades y notas pueden ser aproximados: la IA los interpreta",
+        "step2.text": "Toca el <strong>botón de envío de destellos (✨)</strong>",
+        "step2.hint": "La estimación comienza y se muestra «Estimando…» en la pantalla",
+        "step3.text": "Revisa la <strong>estimación de la IA</strong> (alimentos y kcal)",
+        "step3.hint": "Ajusta la porción con el menú de multiplicador (×0,3 a ×3) o edita las kcal directamente",
+        "step4.text": "Toca <strong>«Guardar»</strong> para confirmar",
+        "step4.hint": "El tipo de comida (desayuno / almuerzo / cena / merienda) se detecta automáticamente por la hora",
+        "card2.label": "MÉTODO 2",
+        "card2.title": "Registrar con voz",
+        "card2.desc": "Solo habla al micrófono: el mismo flujo que al escribir.",
+        "step5.text": "Toca el <strong>icono de micrófono (🎙)</strong> junto al campo de entrada y habla",
+        "step6.text": "Toca otra vez para <strong>detener el reconocimiento</strong>",
+        "step7.text": "<strong>Revisa en la misma pantalla de confirmación</strong> y guarda",
+        "tip1": "<strong>Consejo:</strong> El texto reconocido se añade al campo de entrada. Puedes editarlo a mano antes de guardar.",
+        "card3.label": "MÉTODO 3",
+        "card3.title": "Registrar con Siri (sin abrir la app)",
+        "card3.desc": "Registra con solo tu voz desde la pantalla de bloqueo o de inicio.",
+        "step8.text": "Di <strong>«Oye Siri, registra con TabeMemo»</strong>",
+        "step9.text": "Siri pregunta <strong>«¿Qué comiste?»</strong> — responde",
+        "step10.text": "Se <strong>guarda automáticamente sin confirmación</strong>",
+        "tip2": "<strong>Consejo:</strong> Siri omite la pantalla de confirmación y guarda directamente. Si la llamada a la API falla, la entrada se guarda sin estimación para que puedas reestimarla después en la app.",
+        "pageH1": "Guía de uso",
+        "tagline": "TabeMemo",
+        "topLink": "TabeMemo",
+        "privacyLink": "Política de privacidad",
+        "pageTitle": "Guía de uso — TabeMemo"
+      },
+      fr: {
+        "card1.label": "MÉTHODE 1",
+        "card1.title": "Enregistrer en saisissant du texte",
+        "card1.desc": "Saisissez simplement ce que vous avez mangé dans le champ en bas de l'écran d'accueil. L'IA estime les aliments et les calories.",
+        "step1.text": "Saisissez sans réfléchir, par exemple <strong>« 3 biscuits Alfort »</strong>",
+        "step1.hint": "Les chiffres, quantités et notes peuvent être approximatifs — l'IA se charge du reste",
+        "step2.text": "Touchez le <strong>bouton d'envoi en étincelles (✨)</strong>",
+        "step2.hint": "L'estimation démarre et « Estimation… » s'affiche à l'écran",
+        "step3.text": "Vérifiez l'<strong>estimation de l'IA</strong> (aliments et kcal)",
+        "step3.hint": "Ajustez la portion via le menu multiplicateur (×0,3 à ×3) ou modifiez les kcal directement",
+        "step4.text": "Touchez <strong>« Enregistrer »</strong> pour confirmer",
+        "step4.hint": "Le type de repas (petit-déjeuner / déjeuner / dîner / collation) est détecté automatiquement selon l'heure",
+        "card2.label": "MÉTHODE 2",
+        "card2.title": "Enregistrer à la voix",
+        "card2.desc": "Parlez simplement dans le microphone — le même flux que la saisie.",
+        "step5.text": "Touchez l'<strong>icône du microphone (🎙)</strong> à côté du champ de saisie et parlez",
+        "step6.text": "Touchez à nouveau pour <strong>arrêter la reconnaissance</strong>",
+        "step7.text": "<strong>Vérifiez sur le même écran de confirmation</strong> puis enregistrez",
+        "tip1": "<strong>Astuce :</strong> Le texte reconnu s'ajoute au champ de saisie. Vous pouvez le modifier à la main avant d'enregistrer.",
+        "card3.label": "MÉTHODE 3",
+        "card3.title": "Enregistrer via Siri (sans ouvrir l'app)",
+        "card3.desc": "Enregistrez d'une seule voix depuis l'écran de verrouillage ou l'écran d'accueil.",
+        "step8.text": "Dites <strong>« Dis Siri, enregistre avec TabeMemo »</strong>",
+        "step9.text": "Siri demande <strong>« Qu'avez-vous mangé ? »</strong> — répondez",
+        "step10.text": "<strong>Enregistré automatiquement sans confirmation</strong>",
+        "tip2": "<strong>Astuce :</strong> Siri ignore l'écran de confirmation et enregistre directement. En cas d'échec de l'appel API, l'entrée est enregistrée sans estimation pour que vous puissiez la réestimer plus tard dans l'app.",
+        "pageH1": "Comment utiliser",
+        "tagline": "TabeMemo",
+        "topLink": "TabeMemo",
+        "privacyLink": "Politique de confidentialité",
+        "pageTitle": "Comment utiliser — TabeMemo"
+      },
+      de: {
+        "card1.label": "METHODE 1",
+        "card1.title": "Per Texteingabe erfassen",
+        "card1.desc": "Geben Sie einfach ein, was Sie gegessen haben, in das Eingabefeld unten auf dem Startbildschirm. Die KI schätzt die Lebensmittel und Kalorien.",
+        "step1.text": "Geben Sie es beiläufig ein — z. B. <strong>„3 Alfort-Kekse“</strong>",
+        "step1.hint": "Zahlen, Mengen und Notizen dürfen grob sein — die KI erkennt es",
+        "step2.text": "Tippen Sie auf die <strong>Funken-Senden-Schaltfläche (✨)</strong>",
+        "step2.hint": "Die Schätzung startet und „Wird geschätzt…“ wird auf dem Bildschirm angezeigt",
+        "step3.text": "Überprüfen Sie die <strong>KI-Schätzung</strong> (Lebensmittel und kcal)",
+        "step3.hint": "Passen Sie die Menge mit dem Multiplikator-Menü (×0,3 bis ×3) an oder bearbeiten Sie die kcal direkt",
+        "step4.text": "Tippen Sie auf <strong>„Speichern“</strong>, um zu bestätigen",
+        "step4.hint": "Die Mahlzeit (Frühstück / Mittag / Abend / Snack) wird anhand der Uhrzeit automatisch erkannt",
+        "card2.label": "METHODE 2",
+        "card2.title": "Per Spracheingabe erfassen",
+        "card2.desc": "Sprechen Sie einfach ins Mikrofon — der gleiche Ablauf wie bei der Texteingabe.",
+        "step5.text": "Tippen Sie auf das <strong>Mikrofon-Symbol (🎙)</strong> neben dem Eingabefeld und sprechen Sie",
+        "step6.text": "Tippen Sie erneut, um die <strong>Erkennung zu stoppen</strong>",
+        "step7.text": "<strong>Auf demselben Bestätigungsbildschirm prüfen und speichern</strong>",
+        "tip1": "<strong>Tipp:</strong> Der erkannte Text wird an das Eingabefeld angehängt. Sie können ihn vor dem Speichern noch von Hand anpassen.",
+        "card3.label": "METHODE 3",
+        "card3.title": "Per Siri erfassen (ohne die App zu öffnen)",
+        "card3.desc": "Erfassen Sie Einträge per Sprachbefehl vom Sperrbildschirm oder Startbildschirm.",
+        "step8.text": "Sagen Sie <strong>„Hey Siri, in TabeMemo erfassen“</strong>",
+        "step9.text": "Siri fragt <strong>„Was hast du gegessen?“</strong> — antworten Sie",
+        "step10.text": "Es wird <strong>automatisch ohne Bestätigung gespeichert</strong>",
+        "tip2": "<strong>Tipp:</strong> Siri überspringt den Bestätigungsbildschirm und speichert direkt. Bei einem API-Fehler wird der Eintrag ungeschätzt gespeichert, damit Sie ihn später in der App erneut schätzen können.",
+        "pageH1": "Anleitung",
+        "tagline": "TabeMemo",
+        "topLink": "TabeMemo",
+        "privacyLink": "Datenschutzerklärung",
+        "pageTitle": "Anleitung — TabeMemo"
+      }
+    };
+
+    FGI18N.init(I18N);
+  </script>
+
+</body>
+</html>

@@ -9,7 +9,7 @@
 |---|---|---|---|
 | `kondate-cart/` | 献立カート（KondateCart） | [App Store](https://apps.apple.com/app/id6760213937) | トップ / プライバシーポリシー / 使い方ガイド |
 | `focus-gym/` | フォーカスジム（FocusGym） | iOS | トップ / プライバシー / 利用規約 / エビデンス |
-| `tabememo/` | 食べメモ（TabeMemo） | [App Store](https://apps.apple.com/app/id6787073935) | トップ / プライバシー |
+| `tabememo/` | 食べメモ（TabeMemo） | [App Store](https://apps.apple.com/app/id6787073935) | トップ / プライバシーポリシー / 使い方ガイド |
 | `Code-Tweet/` | Code Tweet | [Web](https://code-tweet.vercel.app/) | トップ / プライバシーポリシー / 使い方ガイド |
 | `sameq/` | SameQ | iOS（審査準備中） | トップ / プライバシーポリシー / 利用規約 |
 
@@ -125,8 +125,9 @@ Product Hunt / X ローンチ向けの整備を、アプリごとに順番に進
 - [x] **食べメモ** — OGP追加 / スクショ欄新設（8言語×6枚、言語連動）/ 共通部品へ移行
 - [x] **Code Tweet** — 日本語og:を英語へ置換 / og:を書き換えるインラインJSを削除 / 新アイコン追加 / 共通部品へ移行
 - [x] **`kondate-cart/how-to-use.html` の集約** — 8言語ぶんのHTML重複を1つの骨組みに（1443行 → 843行）
+- [x] **`tabememo/how-to-use.html` を新規作成** — 手入力・音声入力・Siri経由の3方法を8言語で解説
 
-これで全11ページが共通部品に統一され、インライン実装は残っていない。
+これで全12ページが共通部品に統一され、インライン実装は残っていない。
 
 Code Tweet はスクショ欄を設けていない。本番 `code-tweet.vercel.app` が日本語しか返さず
 （8言語ルーティングは作業ブランチ止まりで、英語メッセージも nav/footer 等22件のみ）、
